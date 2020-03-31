@@ -73,7 +73,7 @@ public class Datenbank
         liste.add(naturstoff);
     }
     
-    
+    //Test
     
     public void BearbeitenName (int Nummer, String Name)
     {
