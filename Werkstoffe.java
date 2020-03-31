@@ -22,6 +22,7 @@ public abstract class Werkstoffe
     {
         this.name = name;
     }
+    
     public static String getName()
     {
         return name;
@@ -31,6 +32,7 @@ public abstract class Werkstoffe
     {
         this.nummer = nummer;
     }
+    
     public static int getNummer()
     {
         return nummer;
@@ -40,6 +42,7 @@ public abstract class Werkstoffe
     {
         this.verwendung = verwendung;
     }
+    
     public static String getVerwendung()
     {
         return verwendung;
