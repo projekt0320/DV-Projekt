@@ -7,9 +7,9 @@
  */
 public abstract class Werkstoffe
 {
-    private static String name;
-    private static int nummer;
-    private static String verwendung;
+    private String name;
+    private int nummer;
+    private String verwendung;
     
     public Werkstoffe(String name,int nummer,String verwendung)
     {
@@ -50,6 +50,7 @@ public abstract class Werkstoffe
    
    
     public abstract String gibEigenschaft();
+   
    
     
     

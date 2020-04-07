@@ -13,22 +13,26 @@ public abstract class Metalle extends Werkstoffe
         super(name,nummer,verwendung);
         this.elektrischeLeitfaehigkeit= elektrischeLeitfaehigkeit;
     }
-    
-        public void setElektrischeLeitfaehigkeit(double elektrischeLeitfaehigkeit)
-        {
-            this.elektrischeLeitfaehigkeit= elektrischeLeitfaehigkeit;
-        }
-    
-        public double getElektrischeLeitfaehigkeit()
-        {
-            return elektrischeLeitfaehigkeit;
-            
-        }
-     
+
+    public void setElektrischeLeitfaehigkeit(double elektrischeLeitfaehigkeit)
+    {
+        this.elektrischeLeitfaehigkeit= elektrischeLeitfaehigkeit;
+    }
+
+    public double getElektrischeLeitfaehigkeit()
+    {
+        return elektrischeLeitfaehigkeit;
+
+    }
+
     public  String gibEigenschaft()
     {   
-        String s= "elektrischeLeitfaehigkeit: "+ "   name: "+this.getName()+",      nummer: "+this.getNummer()+ ",      verwendung: "+this.getVerwendung() ;
+
+       
+
+        String s= "name: "+this.getName()+",      nummer: "+this.getNummer()+ ",      verwendung: "+this.getVerwendung()+",      elektrischeLeitfaehigkeit: "+ elektrischeLeitfaehigkeit;
+
         return s;
-        
+
     }
 }
