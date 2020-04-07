@@ -16,56 +16,56 @@ public class Datenbank
         anzahl=0;
         liste = new ArrayList<Werkstoffe>();
     }
-    
+
     public void ErstellenStahl (String Name, int Nummer, String Verwendung, double eLeitf, double Eisengehalt, double Kohlenstoffgehalt)
     {
         anzahl+=1;
         Werkstoffe stahl = new Stahl (Name, Nummer, Verwendung, eLeitf, Eisengehalt, Kohlenstoffgehalt);
         liste.add(stahl);
     }
-    
+
     public void ErstellenGuss (String Name, int Nummer, String Verwendung, double eLeitf, double Eisengehalt, double Siedetemp)
     {
         anzahl+=1;
         Werkstoffe guss = new Gusswerkstoff (Name, Nummer, Verwendung, eLeitf, Eisengehalt, Siedetemp);
         liste.add(guss);
     }
-    
+
     public void ErstellenSchwermetalle (String Name, int Nummer, String Verwendung, double eLeitf, String Hauptelement, String Verform)
     {
         anzahl+=1;
         Werkstoffe schwer = new Schwermetalle (Name, Nummer, Verwendung, eLeitf, Hauptelement, Verform);
         liste.add(schwer);
     }
-    
+
     public void ErstellenLeichtmetalle (String Name, int Nummer, String Verwendung, double eLeitf, double Hauptelement, String Dichte)
     {
         anzahl+=1;
         Werkstoffe leicht = new Leichtmetalle (Name, Nummer, Verwendung, eLeitf, Hauptelement, Dichte);
         liste.add(leicht);
     }
-    
+
     public void ErstellenHalbleiter (String Name, int Nummer, String Verwendung, String metallEigenschaft, double eLeitf)
     {
         anzahl+=1;
         Werkstoffe halbleiter = new Halbleiter (Name, Nummer, Verwendung, metallEigenschaft, eLeitf);
         liste.add(halbleiter);
     }
-    
+
     public void ErstellenKeramik (String Name, int Nummer, String Verwendung, String metallEigenschaft, double Zugfestigkeit)
     {
         anzahl+=1;
         Werkstoffe keramik = new keramischeWerkstoffe (Name, Nummer, Verwendung, metallEigenschaft, Zugfestigkeit);
         liste.add(keramik);
     }
-    
+
     public void ErstellenKunststoffe (String Name, int Nummer, String Verwendung, String metallEigenschaft, String Verformbarkeit)
     {
         anzahl+=1;
         Werkstoffe kunststoff = new Kunststoffe (Name, Nummer, Verwendung, metallEigenschaft, Verformbarkeit);
         liste.add(kunststoff);
     }
-    
+
     public void ErstellenNaturstoffe (String Name, int Nummer, String Verwendung, String metallEigenschaft, String Degradation)
     {
         anzahl+=1;
@@ -73,12 +73,84 @@ public class Datenbank
         liste.add(naturstoff);
     }
     
-    //Testen
-    
     public void BearbeitenName (int Nummer, String Name)
     {
-        
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setName(Name);
     }
+    
+    public void BearbeitenNummer (int Nummer, int nr)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setNummer(nr);
+    }
+    
+    public void BearbeitenVerwendung (int Nummer, String Verwendung)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setVerwendung(Verwendung);
+    }
+    
+    public void BearbeitenElektrischeLeitfaehigkeit (int Nummer, double elektrLeitf)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setElektrischeLeitfaehigkeit(elektrLeitf);
+    }
+    
+    public void BearbeitenEisengehalt (int Nummer, double eisengehalt)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setEisengehalt(eisengehalt);
+    }
+    
+    public void BearbeitenKohlenstoffgehalt (int Nummer, double Kohlenstoffgehalt)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setKohlenstoffgehalt(Kohlenstoffgehalt);
+    }
+    
+    public void BearbeitenHauptelement (int Nummer, String Hauptelement)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setHauptelement(Hauptelement);
+    }
+    
+    public void BearbeitenSiedetemperatur (int Nummer, double Siedetemp)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setSiedetemperatur(Siedetemp);
+    }
+    
+    public void BearbeitenVerformbarkeit (int Nummer, String Verformbarkeit)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setVerformbarkeit(Verformbarkeit);
+    }
+    
+    public void BearbeitenDichte (int Nummer, double Dichte)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setDichte(Dichte);
+    }
+    
+    public void BearbeitenmetallischeEigenschaft (int Nummer, String metallEigenschaft)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setMetallAehnlicheEigenschaften(metallEigenschaft);
+    }
+    
+    public void BearbeitenZugfestigkeit (int Nummer, double Zugfestigkeit)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setZugfestigkeit(Zugfestigkeit);
+    }
+    
+    public void BearbeitenDegradation (int Nummer, String Degradation)
+    {
+        Werkstoffe w = sucheNummer(Nummer);
+        w.setDegradation(Degradation);
+    }
+
     public Werkstoffe sucheName(String name)
     {
         for (Werkstoffe w : liste)
@@ -88,12 +160,13 @@ public class Datenbank
                 //System.out.println(w.gibEigenschaft());
                 return w;
             }
-            
+
         }
-        //System.out.println("Werkstoff konnte anhand des eingegebenen Namen nicht gefunden werden");
+        //System.out.println("Werkstoff konnte anhand des eingegebenen Namens nicht gefunden werden");
         return null;
     }
-     public Werkstoffe sucheNummer(int nummer)
+
+    public Werkstoffe sucheNummer(int nummer)
     {
         for (Werkstoffe w : liste)
         {
@@ -102,12 +175,13 @@ public class Datenbank
                 //System.out.println(w.gibEigenschaft());
                 return w;
             }
-            
+
         }
         //System.out.println("Werkstoff konnte anhand der eingegebenen Nummer nicht gefunden werden");
         return null;
     }
-      public Werkstoffe sucheVerwendung(String verwendung)
+
+    public Werkstoffe sucheVerwendung(String verwendung)
     {
         for (Werkstoffe w : liste)
         {
@@ -116,10 +190,11 @@ public class Datenbank
                 //System.out.println(w.gibEigenschaft());
                 return w;
             }
-             //System.out.println("Werkstoff konnte anhand der eingegebenen Verwendung nicht gefunden werden");
+            //System.out.println("Werkstoff konnte anhand der eingegebenen Verwendung nicht gefunden werden");
         }
         return null;
     }
+
     public void loeschen(int Nummer)
     {
         Werkstoffe werk2delete= sucheNummer(Nummer);
@@ -128,10 +203,8 @@ public class Datenbank
             System.out.println("Der Werkstoff konnte nicht gefunden und deshalb nicht gelöscht werden");
         }
         else
-        liste.remove(werk2delete);
+            liste.remove(werk2delete);
         anzahl-=1;
     }
-     
-    
-    
+
 }
