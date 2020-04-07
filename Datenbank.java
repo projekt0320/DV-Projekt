@@ -115,15 +115,16 @@ public class Datenbank
         }
         return null;
     }
-    public void loeschen(int nummer)
+    public void loeschen(int Nummer)
     {
-        Werkstoffe werk2delete= sucheNummer(nummer);
+        Werkstoffe werk2delete= sucheNummer(Nummer);
         if(werk2delete == null)
         {
-            System.out.println("Der Werkstooff konne nicht gefunden und deshalb nicht gelöscht werden");
+            System.out.println("Der Werkstoff konnte nicht gefunden und deshalb nicht gelöscht werden");
         }
+        else
         liste.remove(werk2delete);
-        
+        anzahl-=1;
     }
      
     
