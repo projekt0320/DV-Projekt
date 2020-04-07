@@ -23,9 +23,9 @@ public abstract class Werkstoffe
         this.name = name;
     }
     
-    public static String getName()
+    public  String getName()
     {
-        return name;
+        return this.name;
     }
     
     public void setNummer(int nummer)
@@ -33,9 +33,9 @@ public abstract class Werkstoffe
         this.nummer = nummer;
     }
     
-    public static int getNummer()
+    public  int getNummer()
     {
-        return nummer;
+        return this.nummer;
     }
     
     public void setVerwendung(String verwendung)
@@ -43,9 +43,9 @@ public abstract class Werkstoffe
         this.verwendung = verwendung;
     }
     
-    public static String getVerwendung()
+    public  String getVerwendung()
     {
-        return verwendung;
+        return this.verwendung;
     }
    
    

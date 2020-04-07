@@ -79,4 +79,53 @@ public class Datenbank
     {
         
     }
+    public Werkstoffe sucheName(String name)
+    {
+        for (Werkstoffe w : liste)
+        {
+            if(w.getName()== name)
+            {
+                return w;
+            }
+            
+        }
+        return null;
+    }
+     public Werkstoffe sucheNummer(int nummer)
+    {
+        for (Werkstoffe w : liste)
+        {
+            if(w.getNummer()== nummer)
+            {
+                return w;
+            }
+            
+        }
+        return null;
+    }
+      public Werkstoffe sucheVerwendung(String verwendung)
+    {
+        for (Werkstoffe w : liste)
+        {
+            if(w.getVerwendung()== verwendung)
+            {
+                return w;
+            }
+            
+        }
+        return null;
+    }
+    public void loeschen(int nummer)
+    {
+        Werkstoffe werk2delete= sucheNummer(nummer);
+        if(werk2delete == null)
+        {
+            System.out.println("Der Werkstooff konne nicht gefunden und deshalb nicht gelöscht werden");
+        }
+        liste.remove(werk2delete);
+        
+    }
+     
+    
+    
 }

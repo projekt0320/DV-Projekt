@@ -27,7 +27,7 @@ public abstract class Metalle extends Werkstoffe
      
     public  String gibEigenschaft()
     {   
-        String s= "elektrischeLeitfaehigkeit: "+ elektrischeLeitfaehigkeit+ ",      name: "+Werkstoffe.getName()+",      nummer: "+Werkstoffe.getNummer()+ ",      verwendung: "+Werkstoffe.getVerwendung() ;
+        String s= "elektrischeLeitfaehigkeit: "+ elektrischeLeitfaehigkeit+ ",      name: "+this.getName()+",      nummer: "+this.getNummer()+ ",      verwendung: "+this.getVerwendung() ;
         return s;
         
     }
