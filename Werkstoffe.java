@@ -2,8 +2,8 @@
 /**
  * Beschreiben Sie hier die Klasse Werkstoff.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author () 
+ * @version (07.04.2020/14:55Uhr)
  */
 public abstract class Werkstoffe
 {
