@@ -23,7 +23,7 @@ public class keramischeWerkstoffe extends Nichtmetalle
     }
     public String gibEigenschaft()
     {
-        String s= super.gibEigenschaft()+"     ,Zugfestigkeit: "+Zugfestigkeit;
+        String s= super.gibEigenschaft()+",      Zugfestigkeit: "+Zugfestigkeit;
         return s;
     }
 }

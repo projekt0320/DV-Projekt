@@ -23,7 +23,7 @@ public class Halbleiter extends Nichtmetalle
     }
     public String gibEigenschaft()
     {
-        String s= super.gibEigenschaft()+ "     ,elektrische Leitfaehigkeit: "+ ElektrischeLeitfaehigkeit;
+        String s= super.gibEigenschaft()+ ",      elektrische Leitfaehigkeit: "+ ElektrischeLeitfaehigkeit;
         return s;
     }
 }

@@ -9,22 +9,25 @@ public class Leichtmetalle extends Nichteisenmetalle
 {
     private double Dichte;
     public Leichtmetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double Dichte, String Hauptelement)
-    
+
     {
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit,Hauptelement);
         this.Dichte = Dichte;
     }
+
     public void setDichte(double Dichte)
     {
         this.Dichte= Dichte;
     }
+
     public double getDichte()
     {
         return Dichte;
     }
+
     public String gibEigenschaft()
     {
-        String s= super.gibEigenschaft()+ "Dichte: "+ Dichte;
-       return s;
+        String s= super.gibEigenschaft()+ ",      Dichte: "+ Dichte;
+        return s;
     }
 }

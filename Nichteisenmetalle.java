@@ -13,20 +13,21 @@ public abstract class Nichteisenmetalle extends Metalle
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit);
         this.Hauptelement = Hauptelement;
     }
-   public void setHauptelement(String Hauptelement)
-     {
-         this.Hauptelement= Hauptelement;
-     }
-     public String getHauptelement()
-     {
-            return Hauptelement;
-     }
-    
-     
+
+    public void setHauptelement(String Hauptelement)
+    {
+        this.Hauptelement= Hauptelement;
+    }
+
+    public String getHauptelement()
+    {
+        return Hauptelement;
+    }
+
     public String gibEigenschaft()
     {
-       String s= super.gibEigenschaft()+ "Hauptelement: "+ Hauptelement;
-       return s;
-       
+        String s= super.gibEigenschaft()+ ",      Hauptelement: "+ Hauptelement;
+        return s;
+
     }
 }

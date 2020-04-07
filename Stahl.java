@@ -24,7 +24,7 @@ public class Stahl extends Eisenmetalle
     }
     public String gibEigenschaft()
     {
-        String s= super.gibEigenschaft()+"    Kohlenstoffgehalt: "+Kohlenstoffgehalt;
+        String s= super.gibEigenschaft()+",      Kohlenstoffgehalt: "+Kohlenstoffgehalt;
         return s;
     }
 }
