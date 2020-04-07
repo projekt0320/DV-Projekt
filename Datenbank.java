@@ -85,10 +85,12 @@ public class Datenbank
         {
             if(w.getName()== name)
             {
+                //System.out.println(w.gibEigenschaft());
                 return w;
             }
             
         }
+        //System.out.println("Werkstoff konnte anhand des eingegebenen Namen nicht gefunden werden");
         return null;
     }
      public Werkstoffe sucheNummer(int nummer)
@@ -97,10 +99,12 @@ public class Datenbank
         {
             if(w.getNummer()== nummer)
             {
+                //System.out.println(w.gibEigenschaft());
                 return w;
             }
             
         }
+        //System.out.println("Werkstoff konnte anhand der eingegebenen Nummer nicht gefunden werden");
         return null;
     }
       public Werkstoffe sucheVerwendung(String verwendung)
@@ -109,9 +113,10 @@ public class Datenbank
         {
             if(w.getVerwendung()== verwendung)
             {
+                //System.out.println(w.gibEigenschaft());
                 return w;
             }
-            
+             //System.out.println("Werkstoff konnte anhand der eingegebenen Verwendung nicht gefunden werden");
         }
         return null;
     }
