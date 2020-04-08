@@ -285,14 +285,14 @@ public class Datenbank
     ((Naturstoffe)w).setDegradation(Degradation);
     }
      
-    public Werkstoffe sucheName(String name)
+    public String sucheName(String name)
     {
         for (Werkstoffe w : liste)
         {
             if(w.getName()== name)
             {
-                //System.out.println(w.gibEigenschaft());
-                return w;
+                return w.gibEigenschaft();
+                
             }
 
         }
