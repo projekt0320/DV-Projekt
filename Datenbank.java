@@ -17,7 +17,7 @@ public class Datenbank
         liste = new ArrayList<Werkstoffe>();
     }
 
-    public void ErstellenStahl (String Name, int Nummer, String Verwendung, double eLeitf, double Eisengehalt, double Kohlenstoffgehalt)
+    public void ErstellenStahl (String Name, int Nummer, String Verwendung, double eLeitf, double Eisengehalt, double Kohlenstoffgehalt) throws Exception
     {
 
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
@@ -213,64 +213,80 @@ public class Datenbank
     }
 
        
-    public void BearbeitenElektrischeLeitfaehigkeit (int Nummer, double elektrLeitf)
+    public void BearbeitenElektrischeLeitfaehigkeitMetalle (int Nummer, double elektrLeitf)
     {
     Werkstoffe w = sucheNummer(Nummer);
+<<<<<<< HEAD
     w .setElektrischeLeitfaehigkeit(elektrLeitf);
+=======
+    ((Metalle) w).setElektrischeLeitfaehigkeit(elektrLeitf);
+    }
+    
+    public void BearbeitenElektrischeLeitfaehigkeitHalbleiter (int Nummer, double elektrLeitf)
+    {
+    Werkstoffe w = sucheNummer(Nummer);
+    ((Halbleiter) w).setElektrischeLeitfaehigkeit(elektrLeitf);
+>>>>>>> f8e26450c090f7424d69b4c55de39249cada606a
     }
 
     public void BearbeitenEisengehalt (int Nummer, double eisengehalt)
     {
     Werkstoffe w = sucheNummer(Nummer);
-    w.setEisengehalt(eisengehalt);
+    ((Eisenmetalle) w).setEisengehalt(eisengehalt);
     }
 
     public void BearbeitenKohlenstoffgehalt (int Nummer, double Kohlenstoffgehalt)
     {
     Werkstoffe w = sucheNummer(Nummer);
-    w.setKohlenstoffgehalt(Kohlenstoffgehalt);
+    ((Stahl)w).setKohlenstoffgehalt(Kohlenstoffgehalt);
     }
 
     public void BearbeitenHauptelement (int Nummer, String Hauptelement)
     {
     Werkstoffe w = sucheNummer(Nummer);
-    w.setHauptelement(Hauptelement);
+    ((Nichteisenmetalle)w).setHauptelement(Hauptelement);
     }
 
     public void BearbeitenSiedetemperatur (int Nummer, double Siedetemp)
     {
     Werkstoffe w = sucheNummer(Nummer);
-    w.setSiedetemperatur(Siedetemp);
+    ((Gusswerkstoff)w).setSiedetemperatur(Siedetemp);
     }
 
-    public void BearbeitenVerformbarkeit (int Nummer, String Verformbarkeit)
+    public void BearbeitenVerformbarkeitSchwermetalle (int Nummer, String Verformbarkeit)
     {
     Werkstoffe w = sucheNummer(Nummer);
-    w.setVerformbarkeit(Verformbarkeit);
+    ((Schwermetalle)w).setVerformbarkeit(Verformbarkeit);
+    }
+    
+    public void BearbeitenVerformbarkeitKunststoffe (int Nummer, String Verformbarkeit)
+    {
+    Werkstoffe w = sucheNummer(Nummer);
+    ((Kunststoffe)w).setVerformbarkeit(Verformbarkeit);
     }
 
     public void BearbeitenDichte (int Nummer, double Dichte)
     {
     Werkstoffe w = sucheNummer(Nummer);
-    w.setDichte(Dichte);
+    ((Leichtmetalle)w).setDichte(Dichte);
     }
 
     public void BearbeitenmetallischeEigenschaft (int Nummer, String metallEigenschaft)
     {
     Werkstoffe w = sucheNummer(Nummer);
-    w.setMetallAehnlicheEigenschaften(metallEigenschaft);
+    ((Nichtmetalle)w).setMetallAehnlicheEigenschaften(metallEigenschaft);
     }
 
     public void BearbeitenZugfestigkeit (int Nummer, double Zugfestigkeit)
     {
     Werkstoffe w = sucheNummer(Nummer);
-    w.setZugfestigkeit(Zugfestigkeit);
+    ((keramischeWerkstoffe)w).setZugfestigkeit(Zugfestigkeit);
     }
 
     public void BearbeitenDegradation (int Nummer, String Degradation)
     {
     Werkstoffe w = sucheNummer(Nummer);
-    w.setDegradation(Degradation);
+    ((Naturstoffe)w).setDegradation(Degradation);
     }
      
     public String sucheName(String name)
