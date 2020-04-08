@@ -292,7 +292,11 @@ public class Datenbank
         {
             if(w.getName()== name)
             {
+
               return w.gibEigenschaft();
+
+                //System.out.println(w.gibEigenschaft());
+                
             }
 
         }
