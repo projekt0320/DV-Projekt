@@ -328,6 +328,11 @@ public class Datenbank
             liste.remove(werk2delete);
         anzahl-=1;
     }
+    
+   
+     
+      
+    
 
     public void AnzahlWerkstoffe()
     {

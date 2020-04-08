@@ -11,11 +11,17 @@ public abstract class Eisenmetalle extends Metalle
     public Eisenmetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double eisengehalt)
     {
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit);
-        this.eisengehalt= eisengehalt;
+        if(eisengehalt>0)
+        {
+            this.eisengehalt= eisengehalt;
+        }
     }
     public void setEisengehalt(double eisengehalt)
     {
-        this.eisengehalt= eisengehalt;
+        if(eisengehalt>0)
+        {
+            this.eisengehalt= eisengehalt;
+        }
     }
     public double getEisengehalt()
     {
