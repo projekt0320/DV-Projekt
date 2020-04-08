@@ -273,14 +273,14 @@ public class Datenbank
     w.setDegradation(Degradation);
     }
      
-    public Werkstoffe sucheName(String name)
+    public String sucheName(String name)
     {
         for (Werkstoffe w : liste)
         {
             if(w.getName()== name)
             {
                 //System.out.println(w.gibEigenschaft());
-                return w;
+                return w.gibEigenschaft();
             }
 
         }
@@ -303,14 +303,14 @@ public class Datenbank
         return null;
     }
 
-    public Werkstoffe sucheVerwendung(String verwendung)
+    public String sucheVerwendung(String verwendung)
     {
         for (Werkstoffe w : liste)
         {
             if(w.getVerwendung()== verwendung)
             {
                 //System.out.println(w.gibEigenschaft());
-                return w;
+                return w.gibEigenschaft();
             }
             //System.out.println("Werkstoff konnte anhand der eingegebenen Verwendung nicht gefunden werden");
         }
