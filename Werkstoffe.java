@@ -13,9 +13,14 @@ public abstract class Werkstoffe
     
     public Werkstoffe(String name,int nummer,String verwendung)
     {
-        this.name= name;
-        this.nummer= nummer;
-        this.verwendung= verwendung;
+       
+            if(nummer>0)
+            {
+                this.name= name;
+                this.nummer= nummer;
+                this.verwendung= verwendung;
+            }
+        
     }
     
     public void setName(String name)
@@ -30,6 +35,7 @@ public abstract class Werkstoffe
     
     public void setNummer(int nummer)
     {
+        if(nummer>0)
         this.nummer = nummer;
     }
     
