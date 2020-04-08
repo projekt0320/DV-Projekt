@@ -12,11 +12,18 @@ public class Gusswerkstoff extends Eisenmetalle
     public Gusswerkstoff(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double eisengehalt,double Siedetemperatur)
     {
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit,eisengehalt);
-        this.Siedetemperatur = Siedetemperatur;
+        if(Siedetemperatur>0)
+        {
+            this.Siedetemperatur = Siedetemperatur;
+    
+        }
     }
     public void setSiedetemperatur(double Siedetemperatur)
     {
-        this.Siedetemperatur= Siedetemperatur;
+        if(Siedetemperatur>0)
+        {
+            this.Siedetemperatur= Siedetemperatur;
+        }
     }
     public double getSiedetemperatur()
     {

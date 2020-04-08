@@ -12,11 +12,18 @@ public class Stahl extends Eisenmetalle
     public Stahl(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double eisengehalt, double Kohlenstoffgehalt)
     {
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit ,eisengehalt);
-        this.Kohlenstoffgehalt = Kohlenstoffgehalt;
+        if(Kohlenstoffgehalt>0 && Kohlenstoffgehalt< 100)
+        {
+            this.Kohlenstoffgehalt = Kohlenstoffgehalt;
+    
+        }
     }
     public void setKohlenstoffgehalt(double Kohlenstoffgehalt)
     {
-        this.Kohlenstoffgehalt= Kohlenstoffgehalt;
+        if(Kohlenstoffgehalt>0 && Kohlenstoffgehalt< 100)
+        {
+            this.Kohlenstoffgehalt= Kohlenstoffgehalt;
+        }
     }
     public double getKohlenstoffgehalt()
     {

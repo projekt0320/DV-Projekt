@@ -13,12 +13,15 @@ public abstract class Eisenmetalle extends Metalle
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit);
         if(eisengehalt>0)
         {
-        this.eisengehalt= eisengehalt;
-    }
+            this.eisengehalt= eisengehalt;
+        }
     }
     public void setEisengehalt(double eisengehalt)
     {
-        this.eisengehalt= eisengehalt;
+        if(eisengehalt>0)
+        {
+            this.eisengehalt= eisengehalt;
+        }
     }
     public double getEisengehalt()
     {

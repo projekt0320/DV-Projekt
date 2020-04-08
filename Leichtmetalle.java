@@ -12,12 +12,19 @@ public class Leichtmetalle extends Nichteisenmetalle
 
     {
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit,Hauptelement);
+        if(Dichte>0)
+        {
+            
         this.Dichte = Dichte;
+        }
     }
 
     public void setDichte(double Dichte)
     {
+        if(Dichte>0)
+        {
         this.Dichte= Dichte;
+        }
     }
 
     public double getDichte()
