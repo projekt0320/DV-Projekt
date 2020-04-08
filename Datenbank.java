@@ -296,7 +296,7 @@ public class Datenbank
               return w.gibEigenschaft();
 
                 //System.out.println(w.gibEigenschaft());
-                
+
             }
 
         }

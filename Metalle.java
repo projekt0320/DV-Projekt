@@ -16,7 +16,7 @@ public abstract class Metalle extends Werkstoffe
         {
             this.elektrischeLeitfaehigkeit= elektrischeLeitfaehigkeit;
         }
-    
+    //xyz
         
     }
     public void setElektrischeLeitfaehigkeit(double elektrischeLeitfaehigkeit)
