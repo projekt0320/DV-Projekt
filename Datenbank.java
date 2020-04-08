@@ -217,7 +217,17 @@ public class Datenbank
     {
     Werkstoffe w = sucheNummer(Nummer);
 <<<<<<< HEAD
+<<<<<<< HEAD
     w .setElektrischeLeitfaehigkeit(elektrLeitf);
+=======
+    ((Metalle) w).setElektrischeLeitfaehigkeit(elektrLeitf);
+    }
+    
+    public void BearbeitenElektrischeLeitfaehigkeitHalbleiter (int Nummer, double elektrLeitf)
+    {
+    Werkstoffe w = sucheNummer(Nummer);
+    ((Halbleiter) w).setElektrischeLeitfaehigkeit(elektrLeitf);
+>>>>>>> f8e26450c090f7424d69b4c55de39249cada606a
 =======
     ((Metalle) w).setElektrischeLeitfaehigkeit(elektrLeitf);
     }
