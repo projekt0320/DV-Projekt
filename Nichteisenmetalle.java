@@ -26,7 +26,7 @@ public abstract class Nichteisenmetalle extends Metalle
 
     public String gibEigenschaft()
     {
-        String s= super.gibEigenschaft()+ ",      Hauptelement: "+ Hauptelement;
+        String s= super.gibEigenschaft()+ "\n Hauptelement:   "+ Hauptelement;
         return s;
 
     }
