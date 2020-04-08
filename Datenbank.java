@@ -216,7 +216,7 @@ public class Datenbank
     public void BearbeitenElektrischeLeitfaehigkeit (int Nummer, double elektrLeitf)
     {
     Werkstoffe w = sucheNummer(Nummer);
-    w.setElektrischeLeitfaehigkeit(elektrLeitf);
+    w .setElektrischeLeitfaehigkeit(elektrLeitf);
     }
 
     public void BearbeitenEisengehalt (int Nummer, double eisengehalt)
