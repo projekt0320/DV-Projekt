@@ -24,7 +24,7 @@ public class Gusswerkstoff extends Eisenmetalle
     }
     public String gibEigenschaft()
     {
-        String s= super.gibEigenschaft()+",      Siedetemperatur: "+Siedetemperatur;
+        String s= super.gibEigenschaft()+"\n Siedetemperatur:   "+Siedetemperatur;
         return s; 
     }
 }

@@ -23,7 +23,7 @@ public class Naturstoffe extends Nichtmetalle
     }
     public String gibEigenschaft()
     {
-        String s=super.gibEigenschaft()+"      ,Degradation: "+Degradation;
+        String s=super.gibEigenschaft()+"\n Degradation:   "+Degradation;
         return s;
     }
 }

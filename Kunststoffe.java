@@ -23,7 +23,7 @@ public class Kunststoffe extends Nichtmetalle
     }
     public String gibEigenschaft()
     {
-        String s=super.gibEigenschaft()+",      Verformbarkeit: "+Verformbarkeit;
+        String s=super.gibEigenschaft()+"\n Verformbarkeit:   "+Verformbarkeit;
         return s;
     }
 }

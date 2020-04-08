@@ -27,7 +27,7 @@ public class Leichtmetalle extends Nichteisenmetalle
 
     public String gibEigenschaft()
     {
-        String s= super.gibEigenschaft()+ ",      Dichte: "+ Dichte;
+        String s= super.gibEigenschaft()+ "\n Dichte:   "+ Dichte;
         return s;
     }
 }

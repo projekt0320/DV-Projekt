@@ -24,7 +24,7 @@ public abstract class Eisenmetalle extends Metalle
     
     public String gibEigenschaft()
     {
-        String s= super.gibEigenschaft()+ ",      Eisengehalt: "+ eisengehalt;
+        String s= super.gibEigenschaft()+ "\n Eisengehalt:   "+ eisengehalt;
         return s;
     }
     
