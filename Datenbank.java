@@ -223,6 +223,7 @@ public class Datenbank
     {
     Werkstoffe w = sucheNummer(Nummer);
     ((Halbleiter) w).setElektrischeLeitfaehigkeit(elektrLeitf);
+
     }
 
     public void BearbeitenEisengehalt (int Nummer, double eisengehalt)
@@ -291,8 +292,9 @@ public class Datenbank
         {
             if(w.getName()== name)
             {
+
                 return w.gibEigenschaft();
-                
+      
             }
 
         }
@@ -315,14 +317,14 @@ public class Datenbank
         return null;
     }
 
-    public Werkstoffe sucheVerwendung(String verwendung)
+    public String sucheVerwendung(String verwendung)
     {
         for (Werkstoffe w : liste)
         {
             if(w.getVerwendung()== verwendung)
             {
                 //System.out.println(w.gibEigenschaft());
-                return w;
+                return w.gibEigenschaft();
             }
             //System.out.println("Werkstoff konnte anhand der eingegebenen Verwendung nicht gefunden werden");
         }
