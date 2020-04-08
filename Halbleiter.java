@@ -13,14 +13,17 @@ public class Halbleiter extends Nichtmetalle
         super(name,nummer,verwendung, metallAehnlicheEigenschaften);
         this.ElektrischeLeitfaehigkeit = ElektrischeLeitfaehigkeit;
     }
+
     public void setElektrischeLeitfaehigkeit(double ElektrischeLeitfaehigkeit)
     {
         this.ElektrischeLeitfaehigkeit= ElektrischeLeitfaehigkeit;
     }
+
     public double getElektrischeLeitfaehigkeit()
     {
         return ElektrischeLeitfaehigkeit;
     }
+
     public String gibEigenschaft()
     {
         String s= super.gibEigenschaft()+ ",      elektrische Leitfaehigkeit: "+ ElektrischeLeitfaehigkeit;

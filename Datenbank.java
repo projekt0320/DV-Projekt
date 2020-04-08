@@ -90,7 +90,7 @@ public class Datenbank
         Werkstoffe w = sucheNummer(Nummer);
         w.setVerwendung(Verwendung);
     }
-    
+   
     public void BearbeitenElektrischeLeitfaehigkeit (int Nummer, double elektrLeitf)
     {
         Werkstoffe w = sucheNummer(Nummer);
