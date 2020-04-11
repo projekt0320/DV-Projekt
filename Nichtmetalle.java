@@ -1,18 +1,21 @@
 
 /**
- * Beschreiben Sie hier die Klasse Nichtmetalle.
+ * Die Klasse Nichtmetalle ist eine abstrakte Subklasse von "Werkstoffe", initialisiert das Attribut metallähnliche Eigenschaften
+ * und enthält sowohl eine get- und set-Methode für dieses Attribut als auch die Methode gibEigenschaft.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author Markus Schnee, Jenny Glönkler 
+ * @version 11. April 2020
  */
 public abstract class  Nichtmetalle extends Werkstoffe
 {
     private String metallAehnlicheEigenschaften;
+    
     public Nichtmetalle(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften)
     {
         super(name,nummer,verwendung);
         this.metallAehnlicheEigenschaften = metallAehnlicheEigenschaften;
     }
+    
     public void setMetallAehnlicheEigenschaften(String metallAehnlicheEigenschaften)
     {
         this.metallAehnlicheEigenschaften=metallAehnlicheEigenschaften;
@@ -22,6 +25,7 @@ public abstract class  Nichtmetalle extends Werkstoffe
     {
         return metallAehnlicheEigenschaften;
     }
+    
     public String gibEigenschaft()
     {
 
