@@ -1,4 +1,3 @@
-
 /**
  * Die Klasse Leichtmetalle ist eine Subklasse von "Werkstoffe", initialisiert das Attribut Hauptelement und enthält
  * sowohl eine get- und set-Methode für dieses Attribut als auch die Methode gibEigenschaft, mit der alle Eigenschaften und deren Werte
