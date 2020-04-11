@@ -1,13 +1,16 @@
 
 /**
- * Beschreiben Sie hier die Klasse Halbleiter.
+ * Die Klasse Halbleiter ist eine Subklasse von "Werkstoffe", initialisiert das Attribut elektrische Leitfähigkeit und enthält
+ * sowohl eine get- und set-Methode für dieses Attribut als auch die Methode gibEigenschaft, mit der alle Eigenschaften und deren Werte
+ * als Text zurückgegeben werden.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author Markus Schnee, Jenny Glönkler
+ * @version 11. April 2020
  */
 public class Halbleiter extends Nichtmetalle
 {
     private double ElektrischeLeitfaehigkeit;
+    
     public Halbleiter(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,double ElektrischeLeitfaehigkeit)
     {
         super(name,nummer,verwendung, metallAehnlicheEigenschaften);

@@ -1,13 +1,16 @@
 
 /**
- * Beschreiben Sie hier die Klasse Schwermetalle.
+ * Die Klasse Schwermetalle ist eine Subklasse von "Werkstoffe", initialisiert das Attribut Verformbarkeit und enthält
+ * sowohl eine get- und set-Methode für dieses Attribut als auch die Methode gibEigenschaft, mit der alle Eigenschaften und deren Werte
+ * als Text zurückgegeben werden.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author Markus Schnee, Jenny Glönkler
+ * @version 11. April 2020
  */
 public class Schwermetalle extends Nichteisenmetalle
 {
     private String Verformbarkeit;
+    
     public Schwermetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,String Hauptelement, String Verformbarkeit)
 
     {
