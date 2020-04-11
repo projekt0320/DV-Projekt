@@ -1,10 +1,14 @@
 import java.util.ArrayList;
 
 /**
- * Beschreiben Sie hier die Klasse Datenbank.
+ * Die Klasse Datenbank erstellt eine ArrayList, in der Objekte der Klasse Werkstoffe mit dynamischer Unterklasse gespeichert werden
+ * können. Zusätzlich wird in einem Attribut die Anzahl der Werkstoffe in der ArrayList mitgezählt.
+ * Die Datenbank ermöglicht es, Werkstoffe in acht verschiedenen Kategorien zu erstellen (Stahl, Guss, Schwermetalle,
+ * Leichtmetalle, Halbleiter, Keramik, Kunststoffe und Naturstoffe), außerdem können die 15 verschiedenen Eigenschaften auch einzeln
+ * bearbeitet werden. Werkstoffe können auch gelöscht und nach Name, Nummer oder Verwendung gesucht werden.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author Jenny Glönkler, Markus Schnee, Felicia Wieland 
+ * @version 11. April 2020
  */
 public class Datenbank
 {
@@ -212,80 +216,79 @@ public class Datenbank
         w.setVerwendung(Verwendung);
     }
 
-       
     public void BearbeitenElektrischeLeitfaehigkeitMetalle (int Nummer, double elektrLeitf)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((Metalle) w).setElektrischeLeitfaehigkeit(elektrLeitf);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((Metalle) w).setElektrischeLeitfaehigkeit(elektrLeitf);
     }
-    
+
     public void BearbeitenElektrischeLeitfaehigkeitHalbleiter (int Nummer, double elektrLeitf)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((Halbleiter) w).setElektrischeLeitfaehigkeit(elektrLeitf);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((Halbleiter) w).setElektrischeLeitfaehigkeit(elektrLeitf);
 
     }
 
     public void BearbeitenEisengehalt (int Nummer, double eisengehalt)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((Eisenmetalle) w).setEisengehalt(eisengehalt);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((Eisenmetalle) w).setEisengehalt(eisengehalt);
     }
 
     public void BearbeitenKohlenstoffgehalt (int Nummer, double Kohlenstoffgehalt)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((Stahl)w).setKohlenstoffgehalt(Kohlenstoffgehalt);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((Stahl)w).setKohlenstoffgehalt(Kohlenstoffgehalt);
     }
 
     public void BearbeitenHauptelement (int Nummer, String Hauptelement)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((Nichteisenmetalle)w).setHauptelement(Hauptelement);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((Nichteisenmetalle)w).setHauptelement(Hauptelement);
     }
 
     public void BearbeitenSiedetemperatur (int Nummer, double Siedetemp)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((Gusswerkstoff)w).setSiedetemperatur(Siedetemp);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((Gusswerkstoff)w).setSiedetemperatur(Siedetemp);
     }
 
     public void BearbeitenVerformbarkeitSchwermetalle (int Nummer, String Verformbarkeit)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((Schwermetalle)w).setVerformbarkeit(Verformbarkeit);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((Schwermetalle)w).setVerformbarkeit(Verformbarkeit);
     }
-    
+
     public void BearbeitenVerformbarkeitKunststoffe (int Nummer, String Verformbarkeit)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((Kunststoffe)w).setVerformbarkeit(Verformbarkeit);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((Kunststoffe)w).setVerformbarkeit(Verformbarkeit);
     }
 
     public void BearbeitenDichte (int Nummer, double Dichte)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((Leichtmetalle)w).setDichte(Dichte);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((Leichtmetalle)w).setDichte(Dichte);
     }
 
     public void BearbeitenmetallischeEigenschaft (int Nummer, String metallEigenschaft)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((Nichtmetalle)w).setMetallAehnlicheEigenschaften(metallEigenschaft);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((Nichtmetalle)w).setMetallAehnlicheEigenschaften(metallEigenschaft);
     }
 
     public void BearbeitenZugfestigkeit (int Nummer, double Zugfestigkeit)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((keramischeWerkstoffe)w).setZugfestigkeit(Zugfestigkeit);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((keramischeWerkstoffe)w).setZugfestigkeit(Zugfestigkeit);
     }
 
     public void BearbeitenDegradation (int Nummer, String Degradation)
     {
-    Werkstoffe w = sucheNummer(Nummer);
-    ((Naturstoffe)w).setDegradation(Degradation);
+        Werkstoffe w = sucheNummer(Nummer);
+        ((Naturstoffe)w).setDegradation(Degradation);
     }
-     
+
     public String sucheName(String name)
     {
         for (Werkstoffe w : liste)
@@ -293,7 +296,7 @@ public class Datenbank
             if(w.getName()== name)
             {
 
-              return w.gibEigenschaft();
+                return w.gibEigenschaft();
 
                 //System.out.println(w.gibEigenschaft());
 
@@ -344,11 +347,6 @@ public class Datenbank
             liste.remove(werk2delete);
         anzahl-=1;
     }
-    
-   
-     
-      
-    
 
     public void AnzahlWerkstoffe()
     {
