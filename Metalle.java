@@ -1,13 +1,15 @@
 
 /**
- * Beschreiben Sie hier die Klasse Metalle.
+ * Die Klasse Metalle ist eine abstrakte Subklasse von "Werkstoffe", initialisiert das Attribut elektrische Leitfähigkeit und enthält
+ * sowohl eine get- und set-Methode für dieses Attribut als auch die Methode gibEigenschaft.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author Markus Schnee, Jenny Glönkler 
+ * @version 11.04.2020
  */
 public abstract class Metalle extends Werkstoffe
 {
     private double elektrischeLeitfaehigkeit;
+    
     public Metalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit)
     {   
         
@@ -19,6 +21,7 @@ public abstract class Metalle extends Werkstoffe
     //xyz
         
     }
+    
     public void setElektrischeLeitfaehigkeit(double elektrischeLeitfaehigkeit)
     {
         if(elektrischeLeitfaehigkeit>0)
@@ -27,6 +30,7 @@ public abstract class Metalle extends Werkstoffe
     
         }
     }
+    
     public double getElektrischeLeitfaehigkeit()
     {
         return elektrischeLeitfaehigkeit;
