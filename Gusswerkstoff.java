@@ -1,9 +1,11 @@
 
 /**
- * Beschreiben Sie hier die Klasse Gusswerkstoff.
+ * Die Klasse Gusswerkstoff ist eine Subklasse von "Werkstoffe", initialisiert das Attribut Siedetemperatur und enthält
+ * sowohl eine get- und set-Methode für dieses Attribut als auch die Methode gibEigenschaft, mit der alle Eigenschaften und deren Werte
+ * als Text zurückgegeben werden.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author Markus Schnee, Jenny Glönkler
+ * @version 11. April 2020
  */
 public class Gusswerkstoff extends Eisenmetalle
 {
@@ -18,6 +20,7 @@ public class Gusswerkstoff extends Eisenmetalle
     
         }
     }
+    
     public void setSiedetemperatur(double Siedetemperatur)
     {
         if(Siedetemperatur>0)
@@ -25,10 +28,12 @@ public class Gusswerkstoff extends Eisenmetalle
             this.Siedetemperatur= Siedetemperatur;
         }
     }
+    
     public double getSiedetemperatur()
     {
        return Siedetemperatur;
     }
+    
     public String gibEigenschaft()
     {
         String s= super.gibEigenschaft()+"\n Siedetemperatur:   "+Siedetemperatur;
