@@ -14,7 +14,7 @@ public class Naturstoffe extends Nichtmetalle
     public Naturstoffe(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,String Degradation)
     {
         super(name,nummer,verwendung, metallAehnlicheEigenschaften);
-        this.Degradation = Degradation;
+        setDegradation( Degradation);
     }
     
     public void setDegradation(String Degradation)

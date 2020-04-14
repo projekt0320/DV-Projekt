@@ -15,7 +15,7 @@ public class Schwermetalle extends Nichteisenmetalle
 
     {
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit,Hauptelement);
-        this.Verformbarkeit = Verformbarkeit;
+        setVerformbarkeit(Verformbarkeit);
     }
 
     public String getVerformbarkeit()

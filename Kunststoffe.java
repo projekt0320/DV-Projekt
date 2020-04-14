@@ -14,7 +14,7 @@ public class Kunststoffe extends Nichtmetalle
     public Kunststoffe(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,String Verformbarkeit)
     {
         super(name,nummer,verwendung, metallAehnlicheEigenschaften);
-        this.Verformbarkeit = Verformbarkeit;
+        setVerformbarkeit( Verformbarkeit);
     }
     
     public void setVerformbarkeit(String Verformbarkeit)

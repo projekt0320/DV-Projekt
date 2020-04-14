@@ -15,13 +15,13 @@ public abstract class Werkstoffe
     
     public Werkstoffe(String name,int nummer,String verwendung)
     {
-       
-            if(nummer>0)
+       if(nummer>0)
             {
                 this.name= name;
                 this.nummer= nummer;
                 this.verwendung= verwendung;
             }
+           
         
     }
     
@@ -37,8 +37,14 @@ public abstract class Werkstoffe
     
     public void setNummer(int nummer)
     {
-        if(nummer>0)
-        this.nummer = nummer;
+         if(nummer>10000 && nummer <40000)
+            {
+                this.nummer= nummer;
+            }
+            else
+            {
+                System.out.println("Die angegebene Nummer ist ungültig");
+            }
     }
     
     public  int getNummer()

@@ -14,20 +14,21 @@ public abstract class Metalle extends Werkstoffe
     {   
         
         super(name,nummer,verwendung);
-        if(elektrischeLeitfaehigkeit>0)
-        {
-            this.elektrischeLeitfaehigkeit= elektrischeLeitfaehigkeit;
-        }
-    //xyz
+        setElektrischeLeitfaehigkeit( elektrischeLeitfaehigkeit);
+   
         
     }
     
     public void setElektrischeLeitfaehigkeit(double elektrischeLeitfaehigkeit)
     {
-        if(elektrischeLeitfaehigkeit>0)
+        if(elektrischeLeitfaehigkeit>0.68 && elektrischeLeitfaehigkeit <= 62)
         {
             this.elektrischeLeitfaehigkeit= elektrischeLeitfaehigkeit;
     
+        }
+        else
+        {
+            System.out.println("Die angegebene elektrische Leitfähigkeit ist ungültig");
         }
     }
     

@@ -11,21 +11,18 @@ public class Gusswerkstoff extends Eisenmetalle
 {
     private double Siedetemperatur;
     
-    public Gusswerkstoff(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double eisengehalt,double Siedetemperatur)
+    public Gusswerkstoff(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double eisengehalt,double Siedetemperatur) throws Exception
     {
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit,eisengehalt);
-        if(Siedetemperatur>0)
-        {
-            this.Siedetemperatur = Siedetemperatur;
-    
-        }
+        setSiedetemperatur(Siedetemperatur);
     }
     
-    public void setSiedetemperatur(double Siedetemperatur)
+    public void setSiedetemperatur(double Siedetemperatur)throws Exception
     {
-        if(Siedetemperatur>0)
+         if(Siedetemperatur<1000 &&Siedetemperatur>1300)
         {
-            this.Siedetemperatur= Siedetemperatur;
+            this.Siedetemperatur = Siedetemperatur;
+            throw new Exception("Die angegebene Siedetemperatur ist ungültig");
         }
     }
     

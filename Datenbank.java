@@ -44,7 +44,7 @@ public class Datenbank
         }
     }
 
-    public void ErstellenGuss (String Name, int Nummer, String Verwendung, double eLeitf, double Eisengehalt, double Siedetemp)
+    public void ErstellenGuss (String Name, int Nummer, String Verwendung, double eLeitf, double Eisengehalt, double Siedetemp)throws Exception
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
         {
@@ -235,7 +235,7 @@ public class Datenbank
         ((Eisenmetalle) w).setEisengehalt(eisengehalt);
     }
 
-    public void BearbeitenKohlenstoffgehalt (int Nummer, double Kohlenstoffgehalt)
+    public void BearbeitenKohlenstoffgehalt (int Nummer, double Kohlenstoffgehalt)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
         ((Stahl)w).setKohlenstoffgehalt(Kohlenstoffgehalt);
@@ -247,7 +247,7 @@ public class Datenbank
         ((Nichteisenmetalle)w).setHauptelement(Hauptelement);
     }
 
-    public void BearbeitenSiedetemperatur (int Nummer, double Siedetemp)
+    public void BearbeitenSiedetemperatur (int Nummer, double Siedetemp)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
         ((Gusswerkstoff)w).setSiedetemperatur(Siedetemp);
@@ -288,7 +288,12 @@ public class Datenbank
         Werkstoffe w = sucheNummer(Nummer);
         ((Naturstoffe)w).setDegradation(Degradation);
     }
-
+    /**
+     * In der  Arraylist "Liste" wird nach dem Werkstoff mit dem angegebenen Namen gesucht. 
+     * Wenn der Werkstoff gefunden werden kann, wird mit ihm die Methode gibEigenschaft() aufgerufen, die alle seine Eigenschaften in einem String speichert. 
+     * Dieser String wird dann zurückgegeben.
+     * Wenn kein Werkstoff gefunden werden kann wird eine Fehlermeldung zurückgegeben.
+     */
     public String sucheName(String name)
     {
         for (Werkstoffe w : liste)
@@ -298,43 +303,63 @@ public class Datenbank
 
                 return w.gibEigenschaft();
 
-                //System.out.println(w.gibEigenschaft());
-
             }
 
         }
-        //System.out.println("Werkstoff konnte anhand des eingegebenen Namens nicht gefunden werden");
-        return null;
+        
+        return "Werksoff mit angegebenem Name konnte nicht gefunden werden";
     }
-
+    /**
+       * In der  Arraylist "Liste" wird nach dem Werkstoff mit dem angegebenen Nummer gesucht.
+       * Wenn der Werkstoff gefunden werden kann, wird er zurückgegeben und es kann mit ihm weitergearbeitet werden(Wird gelöscht oder bearbeitet).
+       * Kann er nicht gefunden werden, wird null zurückgegeben.
+    */
     public Werkstoffe sucheNummer(int nummer)
     {
         for (Werkstoffe w : liste)
         {
             if(w.getNummer()== nummer)
             {
-                //System.out.println(w.gibEigenschaft());
+                
                 return w;
             }
 
         }
-        //System.out.println("Werkstoff konnte anhand der eingegebenen Nummer nicht gefunden werden");
         return null;
     }
-
+    /**
+     * In der  Arraylist "Liste" wird nach dem/den Werkstoff/en mit der angegebenen Verwendung gesucht.
+     *  Wenn ein Werkstoff gefunden werden kann, wird mit ihm die Methode gibEigenschaft() aufgerufen, die alle seine Eigenschaften in einem String speichert.
+     *  Wenn es mehrere Werkstoffe mit der gleichen Verwendung gibt, so werden auch die Eigenschafften mehrerer Werkstoofe in dem String gespeichert getrennt voneinander mit 
+     *  zwei Leerzeilen.
+     *  Dieser String wird dann zurückgegeben.
+     *  Wenn kein Werkstoff gefunden werden kann wird eine Fehlermeldung zurückgegeben.
+     */
     public String sucheVerwendung(String verwendung)
     {
+        String s= "";
         for (Werkstoffe w : liste)
+        
         {
             if(w.getVerwendung()== verwendung)
             {
-                //System.out.println(w.gibEigenschaft());
-                return w.gibEigenschaft();
-            }
-            //System.out.println("Werkstoff konnte anhand der eingegebenen Verwendung nicht gefunden werden");
+                
+                s= s+w.gibEigenschaft();
+                
+            }   
         }
-        return null;
+        if(s== "")
+        {
+            return "Es konnte kein Werkstoff mit der angegebenen Verwendung gefunden werden";
+        }
+        else
+        {
+            return s;
+        }
+        
     }
+
+
 
     public void loeschen(int Nummer) throws Exception
     {
