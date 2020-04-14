@@ -345,7 +345,7 @@ public class Datenbank
         ((Kunststoffe)w).setVerformbarkeit(Verformbarkeit);
     }
 
-    public void BearbeitenDichte (int Nummer, double Dichte)
+    public void BearbeitenDichte (int Nummer, double Dichte)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
         ((Leichtmetalle)w).setDichte(Dichte);

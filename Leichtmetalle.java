@@ -17,7 +17,7 @@ public class Leichtmetalle extends Nichteisenmetalle
         setDichte(Dichte);
     }
 
-    public void setDichte(double Dichte)
+    public void setDichte(double Dichte)throws Exception
     {
         if(Dichte>0.5 && Dichte< 5)
         {
@@ -25,7 +25,7 @@ public class Leichtmetalle extends Nichteisenmetalle
         }
         else
         {
-            System.out.println("Die angegebene Dichte ist ungültig");
+            throw new Exception("Die angegebene Dichte ist ungültig");
         }
     }
 
