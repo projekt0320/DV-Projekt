@@ -293,6 +293,8 @@ public class Datenbank
      * Wenn der Werkstoff gefunden werden kann, wird mit ihm die Methode gibEigenschaft() aufgerufen, die alle seine Eigenschaften in einem String speichert. 
      * Dieser String wird dann zurückgegeben.
      * Wenn kein Werkstoff gefunden werden kann wird eine Fehlermeldung zurückgegeben.
+     * @param name
+     * @return Eigenschaften des Werkstoffs mit angegebenem Name
      */
     public String sucheName(String name)
     {
@@ -313,6 +315,8 @@ public class Datenbank
        * In der  Arraylist "Liste" wird nach dem Werkstoff mit dem angegebenen Nummer gesucht.
        * Wenn der Werkstoff gefunden werden kann, wird er zurückgegeben und es kann mit ihm weitergearbeitet werden(Wird gelöscht oder bearbeitet).
        * Kann er nicht gefunden werden, wird null zurückgegeben.
+       * @param nummer
+       * @return Werkstoff mit angegebener Nummer
     */
     public Werkstoffe sucheNummer(int nummer)
     {
@@ -334,6 +338,8 @@ public class Datenbank
      *  zwei Leerzeilen.
      *  Dieser String wird dann zurückgegeben.
      *  Wenn kein Werkstoff gefunden werden kann wird eine Fehlermeldung zurückgegeben.
+     *  @param verwendung
+     *  @return Eigenschaften aller Werkstoffe, die angegebene Verwendung haben.
      */
     public String sucheVerwendung(String verwendung)
     {

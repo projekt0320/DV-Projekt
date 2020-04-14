@@ -19,9 +19,13 @@ public class Gusswerkstoff extends Eisenmetalle
     
     public void setSiedetemperatur(double Siedetemperatur)throws Exception
     {
-         if(Siedetemperatur<1000 &&Siedetemperatur>1300)
+         if(Siedetemperatur>1000 &&Siedetemperatur<1300)
         {
             this.Siedetemperatur = Siedetemperatur;
+            
+        }
+        else
+        {
             throw new Exception("Die angegebene Siedetemperatur ist ungültig");
         }
     }

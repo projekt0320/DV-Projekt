@@ -19,7 +19,7 @@ public class Leichtmetalle extends Nichteisenmetalle
 
     public void setDichte(double Dichte)
     {
-        if(Dichte>0 && Dichte< 22.7)
+        if(Dichte>0.5 && Dichte< 5)
         {
         this.Dichte= Dichte;
         }

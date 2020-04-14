@@ -20,7 +20,7 @@ public class Stahl extends Eisenmetalle
     
     public void setKohlenstoffgehalt(double Kohlenstoffgehalt)throws Exception
     {
-       if(Kohlenstoffgehalt>0 && Kohlenstoffgehalt< 100)
+       if(Kohlenstoffgehalt>0 && Kohlenstoffgehalt< 2)
         {
             this.Kohlenstoffgehalt = Kohlenstoffgehalt;
     

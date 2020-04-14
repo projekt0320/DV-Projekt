@@ -18,7 +18,7 @@ public abstract class Eisenmetalle extends Metalle
     
     public void setEisengehalt(double eisengehalt)
     {
-        if(eisengehalt>0 && eisengehalt<100 )
+        if(eisengehalt>50 && eisengehalt<100 )
         {
             this.eisengehalt= eisengehalt;
         }

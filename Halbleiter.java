@@ -19,7 +19,7 @@ public class Halbleiter extends Nichtmetalle
 
     public void setElektrischeLeitfaehigkeit(double ElektrischeLeitfaehigkeit)
     {
-        if(ElektrischeLeitfaehigkeit>0 && ElektrischeLeitfaehigkeit <= 62)
+        if(ElektrischeLeitfaehigkeit>0 && ElektrischeLeitfaehigkeit <= Math.pow(10,4))
         {
         this.ElektrischeLeitfaehigkeit= ElektrischeLeitfaehigkeit;
         }
