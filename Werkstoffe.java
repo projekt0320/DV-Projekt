@@ -13,12 +13,12 @@ public abstract class Werkstoffe
     private int nummer;
     private String verwendung;
     
-    public Werkstoffe(String name,int nummer,String verwendung)
+    public Werkstoffe(String name,int nummer,String verwendung)throws Exception
     {
        if(nummer>0)
             {
                 this.name= name;
-                this.nummer= nummer;
+                setNummer(nummer);
                 this.verwendung= verwendung;
             }
            
@@ -35,7 +35,7 @@ public abstract class Werkstoffe
         return this.name;
     }
     
-    public void setNummer(int nummer)
+    public void setNummer(int nummer)throws Exception
     {
          if(nummer>10000 && nummer <40000)
             {
@@ -43,7 +43,7 @@ public abstract class Werkstoffe
             }
             else
             {
-                System.out.println("Die angegebene Nummer ist ungültig");
+                throw new Exception("Die angegebene Nummer ist ungültig");
             }
     }
     

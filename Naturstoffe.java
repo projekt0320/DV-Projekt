@@ -11,7 +11,7 @@ public class Naturstoffe extends Nichtmetalle
 {
     private String Degradation;
     
-    public Naturstoffe(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,String Degradation)
+    public Naturstoffe(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,String Degradation)throws Exception
     {
         super(name,nummer,verwendung, metallAehnlicheEigenschaften);
         setDegradation( Degradation);

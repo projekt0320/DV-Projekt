@@ -11,7 +11,7 @@ public class Schwermetalle extends Nichteisenmetalle
 {
     private String Verformbarkeit;
     
-    public Schwermetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,String Hauptelement, String Verformbarkeit)
+    public Schwermetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,String Hauptelement, String Verformbarkeit)throws Exception
 
     {
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit,Hauptelement);

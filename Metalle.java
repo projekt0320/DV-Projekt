@@ -10,7 +10,7 @@ public abstract class Metalle extends Werkstoffe
 {
     private double elektrischeLeitfaehigkeit;
     
-    public Metalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit)
+    public Metalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit)throws Exception
     {   
         
         super(name,nummer,verwendung);
@@ -19,7 +19,7 @@ public abstract class Metalle extends Werkstoffe
         
     }
     
-    public void setElektrischeLeitfaehigkeit(double elektrischeLeitfaehigkeit)
+    public void setElektrischeLeitfaehigkeit(double elektrischeLeitfaehigkeit)throws Exception
     {
         if(elektrischeLeitfaehigkeit>0.68 && elektrischeLeitfaehigkeit <= 62)
         {
@@ -28,7 +28,7 @@ public abstract class Metalle extends Werkstoffe
         }
         else
         {
-            System.out.println("Die angegebene elektrische Leitfähigkeit ist ungültig");
+           throw new Exception("Die angegebene elektrische Leitfähigkeit ist ungültig");
         }
     }
     

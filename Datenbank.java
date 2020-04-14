@@ -96,7 +96,7 @@ public class Datenbank
     *@param Name, Nummer, Verwendung, eLeitf (elektrische Leitfähigkeit), Hauptelement, Verform (Verformbarkeit)
     *@throws Exception
     */
-    public void ErstellenSchwermetalle (String Name, int Nummer, String Verwendung, double eLeitf, String Hauptelement, String Verform)
+    public void ErstellenSchwermetalle (String Name, int Nummer, String Verwendung, double eLeitf, String Hauptelement, String Verform)throws Exception
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
         {
@@ -128,7 +128,7 @@ public class Datenbank
     *@param Name, Nummer, Verwendung, eLeitf (elektrische Leitfähigkeit), Hauptelement, Dichte
     *@throws Exception
     */
-    public void ErstellenLeichtmetalle (String Name, int Nummer, String Verwendung, double eLeitf, double Hauptelement, String Dichte)
+    public void ErstellenLeichtmetalle (String Name, int Nummer, String Verwendung, double eLeitf, double Hauptelement, String Dichte)throws Exception
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
         {
@@ -160,7 +160,7 @@ public class Datenbank
     *@param Name, Nummer, Verwendung, metallEigenschaft (metallähnliche Eigenschaft), eLeitf (elektrische Leitfähigkeit)
     *@throws Exception
     */
-    public void ErstellenHalbleiter (String Name, int Nummer, String Verwendung, String metallEigenschaft, double eLeitf)
+    public void ErstellenHalbleiter (String Name, int Nummer, String Verwendung, String metallEigenschaft, double eLeitf)throws Exception
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
         {
@@ -192,7 +192,7 @@ public class Datenbank
     *@param Name, Nummer, Verwendung, metallEigenschaft (metallähnliche Eigenschaft), Zugfestigkeit
     *@throws Exception
     */
-    public void ErstellenKeramik (String Name, int Nummer, String Verwendung, String metallEigenschaft, double Zugfestigkeit)
+    public void ErstellenKeramik (String Name, int Nummer, String Verwendung, String metallEigenschaft, double Zugfestigkeit)throws Exception
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
         {
@@ -224,7 +224,7 @@ public class Datenbank
     *@param Name, Nummer, Verwendung, metallEigenschaft (metallähnliche Eigenschaft), Verformbarkeit
     *@throws Exception
     */
-    public void ErstellenKunststoffe (String Name, int Nummer, String Verwendung, String metallEigenschaft, String Verformbarkeit)
+    public void ErstellenKunststoffe (String Name, int Nummer, String Verwendung, String metallEigenschaft, String Verformbarkeit)throws Exception
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
         {
@@ -256,7 +256,7 @@ public class Datenbank
     *@param Name, Nummer, Verwendung,metallEigenschat (metallähnliche Eigenschaft), Degradation
     *@throws Exception
     */
-    public void ErstellenNaturstoffe (String Name, int Nummer, String Verwendung, String metallEigenschaft, String Degradation)
+    public void ErstellenNaturstoffe (String Name, int Nummer, String Verwendung, String metallEigenschaft, String Degradation)throws Exception
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
         {
@@ -284,7 +284,7 @@ public class Datenbank
         w.setName(Name);
     }
 
-    public void BearbeitenNummer (int Nummer, int nr)
+    public void BearbeitenNummer (int Nummer, int nr)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
         w.setNummer(nr);
@@ -296,20 +296,20 @@ public class Datenbank
         w.setVerwendung(Verwendung);
     }
 
-    public void BearbeitenElektrischeLeitfaehigkeitMetalle (int Nummer, double elektrLeitf)
+    public void BearbeitenElektrischeLeitfaehigkeitMetalle (int Nummer, double elektrLeitf)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
         ((Metalle) w).setElektrischeLeitfaehigkeit(elektrLeitf);
     }
 
-    public void BearbeitenElektrischeLeitfaehigkeitHalbleiter (int Nummer, double elektrLeitf)
+    public void BearbeitenElektrischeLeitfaehigkeitHalbleiter (int Nummer, double elektrLeitf)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
         ((Halbleiter) w).setElektrischeLeitfaehigkeit(elektrLeitf);
 
     }
 
-    public void BearbeitenEisengehalt (int Nummer, double eisengehalt)
+    public void BearbeitenEisengehalt (int Nummer, double eisengehalt)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
         ((Eisenmetalle) w).setEisengehalt(eisengehalt);
@@ -357,7 +357,7 @@ public class Datenbank
         ((Nichtmetalle)w).setMetallAehnlicheEigenschaften(metallEigenschaft);
     }
 
-    public void BearbeitenZugfestigkeit (int Nummer, double Zugfestigkeit)
+    public void BearbeitenZugfestigkeit (int Nummer, double Zugfestigkeit)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
         ((keramischeWerkstoffe)w).setZugfestigkeit(Zugfestigkeit);

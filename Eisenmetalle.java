@@ -10,13 +10,13 @@ public abstract class Eisenmetalle extends Metalle
 {
     private double eisengehalt;
     
-    public Eisenmetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double eisengehalt)
+    public Eisenmetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double eisengehalt)throws Exception
     {
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit);
        setEisengehalt(eisengehalt);
     }
     
-    public void setEisengehalt(double eisengehalt)
+    public void setEisengehalt(double eisengehalt)throws Exception
     {
         if(eisengehalt>50 && eisengehalt<100 )
         {
@@ -24,7 +24,7 @@ public abstract class Eisenmetalle extends Metalle
         }
         else
         {
-            System.out.println("Der angegebene Eisengehalt ist ungültig");
+           throw new Exception("Der angegebene Eisengehalt ist ungültig");
         }
     }
     

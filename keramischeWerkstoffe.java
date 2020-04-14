@@ -11,13 +11,13 @@ public class keramischeWerkstoffe extends Nichtmetalle
 {
     private double Zugfestigkeit;
     
-    public keramischeWerkstoffe(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,double Zugfestigkeit)
+    public keramischeWerkstoffe(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,double Zugfestigkeit)throws Exception
     {
         super(name,nummer,verwendung, metallAehnlicheEigenschaften);
         setZugfestigkeit( Zugfestigkeit);
     }
     
-    public void setZugfestigkeit(double Zugfestigkeit)
+    public void setZugfestigkeit(double Zugfestigkeit)throws Exception
     {
         if(Zugfestigkeit>0)
         {
@@ -25,7 +25,7 @@ public class keramischeWerkstoffe extends Nichtmetalle
         }
         else
         {
-            System.out.println("Die angegebene Zugfestigkeit ist ungültig");
+            throw new Exception("Die angegebene Zugfestigkeit ist ungültig");
         }
     }
     

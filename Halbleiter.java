@@ -11,21 +11,21 @@ public class Halbleiter extends Nichtmetalle
 {
     private double ElektrischeLeitfaehigkeit;
     
-    public Halbleiter(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,double ElektrischeLeitfaehigkeit)
+    public Halbleiter(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,double ElektrischeLeitfaehigkeit) throws Exception
     {
         super(name,nummer,verwendung, metallAehnlicheEigenschaften);
        setElektrischeLeitfaehigkeit( ElektrischeLeitfaehigkeit);
     }
 
-    public void setElektrischeLeitfaehigkeit(double ElektrischeLeitfaehigkeit)
+    public void setElektrischeLeitfaehigkeit(double ElektrischeLeitfaehigkeit)throws Exception
     {
-        if(ElektrischeLeitfaehigkeit>0 && ElektrischeLeitfaehigkeit <= Math.pow(10,4))
+        if(ElektrischeLeitfaehigkeit>0 && ElektrischeLeitfaehigkeit <= Math.pow(10,4)) 
         {
         this.ElektrischeLeitfaehigkeit= ElektrischeLeitfaehigkeit;
         }
         else
         {
-            System.out.println("Die angegebene elektrische Leitfähigkeit ist ungültig");
+             throw new Exception("Die angegebene elektrische Leitfähigkeit ist ungültig");
         }
     }
 

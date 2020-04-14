@@ -10,7 +10,7 @@ public class Leichtmetalle extends Nichteisenmetalle
 {
     private double Dichte;
     
-    public Leichtmetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double Dichte, String Hauptelement)
+    public Leichtmetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double Dichte, String Hauptelement)throws Exception
 
     {
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit,Hauptelement);

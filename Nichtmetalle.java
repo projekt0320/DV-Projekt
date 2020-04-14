@@ -10,7 +10,7 @@ public abstract class  Nichtmetalle extends Werkstoffe
 {
     private String metallAehnlicheEigenschaften;
     
-    public Nichtmetalle(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften)
+    public Nichtmetalle(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften) throws Exception
     {
         super(name,nummer,verwendung);
         setMetallAehnlicheEigenschaften( metallAehnlicheEigenschaften);

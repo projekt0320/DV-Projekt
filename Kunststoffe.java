@@ -11,7 +11,7 @@ public class Kunststoffe extends Nichtmetalle
 {
     private String Verformbarkeit;
     
-    public Kunststoffe(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,String Verformbarkeit)
+    public Kunststoffe(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,String Verformbarkeit)throws Exception
     {
         super(name,nummer,verwendung, metallAehnlicheEigenschaften);
         setVerformbarkeit( Verformbarkeit);

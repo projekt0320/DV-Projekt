@@ -10,7 +10,7 @@ public abstract class Nichteisenmetalle extends Metalle
 {
     private String Hauptelement;
     
-    public Nichteisenmetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit, String Hauptelement)
+    public Nichteisenmetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit, String Hauptelement)throws Exception
     {
         super(name,nummer,verwendung,elektrischeLeitfaehigkeit);
         setHauptelement( Hauptelement);
