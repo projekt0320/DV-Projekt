@@ -20,7 +20,17 @@ public class Datenbank
         anzahl=0;
         liste = new ArrayList<Werkstoffe>();
     }
-
+    
+    /**
+    *Die Methode erstellt ein Objekt mit der dynamischer Unterklasse Stahl. Die Anzahl, der Werkstoffe in der Liste, wird um eins erhöht und der neu erstellte 
+    *Werkstoff wird in die ArrayList eingefügt.
+    *Es kann jedoch kein neues Objekt/ kein neuer Werkstoff erstellt werden, wenn mit dem eingegebenem Name und der eingegebenen Nummer, dem eingegebenem Name oder 
+    *der eingegebenen Nummer bereits ein Objekt/ Werkstoff in der Liste erstellt worden ist. Ist das der Fall, wird eine Exception geworfen.
+    *
+    *@param Name, Nummer, Verwendung, eLeitf (elektrische Leitfähigkeit), Eisengehalt, Kohlenstoffgehalt
+    *@throws Exception
+    */
+   
     public void ErstellenStahl (String Name, int Nummer, String Verwendung, double eLeitf, double Eisengehalt, double Kohlenstoffgehalt) throws Exception
     {
 
@@ -44,6 +54,16 @@ public class Datenbank
         }
     }
 
+    
+    /**
+    *Die Methode erstellt ein Objekt mit der dynamischer Unterklasse Gusswerkstoff. Die Anzahl, der Werkstoffe in der Liste, wird um eins erhöht und der neu erstellte 
+    *Werkstoff wird in die ArrayList eingefügt.
+    *Es kann jedoch kein neues Objekt/ kein neuer Werkstoff erstellt werden, wenn mit dem eingegebenem Name und der eingegebenen Nummer, dem eingegebenem Name oder 
+    *der eingegebenen Nummer bereits ein Objekt/ Werkstoff in der Liste erstellt worden ist. Ist das der Fall, wird eine Exception geworfen.
+    *
+    *@param Name, Nummer, Verwendung, eLeitf (elektrische Leitfähigkeit), Eisengehalt, Siedetemp (Siedetemperatur)
+    *@throws Exception
+    */
     public void ErstellenGuss (String Name, int Nummer, String Verwendung, double eLeitf, double Eisengehalt, double Siedetemp)throws Exception
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
@@ -65,7 +85,17 @@ public class Datenbank
             System.out.println("Bitte geben Sie einen anderen Name und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
         }
     }
-
+    
+    
+    /**
+    *Die Methode erstellt ein Objekt mit der dynamischer Unterklasse Schwermetalle. Die Anzahl, der Werkstoffe in der Liste, wird um eins erhöht und der neu erstellte 
+    *Werkstoff wird in die ArrayList eingefügt.
+    *Es kann jedoch kein neues Objekt/ kein neuer Werkstoff erstellt werden, wenn mit dem eingegebenem Name und der eingegebenen Nummer, dem eingegebenem Name oder 
+    *der eingegebenen Nummer bereits ein Objekt/ Werkstoff in der Liste erstellt worden ist. Ist das der Fall, wird eine Exception geworfen.
+    *
+    *@param Name, Nummer, Verwendung, eLeitf (elektrische Leitfähigkeit), Hauptelement, Verform (Verformbarkeit)
+    *@throws Exception
+    */
     public void ErstellenSchwermetalle (String Name, int Nummer, String Verwendung, double eLeitf, String Hauptelement, String Verform)
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
@@ -87,7 +117,17 @@ public class Datenbank
             System.out.println("Bitte geben Sie einen anderen Name und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
         }
     }
-
+    
+    
+    /**
+    *Die Methode erstellt ein Objekt mit der dynamischer Unterklasse Leichtmetalle. Die Anzahl, der Werkstoffe in der Liste, wird um eins erhöht und der neu erstellte 
+    *Werkstoff wird in die ArrayList eingefügt.
+    *Es kann jedoch kein neues Objekt/ kein neuer Werkstoff erstellt werden, wenn mit dem eingegebenem Name und der eingegebenen Nummer, dem eingegebenem Name oder 
+    *der eingegebenen Nummer bereits ein Objekt/ Werkstoff in der Liste erstellt worden ist. Ist das der Fall, wird eine Exception geworfen.
+    *
+    *@param Name, Nummer, Verwendung, eLeitf (elektrische Leitfähigkeit), Hauptelement, Dichte
+    *@throws Exception
+    */
     public void ErstellenLeichtmetalle (String Name, int Nummer, String Verwendung, double eLeitf, double Hauptelement, String Dichte)
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
@@ -109,7 +149,17 @@ public class Datenbank
             System.out.println("Bitte geben Sie einen anderen Name und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
         }
     }
-
+    
+    
+    /**
+    *Die Methode erstellt ein Objekt mit der dynamischer Unterklasse Halbleiter. Die Anzahl, der Werkstoffe in der Liste, wird um eins erhöht und der neu erstellte 
+    *Werkstoff wird in die ArrayList eingefügt.
+    *Es kann jedoch kein neues Objekt/ kein neuer Werkstoff erstellt werden, wenn mit dem eingegebenem Name und der eingegebenen Nummer, dem eingegebenem Name oder 
+    *der eingegebenen Nummer bereits ein Objekt/ Werkstoff in der Liste erstellt worden ist. Ist das der Fall, wird eine Exception geworfen.
+    *
+    *@param Name, Nummer, Verwendung, metallEigenschaft (metallähnliche Eigenschaft), eLeitf (elektrische Leitfähigkeit)
+    *@throws Exception
+    */
     public void ErstellenHalbleiter (String Name, int Nummer, String Verwendung, String metallEigenschaft, double eLeitf)
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
@@ -131,7 +181,17 @@ public class Datenbank
             System.out.println("Bitte geben Sie einen anderen Name und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
         }
     }
-
+    
+    
+    /**
+    *Die Methode erstellt ein Objekt mit der dynamischer Unterklasse keramischeWerkstoffe. Die Anzahl, der Werkstoffe in der Liste, wird um eins erhöht und der neu erstellte 
+    *Werkstoff wird in die ArrayList eingefügt.
+    *Es kann jedoch kein neues Objekt/ kein neuer Werkstoff erstellt werden, wenn mit dem eingegebenem Name und der eingegebenen Nummer, dem eingegebenem Name oder 
+    *der eingegebenen Nummer bereits ein Objekt/ Werkstoff in der Liste erstellt worden ist. Ist das der Fall, wird eine Exception geworfen.
+    *
+    *@param Name, Nummer, Verwendung, metallEigenschaft (metallähnliche Eigenschaft), Zugfestigkeit
+    *@throws Exception
+    */
     public void ErstellenKeramik (String Name, int Nummer, String Verwendung, String metallEigenschaft, double Zugfestigkeit)
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
@@ -153,7 +213,17 @@ public class Datenbank
             System.out.println("Bitte geben Sie einen anderen Name und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
         }
     }
-
+    
+    
+    /**
+    *Die Methode erstellt ein Objekt mit der dynamischer Unterklasse Kunststoffe. Die Anzahl, der Werkstoffe in der Liste, wird um eins erhöht und der neu erstellte 
+    *Werkstoff wird in die ArrayList eingefügt.
+    *Es kann jedoch kein neues Objekt/ kein neuer Werkstoff erstellt werden, wenn mit dem eingegebenem Name und der eingegebenen Nummer, dem eingegebenem Name oder 
+    *der eingegebenen Nummer bereits ein Objekt/ Werkstoff in der Liste erstellt worden ist. Ist das der Fall, wird eine Exception geworfen.
+    *
+    *@param Name, Nummer, Verwendung, metallEigenschaft (metallähnliche Eigenschaft), Verformbarkeit
+    *@throws Exception
+    */
     public void ErstellenKunststoffe (String Name, int Nummer, String Verwendung, String metallEigenschaft, String Verformbarkeit)
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
@@ -175,7 +245,17 @@ public class Datenbank
             System.out.println("Bitte geben Sie einen anderen Name und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
         }
     }
-
+    
+    
+    /**
+    *Die Methode erstellt ein Objekt mit der dynamischer Unterklasse Naturstoffe. Die Anzahl, der Werkstoffe in der Liste, wird um eins erhöht und der neu erstellte 
+    *Werkstoff wird in die ArrayList eingefügt.
+    *Es kann jedoch kein neues Objekt/ kein neuer Werkstoff erstellt werden, wenn mit dem eingegebenem Name und der eingegebenen Nummer, dem eingegebenem Name oder 
+    *der eingegebenen Nummer bereits ein Objekt/ Werkstoff in der Liste erstellt worden ist. Ist das der Fall, wird eine Exception geworfen.
+    *
+    *@param Name, Nummer, Verwendung,metallEigenschat (metallähnliche Eigenschaft), Degradation
+    *@throws Exception
+    */
     public void ErstellenNaturstoffe (String Name, int Nummer, String Verwendung, String metallEigenschaft, String Degradation)
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
@@ -367,7 +447,16 @@ public class Datenbank
 
 
 
-    public void loeschen(int Nummer) throws Exception
+    /**
+     * In der Methode "Löschen" wird ein ausgewähltes Objekt aus der Liste, das mit der
+     * "Nummer-Suchmethode" aufgerufen wird, gelöscht. Zusätzlich wird die Anzahl, der werkstoffe in der Liste, um eins verrringert.
+     * Gibt die "Nummer-Suchmethode" jedoch null zurück (, da der Werkstoff nicht in der Liste gefunden wurde), wird eine Exception geworfen.
+     * 
+     * @param Nummer
+     * @throws Exception
+     * 
+     */
+    public void loeschen(int Nummer) throws Exception 
     {
         Werkstoffe werk2delete= sucheNummer(Nummer);
         if(werk2delete == null)
@@ -380,7 +469,9 @@ public class Datenbank
             anzahl-=1;
         }
     }
-
+    /**
+    *Gibt die Anzahl, der Objekte/ Werkstoffe in der ArrayList, auf dem Bildschirm aus.
+    */
     public void AnzahlWerkstoffe()
     {
         if (liste.size() == 1)
