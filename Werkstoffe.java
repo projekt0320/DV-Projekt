@@ -5,13 +5,19 @@
  * Verwendung und enthält deren get- und set-Methoden. Außerdem enthält sie die Methodensignatur der abstrakten Methode gibEigenschaft.
  * 
  * @author Markus Schnee, Jenny Glönkler 
- * @version (07.04.2020/14:55Uhr)
+ * @version 11. April 2020
  */
 public abstract class Werkstoffe
 {
     private String name;
     private int nummer;
     private String verwendung;
+    
+    /**
+     * Konstruktor, der Objekte der Klasse Werkstoffe erzeugt, wenn die eingegebene Nummer größer als 0 ist.
+     * @param Name, Nummer, Verwendung
+     * @throws Exception
+     */
     
     public Werkstoffe(String name,int nummer,String verwendung)throws Exception
     {
@@ -24,17 +30,28 @@ public abstract class Werkstoffe
            
         
     }
-    
+    /**
+     * Setzt den Name des Werkstoffes auf den eingegebenen Namen.
+     * @param Name
+     */
     public void setName(String name)
     {
         this.name = name;
     }
-    
+    /**
+     * Gibt den Name als String zurück.
+     * @return Name
+     */
     public  String getName()
     {
         return this.name;
     }
-    
+    /**
+     * Setzt die Nummer des Werkstoffes auf die eingegebene Nummer, wenn diese größer als 10000 und kleiner als 40000 ist. Ist das nicht der Fall, 
+     * wird eine Exception geworfen.
+     * @param Nummer
+     * @throws Exception
+     */
     public void setNummer(int nummer)throws Exception
     {
          if(nummer>10000 && nummer <40000)
@@ -46,17 +63,26 @@ public abstract class Werkstoffe
                 throw new Exception("Die angegebene Nummer ist ungültig");
             }
     }
-    
+    /**
+     * Gibt die Nummer als int zurück.
+     * @return Nummer
+     */
     public  int getNummer()
     {
         return this.nummer;
     }
-    
+    /**
+     * Setzt die Verwendung des Werkstoffes auf die eingegebene Verwendung.
+     * @param Verwendung
+     */
     public void setVerwendung(String verwendung)
     {
         this.verwendung = verwendung;
     }
-    
+    /**
+     * Gibt die Verwendung als String zurück.
+     * @return Verwendung
+     */
     public  String getVerwendung()
     {
         return this.verwendung;
