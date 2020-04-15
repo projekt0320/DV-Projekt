@@ -11,12 +11,28 @@ public class Gusswerkstoff extends Eisenmetalle
 {
     private double Siedetemperatur;
     
-    public Gusswerkstoff(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double eisengehalt,double Siedetemperatur) throws Exception
+     /**
+     * Konstruktor der abstrakten Klasse Gusswerkstoff.
+     * Die Superklasse Eisenmetalle wird aufgerufen, um Name, Nummer, Verwendung, elektrische Leitfähigkeit und Eisengehalt zu setzen, 
+     * gegebenenfalls löst diese eine Exception aus.
+     * Zudem wird die Methode SetSiedetemperatur aufgerufen, um den Wert der Siedetemperatur zu setzen, 
+     * gegebenenfalls kann auch diese eine Exception auslösen.
+     * 
+     * @param Name, Nummer, Verwendung, ElektrischeLeitfaehigkeit, Eisengehalt, Siedetemperatur
+     * @throws Exception
+     */
+    public Gusswerkstoff(String Name,int Nummer,String Verwendung,double ElektrischeLeitfaehigkeit,double Eisengehalt,double Siedetemperatur) throws Exception
     {
-        super(name,nummer,verwendung,elektrischeLeitfaehigkeit,eisengehalt);
+        super(Name,Nummer,Verwendung,ElektrischeLeitfaehigkeit,Eisengehalt);
         setSiedetemperatur(Siedetemperatur);
     }
     
+     /**
+     * Setzt die Siedetemperatur auf den eingegebenen Wert, wenn dieser größer als 1000 und kleiner als 1300 ist. Ist das nicht der Fall, 
+     * wird eine Exception geworfen.
+     * @param Siedetemperatur
+     * @throws Exception
+     */
     public void setSiedetemperatur(double Siedetemperatur)throws Exception
     {
          if(Siedetemperatur>1000 &&Siedetemperatur<1300)
@@ -30,6 +46,10 @@ public class Gusswerkstoff extends Eisenmetalle
         }
     }
     
+    /**
+     * Gibt den Wert der Siedetemperatur als double zurück.
+     * @return Siedetemperatur
+     */
     public double getSiedetemperatur()
     {
        return Siedetemperatur;

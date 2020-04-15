@@ -8,19 +8,34 @@
  */
 public abstract class Eisenmetalle extends Metalle
 {
-    private double eisengehalt;
+    private double Eisengehalt;
     
-    public Eisenmetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double eisengehalt)throws Exception
+    /**
+     * Konstruktor der abstrakten Klasse Eisenmetalle.
+     * Die Superklasse Metalle wird aufgerufen, um Name, Nummer, Verwendung und elektrische Leitfähigkeit zu setzen, gegebenenfalls löst diese eine Exception aus.
+     * Zudem wird die Methode SetEisengehalt aufgerufen, um den Wert des Eisengehalts zu setzen, 
+     * gegebenenfalls kann auch diese eine Exception auslösen.
+     * 
+     * @param Name, Nummer, Verwendung, ElektrischeLeitfaehigkeit, Eisengehalt
+     * @throws Exception
+     */
+    public Eisenmetalle(String Name,int Nummer,String Verwendung,double ElektrischeLeitfaehigkeit,double Eisengehalt)throws Exception
     {
-        super(name,nummer,verwendung,elektrischeLeitfaehigkeit);
-       setEisengehalt(eisengehalt);
+        super(Name,Nummer,Verwendung,ElektrischeLeitfaehigkeit);
+       setEisengehalt(Eisengehalt);
     }
     
-    public void setEisengehalt(double eisengehalt)throws Exception
+    /**
+     * Setzt den Eisengehalt auf den eingegebenen Wert, wenn dieser größer als 50 und kleiner als 100 ist. Ist das nicht der Fall, 
+     * wird eine Exception geworfen.
+     * @param Eisengehalt
+     * @throws Exception
+     */
+    public void setEisengehalt(double Eisengehalt)throws Exception
     {
-        if(eisengehalt>50 && eisengehalt<100 )
+        if(Eisengehalt>50 && Eisengehalt<100 )
         {
-            this.eisengehalt= eisengehalt;
+            this.Eisengehalt= Eisengehalt;
         }
         else
         {
@@ -28,14 +43,18 @@ public abstract class Eisenmetalle extends Metalle
         }
     }
     
+    /**
+     * Gibt den Wert des Eisengehalts als double zurück.
+     * @return Eisengehalt
+     */
     public double getEisengehalt()
     {
-       return eisengehalt;
+       return Eisengehalt;
     }
     
     public String gibEigenschaft()
     {
-        String s= super.gibEigenschaft()+ "\n Eisengehalt:   "+ eisengehalt;
+        String s= super.gibEigenschaft()+ "\n Eisengehalt:   "+ Eisengehalt;
         return s;
     }
     

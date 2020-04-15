@@ -8,22 +8,36 @@
  */
 public abstract class Metalle extends Werkstoffe
 {
-    private double elektrischeLeitfaehigkeit;
+    private double ElektrischeLeitfaehigkeit;
     
-    public Metalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit)throws Exception
+    /**
+     * Konstruktor der abstrakten Klasse Metalle.
+     * Die Superklasse Werkstoffe wird aufgerufen, um Name, Nummer und Verwendung zu setzen, gegebenenfalls löst diese eine Exception aus.
+     * Zudem wird die Methode SetElektrischeLeitfaehigkeit aufgerufen, um den Wert der elektrischen Leitfähigkeit zu setzen, 
+     * gegebenenfalls kann auch diese eine Exception auslösen.
+     * 
+     * @param Name, Nummer, Verwendung, ElektrischeLeitfaehigkeit
+     * @throws Exception
+     */
+    public Metalle(String Name,int Nummer,String Verwendung,double ElektrischeLeitfaehigkeit)throws Exception
     {   
         
-        super(name,nummer,verwendung);
-        setElektrischeLeitfaehigkeit( elektrischeLeitfaehigkeit);
+        super(Name,Nummer,Verwendung);
+        setElektrischeLeitfaehigkeit( ElektrischeLeitfaehigkeit);
    
         
     }
-    
-    public void setElektrischeLeitfaehigkeit(double elektrischeLeitfaehigkeit)throws Exception
+    /**
+     * Setzt die elektrische Leitfähigkeit auf den eingegebenen Wert, wenn dieser größer als 0,68 und kleiner/gleich 62 ist. Ist das nicht der Fall, 
+     * wird eine Exception geworfen.
+     * @param ElektrischeLeitfaehigkeit
+     * @throws Exception
+     */
+    public void setElektrischeLeitfaehigkeit(double ElektrischeLeitfaehigkeit)throws Exception
     {
-        if(elektrischeLeitfaehigkeit>0.68 && elektrischeLeitfaehigkeit <= 62)
+        if(ElektrischeLeitfaehigkeit>0.68 && ElektrischeLeitfaehigkeit <= 62)
         {
-            this.elektrischeLeitfaehigkeit= elektrischeLeitfaehigkeit;
+            this.ElektrischeLeitfaehigkeit= ElektrischeLeitfaehigkeit;
     
         }
         else
@@ -31,17 +45,20 @@ public abstract class Metalle extends Werkstoffe
            throw new Exception("Die angegebene elektrische Leitfähigkeit ist ungültig");
         }
     }
-    
+    /**
+     * Gibt den Wert der elektrischen Leitfähigkeit als double zurück.
+     * @return ElektrischeLeitfaehigkeit
+     */
     public double getElektrischeLeitfaehigkeit()
     {
-        return elektrischeLeitfaehigkeit;
+        return ElektrischeLeitfaehigkeit;
 
     }
 
     public  String gibEigenschaft()
     {   
 
-        String s= " name:   "+this.getName()+"\n nummer:   "+this.getNummer()+ "\n verwendung:   "+this.getVerwendung()+"\n   elektrischeLeitfaehigkeit: "+ elektrischeLeitfaehigkeit;
+        String s= " name:   "+this.getName()+"\n nummer:   "+this.getNummer()+ "\n verwendung:   "+this.getVerwendung()+"\n   elektrischeLeitfaehigkeit: "+ ElektrischeLeitfaehigkeit;
         return s;
 
 

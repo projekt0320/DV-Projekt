@@ -11,18 +11,35 @@ public class Schwermetalle extends Nichteisenmetalle
 {
     private String Verformbarkeit;
     
-    public Schwermetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,String Hauptelement, String Verformbarkeit)throws Exception
+    /**
+     * Konstruktor der abstrakten Klasse Schwermetalle.
+     * Die Superklasse Nichteisenmetalle wird aufgerufen, um Name, Nummer, Verwendung, elektrische Leitfähigkeit und Hauptelement zu setzen, 
+     * gegebenenfalls löst diese eine Exception aus.
+     * Zudem wird die Methode SetVerformbarkeit aufgerufen, um den Wert der Verformbarkeit zu setzen.
+     * 
+     * @param Name, Nummer, Verwendung, ElektrischeLeitfaehigkeit, Hauptelement, Verformbarkeit
+     * @throws Exception
+     */
+    public Schwermetalle(String Name,int Nummer,String Verwendung,double ElektrischeLeitfaehigkeit,String Hauptelement, String Verformbarkeit)throws Exception
 
     {
-        super(name,nummer,verwendung,elektrischeLeitfaehigkeit,Hauptelement);
+        super(Name,Nummer,Verwendung,ElektrischeLeitfaehigkeit,Hauptelement);
         setVerformbarkeit(Verformbarkeit);
     }
-
+    
+    /**
+     * Gibt die Verformbarkeit als String zurück.
+     * @return Verformbarkeit
+     */
     public String getVerformbarkeit()
     {
         return Verformbarkeit;
     }
-
+    
+    /**
+     * Setzt die Verformbarkeit auf die eingegebene Verformbarkeit.
+     * @param Verformbarkeit
+     */
     public void setVerformbarkeit(String Verformbarkeit)
     {
         this.Verformbarkeit=Verformbarkeit;

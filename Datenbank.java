@@ -125,7 +125,7 @@ public class Datenbank
      *@param Name, Nummer, Verwendung, eLeitf (elektrische Leitfähigkeit), Hauptelement, Dichte
      *@throws Exception
      */
-    public void ErstellenLeichtmetalle (String Name, int Nummer, String Verwendung, double eLeitf, double Hauptelement, String Dichte)throws Exception
+    public void ErstellenLeichtmetalle (String Name, int Nummer, String Verwendung, double eLeitf, String Hauptelement, double Dichte)throws Exception
     {
         if ( sucheName(Name)== null && sucheNummer(Nummer)==null)
         {

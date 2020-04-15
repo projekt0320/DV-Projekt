@@ -11,12 +11,28 @@ public class Halbleiter extends Nichtmetalle
 {
     private double ElektrischeLeitfaehigkeit;
     
-    public Halbleiter(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,double ElektrischeLeitfaehigkeit) throws Exception
+     /**
+     * Konstruktor der abstrakten Klasse Halbleiter.
+     * Die Superklasse Nichtmetalle wird aufgerufen, um Name, Nummer, Verwendung und metallähnliche Eigenschaften zu setzen, 
+     * gegebenenfalls löst diese eine Exception aus.
+     * Zudem wird die Methode SetElektrischeLeitfaehigkeit aufgerufen, um den Wert der elektrischen Leitfähigkeit zu setzen, 
+     * gegebenenfalls kann auch diese eine Exception auslösen.
+     * 
+     * @param Name, Nummer, Verwendung, metallAehnlicheEigenschaften (metallähnliche Eigenschaften), ElektrischeLeitfaehigkeit (elektrische Leitfähigkeit)
+     * @throws Exception
+     */
+    public Halbleiter(String Name,int Nummer,String Verwendung, String metallAehnlicheEigenschaften,double ElektrischeLeitfaehigkeit) throws Exception
     {
-        super(name,nummer,verwendung, metallAehnlicheEigenschaften);
+        super(Name,Nummer,Verwendung, metallAehnlicheEigenschaften);
        setElektrischeLeitfaehigkeit( ElektrischeLeitfaehigkeit);
     }
-
+    
+    /**
+     * Setzt die elektrische Leitfähigkeit auf den eingegebenen Wert, wenn dieser größer als 0 und kleiner/gleich 10 hoch 4 ist. Ist das nicht der Fall, 
+     * wird eine Exception geworfen.
+     * @param ElektrischeLeitfaehigkeit (elektrische Leitfähigkeit)
+     * @throws Exception
+     */
     public void setElektrischeLeitfaehigkeit(double ElektrischeLeitfaehigkeit)throws Exception
     {
         if(ElektrischeLeitfaehigkeit>0 && ElektrischeLeitfaehigkeit <= Math.pow(10,4)) 
@@ -28,7 +44,11 @@ public class Halbleiter extends Nichtmetalle
              throw new Exception("Die angegebene elektrische Leitfähigkeit ist ungültig");
         }
     }
-
+    
+    /**
+     * Gibt den Wert der elektrischen Leitfähigkeit als double zurück.
+     * @return ElektrischeLeitfaehigkeit ( elektrische Leitfähigkeit)
+     */
     public double getElektrischeLeitfaehigkeit()
     {
         return ElektrischeLeitfaehigkeit;

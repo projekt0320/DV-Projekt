@@ -11,12 +11,28 @@ public class keramischeWerkstoffe extends Nichtmetalle
 {
     private double Zugfestigkeit;
     
-    public keramischeWerkstoffe(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,double Zugfestigkeit)throws Exception
+     /**
+     * Konstruktor der abstrakten Klasse keramischeWerkstoffe.
+     * Die Superklasse Nichtmetalle wird aufgerufen, um Name, Nummer, Verwendung und metallähnliche Eigenschaften zu setzen, 
+     * gegebenenfalls löst diese eine Exception aus.
+     * Zudem wird die Methode SetZugfestigkeit aufgerufen, um den Wert der Zugfestigkeit zu setzen, 
+     * gegebenenfalls kann auch diese eine Exception auslösen.
+     * 
+     * @param Name, Nummer, Verwendung, metallAehnlicheEigenschaften (metallähnliche Eigenschaften), Zugfestigkeit
+     * @throws Exception
+     */
+    public keramischeWerkstoffe(String Name,int Nummer,String Verwendung, String metallAehnlicheEigenschaften,double Zugfestigkeit)throws Exception
     {
-        super(name,nummer,verwendung, metallAehnlicheEigenschaften);
+        super(Name,Nummer,Verwendung, metallAehnlicheEigenschaften);
         setZugfestigkeit( Zugfestigkeit);
     }
     
+    /**
+     * Setzt die Zugfestigkeit auf den eingegebenen Wert, wenn dieser größer als 0 ist. Ist das nicht der Fall, 
+     * wird eine Exception geworfen.
+     * @param Zugfestigkeit
+     * @throws Exception
+     */
     public void setZugfestigkeit(double Zugfestigkeit)throws Exception
     {
         if(Zugfestigkeit>0)
@@ -29,6 +45,10 @@ public class keramischeWerkstoffe extends Nichtmetalle
         }
     }
     
+     /**
+     * Gibt den Wert der Zugfestigkeit als double zurück.
+     * @return Zugfestigkeit
+     */
     public double getZugfestigkeit()
     {
         return Zugfestigkeit;

@@ -9,96 +9,97 @@
  */
 public abstract class Werkstoffe
 {
-    private String name;
-    private int nummer;
-    private String verwendung;
-    
+    private String Name;
+    private int Nummer;
+    private String Verwendung;
+
     /**
-     * Konstruktor der abstrakten Klasse Werkstoffe. 
-     * Wenn die eingegebene Nummer größer als 0 ist, wird Name, Nummer und Verwendung auf die eingegebenen Werte gesetzt. 
+     * Konstruktor der abstrakten Klasse Werkstoffe, der Name, Nummer und Verwendung auf die eingegebenen Werte setzt. 
      * Dabei wird die Methode SetNummer aufgerufen, die eine Exception wirft, wenn die Nummer nicht größer als 10000 und nicht kleiner als 40000 ist.
      * @param Name, Nummer, Verwendung
      * @throws Exception
      */
-    
-    public Werkstoffe(String name,int nummer,String verwendung)throws Exception
+
+    public Werkstoffe(String Name,int Nummer,String Verwendung)throws Exception
     {
-       if(nummer>0)
-            {
-                this.name= name;
-                setNummer(nummer);
-                this.verwendung= verwendung;
-            }
-           
+
+        this.Name= Name;
+        setNummer(Nummer);
+        this.Verwendung= Verwendung;
+
         
     }
+
     /**
      * Setzt den Name des Werkstoffes auf den eingegebenen Namen.
      * @param Name
      */
-    public void setName(String name)
+    public void setName(String Name)
     {
-        this.name = name;
+        this.Name = Name;
     }
+
     /**
-     * Gibt den Name als String zurück.
+     * Gibt den Name des Wekstoffes als String zurück.
      * @return Name
      */
     public  String getName()
     {
-        return this.name;
+        return this.Name;
     }
+
     /**
      * Setzt die Nummer des Werkstoffes auf die eingegebene Nummer, wenn diese größer als 10000 und kleiner als 40000 ist. Ist das nicht der Fall, 
      * wird eine Exception geworfen.
      * @param Nummer
      * @throws Exception
      */
-    public void setNummer(int nummer)throws Exception
+    public void setNummer(int Nummer)throws Exception
     {
-         if(nummer>10000 && nummer <40000)
-            {
-                this.nummer= nummer;
-            }
-            else
-            {
-                throw new Exception("Die angegebene Nummer ist ungültig");
-            }
+        if(Nummer>10000 && Nummer <40000)
+        {
+            this.Nummer= Nummer;
+        }
+        else
+        {
+            throw new Exception("Die angegebene Nummer ist ungültig");
+        }
     }
+
     /**
-     * Gibt die Nummer als int zurück.
+     * Gibt die Nummer des Werkstoffes als int zurück.
      * @return Nummer
      */
     public  int getNummer()
     {
-        return this.nummer;
+        return this.Nummer;
     }
+
     /**
      * Setzt die Verwendung des Werkstoffes auf die eingegebene Verwendung.
      * @param Verwendung
      */
-    public void setVerwendung(String verwendung)
+    public void setVerwendung(String Verwendung)
     {
-        this.verwendung = verwendung;
+        this.Verwendung = Verwendung;
     }
+
     /**
-     * Gibt die Verwendung als String zurück.
+     * Gibt die Verwendung des Werkstoffes als String zurück.
      * @return Verwendung
      */
     public  String getVerwendung()
     {
-        return this.verwendung;
+        return this.Verwendung;
     }
-   
-   /**
-    * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
-    * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der nächshöheren Klasse aufgerufen wird unter Verwendung des Schlüsselworts „super“
-    * @return String mit den Eigenschaften des Werkstoffs
-    */
+
+    /**
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der nächshöheren Klasse aufgerufen wird unter Verwendung des Schlüsselworts „super“
+     * @return String mit den Eigenschaften des Werkstoffs
+     */
     public abstract String gibEigenschaft();
-   
-   
-    
+
     
     
 }

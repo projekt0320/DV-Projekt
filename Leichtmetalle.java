@@ -10,13 +10,29 @@ public class Leichtmetalle extends Nichteisenmetalle
 {
     private double Dichte;
     
-    public Leichtmetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit,double Dichte, String Hauptelement)throws Exception
+    /**
+     * Konstruktor der abstrakten Klasse Leichtmetalle.
+     * Die Superklasse Nichteisenmetalle wird aufgerufen, um Name, Nummer, Verwendung, elektrische Leitfähigkeit und Hauptelement zu setzen, 
+     * gegebenenfalls löst diese eine Exception aus.
+     * Zudem wird die Methode SetDichte aufgerufen, um den Wert der Dichte zu setzen, 
+     * gegebenenfalls kann auch diese eine Exception auslösen.
+     * 
+     * @param Name, Nummer, Verwendung, ElektrischeLeitfaehigkeit, Hauptelement, Dichte
+     * @throws Exception
+     */
+    public Leichtmetalle(String Name,int Nummer,String Verwendung,double ElektrischeLeitfaehigkeit,String Hauptelement,double Dichte)throws Exception
 
     {
-        super(name,nummer,verwendung,elektrischeLeitfaehigkeit,Hauptelement);
+        super(Name,Nummer,Verwendung,ElektrischeLeitfaehigkeit,Hauptelement);
         setDichte(Dichte);
     }
-
+    
+    /**
+     * Setzt die Dichte auf den eingegebenen Wert, wenn dieser größer als 0,5 und kleiner als 5 ist. Ist das nicht der Fall, 
+     * wird eine Exception geworfen.
+     * @param Dichte
+     * @throws Exception
+     */
     public void setDichte(double Dichte)throws Exception
     {
         if(Dichte>0.5 && Dichte< 5)
@@ -28,7 +44,11 @@ public class Leichtmetalle extends Nichteisenmetalle
             throw new Exception("Die angegebene Dichte ist ungültig");
         }
     }
-
+    
+    /**
+     * Gibt den Wert der Dichte als double zurück.
+     * @return Dichte
+     */
     public double getDichte()
     {
         return Dichte;

@@ -10,17 +10,33 @@ public abstract class Nichteisenmetalle extends Metalle
 {
     private String Hauptelement;
     
-    public Nichteisenmetalle(String name,int nummer,String verwendung,double elektrischeLeitfaehigkeit, String Hauptelement)throws Exception
+    /**
+     * Konstruktor der abstrakten Klasse Nichteisenmetalle.
+     * Die Superklasse Metalle wird aufgerufen, um Name, Nummer, Verwendung und elektrische Leitfähigkeit zu setzen, gegebenenfalls löst diese eine Exception aus.
+     * Zudem wird die Methode SetHauptelement aufgerufen, um den Wert des Hauptelements zu setzen.
+     * 
+     * @param Name, Nummer, Verwendung, ElektrischeLeitfaehigkeit, Hauptelement
+     * @throws Exception
+     */
+    public Nichteisenmetalle(String Name,int Nummer,String Verwendung,double ElektrischeLeitfaehigkeit, String Hauptelement)throws Exception
     {
-        super(name,nummer,verwendung,elektrischeLeitfaehigkeit);
+        super(Name,Nummer,Verwendung,ElektrischeLeitfaehigkeit);
         setHauptelement( Hauptelement);
     }
-
+    
+     /**
+     * Setzt das Hauptelement auf das eingegebene Hauptelement.
+     * @param Hauptelement
+     */
     public void setHauptelement(String Hauptelement)
     {
         this.Hauptelement= Hauptelement;
     }
-
+    
+    /**
+     * Gibt das Hauptelement als String zurück.
+     * @return Hauptelement
+     */
     public String getHauptelement()
     {
         return Hauptelement;

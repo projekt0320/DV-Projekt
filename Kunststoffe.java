@@ -11,17 +11,34 @@ public class Kunststoffe extends Nichtmetalle
 {
     private String Verformbarkeit;
     
-    public Kunststoffe(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften,String Verformbarkeit)throws Exception
+     /**
+     * Konstruktor der abstrakten Klasse Kunststoffe.
+     * Die Superklasse Nichtmetalle wird aufgerufen, um Name, Nummer, Verwendung und metallähnliche Eigenschaften zu setzen, 
+     * gegebenenfalls löst diese eine Exception aus.
+     * Zudem wird die Methode SetVerformbarkeit aufgerufen, um den Wert der Verformbarkeit zu setzen.
+     * 
+     * @param Name, Nummer, Verwendung, metallAehnlicheEigenschaften (metallähnliche Eigenschaften), Verformbarkeit
+     * @throws Exception
+     */
+    public Kunststoffe(String Name,int Nummer,String Verwendung, String metallAehnlicheEigenschaften,String Verformbarkeit)throws Exception
     {
-        super(name,nummer,verwendung, metallAehnlicheEigenschaften);
+        super(Name,Nummer,Verwendung, metallAehnlicheEigenschaften);
         setVerformbarkeit( Verformbarkeit);
     }
     
+    /**
+     * Setzt die Verformbarkeit auf den eingegebenen Wert.
+     * @param Verformbarkeit
+     */
     public void setVerformbarkeit(String Verformbarkeit)
     {
         this.Verformbarkeit=Verformbarkeit;
     }
     
+    /**
+     * Gibt die Verformbarkeit als String zurück.
+     * @return Verformbarkeit
+     */
     public String getVerformbarkeit()
     {
         return Verformbarkeit;

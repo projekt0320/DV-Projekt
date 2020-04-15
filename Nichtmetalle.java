@@ -10,17 +10,33 @@ public abstract class  Nichtmetalle extends Werkstoffe
 {
     private String metallAehnlicheEigenschaften;
     
+    /**
+     * Konstruktor der abstrakten Klasse Nichtmetalle.
+     * Die Superklasse Werkstoffe wird aufgerufen, um Name, Nummer und Verwendung zu setzen, gegebenenfalls löst diese eine Exception aus.
+     * Zudem wird die Methode SetMetallAehnlicheEigenschaften aufgerufen, um den Wert der metallähnlichen Eigenschaften zu setzen.
+     * 
+     * @param Name, Nummer, Verwendung, metallAehnlicheEigenschaften (metallähnliche Eigenschaften)
+     * @throws Exception
+     */
     public Nichtmetalle(String name,int nummer,String verwendung, String metallAehnlicheEigenschaften) throws Exception
     {
         super(name,nummer,verwendung);
         setMetallAehnlicheEigenschaften( metallAehnlicheEigenschaften);
     }
-    
+   
+    /**
+     *Setzt metallähnliche Eigenschaften auf die eingegebenen metallähnlichen Eigenschaften.
+     *@param metallAehnlicheEigenschaften (metallähnliche Eigenschaften)
+     */
     public void setMetallAehnlicheEigenschaften(String metallAehnlicheEigenschaften)
     {
         this.metallAehnlicheEigenschaften=metallAehnlicheEigenschaften;
     }
     
+    /**
+     * Gibt die metallähnlichen Eigenschaften als String zurück.
+     * @return metallAehnlicheEigenschaften (metallähnliche Eigenschaften)
+     */
     public String getmetallAehnlicheEigenschaften()
     {
         return metallAehnlicheEigenschaften;
