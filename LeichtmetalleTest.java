@@ -41,10 +41,34 @@ public class LeichtmetalleTest
     }
 
     @Test
-    public void testKonstruktor()
+    public void testKonstruktor() throws Exception
     {
         Leichtmetalle leichtme1 = new Leichtmetalle("Titan", 20000, "Sportwagen", 2.5, "Titan", 4.5);
         assertEquals(4.5, leichtme1.getDichte(), 0.1);
     }
+
+    @Test
+    public void testKonstruktor2()throws Exception
+    {
+        Leichtmetalle leichtme1 = new Leichtmetalle("Titan", 20000, "Sportauto", 2.5, "Titan", 4.5);
+        assertEquals("Sportauto", leichtme1.getVerwendung());
+        assertEquals("Titan", leichtme1.getName());
+        assertEquals(20000, leichtme1.getNummer());
+        assertEquals(2.5, leichtme1.getElektrischeLeitfaehigkeit(), 0.1);
+        assertEquals("Titan", leichtme1.getHauptelement());
+        assertEquals(4.5, leichtme1.getDichte(), 0.1);
+    }
+    
+
+
+    @Test
+    public void negativTesten() throws Exception
+    {
+        Leichtmetalle leichtme1 = new Leichtmetalle("Titan", 2, "Sportauto", 2.5, "Titan", 4.5);
+        assertEquals(2,leichtme1.getNummer());
+    }
 }
+
+
+
 
