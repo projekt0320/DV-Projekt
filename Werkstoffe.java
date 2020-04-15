@@ -14,7 +14,9 @@ public abstract class Werkstoffe
     private String verwendung;
     
     /**
-     * Konstruktor, der Objekte der Klasse Werkstoffe erzeugt, wenn die eingegebene Nummer größer als 0 ist.
+     * Konstruktor der abstrakten Klasse Werkstoffe. 
+     * Wenn die eingegebene Nummer größer als 0 ist, wird Name, Nummer und Verwendung auf die eingegebenen Werte gesetzt. 
+     * Dabei wird die Methode SetNummer aufgerufen, die eine Exception wirft, wenn die Nummer nicht größer als 10000 und nicht kleiner als 40000 ist.
      * @param Name, Nummer, Verwendung
      * @throws Exception
      */
