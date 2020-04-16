@@ -15,7 +15,11 @@ public class Datenbank
     private int anzahl;
     ArrayList <Werkstoffe> liste;
     boolean test = true;
-
+    
+    /**
+     * Der Konstruktor der Klasse Datenbank, erzeugt eine ArrayList, in der Werkstoffe gespeichert werden können.
+     * Zudem wird die Anzahl (der Werkstoffe in der Liste) auf 0 gestezt.
+     */
     public Datenbank ()
     {
         anzahl=0;
