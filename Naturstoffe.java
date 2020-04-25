@@ -4,15 +4,15 @@
  * sowohl eine get- und set-Methode für dieses Attribut als auch die Methode gibEigenschaft, mit der alle Eigenschaften und deren Werte
  * als Text zurückgegeben werden.
  * 
- * @author Markus Schnee, Jenny Glönkler
- * @version 11. April 2020
+ * @author Markus Schnee, Jenny Glönkler, Felicia Wieland
+ * @version 25. April 2020
  */
 public class Naturstoffe extends Nichtmetalle
 {
     private String Degradation;
-    
-     /**
-     * Konstruktor der abstrakten Klasse Naturstoffe.
+
+    /**
+     * Konstruktor der Klasse Naturstoffe.
      * Die Superklasse Nichtmetalle wird aufgerufen, um Name, Nummer, Verwendung und metallähnliche Eigenschaften zu setzen, 
      * gegebenenfalls löst diese eine Exception aus.
      * Zudem wird die Methode SetDegradation aufgerufen, um den Wert der Degradation zu setzen.
@@ -25,30 +25,33 @@ public class Naturstoffe extends Nichtmetalle
         super(Name,Nummer,Verwendung, metallAehnlicheEigenschaften);
         setDegradation( Degradation);
     }
-    
-     /**
+
+    /**
      * Setzt die Degradation auf den eingegebenen Wert.
+     * 
      * @param Degradation
      */
     public void setDegradation(String Degradation)
     {
         this.Degradation=Degradation;
     }
-    
+
     /**
      * Gibt die Degradation als String zurück.
+     * 
      * @return Degradation
      */
     public String getDegradation()
     {
         return Degradation;
     }
-    
-     /**
-     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
-     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der Klasse Nichtmetalle aufgerufen wird unter Verwendung des Schlüsselworts „super“
+
+    /**
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String.
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() unter Verwendung des Schlüsselworts „super“ aus der nächsthöheren
+     * Klasse aufgerufen wird.
      * 
-     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, matallähnliche Eigenschaften, Degradation
+     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, metallähnliche Eigenschaften, Degradation
      */
     public String gibEigenschaft()
     {

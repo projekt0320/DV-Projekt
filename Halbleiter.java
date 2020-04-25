@@ -4,15 +4,15 @@
  * sowohl eine get- und set-Methode für dieses Attribut als auch die Methode gibEigenschaft, mit der alle Eigenschaften und deren Werte
  * als Text zurückgegeben werden.
  * 
- * @author Markus Schnee, Jenny Glönkler
- * @version 11. April 2020
+ * @author Markus Schnee, Jenny Glönkler, Felicia Wieland
+ * @version 25. April 2020
  */
 public class Halbleiter extends Nichtmetalle
 {
     private double ElektrischeLeitfaehigkeit;
-    
-     /**
-     * Konstruktor der abstrakten Klasse Halbleiter.
+
+    /**
+     * Konstruktor der Klasse Halbleiter.
      * Die Superklasse Nichtmetalle wird aufgerufen, um Name, Nummer, Verwendung und metallähnliche Eigenschaften zu setzen, 
      * gegebenenfalls löst diese eine Exception aus.
      * Zudem wird die Methode SetElektrischeLeitfaehigkeit aufgerufen, um den Wert der elektrischen Leitfähigkeit zu setzen, 
@@ -24,12 +24,13 @@ public class Halbleiter extends Nichtmetalle
     public Halbleiter(String Name,int Nummer,String Verwendung, String metallAehnlicheEigenschaften,double ElektrischeLeitfaehigkeit) throws Exception
     {
         super(Name,Nummer,Verwendung, metallAehnlicheEigenschaften);
-       setElektrischeLeitfaehigkeit( ElektrischeLeitfaehigkeit);
+        setElektrischeLeitfaehigkeit(ElektrischeLeitfaehigkeit);
     }
-    
+
     /**
      * Setzt die elektrische Leitfähigkeit auf den eingegebenen Wert, wenn dieser größer als 0 und kleiner/gleich 10 hoch 4 ist. Ist das nicht der Fall, 
      * wird eine Exception geworfen.
+     * 
      * @param ElektrischeLeitfaehigkeit (elektrische Leitfähigkeit)
      * @throws Exception
      */
@@ -37,28 +38,30 @@ public class Halbleiter extends Nichtmetalle
     {
         if(ElektrischeLeitfaehigkeit>0 && ElektrischeLeitfaehigkeit <= Math.pow(10,4)) 
         {
-        this.ElektrischeLeitfaehigkeit= ElektrischeLeitfaehigkeit;
+            this.ElektrischeLeitfaehigkeit= ElektrischeLeitfaehigkeit;
         }
         else
         {
-             throw new Exception("Die angegebene elektrische Leitfähigkeit ist ungültig");
+            throw new Exception("Die angegebene elektrische Leitfähigkeit ist ungültig");
         }
     }
-    
+
     /**
      * Gibt den Wert der elektrischen Leitfähigkeit als double zurück.
-     * @return ElektrischeLeitfaehigkeit ( elektrische Leitfähigkeit)
+     * 
+     * @return ElektrischeLeitfaehigkeit (elektrische Leitfähigkeit)
      */
     public double getElektrischeLeitfaehigkeit()
     {
         return ElektrischeLeitfaehigkeit;
     }
-    
-     /**
-     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
-     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der Klasse Nichtmetalle aufgerufen wird unter Verwendung des Schlüsselworts „super“
+
+    /**
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String.
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() unter Verwendung des Schlüsselworts „super“ aus der nächsthöheren
+     * Klasse aufgerufen wird.
      * 
-     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, matallähnliche Eigenschaften, elektrische Leitfähigkeit
+     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, metallähnliche Eigenschaften, elektrische Leitfähigkeit
      */
     public String gibEigenschaft()
     {
