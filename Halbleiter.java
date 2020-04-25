@@ -28,7 +28,17 @@ public class Halbleiter extends Nichtmetalle
     }
 
     /**
-     * Setzt die elektrische Leitfähigkeit auf den eingegebenen Wert, wenn dieser größer als 0 und kleiner/gleich 10 hoch 4 ist. Ist das nicht der Fall, 
+     * Standardkonstruktor der Klasse Halbleiter. Er ruft den Konstruktor der Superklasse Nichtmetalle auf und weist vorgegebene Werte zu.
+     * Außerdem wird dem Attribut elektrische Leitfähigkeit ein Wert zugewiesen.
+     */
+    public Halbleiter() throws Exception
+    {
+        super("SiC", 409212, "Lichttechnik", "hohe Wärmeleitfähigkeit");
+        setElektrischeLeitfaehigkeit(0.0098);
+    }
+    
+    /**
+     * Setzt die elektrische Leitfähigkeit auf den eingegebenen Wert, wenn dieser größer als 0 und kleiner/gleich 10 hoch 6 ist. Ist das nicht der Fall, 
      * wird eine Exception geworfen.
      * 
      * @param ElektrischeLeitfaehigkeit (elektrische Leitfähigkeit)
@@ -36,7 +46,7 @@ public class Halbleiter extends Nichtmetalle
      */
     public void setElektrischeLeitfaehigkeit(double ElektrischeLeitfaehigkeit)throws Exception
     {
-        if(ElektrischeLeitfaehigkeit>0 && ElektrischeLeitfaehigkeit <= Math.pow(10,4)) 
+        if(ElektrischeLeitfaehigkeit>0 && ElektrischeLeitfaehigkeit <= Math.pow(10,6)) 
         {
             this.ElektrischeLeitfaehigkeit= ElektrischeLeitfaehigkeit;
         }
@@ -47,7 +57,7 @@ public class Halbleiter extends Nichtmetalle
     }
 
     /**
-     * Gibt den Wert der elektrischen Leitfähigkeit als double zurück.
+     * Gibt den Wert der elektrischen Leitfähigkeit in S/m (Siemens pro Meter) als double zurück.
      * 
      * @return ElektrischeLeitfaehigkeit (elektrische Leitfähigkeit)
      */

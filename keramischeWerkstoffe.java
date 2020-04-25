@@ -24,9 +24,19 @@ public class keramischeWerkstoffe extends Nichtmetalle
     public keramischeWerkstoffe(String Name,int Nummer,String Verwendung, String metallAehnlicheEigenschaften,double Zugfestigkeit)throws Exception
     {
         super(Name,Nummer,Verwendung, metallAehnlicheEigenschaften);
-        setZugfestigkeit( Zugfestigkeit);
+        setZugfestigkeit(Zugfestigkeit);
     }
 
+    /**
+     * Standardkonstruktor der Klasse keramische Werkstoffe. Er ruft den Konstruktor der Superklasse Nichtmetalle auf und weist vorgegebene Werte zu.
+     * Außerdem wird dem Attribut Zugfestigkeit ein Wert zugewiesen.
+     */
+    public keramischeWerkstoffe() throws Exception
+    {
+        super("Al2O3", 1344281, "Medizintechnik", "hohe Zugfestigkeit");
+        setZugfestigkeit(500);
+    }
+    
     /**
      * Setzt die Zugfestigkeit auf den eingegebenen Wert, wenn dieser größer als 0 ist. Ist das nicht der Fall, 
      * wird eine Exception geworfen.
