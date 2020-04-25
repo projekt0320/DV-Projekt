@@ -33,7 +33,7 @@ public class Stahl extends Eisenmetalle
      */
     public Stahl() throws Exception
     {
-        super("C45", 10503, "Maschinenbau", 8.3, 90);
+        super("C45", 10503, "Maschinenbau", 8.3, 97);
         setKohlenstoffgehalt(0.45);
     }
 

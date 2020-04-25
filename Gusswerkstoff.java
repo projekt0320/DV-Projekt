@@ -28,6 +28,16 @@ public class Gusswerkstoff extends Eisenmetalle
     }
 
     /**
+     * Standardkonstruktor der Klasse Gusswerkstoff. Er ruft den Konstruktor der Superklasse Eisenmetalle auf und weist vorgegebene Werte zu.
+     * Außerdem wird dem Attribut Siedetemperatur ein Wert zugewiesen.
+     */
+    public Gusswerkstoff() throws Exception
+    {
+        super("EN-GJL-200", 06020, "Armaturen", 7.7, 94);
+        setSiedetemperatur(1150);
+    }
+
+    /**
      * Setzt die Siedetemperatur auf den eingegebenen Wert, wenn dieser größer als 1000 und kleiner als 1300 ist. Ist das nicht der Fall, 
      * wird eine Exception geworfen.
      * 
