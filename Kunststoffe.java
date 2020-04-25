@@ -27,6 +27,16 @@ public class Kunststoffe extends Nichtmetalle
     }
 
     /**
+     * Standardkonstruktor der Klasse Kunststoffe. Er ruft den Konstruktor der Superklasse Nichtmetalle auf und weist vorgegebene Werte zu.
+     * Außerdem wird dem Attribut Verformbarkeit ein Wert zugewiesen.
+     */
+    public Kunststoffe() throws Exception
+    {
+        super("PE-LD", 9002884, "Verpackunstechnik", "keine");
+        setVerformbarkeit("hohe Dehnbarkeit");
+    }
+    
+    /**
      * Setzt die Verformbarkeit auf den eingegebenen Wert.
      * 
      * @param Verformbarkeit
