@@ -41,7 +41,13 @@ public abstract class Nichteisenmetalle extends Metalle
     {
         return Hauptelement;
     }
-
+    
+    /**
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der Klasse Metalle aufgerufen wird unter Verwendung des Schlüsselworts „super“
+     * 
+     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, elektrische Leitfähigkeit, Hauptelement
+     */
     public String gibEigenschaft()
     {
         String s= super.gibEigenschaft()+ "\n Hauptelement:   "+ Hauptelement;

@@ -44,6 +44,12 @@ public class Naturstoffe extends Nichtmetalle
         return Degradation;
     }
     
+     /**
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der Klasse Nichtmetalle aufgerufen wird unter Verwendung des Schlüsselworts „super“
+     * 
+     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, matallähnliche Eigenschaften, Degradation
+     */
     public String gibEigenschaft()
     {
         String s=super.gibEigenschaft()+"\n Degradation:   "+Degradation;

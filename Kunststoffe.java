@@ -44,6 +44,12 @@ public class Kunststoffe extends Nichtmetalle
         return Verformbarkeit;
     }
     
+     /**
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der Klasse Nichtmetalle aufgerufen wird unter Verwendung des Schlüsselworts „super“
+     * 
+     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, matallähnliche Eigenschaften, Verformbarkeit
+     */
     public String gibEigenschaft()
     {
         String s=super.gibEigenschaft()+"\n Verformbarkeit:   "+Verformbarkeit;

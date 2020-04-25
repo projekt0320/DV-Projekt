@@ -55,6 +55,12 @@ public class Gusswerkstoff extends Eisenmetalle
        return Siedetemperatur;
     }
     
+     /**
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der Klasse Eisenmetalle aufgerufen wird unter Verwendung des Schlüsselworts „super“
+     * 
+     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, elektrische Leitfähigkeit, Eisengehalt, Siedetemperatur
+     */
     public String gibEigenschaft()
     {
         String s= super.gibEigenschaft()+"\n Siedetemperatur:   "+Siedetemperatur;

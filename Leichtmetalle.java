@@ -53,7 +53,13 @@ public class Leichtmetalle extends Nichteisenmetalle
     {
         return Dichte;
     }
-
+    
+    /**
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der Klasse Nichteisenmetalle aufgerufen wird unter Verwendung des Schlüsselworts „super“
+     * 
+     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, elektrische Leitfähigkeit, Hauptelement, Dichte
+     */
     public String gibEigenschaft()
     {
         String s= super.gibEigenschaft()+ "\n Dichte:   "+ Dichte;

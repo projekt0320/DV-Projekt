@@ -42,6 +42,12 @@ public abstract class  Nichtmetalle extends Werkstoffe
         return metallAehnlicheEigenschaften;
     }
     
+    /**
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der Klasse Werkstoffe aufgerufen wird unter Verwendung des Schlüsselworts „super“
+     * 
+     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, matallähnliche Eigenschaften
+     */
     public String gibEigenschaft()
     {
 

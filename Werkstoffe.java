@@ -94,9 +94,11 @@ public abstract class Werkstoffe
     }
 
     /**
-     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
-     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der nächshöheren Klasse aufgerufen wird unter Verwendung des Schlüsselworts „super“
-     * @return String mit den Eigenschaften des Werkstoffs
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String.
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der nächshöheren Klasse aufgerufen wird unter Verwendung des Schlüsselworts „super“.
+     * Hier wird zunächst nur die abstrakte Methode gibEigenschaft() deklariert.
+     * 
+     * (@return String mit den Eigenschaften des Werkstoffs)
      */
     public abstract String gibEigenschaft();
 

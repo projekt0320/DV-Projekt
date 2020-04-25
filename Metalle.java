@@ -54,7 +54,13 @@ public abstract class Metalle extends Werkstoffe
         return ElektrischeLeitfaehigkeit;
 
     }
-
+    
+    /**
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der Klasse Werkstoffe aufgerufen wird unter Verwendung des Schlüsselworts „super“
+     * 
+     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, elektrische Leitfähigkeit
+     */
     public  String gibEigenschaft()
     {   
 
