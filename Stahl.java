@@ -57,7 +57,7 @@ public class Stahl extends Eisenmetalle
     }
 
     /**
-     * Gibt den Wert des Kohlenstoffgehalts als double zurück.
+     * Gibt den Wert des Kohlenstoffgehalts in Prozent als double zurück.
      * 
      * @return Kohlenstoffgehalt
      */

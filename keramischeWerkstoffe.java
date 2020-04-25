@@ -57,7 +57,7 @@ public class keramischeWerkstoffe extends Nichtmetalle
     }
 
     /**
-     * Gibt den Wert der Zugfestigkeit als double zurück.
+     * Gibt den Wert der Zugfestigkeit in N/mm^2 als double zurück.
      * 
      * @return Zugfestigkeit
      */

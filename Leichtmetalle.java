@@ -56,7 +56,7 @@ public class Leichtmetalle extends Nichteisenmetalle
     }
 
     /**
-     * Gibt den Wert der Dichte als double zurück.
+     * Gibt den Wert der Dichte in g/cm^3 als double zurück.
      * 
      * @return Dichte
      */

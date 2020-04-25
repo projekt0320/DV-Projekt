@@ -39,7 +39,7 @@ public abstract class Werkstoffe
     }
 
     /**
-     * Gibt den Namen des Wekstoffes als String zurück.
+     * Gibt den Namen des Werkstoffes als String zurück.
      * 
      * @return Name
      */
@@ -68,7 +68,7 @@ public abstract class Werkstoffe
     }
 
     /**
-     * Gibt die Nummer des Werkstoffes als int zurück.
+     * Gibt die Nummer des Werkstoffes als int ohne Einheit zurück.
      * 
      * @return Nummer
      */

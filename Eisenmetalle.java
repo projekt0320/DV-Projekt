@@ -45,7 +45,7 @@ public abstract class Eisenmetalle extends Metalle
     }
 
     /**
-     * Gibt den Wert des Eisengehalts als double zurück.
+     * Gibt den Wert des Eisengehalts in Prozent als double zurück.
      * 
      * @return Eisengehalt
      */

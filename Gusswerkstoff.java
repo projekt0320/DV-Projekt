@@ -33,7 +33,7 @@ public class Gusswerkstoff extends Eisenmetalle
      */
     public Gusswerkstoff() throws Exception
     {
-        super("EN-GJL-200", 06020, "Armaturen", 7.7, 94);
+        super("EN-GJL-200", 06020, "Armaturen", 13, 94);
         setSiedetemperatur(1150);
     }
 
@@ -57,7 +57,7 @@ public class Gusswerkstoff extends Eisenmetalle
     }
 
     /**
-     * Gibt den Wert der Siedetemperatur als double zurück.
+     * Gibt den Wert der Siedetemperatur in Grad Celsius als double zurück.
      * 
      * @return Siedetemperatur
      */
