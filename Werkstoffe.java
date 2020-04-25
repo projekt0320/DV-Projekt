@@ -5,7 +5,7 @@
  * Verwendung und enthält deren get- und set-Methoden. Außerdem enthält sie die Methodensignatur der abstrakten Methode gibEigenschaft.
  * 
  * @author Markus Schnee, Jenny Glönkler 
- * @version 11. April 2020
+ * @version 25. April 2020
  */
 public abstract class Werkstoffe
 {
