@@ -15,23 +15,22 @@ public abstract class Werkstoffe
 
     /**
      * Konstruktor der abstrakten Klasse Werkstoffe, der Name, Nummer und Verwendung auf die eingegebenen Werte setzt. 
-     * Dabei wird die Methode SetNummer aufgerufen, die eine Exception wirft, wenn die Nummer nicht größer als 10000 und nicht kleiner als 40000 ist.
+     * Dabei wird die Methode SetNummer aufgerufen, die eine Exception wirft, wenn die Nummer nicht größer als 0 und nicht kleiner
+     * als 9999999 ist.
+     * 
      * @param Name, Nummer, Verwendung
      * @throws Exception
      */
-
     public Werkstoffe(String Name,int Nummer,String Verwendung)throws Exception
     {
-
         this.Name= Name;
         setNummer(Nummer);
         this.Verwendung= Verwendung;
-
-        
     }
 
     /**
-     * Setzt den Name des Werkstoffes auf den eingegebenen Namen.
+     * Setzt den Namen des Werkstoffes auf den eingegebenen Namen.
+     * 
      * @param Name
      */
     public void setName(String Name)
@@ -40,7 +39,8 @@ public abstract class Werkstoffe
     }
 
     /**
-     * Gibt den Name des Wekstoffes als String zurück.
+     * Gibt den Namen des Wekstoffes als String zurück.
+     * 
      * @return Name
      */
     public  String getName()
@@ -49,14 +49,15 @@ public abstract class Werkstoffe
     }
 
     /**
-     * Setzt die Nummer des Werkstoffes auf die eingegebene Nummer, wenn diese größer als 10000 und kleiner als 40000 ist. Ist das nicht der Fall, 
-     * wird eine Exception geworfen.
+     * Setzt die Nummer des Werkstoffes auf die eingegebene Nummer, wenn diese größer als 0 und kleiner als 9999999 ist.
+     * Ist das nicht der Fall, wird eine Exception geworfen.
+     * 
      * @param Nummer
      * @throws Exception
      */
     public void setNummer(int Nummer)throws Exception
     {
-        if(Nummer>10000 && Nummer <40000)
+        if(Nummer>0 && Nummer <9999999)
         {
             this.Nummer= Nummer;
         }
@@ -68,6 +69,7 @@ public abstract class Werkstoffe
 
     /**
      * Gibt die Nummer des Werkstoffes als int zurück.
+     * 
      * @return Nummer
      */
     public  int getNummer()
@@ -77,6 +79,7 @@ public abstract class Werkstoffe
 
     /**
      * Setzt die Verwendung des Werkstoffes auf die eingegebene Verwendung.
+     * 
      * @param Verwendung
      */
     public void setVerwendung(String Verwendung)
@@ -86,6 +89,7 @@ public abstract class Werkstoffe
 
     /**
      * Gibt die Verwendung des Werkstoffes als String zurück.
+     * 
      * @return Verwendung
      */
     public  String getVerwendung()
@@ -95,13 +99,11 @@ public abstract class Werkstoffe
 
     /**
      * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String.
-     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der nächshöheren Klasse aufgerufen wird unter Verwendung des Schlüsselworts „super“.
-     * Hier wird zunächst nur die abstrakte Methode gibEigenschaft() deklariert.
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() unter Verwendung des Schlüsselworts „super“ aus der nächsthöheren
+     * Klasse aufgerufen wird.
+     * Hier wird zunächst nur die abstrakte Methode gibEigenschaft deklariert.
      * 
-     * (@return String mit den Eigenschaften des Werkstoffs)
+     * @return String mit den Eigenschaften des Werkstoffs
      */
     public abstract String gibEigenschaft();
-
-    
-    
 }
