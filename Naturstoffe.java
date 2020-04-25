@@ -23,9 +23,19 @@ public class Naturstoffe extends Nichtmetalle
     public Naturstoffe(String Name,int Nummer,String Verwendung, String metallAehnlicheEigenschaften,String Degradation)throws Exception
     {
         super(Name,Nummer,Verwendung, metallAehnlicheEigenschaften);
-        setDegradation( Degradation);
+        setDegradation(Degradation);
     }
 
+    /**
+     * Standardkonstruktor der Klasse Naturstoffe. Er ruft den Konstruktor der Superklasse Nichtmetalle auf und weist vorgegebene Werte zu.
+     * Außerdem wird dem Attribut Degradation ein Wert zugewiesen.
+     */
+    public Naturstoffe() throws Exception
+    {
+        super("Buchenholz", 81234, "Baugewerbe", "ähnliche Zugfestigkeit");
+        setDegradation("langsamer Zerfall");
+    }
+    
     /**
      * Setzt die Degradation auf den eingegebenen Wert.
      * 
