@@ -4,12 +4,12 @@
  * und enthält sowohl eine get- und set-Methode für dieses Attribut als auch die Methode gibEigenschaft.
  * 
  * @author Markus Schnee, Jenny Glönkler 
- * @version 11. April 2020
+ * @version 25. April 2020
  */
 public abstract class  Nichtmetalle extends Werkstoffe
 {
     private String metallAehnlicheEigenschaften;
-    
+
     /**
      * Konstruktor der abstrakten Klasse Nichtmetalle.
      * Die Superklasse Werkstoffe wird aufgerufen, um Name, Nummer und Verwendung zu setzen, gegebenenfalls löst diese eine Exception aus.
@@ -23,37 +23,37 @@ public abstract class  Nichtmetalle extends Werkstoffe
         super(name,nummer,verwendung);
         setMetallAehnlicheEigenschaften( metallAehnlicheEigenschaften);
     }
-   
+
     /**
      *Setzt metallähnliche Eigenschaften auf die eingegebenen metallähnlichen Eigenschaften.
+     *
      *@param metallAehnlicheEigenschaften (metallähnliche Eigenschaften)
      */
     public void setMetallAehnlicheEigenschaften(String metallAehnlicheEigenschaften)
     {
         this.metallAehnlicheEigenschaften=metallAehnlicheEigenschaften;
     }
-    
+
     /**
      * Gibt die metallähnlichen Eigenschaften als String zurück.
+     * 
      * @return metallAehnlicheEigenschaften (metallähnliche Eigenschaften)
      */
     public String getmetallAehnlicheEigenschaften()
     {
         return metallAehnlicheEigenschaften;
     }
-    
+
     /**
-     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
-     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der Klasse Werkstoffe aufgerufen wird unter Verwendung des Schlüsselworts „super“
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String.
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() unter Verwendung des Schlüsselworts „super“ aus der nächsthöheren
+     * Klasse aufgerufen wird.
      * 
-     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, matallähnliche Eigenschaften
+     * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, metallähnliche Eigenschaften
      */
     public String gibEigenschaft()
     {
-
         String s= "name:   "+this.getName()+"\n nummer:   "+this.getNummer()+ "\n verwendung:   "+this.getVerwendung()+ "\n metallAehnlicheEigenschaften:   "+metallAehnlicheEigenschaften;
-
         return s;
     }
-    
 }

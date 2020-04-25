@@ -4,12 +4,12 @@
  * sowohl eine get- und set-Methode für dieses Attribut als auch die Methode gibEigenschaft.
  * 
  * @author Markus Schnee, Jenny Glönkler 
- * @version 11. April 2020
+ * @version 25. April 2020
  */
 public abstract class Eisenmetalle extends Metalle
 {
     private double Eisengehalt;
-    
+
     /**
      * Konstruktor der abstrakten Klasse Eisenmetalle.
      * Die Superklasse Metalle wird aufgerufen, um Name, Nummer, Verwendung und elektrische Leitfähigkeit zu setzen, gegebenenfalls löst diese eine Exception aus.
@@ -22,12 +22,13 @@ public abstract class Eisenmetalle extends Metalle
     public Eisenmetalle(String Name,int Nummer,String Verwendung,double ElektrischeLeitfaehigkeit,double Eisengehalt)throws Exception
     {
         super(Name,Nummer,Verwendung,ElektrischeLeitfaehigkeit);
-       setEisengehalt(Eisengehalt);
+        setEisengehalt(Eisengehalt);
     }
-    
+
     /**
      * Setzt den Eisengehalt auf den eingegebenen Wert, wenn dieser größer als 50 und kleiner als 100 ist. Ist das nicht der Fall, 
      * wird eine Exception geworfen.
+     * 
      * @param Eisengehalt
      * @throws Exception
      */
@@ -39,22 +40,24 @@ public abstract class Eisenmetalle extends Metalle
         }
         else
         {
-           throw new Exception("Der angegebene Eisengehalt ist ungültig");
+            throw new Exception("Der angegebene Eisengehalt ist ungültig");
         }
     }
-    
+
     /**
      * Gibt den Wert des Eisengehalts als double zurück.
+     * 
      * @return Eisengehalt
      */
     public double getEisengehalt()
     {
-       return Eisengehalt;
+        return Eisengehalt;
     }
-    
+
     /**
-     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String
-     * Das Sammeln geschieht, indem die Methode gibEigenschaft() aus der Klasse Metalle aufgerufen wird unter Verwendung des Schlüsselworts „super“
+     * Sammelt die Eigenschaften eines Werkstoffes und speichert sie als String.
+     * Das Sammeln geschieht, indem die Methode gibEigenschaft() unter Verwendung des Schlüsselworts „super“ aus der nächsthöheren
+     * Klasse aufgerufen wird.
      * 
      * @return String mit den Eigenschaften des Werkstoffs: Name, Nummer, Verwendung, elektrische Leitfähigkeit, Eisengehalt
      */
@@ -63,5 +66,4 @@ public abstract class Eisenmetalle extends Metalle
         String s= super.gibEigenschaft()+ "\n Eisengehalt:   "+ Eisengehalt;
         return s;
     }
-    
 }
