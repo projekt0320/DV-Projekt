@@ -27,6 +27,16 @@ public class Leichtmetalle extends Nichteisenmetalle
     }
 
     /**
+     * Standardkonstruktor der Klasse Leichtmetalle. Er ruft den Konstruktor der Superklasse Nichteisenmetalle auf und weist vorgegebene Werte zu.
+     * Außerdem wird dem Attribut Dichte ein Wert zugewiesen.
+     */
+    public Leichtmetalle() throws Exception
+    {
+        super("AlCu4Mg1", 31355, "Luftfahrttechnik", 8.3, "Aluminium");
+        setDichte(2.77);
+    }
+    
+    /**
      * Setzt die Dichte auf den eingegebenen Wert, wenn dieser größer als 0 und kleiner als 5 ist. Ist das nicht der Fall, 
      * wird eine Exception geworfen.
      * 
