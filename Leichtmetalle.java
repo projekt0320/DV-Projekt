@@ -35,7 +35,7 @@ public class Leichtmetalle extends Nichteisenmetalle
         super("AlCu4Mg1", 31355, "Luftfahrttechnik", 8.3, "Aluminium");
         setDichte(2.77);
     }
-    
+
     /**
      * Setzt die Dichte auf den eingegebenen Wert, wenn dieser größer als 0 und kleiner als 5 ist. Ist das nicht der Fall, 
      * wird eine Exception geworfen.

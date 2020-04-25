@@ -27,6 +27,16 @@ public class Schwermetalle extends Nichteisenmetalle
     }
 
     /**
+     * Standardkonstruktor der Klasse Schwermetalle. Er ruft den Konstruktor der Superklasse Nichteisenmetalle auf und weist vorgegebene Werte zu.
+     * Außerdem wird dem Attribut Verformbarkeit ein Wert zugewiesen.
+     */
+    public Schwermetalle() throws Exception
+    {
+        super("CuZn5", 20220, "Elektronik", 33, "Kupfer");
+        setVerformbarkeit("sehr hohe Kaltumformbarkeit");
+    }
+    
+    /**
      * Gibt die Verformbarkeit als String zurück.
      * 
      * @return Verformbarkeit

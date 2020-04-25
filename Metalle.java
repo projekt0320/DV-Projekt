@@ -45,7 +45,7 @@ public abstract class Metalle extends Werkstoffe
     }
 
     /**
-     * Gibt den Wert der elektrischen Leitfähigkeit als double zurück.
+     * Gibt den Wert der elektrischen Leitfähigkeit in MS/m (Megasiemens pro Meter) als double zurück.
      * 
      * @return ElektrischeLeitfaehigkeit
      */
