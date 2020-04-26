@@ -50,7 +50,14 @@ public class DatenbankTest
         assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(20000));
         assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(20000));
     }
-
+    @Test
+    public void testeErstellenAlternativ() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        assertNotNull(datenban1.sucheNummer(20000));
+    }
+    //
     @Test
     public void testeErstellenMitGleicherNummer()
     {
@@ -58,7 +65,6 @@ public class DatenbankTest
         try
         {
         datenban1.ErstellenLeichtmetalle("Titan", 20000, "Sportauto", 2.5, "Titan", 4.5);
-        //datenban1.ErstellenLeichtmetalle("met2", 20000, "Sportauto", 2.5, "Titan", 4.5);
         }
         catch(Exception e)
         {
@@ -80,7 +86,17 @@ public class DatenbankTest
         datenban1.BearbeitenName(20000, "TitanNeu");
         assertEquals(datenban1.liste.get(0).getName(),"TitanNeu");
     }
+
+    @Test
+    public void testeBearbeitenNummer() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "auto", 2.5, "Titan", 4.5);
+         datenban1.BearbeitenNummer(20000, 0);
+    }
+
 }
+
 
 
 
