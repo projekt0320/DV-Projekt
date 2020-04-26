@@ -92,7 +92,8 @@ public class DatenbankTest
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenLeichtmetalle("Titan", 20000, "auto", 2.5, "Titan", 4.5);
-         datenban1.BearbeitenNummer(20000, 0);
+         datenban1.BearbeitenNummer(20000, 30000);
+         assertEquals(datenban1.liste.get(0).getNummer(),20000);
     }
 
 }
