@@ -96,7 +96,17 @@ public class DatenbankTest
          assertEquals(datenban1.liste.get(0).getNummer(),20000);
     }
 
+
+    @Test
+    public void testeLoeschen() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.loeschen(20000);
+        assertNull(datenban1.liste.get(0)); 
+    }
 }
+
 
 
 
