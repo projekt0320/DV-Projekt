@@ -124,7 +124,23 @@ public class DatenbankTest
 
 
     
+
+    @Test
+    public void EstellenLeichtmetalleGleicheNummerUndName()
+    {
+        Datenbank datenban1 = new Datenbank();
+        try
+        {
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+    }
 }
+
 
 
 
