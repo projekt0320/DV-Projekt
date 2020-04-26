@@ -41,7 +41,8 @@ public class DatenbankTest
     }
 
     //Testen der ErstellenLEichtmetalle- Methode
-
+   
+    
     @Test
     public void testeErstellenLeichtmetalle() throws Exception
     {
@@ -121,7 +122,10 @@ public class DatenbankTest
         assertNull(datenban1.liste.get(0)); 
     }
 
+
+    
 }
+
 
 
 
