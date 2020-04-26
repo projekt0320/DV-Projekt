@@ -40,10 +40,10 @@ public class DatenbankTest
     {
     }
 
-    
+    //Testen der ErstellenLEichtmetalle- Methode
 
     @Test
-    public void testeErstellen() throws Exception
+    public void testeErstellenLeichtmetalle() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenLeichtmetalle("Titan", 20000, "Sportauto", 2.5, "Titan", 4.5);
@@ -51,7 +51,7 @@ public class DatenbankTest
         assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(20000));
     }
     @Test
-    public void testeErstellenAlternativ() throws Exception
+    public void testeErstellenLeichtmetalleAlternativ() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
@@ -59,12 +59,13 @@ public class DatenbankTest
     }
     //
     @Test
-    public void testeErstellenMitGleicherNummer()
+    public void testeErstellenLeichtmetalleMitGleicherNummer()
     {
         Datenbank datenban1 = new Datenbank();
         try
         {
         datenban1.ErstellenLeichtmetalle("Titan", 20000, "Sportauto", 2.5, "Titan", 4.5);
+       datenban1.ErstellenLeichtmetalle("met2", 20000, "Sportauto", 2.5, "Titan", 4.5);
         }
         catch(Exception e)
         {
@@ -74,9 +75,23 @@ public class DatenbankTest
        
     }
 
+    @Test
+    public void testeErstellenLeichtmetalleMitGleichemName()
+    {
+        Datenbank datenban1 = new Datenbank();
+        try
+        {
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Titan", 20002, "Auto", 2.5, "Titan", 4.5);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
    
 
-    
+    //Positives Testen Bearbeitemethoden
 
     @Test
     public void testeBearbeitenDichte() throws Exception
@@ -93,10 +108,10 @@ public class DatenbankTest
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenLeichtmetalle("Titan", 20000, "auto", 2.5, "Titan", 4.5);
          datenban1.BearbeitenNummer(20000, 30000);
-         assertEquals(datenban1.liste.get(0).getNummer(),20000);
+         assertEquals(datenban1.liste.get(0).getNummer(),30000);
     }
 
-
+    //Positives Testen Lösche- MEthoden
     @Test
     public void testeLoeschen() throws Exception
     {
@@ -105,7 +120,9 @@ public class DatenbankTest
         datenban1.loeschen(20000);
         assertNull(datenban1.liste.get(0)); 
     }
+
 }
+
 
 
 
