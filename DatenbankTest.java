@@ -136,28 +136,15 @@ public class DatenbankTest
     }
 
     
-    //Tests zu SucheName-Methode
-
-    @Test
-    public void TestSucheName1() throws Exception
-    {
-        Datenbank datenban1 = new Datenbank();
-        datenban1.ErstellenStahl("C45", 12345, "Bau", 0.69, 77, 0.3);
-        java.lang.String string1 = datenban1.sucheName("C45");
-        boolean b= true; 
-        if(string1.equalsIgnoreCase("name:   C45\n nummer:   12345\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   0.69\n Eisengehalt:   77\n Kohlenstoffgehalt:   0.3")==b)
-        {
-            assertEquals(datenban1.sucheName("C45"),string1);
-        }
-    }
+    //Tests zu SucheName-Methde
     
     @Test
-    public void TestSucheName2() throws Exception
+    public void TestSucheName() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenStahl("C45", 12345, "Bau", 0.69, 77, 0.3);
         java.lang.String string1 = datenban1.sucheName("C45");
-        assertEquals(datenban1.liste.get(0).gibEigenschaft(), string1);
+        assertEquals(" name:   C45\n nummer:   12345\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   0.69\n Eisengehalt:   77.0\n Kohlenstoffgehalt:   0.3", string1);
     }
     
     @Test
@@ -207,7 +194,7 @@ public class DatenbankTest
         Stahl stahl1 = (Stahl)datenban1.sucheNummer(12345);
         assertEquals( stahl1.getNummer(),12345 );
     }
-    }
+    } 
 
 
 
