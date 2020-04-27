@@ -1,5 +1,4 @@
 
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -41,8 +40,7 @@ public class DatenbankTest
     }
 
     //Testen der ErstellenLEichtmetalle- Methode
-   
-    
+
     @Test
     public void testeErstellenLeichtmetalle() throws Exception
     {
@@ -51,6 +49,7 @@ public class DatenbankTest
         assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(20000));
         assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(20000));
     }
+
     @Test
     public void testeErstellenLeichtmetalleAlternativ() throws Exception
     {
@@ -65,15 +64,15 @@ public class DatenbankTest
         Datenbank datenban1 = new Datenbank();
         try
         {
-        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Sportauto", 2.5, "Titan", 4.5);
-       datenban1.ErstellenLeichtmetalle("met2", 20000, "Sportauto", 2.5, "Titan", 4.5);
+            datenban1.ErstellenLeichtmetalle("Titan", 20000, "Sportauto", 2.5, "Titan", 4.5);
+            datenban1.ErstellenLeichtmetalle("met2", 20000, "Sportauto", 2.5, "Titan", 4.5);
         }
         catch(Exception e)
         {
             System.out.println(e.getMessage());
             //assertSame( e,   datenban1.ErstellenLeichtmetalle("met2", 20000, "Sportauto", 2.5, "Titan", 4.5)     );
         }
-       
+
     }
 
     @Test
@@ -82,22 +81,23 @@ public class DatenbankTest
         Datenbank datenban1 = new Datenbank();
         try
         {
-        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
-        datenban1.ErstellenLeichtmetalle("Titan", 20002, "Auto", 2.5, "Titan", 4.5);
+            datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+            datenban1.ErstellenLeichtmetalle("Titan", 20002, "Auto", 2.5, "Titan", 4.5);
         }
         catch(Exception e)
         {
             System.out.println(e.getMessage());
         }
     }
+
     @Test
     public void EstellenLeichtmetalleGleicheNummerUndName()
     {
         Datenbank datenban1 = new Datenbank();
         try
         {
-        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
-        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+            datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+            datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
         }
         catch(Exception e)
         {
@@ -121,8 +121,8 @@ public class DatenbankTest
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenLeichtmetalle("Titan", 20000, "auto", 2.5, "Titan", 4.5);
-         datenban1.BearbeitenNummer(20000, 30000);
-         assertEquals(datenban1.liste.get(0).getNummer(),30000);
+        datenban1.BearbeitenNummer(20000, 30000);
+        assertEquals(datenban1.liste.get(0).getNummer(),30000);
     }
 
     //Positives Testen Lösche- MEthoden
@@ -135,11 +135,80 @@ public class DatenbankTest
         assertNull(datenban1.liste.get(0)); 
     }
 
-
     
+    //Tests zu SucheName-Methode
 
-   
-}
+    @Test
+    public void TestSucheName1() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 12345, "Bau", 0.69, 77, 0.3);
+        java.lang.String string1 = datenban1.sucheName("C45");
+        boolean b= true; 
+        if(string1.equalsIgnoreCase("name:   C45\n nummer:   12345\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   0.69\n Eisengehalt:   77\n Kohlenstoffgehalt:   0.3")==b)
+        {
+            assertEquals(datenban1.sucheName("C45"),string1);
+        }
+    }
+    
+    @Test
+    public void TestSucheName2() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 12345, "Bau", 0.69, 77, 0.3);
+        java.lang.String string1 = datenban1.sucheName("C45");
+        assertEquals(datenban1.liste.get(0).gibEigenschaft(), string1);
+    }
+    
+    @Test
+    public void SucheNameNichtInListeVorhanden()
+    {
+        Datenbank datenban1 = new Datenbank();
+        try
+        {
+            datenban1.ErstellenStahl("C45", 10053, "Bau", 40, 60, 0.4);
+            datenban1.sucheName("St52");
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+    }
+
+    @Test
+    public void SucheNameOhneVorhandeneWerkstoffeInListe()
+    {
+        Datenbank datenban1 = new Datenbank();
+        try
+        {
+            datenban1.sucheName("St52");
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+    }
+
+    //Tests zu SucheNummer-Methode
+    @Test
+    public void TestSucheNummer1() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 12345, "Bau", 0.69, 77, 0.3);
+        Stahl stahl1 = (Stahl)datenban1.sucheNummer(12345);
+        assertEquals(datenban1.liste.get(0), stahl1);
+    }
+    
+    @Test
+    public void TestSucheNummer2() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 12345, "Bau", 0.69, 77, 0.3);
+        Stahl stahl1 = (Stahl)datenban1.sucheNummer(12345);
+        assertEquals( stahl1.getNummer(),12345 );
+    }
+    }
+
 
 
 

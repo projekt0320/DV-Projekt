@@ -35,6 +35,7 @@ public class Stahl extends Eisenmetalle
     {
         super("C45", 10503, "Maschinenbau", 8.3, 97);
         setKohlenstoffgehalt(0.45);
+        
     }
 
     /**

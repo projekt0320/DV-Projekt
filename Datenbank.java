@@ -25,7 +25,7 @@ public class Datenbank
         anzahl = 0;
         liste = new ArrayList<Werkstoffe>();
     }
-
+    
     /**
      *Die Methode erstellt ein Objekt mit der dynamischen Unterklasse Stahl. Die Anzahl der Werkstoffe in der Liste wird um eins erhöht und der neu erstellte 
      *Werkstoff wird in die ArrayList eingefügt.
