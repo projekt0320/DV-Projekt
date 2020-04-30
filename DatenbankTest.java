@@ -134,7 +134,19 @@ public class DatenbankTest
         datenban1.loeschen(20000);
         assertNull(datenban1.liste.get(0)); 
     }
-
+    @Test
+    public void testeLoeschenFalscheNummer() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        try
+        {
+            datenban1.loeschen(20000);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()  );
+        }
+    }
     
     //Tests zu SucheName-Methde
     
