@@ -648,6 +648,7 @@ public class Datenbank
             anzahl-=1;
         }
     }
+    
 
     /**
      * Gibt die Anzahl der Objekte/Werkstoffe in der ArrayList auf dem Bildschirm aus.
