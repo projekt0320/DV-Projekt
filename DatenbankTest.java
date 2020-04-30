@@ -142,9 +142,9 @@ public class DatenbankTest
     public void TestSucheName() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
-        datenban1.ErstellenStahl("C45", 12345, "Bau", 0.69, 77, 0.3);
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
         java.lang.String string1 = datenban1.sucheName("C45");
-        assertEquals(" name:   C45\n nummer:   12345\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   0.69\n Eisengehalt:   77.0\n Kohlenstoffgehalt:   0.3", string1);
+        assertEquals(" name:   C45\n nummer:   10503\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45", string1);
     }
     
     @Test
@@ -153,7 +153,7 @@ public class DatenbankTest
         Datenbank datenban1 = new Datenbank();
         try
         {
-            datenban1.ErstellenStahl("C45", 10053, "Bau", 40, 60, 0.4);
+            datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
             datenban1.sucheName("St52");
         }
         catch(Exception e)
@@ -181,8 +181,8 @@ public class DatenbankTest
     public void TestSucheNummer1() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
-        datenban1.ErstellenStahl("C45", 12345, "Bau", 0.69, 77, 0.3);
-        Stahl stahl1 = (Stahl)datenban1.sucheNummer(12345);
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        Stahl stahl1 = (Stahl)datenban1.sucheNummer(10503);
         assertEquals(datenban1.liste.get(0), stahl1);
     }
     
@@ -190,11 +190,63 @@ public class DatenbankTest
     public void TestSucheNummer2() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
-        datenban1.ErstellenStahl("C45", 12345, "Bau", 0.69, 77, 0.3);
-        Stahl stahl1 = (Stahl)datenban1.sucheNummer(12345);
-        assertEquals( stahl1.getNummer(),12345 );
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        Stahl stahl1 = (Stahl)datenban1.sucheNummer(10503);
+        assertEquals( stahl1.getNummer(),10503 );
     }
-    } 
+  
+    //Tests zu SucheVerwendung-Methode 
+    @Test
+    public void TestSucheVerwendung1() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        java.lang.String string1 = datenban1.sucheVerwendung("Bau");
+        assertEquals(" name:   C45\n nummer:   10503\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45", string1);
+    }
+
+    @Test
+    public void TestSucheVerwendung2()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 18, 65, 0.33);
+        java.lang.String string1 = datenban1.sucheVerwendung("Bau");
+        assertEquals(" name:   C45\n nummer:   10503\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45 name:   St52\n nummer:   10067\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   18.0\n Eisengehalt:   65.0\n Kohlenstoffgehalt:   0.33", string1);
+    }
+
+    @Test
+    public void TestSucheVerwendung3()
+    {
+        Datenbank datenban1 = new Datenbank();
+        java.lang.String string1 = datenban1.sucheVerwendung("Bau");
+        assertEquals("Es konnte kein Werkstoff mit der angegebenen Verwendung gefunden werden", string1);
+    }
+
+    @Test
+    public void TestSucheVerwendung4() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        java.lang.String string1 = datenban1.sucheVerwendung("Elektronik");
+        assertEquals("Es konnte kein Werkstoff mit der angegebenen Verwendung gefunden werden", string1);
+    }
+
+    @Test
+    public void TestSucheVerwendung5()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenSchwermetalle("CuZn5", 20220, "Elektronik", 33, "Kupfer", "sehr hohe Kaltumformbarkeit");
+        java.lang.String string1 = datenban1.sucheVerwendung("Elektronik");
+        assertEquals(" name:   CuZn5\n nummer:   20220\n verwendung:   Elektronik\n elektrischeLeitfaehigkeit:   33.0\n Hauptelement:   Kupfer\n Verformbarkeit:   sehr hohe Kaltumformbarkeit", string1);
+    }
+}
+
+
+
+
+ 
 
 
 

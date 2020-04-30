@@ -67,14 +67,23 @@ public class LeichtmetalleTest
         Leichtmetalle leichtme1 = new Leichtmetalle("Titan", 2, "Sportauto", 2.5, "Titan", 4.5);
         assertEquals(2,leichtme1.getNummer());
     }
-
+    
+    //Tests zu GibEigenschaft-Methode
     @Test
-    public void testeGibEigenschaft() throws Exception
+    public void TesteGibEigenschaft1() throws Exception
     {
         Leichtmetalle leichtme1 = new Leichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
         assertEquals( " name:   Titan\n nummer:   20000\n verwendung:   Auto\n elektrischeLeitfaehigkeit:   2.5\n Hauptelement:   Titan\n Dichte:   4.5",leichtme1.gibEigenschaft());
     }
+
+    @Test
+    public void TesteGibEigenschaft2()throws Exception
+    {
+        Leichtmetalle leichtme1 = new Leichtmetalle();
+        assertEquals(" name:   AlCu4Mg1\n nummer:   31355\n verwendung:   Luftfahrttechnik\n elektrischeLeitfaehigkeit:   8.3\n Hauptelement:   Aluminium\n Dichte:   2.77", leichtme1.gibEigenschaft());
+    }
 }
+
 
 
 
