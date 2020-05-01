@@ -151,22 +151,73 @@ public class DatenbankTest
     //Tests zu SucheName-Methde
     
     @Test
-    public void TestSucheName() throws Exception
+    public void TestSucheName1() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
-        java.lang.String string1 = datenban1.sucheName("C45");
-        assertEquals(" name:   C45\n nummer:   10503\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45", string1);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        assertEquals(datenban1.sucheName("C45")," name:   C45\n nummer:   10503\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45");
+    }
+    
+     @Test
+    public void TestSucheName2() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        assertEquals(datenban1.sucheName("Titan")," name:   Titan\n nummer:   20000\n verwendung:   Auto\n elektrischeLeitfaehigkeit:   2.5\n Hauptelement:   Titan\n Dichte:   4.5");
+    }
+    
+     @Test
+    public void TestSucheName3() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        assertEquals(datenban1.sucheName("Germanium"),"name:   Germanium\n nummer:   400776\n verwendung:   Arzneimittel\n metallAehnlicheEigenschaften:   plastische Verformbarkeit\n elektrische Leitfaehigkeit:   6.0E-4");
     }
     
     @Test
-    public void SucheNameNichtInListeVorhanden()
+    public void TestSucheName4() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
         try
         {
-            datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
-            datenban1.sucheName("St52");
+            datenban1.sucheName("Styropor");
         }
         catch(Exception e)
         {
@@ -175,12 +226,12 @@ public class DatenbankTest
     }
 
     @Test
-    public void SucheNameOhneVorhandeneWerkstoffeInListe()
+    public void TestSucheName5()
     {
         Datenbank datenban1 = new Datenbank();
         try
         {
-            datenban1.sucheName("St52");
+            datenban1.sucheName("Styropor");
         }
         catch(Exception e)
         {
@@ -213,8 +264,7 @@ public class DatenbankTest
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
-        java.lang.String string1 = datenban1.sucheVerwendung("Bau");
-        assertEquals(" name:   C45\n nummer:   10503\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45", string1);
+        assertEquals(datenban1.sucheVerwendung("Bau")," name:   C45\n nummer:   10503\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45");
     }
 
     @Test
@@ -222,17 +272,24 @@ public class DatenbankTest
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
-        datenban1.ErstellenStahl("St52", 10067, "Bau", 18, 65, 0.33);
-        java.lang.String string1 = datenban1.sucheVerwendung("Bau");
-        assertEquals(" name:   C45\n nummer:   10503\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45 name:   St52\n nummer:   10067\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   18.0\n Eisengehalt:   65.0\n Kohlenstoffgehalt:   0.33", string1);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        assertEquals(datenban1.sucheVerwendung("Bau")," name:   C45\n nummer:   10503\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45 name:   St52\n nummer:   10067\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   9.4\n Eisengehalt:   67.0\n Kohlenstoffgehalt:   0.52 name:   AlCu4Mg1\n nummer:   31355\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   8.3\n Hauptelement:   Aluminium\n Dichte:   2.77name:   SiC\n nummer:   409212\n verwendung:   Bau\n metallAehnlicheEigenschaften:   hohe Wärmeleitfähigkeit\n elektrische Leitfaehigkeit:   0.0098");
     }
-
+ 
+    
     @Test
     public void TestSucheVerwendung3()
     {
         Datenbank datenban1 = new Datenbank();
-        java.lang.String string1 = datenban1.sucheVerwendung("Bau");
-        assertEquals("Es konnte kein Werkstoff mit der angegebenen Verwendung gefunden werden", string1);
+        assertEquals(datenban1.sucheVerwendung("Bau"),"Es konnte kein Werkstoff mit der angegebenen Verwendung gefunden werden");
     }
 
     @Test
@@ -240,34 +297,18 @@ public class DatenbankTest
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
-        java.lang.String string1 = datenban1.sucheVerwendung("Elektronik");
-        assertEquals("Es konnte kein Werkstoff mit der angegebenen Verwendung gefunden werden", string1);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        assertEquals(datenban1.sucheVerwendung("Elektronik"),"Es konnte kein Werkstoff mit der angegebenen Verwendung gefunden werden");
     }
 
-    @Test
-    public void TestSucheVerwendung5()throws Exception
-    {
-        Datenbank datenban1 = new Datenbank();
-        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
-        datenban1.ErstellenSchwermetalle("CuZn5", 20220, "Elektronik", 33, "Kupfer", "sehr hohe Kaltumformbarkeit");
-        java.lang.String string1 = datenban1.sucheVerwendung("Elektronik");
-        assertEquals(" name:   CuZn5\n nummer:   20220\n verwendung:   Elektronik\n elektrischeLeitfaehigkeit:   33.0\n Hauptelement:   Kupfer\n Verformbarkeit:   sehr hohe Kaltumformbarkeit", string1);
-    }
+    
 }
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
 
