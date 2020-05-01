@@ -349,6 +349,15 @@ public class DatenbankTest
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Maschinenau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Luftfahrttechnik", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Lichttechnik", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
         assertEquals(datenban1.sucheVerwendung("Bau")," name:   C45\n nummer:   10503\n verwendung:   Bau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45");
     }
 
