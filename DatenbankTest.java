@@ -245,8 +245,18 @@ public class DatenbankTest
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
         Stahl stahl1 = (Stahl)datenban1.sucheNummer(10503);
-        assertEquals(datenban1.liste.get(0), stahl1);
+        assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(10503));
+        assertEquals( stahl1.getNummer(),10503 );
     }
     
     @Test
@@ -254,10 +264,85 @@ public class DatenbankTest
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
-        Stahl stahl1 = (Stahl)datenban1.sucheNummer(10503);
-        assertEquals( stahl1.getNummer(),10503 );
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        Leichtmetalle Leichtmetall1 = (Leichtmetalle)datenban1.sucheNummer(20000);
+        assertEquals(datenban1.liste.get(5), datenban1.sucheNummer(20000));
+        assertEquals( Leichtmetall1.getNummer(),20000 );
     }
-  
+    
+    @Test
+    public void TestSucheNummer3() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        Halbleiter Halbleiter1 = (Halbleiter)datenban1.sucheNummer(400776);
+        assertEquals(datenban1.liste.get(8), datenban1.sucheNummer(400776));
+        assertEquals( Halbleiter1.getNummer(),400776 );
+    }
+    
+    @Test
+    public void TestSucheNummer4()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        assertEquals(null, datenban1.sucheNummer(14478));
+    }
+    
+     @Test
+    public void TestSucheNummer5()
+    {
+        Datenbank datenban1 = new Datenbank();
+        assertEquals(null, datenban1.sucheNummer(10503));
+    }
+    
+    @Test
+    public void TestSucheNummer6()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        assertEquals(null, datenban1.sucheNummer(-458));
+        assertEquals(null, datenban1.sucheNummer(0));
+        assertEquals(null, datenban1.sucheNummer(10000000));
+    }
+    
+    
+ 
+    
     //Tests zu SucheVerwendung-Methode 
     @Test
     public void TestSucheVerwendung1() throws Exception
@@ -310,5 +395,11 @@ public class DatenbankTest
     }
 
     
+
+    
+
+   
 }
+
+
 
