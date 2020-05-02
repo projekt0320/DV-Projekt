@@ -641,7 +641,7 @@ public class Datenbank
         if(werk2delete == null)
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht gelöscht werden.");
-        }
+        } 
         else
         {
             liste.remove(werk2delete);
