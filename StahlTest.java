@@ -54,6 +54,86 @@ public class StahlTest
         Stahl stahl1 = new Stahl();
         assertEquals(" name:   C45\n nummer:   10503\n verwendung:   Maschinenbau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45", stahl1.gibEigenschaft());
     }
+
+    @Test
+    public void testSetKohlenstoffgehaltPositiv() throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067,  "Bau ", 9.4,  67.0, 0.52);
+        stahl1.setKohlenstoffgehalt(1);
+        assertEquals(1, stahl1.getKohlenstoffgehalt(), 0.1);
+    }
+      @Test
+    public void testSetKohlenstoffgehaltUntergrenze() throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067,  "Bau ", 9.4,  67.0, 0.52);
+        try
+        {
+        stahl1.setKohlenstoffgehalt(0);
+       
+        }
+        catch(Exception e)
+        {
+            System.out.println(     e.getMessage()   );
+        }
+    }
+     public void testSetKohlenstoffgehaltObergrenze() throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067,  "Bau ", 9.4,  67.0, 0.52);
+        try
+        {
+        stahl1.setKohlenstoffgehalt(2.07);
+       
+        }
+        catch(Exception e)
+        {
+            System.out.println(     e.getMessage()   );
+        }
+    }
+     @Test
+    public void testSetEisengehaltPositiv() throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067,  "Bau", 9.4,  67.0, 0.52);
+        stahl1.setEisengehalt(75);
+        assertEquals(75, stahl1.getEisengehalt(), 0.1);
+    }
+      @Test
+    public void testSetEisengehaltUntergrenze() throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067,  "Bau", 9.4,  67.0, 0.52);
+        try
+        {
+        stahl1.setEisengehalt(50);
+        }
+        catch(Exception e)
+        {
+            System.out.println(     e.getMessage()   );
+        }
+       
+    }
+       @Test
+    public void testSetEisengehaltObergrenze() throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067,  "Bau", 9.4,  67.0, 0.52);
+        try
+        {
+        stahl1.setEisengehalt(100);
+        }
+        catch(Exception e)
+        {
+            System.out.println(     e.getMessage()   );
+        }
+       
+    }
+
+    @Test
+    public void testSetElektrischeLeitfaehigkeitPositiv()throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067, "Bau", 9.4, 67.0, 0.52);
+        stahl1.setElektrischeLeitfaehigkeit(5);
+        assertEquals(5, stahl1.getElektrischeLeitfaehigkeit(), 0.1);
+    }
 }
+
+
 
 
