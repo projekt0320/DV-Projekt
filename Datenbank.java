@@ -654,13 +654,16 @@ public class Datenbank
     /**
      * Gibt die Anzahl der Objekte/Werkstoffe in der ArrayList auf dem Bildschirm aus.
      */
-    public void AnzahlWerkstoffe()
+    public int AnzahlWerkstoffe()
     {
         if (liste.size() == 1)
         {
             System.out.println("Die Datenbank enthält " + liste.size() + " Werkstoff."); 
         }
         else 
+        {
             System.out.println("Die Datenbank enthält " + liste.size() + " Werkstoffe.");
+        }
+        return (int)liste.size();
     }
 }

@@ -45,6 +45,7 @@ public class DatenbankTest
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit", 0.5);
         assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(400776));
+        assertEquals(datenban1.AnzahlWerkstoffe(),1);
     }
     //Testen der ErstellenLEichtmetalle- Methode
     @Test
@@ -95,6 +96,7 @@ public class DatenbankTest
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenStahl("St52", 10067, "Bau ", 9.4, 67.0, 0.52);
         assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(10067));
+        assertEquals(datenban1.AnzahlWerkstoffe(),1);
     }
     @Test
     public void testErstellenStahlMitGleicherNummer() throws Exception
@@ -140,24 +142,18 @@ public class DatenbankTest
     }
     
     @Test
-    public void testeErstellenLeichtmetalle() throws Exception
+    public void testErstellenLeichtmetalle() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenLeichtmetalle("Titan", 20000, "Sportauto", 2.5, "Titan", 4.5);
         assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(20000));
-        //assertEquals(datenban1.AnzahlWerkstoffe(),1);
+        assertEquals(datenban1.AnzahlWerkstoffe(),1);
     }
 
+    
+    
     @Test
-    public void testeErstellenLeichtmetalleAlternativ() throws Exception
-    {
-        Datenbank datenban1 = new Datenbank();
-        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
-        assertNotNull(datenban1.sucheNummer(20000));
-    }
-    //
-    @Test
-    public void testeErstellenLeichtmetalleMitGleicherNummer()
+    public void testErstellenLeichtmetalleMitGleicherNummer()
     {
         Datenbank datenban1 = new Datenbank();
         try
@@ -175,7 +171,7 @@ public class DatenbankTest
     }
 
     @Test
-    public void testeErstellenLeichtmetalleMitGleichemName()
+    public void testErstellenLeichtmetalleMitGleichemName()
     {
         Datenbank datenban1 = new Datenbank();
         try
@@ -190,7 +186,7 @@ public class DatenbankTest
     }
 
     @Test
-    public void EstellenLeichtmetalleGleicheNummerUndName()
+    public void testEstellenLeichtmetalleGleicheNummerUndName()
     {
         Datenbank datenban1 = new Datenbank();
         try
