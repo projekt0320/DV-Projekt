@@ -124,7 +124,7 @@ public class DatenbankTest
             System.out.println(e.getMessage());
         }
     }
-      @Test
+    @Test
     public void testErstellenStahlGleicheNummerundName() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
@@ -471,8 +471,9 @@ public class DatenbankTest
         datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
         datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
         
-        datenban1.BearbeitenName(14478, "Werkstoff");
         assertEquals(datenban1.sucheNummer(14478),null);
+        datenban1.BearbeitenName(14478, "Werkstoff");        //Programmfehler: "NullPointerException"
+        
         
     }
 
@@ -480,9 +481,9 @@ public class DatenbankTest
     public void TestBearbeitenName3() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
-        
-        datenban1.BearbeitenName(14478, "Werkstoff");
-        assertEquals(datenban1.sucheNummer(14478),null);
+         assertEquals(datenban1.sucheNummer(14478),null);
+        datenban1.BearbeitenName(14478, "Werkstoff");        //Programmfehler: "NullPointerException"
+       
         
     }
     
@@ -523,7 +524,21 @@ public class DatenbankTest
         try
         {
             datenban1.BearbeitenKohlenstoffgehalt(10503, -5);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        try
+        {
             datenban1.BearbeitenKohlenstoffgehalt(10503, 0);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        try
+        {
             datenban1.BearbeitenKohlenstoffgehalt(10503, 2.07);
         }
         catch(Exception e)
@@ -547,8 +562,8 @@ public class DatenbankTest
         datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
         datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
         
-        datenban1.BearbeitenKohlenstoffgehalt(20000, 2.1);
-        datenban1.BearbeitenKohlenstoffgehalt(400776, 2.1);
+        datenban1.BearbeitenKohlenstoffgehalt(20000, 2.1);   // Programmfehler: „ClassCastException: class Leichtmetalle cannot be cast to class Stahl“
+        datenban1.BearbeitenKohlenstoffgehalt(400776, 2.1);  //wird nicht mehr ausgeführt,würde jedoch Programmfehler aufrufen: „ClassCastException: class Halbleiter cannot be cast to class Stahl“
             
        
     }
@@ -568,7 +583,7 @@ public class DatenbankTest
         datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
         datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
         
-        datenban1.BearbeitenKohlenstoffgehalt(14478, 2.1);
+        datenban1.BearbeitenKohlenstoffgehalt(14478, 2.1);      //Programmfehler: "NullPointerException"
         
     }
     
@@ -577,7 +592,7 @@ public class DatenbankTest
     {
         Datenbank datenban1 = new Datenbank();
         
-        datenban1.BearbeitenKohlenstoffgehalt(14478, 2.1);
+        datenban1.BearbeitenKohlenstoffgehalt(14478, 2.1);      //Programmfehler: "NullPointerException"
         
     }
     
@@ -596,18 +611,237 @@ public class DatenbankTest
         datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
         datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
         
-        datenban1.BearbeitenKohlenstoffgehalt(-488,2.1);
-        datenban1.BearbeitenKohlenstoffgehalt(0,2.1);
-        datenban1.BearbeitenKohlenstoffgehalt(10000000,2.1);
+        datenban1.BearbeitenKohlenstoffgehalt(-488,2.1);         //Programmfehler: "NullPointerException"
+        datenban1.BearbeitenKohlenstoffgehalt(0,2.1);            //Wird nicht mehr ausgeführt, würde jedoch Programmfehler aufrufen: "NullPointerException" 
+        datenban1.BearbeitenKohlenstoffgehalt(10000000,2.1);     //Wird nicht mehr ausgeführt, würde jedoch Programmfehler aufrufen: "NullPointerException" 
+        
+    }
+       
+    //Test zu Methode BearbeitenDichte
+    
+    @Test
+    public void TestBearbeitenDichte2()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        try
+        {
+            datenban1.BearbeitenDichte(20000, -3.5);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        try
+        {
+           datenban1.BearbeitenDichte(20000, 0);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        try
+        {
+           datenban1.BearbeitenDichte(20000, 5);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+    }
+    
+    @Test
+    public void TestBearbeitenDichte3()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        
+        datenban1.BearbeitenDichte(10503, 3.5);  // Programmfehler: „ClassCastException: class Stahl cannot be cast to class Leichtmetalle“
+        datenban1.BearbeitenDichte(400776, 3.5); //wird nicht mehr ausgeführt,würde jedoch Programmfehler aufrufen: „ClassCastException: class Halbleiter cannot be cast to class Leichtmetalle“
+            
+       
+    }
+
+    @Test
+    public void TestBearbeitenDichte4()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        
+        datenban1.BearbeitenDichte(14478, 3.5); //Programmfehler: "NullPointerException"
         
     }
 
+     @Test
+    public void TestBearbeitenDichte5()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        
+        datenban1.BearbeitenDichte(14478, 3.5);  //Programmfehler: "NullPointerException"
+        
+    }
     
-
-  
-
+    @Test
+    public void TestBearbeitenDichte6()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        
+        datenban1.BearbeitenDichte(-488,3.5);       //Programmfehler: "NullPointerException"
+        datenban1.BearbeitenDichte(0,3.5);          //Wird nicht mehr ausgeführt, würde jedoch Programmfehler aufrufen: "NullPointerException"       
+        datenban1.BearbeitenDichte(10000000,3.5);   //Wird nicht mehr ausgeführt, würde jedoch Programmfehler aufrufen: "NullPointerException"
+        
+    }
     
+    //Test zu Methode BearbeitenElektrischeLeitfaehigkeitHalbleiter
+    @Test
+    public void TestBearbeitenElektrischeLeitfaehigkeitHalbleiter2()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        try
+        {
+            datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(400776, -0.0008);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        try
+        {
+           datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(400776, 0);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        try
+        {
+           datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(400776, Math.pow(10,6));
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+    }
+    
+    @Test
+    public void TestBearbeitenElektrischeLeitfaehigkeitHalbleiter3()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        
+        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(10503, 0.0008);  // Programmfehler: „ClassCastException: class Stahl cannot be cast to class Halbleiter“
+        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(20000, 0.0008); //wird nicht mehr ausgeführt,würde jedoch Programmfehler aufrufen: „ClassCastException: class Leichtmetalle cannot be cast to class Halbleiter“
+            
+       
+    }
+
+    @Test
+    public void TestBearbeitenElektrischeLeitfaehigkeitHalbleiter4()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        
+        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(14478, 0.0008); //Programmfehler: "NullPointerException"
+        
+    }
+
+     @Test
+    public void TestBearbeitenElektrischeLeitfaehigkeitHalbleiter5()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        
+        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(14478, 0.0008);  //Programmfehler: "NullPointerException"
+        
+    }
+    
+    @Test
+    public void TestBearbeitenElektrischeLeitfaehigkeitHalbleiter6()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("Invar-Stahl", 10111, "Präzisionsmessinstrumente", 3.2, 65, 0.2);
+        datenban1.ErstellenLeichtmetalle("AlCu4Mg1", 31355, "Bau", 8.3, "Aluminium", 2.77);
+        datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        datenban1.ErstellenLeichtmetalle("Magnesium", 31400, "Raumfahrt", 6.0, "Magnesium", 3.5);
+        datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
+        datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
+        
+        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(-488,3.5);       //Programmfehler: "NullPointerException"
+        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(0,3.5);          //Wird nicht mehr ausgeführt, würde jedoch Programmfehler aufrufen: "NullPointerException"       
+        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(10000000,3.5);   //Wird nicht mehr ausgeführt, würde jedoch Programmfehler aufrufen: "NullPointerException"
+        
+    }
+ 
 }
+
 
 
 
