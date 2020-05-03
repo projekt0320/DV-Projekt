@@ -56,6 +56,17 @@ public class StahlTest
     }
 
     @Test
+    public void testKonstruktor() throws Exception
+    {
+        Stahl stahl1= new Stahl("St52", 10067,  "Bau ", 9.4,  67.0, 0.52);
+        assertEquals(   "St52", stahl1.getName() );
+        assertEquals(   10067, stahl1.getNummer()     );
+        assertEquals(   "Bau ", stahl1.getVerwendung()   );
+        assertEquals(   9.4, stahl1.getElektrischeLeitfaehigkeit()      );
+        assertEquals(   67.0, stahl1.getEisengehalt()    );
+        assertEquals(   0.52, stahl1.getKohlenstoffgehalt()      );
+    }
+    @Test
     public void testSetKohlenstoffgehaltPositiv() throws Exception
     {
         Stahl stahl1 = new Stahl("St52", 10067,  "Bau ", 9.4,  67.0, 0.52);

@@ -82,7 +82,53 @@ public class LeichtmetalleTest
         Leichtmetalle leichtme1 = new Leichtmetalle();
         assertEquals(" name:   AlCu4Mg1\n nummer:   31355\n verwendung:   Luftfahrttechnik\n elektrischeLeitfaehigkeit:   8.3\n Hauptelement:   Aluminium\n Dichte:   2.77", leichtme1.gibEigenschaft());
     }
+
+    @Test
+    public void testSetDichtePositiv()throws Exception
+    {
+        Leichtmetalle leichtme1 = new Leichtmetalle("Titan", 20000, "Sportwagen", 2.5, "Titan", 4.5);
+        leichtme1.setDichte(3);
+        assertEquals(3, leichtme1.getDichte(), 0.1);
+    }
+     @Test
+    public void testSetDichteUntergrenze()throws Exception
+    {
+        Leichtmetalle leichtme1 = new Leichtmetalle("Titan", 20000, "Sportwagen", 2.5, "Titan", 4.5);
+        try
+        {
+           leichtme1.setDichte(0);
+        }
+        catch(Exception e)
+        {
+            System.out.println(     e.getMessage()   );
+        }
+        
+       
+    }
+       @Test
+    public void testSetDichteObergrenze()throws Exception
+    {
+        Leichtmetalle leichtme1 = new Leichtmetalle("Titan", 20000, "Sportwagen", 2.5, "Titan", 4.5);
+        try
+        {
+           leichtme1.setDichte(5);
+        }
+        catch(Exception e)
+        {
+            System.out.println(     e.getMessage()   );
+        }
+        
+       
+    }
+      @Test
+    public void testSetHauptelement()throws Exception
+    {
+        Leichtmetalle leichtme1 = new Leichtmetalle("Titan", 20000, "Sportwagen", 2.5, "Titan", 4.5);
+        leichtme1.setHauptelement("HauptelementNeu");
+        assertEquals( "HauptelementNeu"  , leichtme1.getHauptelement()   );
+    }
 }
+
 
 
 

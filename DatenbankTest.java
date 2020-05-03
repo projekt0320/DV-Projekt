@@ -39,15 +39,113 @@ public class DatenbankTest
     {
     }
 
+    @Test
+    public void testErstelleHalbleiter() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit", 0.5);
+        assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(400776));
+    }
     //Testen der ErstellenLEichtmetalle- Methode
-
+    @Test
+    public void testErstellenHalbleiterMitGleicherNummer()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        try
+        {
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit", 0.0006);
+        datenban1.ErstellenHalbleiter("WeitererHalbleiter", 400776, "Arzneimittel", "plastische Verformbarkeit", 0.0006);
+        }
+          catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    } 
+    @Test
+    public void testErstellenHalbleiterMitGleichemName()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        try
+        {
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit", 0.0006);
+        datenban1.ErstellenHalbleiter("Germanium", 400000, "Arzneimittel", "plastische Verformbarkeit", 0.0006);
+        }
+          catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    } 
+     @Test
+    public void testErstellenHalbleiterGleicheNummerUndName()throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        try
+        {
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit", 0.0006);
+        datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit", 0.0006);
+        }
+          catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    } 
+    @Test
+    public void testErstelleStahl() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("St52", 10067, "Bau ", 9.4, 67.0, 0.52);
+        assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(10067));
+    }
+    @Test
+    public void testErstellenStahlMitGleicherNummer() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        try
+        {
+            datenban1.ErstellenStahl("St52", 10067, "Bau ", 9.4, 67.0, 0.52);
+            datenban1.ErstellenStahl("St", 10067, "Bau ", 9.4, 67.0, 0.52);
+        }
+         catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+      @Test
+    public void testErstellenStahlMitGleichemName() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        try
+        {
+            datenban1.ErstellenStahl("St52", 10067, "Bau ", 9.4, 67.0, 0.52);
+            datenban1.ErstellenStahl("St52", 20000, "Bau ", 9.4, 67.0, 0.52);
+        }
+         catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+      @Test
+    public void testErstellenStahlGleicheNummerundName() throws Exception
+    {
+        Datenbank datenban1 = new Datenbank();
+        try
+        {
+            datenban1.ErstellenStahl("St52", 10067, "Bau ", 9.4, 67.0, 0.52);
+            datenban1.ErstellenStahl("St52", 10067, "Bau ", 9.4, 67.0, 0.52);
+        }
+         catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    
     @Test
     public void testeErstellenLeichtmetalle() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenLeichtmetalle("Titan", 20000, "Sportauto", 2.5, "Titan", 4.5);
         assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(20000));
-        assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(20000));
+        //assertEquals(datenban1.AnzahlWerkstoffe(),1);
     }
 
     @Test
@@ -64,13 +162,14 @@ public class DatenbankTest
         Datenbank datenban1 = new Datenbank();
         try
         {
+            
             datenban1.ErstellenLeichtmetalle("Titan", 20000, "Sportauto", 2.5, "Titan", 4.5);
             datenban1.ErstellenLeichtmetalle("met2", 20000, "Sportauto", 2.5, "Titan", 4.5);
+           
         }
         catch(Exception e)
         {
             System.out.println(e.getMessage());
-            //assertSame( e,   datenban1.ErstellenLeichtmetalle("met2", 20000, "Sportauto", 2.5, "Titan", 4.5)     );
         }
 
     }
@@ -104,6 +203,7 @@ public class DatenbankTest
             System.out.println( e.getMessage()   );
         }
     }
+    
 
     //Positives Testen Lösche- MEthoden
     @Test
@@ -501,7 +601,16 @@ public class DatenbankTest
         datenban1.BearbeitenKohlenstoffgehalt(10000000,2.1);
         
     }
+
+    
+
+  
+
+    
 }
+
+
+
 
 
 
