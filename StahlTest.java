@@ -132,7 +132,73 @@ public class StahlTest
         stahl1.setElektrischeLeitfaehigkeit(5);
         assertEquals(5, stahl1.getElektrischeLeitfaehigkeit(), 0.1);
     }
+    @Test
+    public void testSetElektrischeLeitfaehigkeitUntergrenze()throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067, "Bau", 9.4, 67.0, 0.52);
+        try
+        {
+         stahl1.setElektrischeLeitfaehigkeit(0.68);
+        }
+        catch(Exception e)
+        {
+            System.out.println(     e.getMessage()   );
+        }
+        
+    }
+      @Test
+    public void testSetElektrischeLeitfaehigkeitObergrenze()throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067, "Bau", 9.4, 67.0, 0.52);
+        try
+        {
+         stahl1.setElektrischeLeitfaehigkeit(62.001);
+        }
+        catch(Exception e)
+        {
+            System.out.println(     e.getMessage()   );
+        }
+        
+    }
+    
+
+    @Test
+    public void testSetNummerPositiv() throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067,  "Bau",  9.4, 67.0, 0.52);
+        stahl1.setNummer(1000000);
+        assertEquals(1000000, stahl1.getNummer());
+    }
+     @Test
+    public void testSetNummerUntergrenze() throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067,  "Bau",  9.4, 67.0, 0.52);
+          try
+        {
+             stahl1.setNummer(0);
+        }
+        catch(Exception e)
+        {
+            System.out.println(     e.getMessage()   );
+        }
+       
+    }
+        @Test
+    public void testSetNummerObergrenze() throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067,  "Bau",  9.4, 67.0, 0.52);
+          try
+        {
+             stahl1.setNummer(10000000);
+        }
+        catch(Exception e)
+        {
+            System.out.println(     e.getMessage()   );
+        }
+       
+    }
 }
+
 
 
 
