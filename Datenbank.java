@@ -592,6 +592,7 @@ public class Datenbank
                 return w;
             }
         }
+         
         return null;
     }
 
