@@ -25,7 +25,7 @@ public class Datenbank
         anzahl = 0;
         liste = new ArrayList<Werkstoffe>();
     }
-    
+
     /**
      *Die Methode erstellt ein Objekt mit der dynamischen Unterklasse Stahl. Die Anzahl der Werkstoffe in der Liste wird um eins erhöht und der neu erstellte 
      *Werkstoff wird in die ArrayList eingefügt.
@@ -379,10 +379,21 @@ public class Datenbank
      * 
      * @param Nummer, Name
      */
-    public void BearbeitenName (int Nummer, String Name)
+    public void BearbeitenName (int Nummer, String Name)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
-        w.setName(Name);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else if(sucheName(Name)==null)
+        {
+            w.setName(Name);
+        }
+        else if (sucheName(Name)!=null)
+        {
+            throw new Exception("Bitte geben Sie einen anderen Namen ein, dieser ist bereits vergeben.");
+        }
     }
 
     /**
@@ -394,7 +405,18 @@ public class Datenbank
     public void BearbeitenNummer (int Nummer, int nr) throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
-        w.setNummer(nr);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else if(sucheNummer(nr)==null)
+        {
+            w.setNummer(nr);
+        }
+        else if (sucheNummer(nr)!=null)
+        {
+            throw new Exception("Bitte geben Sie eine andere Nummer ein, diese ist bereits vergeben.");
+        }
     }
 
     /**
@@ -403,10 +425,17 @@ public class Datenbank
      * 
      * @param Nummer, Verwendung
      */
-    public void BearbeitenVerwendung (int Nummer, String Verwendung)
+    public void BearbeitenVerwendung (int Nummer, String Verwendung)throws Exception 
     {
         Werkstoffe w = sucheNummer(Nummer);
-        w.setVerwendung(Verwendung);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            w.setVerwendung(Verwendung);
+        }
     }
 
     /**
@@ -418,7 +447,14 @@ public class Datenbank
     public void BearbeitenElektrischeLeitfaehigkeitMetalle (int Nummer, double elektrLeitf)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((Metalle) w).setElektrischeLeitfaehigkeit(elektrLeitf);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((Metalle) w).setElektrischeLeitfaehigkeit(elektrLeitf);
+        }
     }
 
     /**
@@ -430,7 +466,14 @@ public class Datenbank
     public void BearbeitenElektrischeLeitfaehigkeitHalbleiter (int Nummer, double elektrLeitf)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((Halbleiter) w).setElektrischeLeitfaehigkeit(elektrLeitf);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((Halbleiter) w).setElektrischeLeitfaehigkeit(elektrLeitf);
+        }
 
     }
 
@@ -443,7 +486,14 @@ public class Datenbank
     public void BearbeitenEisengehalt (int Nummer, double eisengehalt)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((Eisenmetalle) w).setEisengehalt(eisengehalt);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((Eisenmetalle) w).setEisengehalt(eisengehalt);
+        }
     }
 
     /**
@@ -455,7 +505,14 @@ public class Datenbank
     public void BearbeitenKohlenstoffgehalt (int Nummer, double Kohlenstoffgehalt)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((Stahl)w).setKohlenstoffgehalt(Kohlenstoffgehalt);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((Stahl)w).setKohlenstoffgehalt(Kohlenstoffgehalt);
+        }
     }
 
     /**
@@ -464,10 +521,17 @@ public class Datenbank
      * 
      * @param Nummer, Hauptelement
      */
-    public void BearbeitenHauptelement (int Nummer, String Hauptelement)
+    public void BearbeitenHauptelement (int Nummer, String Hauptelement)throws Exception 
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((Nichteisenmetalle)w).setHauptelement(Hauptelement);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((Nichteisenmetalle)w).setHauptelement(Hauptelement);
+        }
     }
 
     /**
@@ -479,7 +543,14 @@ public class Datenbank
     public void BearbeitenSiedetemperatur (int Nummer, double Siedetemp)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((Gusswerkstoff)w).setSiedetemperatur(Siedetemp);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((Gusswerkstoff)w).setSiedetemperatur(Siedetemp);
+        }
     }
 
     /**
@@ -488,10 +559,17 @@ public class Datenbank
      * 
      * @param Nummer, Verformbarkeit
      */
-    public void BearbeitenVerformbarkeitSchwermetalle (int Nummer, String Verformbarkeit)
+    public void BearbeitenVerformbarkeitSchwermetalle (int Nummer, String Verformbarkeit)throws Exception 
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((Schwermetalle)w).setVerformbarkeit(Verformbarkeit);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((Schwermetalle)w).setVerformbarkeit(Verformbarkeit);
+        }
     }
 
     /**
@@ -500,10 +578,17 @@ public class Datenbank
      * 
      * @param Nummer, Verformbarkeit
      */
-    public void BearbeitenVerformbarkeitKunststoffe (int Nummer, String Verformbarkeit)
+    public void BearbeitenVerformbarkeitKunststoffe (int Nummer, String Verformbarkeit)throws Exception 
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((Kunststoffe)w).setVerformbarkeit(Verformbarkeit);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((Kunststoffe)w).setVerformbarkeit(Verformbarkeit);
+        }
     }
 
     /**
@@ -515,7 +600,14 @@ public class Datenbank
     public void BearbeitenDichte (int Nummer, double Dichte)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((Leichtmetalle)w).setDichte(Dichte);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((Leichtmetalle)w).setDichte(Dichte);
+        }
     }
 
     /**
@@ -524,10 +616,17 @@ public class Datenbank
      * 
      * @param Nummer, metallEigenschaft (metallähnliche Eigenschaft)
      */
-    public void BearbeitenmetallischeEigenschaft (int Nummer, String metallEigenschaft)
+    public void BearbeitenmetallischeEigenschaft (int Nummer, String metallEigenschaft)throws Exception 
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((Nichtmetalle)w).setMetallAehnlicheEigenschaften(metallEigenschaft);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((Nichtmetalle)w).setMetallAehnlicheEigenschaften(metallEigenschaft);
+        }
     }
 
     /**
@@ -539,7 +638,14 @@ public class Datenbank
     public void BearbeitenZugfestigkeit (int Nummer, double Zugfestigkeit)throws Exception
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((keramischeWerkstoffe)w).setZugfestigkeit(Zugfestigkeit);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((keramischeWerkstoffe)w).setZugfestigkeit(Zugfestigkeit);
+        }
     }
 
     /**
@@ -548,10 +654,17 @@ public class Datenbank
      * 
      * @param Nummer, Degradation
      */
-    public void BearbeitenDegradation (int Nummer, String Degradation)
+    public void BearbeitenDegradation (int Nummer, String Degradation)throws Exception 
     {
         Werkstoffe w = sucheNummer(Nummer);
-        ((Naturstoffe)w).setDegradation(Degradation);
+        if(w == null)
+        {
+            throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
+        } 
+        else
+        {
+            ((Naturstoffe)w).setDegradation(Degradation);
+        }
     }
 
     /**
@@ -592,7 +705,7 @@ public class Datenbank
                 return w;
             }
         }
-         
+
         return null;
     }
 
@@ -649,7 +762,6 @@ public class Datenbank
             anzahl-=1;
         }
     }
-    
 
     /**
      * Gibt die Anzahl der Objekte/Werkstoffe in der ArrayList auf dem Bildschirm aus.
