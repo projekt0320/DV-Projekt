@@ -57,7 +57,7 @@ public abstract class Werkstoffe
      */
     public void setNummer(int Nummer)throws Exception
     {
-        if(Nummer>0 && Nummer <9999999)
+        if(Nummer>0 && Nummer <=9999999)
         {
             this.Nummer= Nummer;
         }
