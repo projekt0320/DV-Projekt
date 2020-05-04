@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * bearbeitet werden. Werkstoffe können auch gelöscht und nach Name, Nummer oder Verwendung gesucht werden.
  * 
  * @author Jenny Glönkler, Markus Schnee, Felicia Wieland 
- * @version 25. April 2020
+ * @version 4. Mai 2020
  */
 public class Datenbank
 {
@@ -676,7 +676,7 @@ public class Datenbank
      * @param name
      * @return Eigenschaften des Werkstoffs mit dem angegebenen Namen
      */
-    public String sucheName(String name)
+    public String sucheName(String name) throws Exception
     {
         for (Werkstoffe w : liste)
         {
@@ -685,7 +685,7 @@ public class Datenbank
                 return w.gibEigenschaft();
             }
         }
-        return null;
+        throw new Exception ("Name nicht gefunden.");
     }
 
     /**
@@ -705,7 +705,6 @@ public class Datenbank
                 return w;
             }
         }
-
         return null;
     }
 
@@ -720,7 +719,7 @@ public class Datenbank
      *  @param verwendung
      *  @return Eigenschaften aller Werkstoffe, die die angegebene Verwendung haben.
      */
-    public String sucheVerwendung(String verwendung)
+    public String sucheVerwendung(String verwendung) throws Exception
     {
         String s= "";
         for (Werkstoffe w : liste)
@@ -733,7 +732,7 @@ public class Datenbank
 
         if(s== "")
         {
-            return "Es konnte kein Werkstoff mit der angegebenen Verwendung gefunden werden";
+            throw new Exception ("Verwendung nicht gefunden.");
         }
         else
         {
@@ -741,6 +740,18 @@ public class Datenbank
         }
     }
 
+    public String sucheNummerAnzeige(int nummer) throws Exception
+    {
+        for (Werkstoffe w : liste)
+        {
+            if(w.getNummer()==nummer)
+            {
+                return w.gibEigenschaft();
+            }
+        }
+        throw new Exception ("Nummer nicht gefunden.");
+    }
+    
     /**
      * In der Methode "Löschen" wird ein ausgewähltes Objekt aus der Liste gelöscht, das mit der Nummer-Suchmethode aufgerufen wird.
      * Zusätzlich wird die Anzahl der Werkstoffe in der Liste um eins verrringert.
