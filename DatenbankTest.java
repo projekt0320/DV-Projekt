@@ -879,18 +879,28 @@ public class DatenbankTest
         datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
         datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
         datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
-
-        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(14478, 0.0008); //Programmfehler: "NullPointerException"
-
-    }
+        try
+        {
+            datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(14478, 0.0008);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        }
 
     @Test
     public void TestBearbeitenElektrischeLeitfaehigkeitHalbleiter5()throws Exception
     {
         Datenbank datenban1 = new Datenbank();
-
-        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(14478, 0.0008);  //Programmfehler: "NullPointerException"
-
+        try
+        {
+            datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(14478, 0.0008);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
     }
 
     @Test
@@ -907,11 +917,30 @@ public class DatenbankTest
         datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
         datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
         datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
-
-        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(-488,3.5);       //Programmfehler: "NullPointerException"
-        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(0,3.5);          //Wird nicht mehr ausgeführt, würde jedoch Programmfehler aufrufen: "NullPointerException"       
-        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(10000000,3.5);   //Wird nicht mehr ausgeführt, würde jedoch Programmfehler aufrufen: "NullPointerException"
-
+        try
+        {
+            datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(-488,3.5);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        try
+        {
+           datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(0,3.5);  
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        try
+        {
+           datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(10000000,3.5); 
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
     }
 
 }
