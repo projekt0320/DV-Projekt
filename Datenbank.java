@@ -378,6 +378,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, Name
+     * @throws Exception
      */
     public void BearbeitenName (int Nummer, String Name)throws Exception
     {
@@ -401,6 +402,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, nr (neue Nummer)
+     * @throws Exception
      */
     public void BearbeitenNummer (int Nummer, int nr) throws Exception
     {
@@ -424,6 +426,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, Verwendung
+     * @throws Exception
      */
     public void BearbeitenVerwendung (int Nummer, String Verwendung)throws Exception 
     {
@@ -443,6 +446,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, elektrLeitf
+     * @throws Exception
      */
     public void BearbeitenElektrischeLeitfaehigkeitMetalle (int Nummer, double elektrLeitf)throws Exception
     {
@@ -462,6 +466,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, elektrLeitf
+     * @throws Exception
      */
     public void BearbeitenElektrischeLeitfaehigkeitHalbleiter (int Nummer, double elektrLeitf)throws Exception
     {
@@ -482,6 +487,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, eisengehalt
+     * @throws Exception
      */
     public void BearbeitenEisengehalt (int Nummer, double eisengehalt)throws Exception
     {
@@ -501,6 +507,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, Kohlenstoffgehalt
+     * @throws Exception
      */
     public void BearbeitenKohlenstoffgehalt (int Nummer, double Kohlenstoffgehalt)throws Exception
     {
@@ -520,6 +527,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, Hauptelement
+     * @throws Exception
      */
     public void BearbeitenHauptelement (int Nummer, String Hauptelement)throws Exception 
     {
@@ -539,6 +547,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, Siedetemperatur
+     * @throws Exception
      */
     public void BearbeitenSiedetemperatur (int Nummer, double Siedetemp)throws Exception
     {
@@ -558,6 +567,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, Verformbarkeit
+     * @throws Exception
      */
     public void BearbeitenVerformbarkeitSchwermetalle (int Nummer, String Verformbarkeit)throws Exception 
     {
@@ -577,6 +587,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, Verformbarkeit
+     * @throws Exception
      */
     public void BearbeitenVerformbarkeitKunststoffe (int Nummer, String Verformbarkeit)throws Exception 
     {
@@ -596,6 +607,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, Dichte
+     * @throws Exception
      */
     public void BearbeitenDichte (int Nummer, double Dichte)throws Exception
     {
@@ -615,6 +627,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, metallEigenschaft (metallähnliche Eigenschaft)
+     * @throws Exception
      */
     public void BearbeitenmetallischeEigenschaft (int Nummer, String metallEigenschaft)throws Exception 
     {
@@ -634,6 +647,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, Zugfestigkeit
+     * @throws Exception
      */
     public void BearbeitenZugfestigkeit (int Nummer, double Zugfestigkeit)throws Exception
     {
@@ -653,6 +667,7 @@ public class Datenbank
      * ändernden Werkstoffes und der Eingabe des neuen Werts.
      * 
      * @param Nummer, Degradation
+     * @throws Exception
      */
     public void BearbeitenDegradation (int Nummer, String Degradation)throws Exception 
     {
@@ -676,7 +691,7 @@ public class Datenbank
      * @param name
      * @return Eigenschaften des Werkstoffs mit dem angegebenen Namen
      */
-    public String sucheName(String name) throws Exception
+    public String sucheName(String name) 
     {
         for (Werkstoffe w : liste)
         {
@@ -685,7 +700,7 @@ public class Datenbank
                 return w.gibEigenschaft();
             }
         }
-        throw new Exception ("Name nicht gefunden.");
+        return null;
     }
 
     /**
@@ -714,10 +729,11 @@ public class Datenbank
      *  Wenn es mehrere Werkstoffe mit der gleichen Verwendung gibt, so werden auch die Eigenschaften mehrerer Werkstoffe getrennt voneinander
      *  mit zwei Leerzeilen in dem String gespeichert.
      *  Dieser String wird dann zurückgegeben.
-     *  Wenn kein Werkstoff gefunden werden kann, wird eine Fehlermeldung zurückgegeben.
+     *  Wenn kein Werkstoff gefunden werden kann, wird eine Fehlermeldung als Exception zurückgegeben.
      *  
      *  @param verwendung
      *  @return Eigenschaften aller Werkstoffe, die die angegebene Verwendung haben.
+     *  @throws Exception
      */
     public String sucheVerwendung(String verwendung) throws Exception
     {
@@ -739,7 +755,16 @@ public class Datenbank
             return s;
         }
     }
-
+    
+     /**
+     * In der  Arraylist "Liste" wird nach dem Werkstoff mit der angegebenen Nummer gesucht.
+     * Wenn der Werkstoff gefunden werden kann, wird er zurückgegeben und es kann mit ihm weitergearbeitet werden (wird gelöscht oder bearbeitet).
+     * Kann er nicht gefunden werden, wird eine Fehlermeldung als Exception zurückgegeben.
+     * 
+     * @param nummer
+     * @return Werkstoff mit der angegebenen Nummer
+     * @throws Exception
+     */
     public String sucheNummerAnzeige(int nummer) throws Exception
     {
         for (Werkstoffe w : liste)
@@ -751,6 +776,29 @@ public class Datenbank
         }
         throw new Exception ("Nummer nicht gefunden.");
     }
+    
+    /**
+     * In der  Arraylist "Liste" wird nach dem Werkstoff mit dem angegebenen Namen gesucht. 
+     * Wenn der Werkstoff gefunden werden kann, wird mit ihm die Methode gibEigenschaft() aufgerufen, die alle seine Eigenschaften in einem String speichert. 
+     * Dieser String wird dann zurückgegeben.
+     * Wenn kein Werkstoff gefunden werden kann, wird eine Fehlermeldung als Exception zurückgegeben.
+     * 
+     * @param name
+     * @return Eigenschaften des Werkstoffs mit dem angegebenen Namen
+     * @throws Exception
+     */
+    public String sucheNameAnzeige(String name) throws Exception
+    {
+        for (Werkstoffe w : liste)
+        {
+            if(w.getName()== name)
+            {
+                return w.gibEigenschaft();
+            }
+        }
+        throw new Exception ("Name nicht gefunden.");
+    }
+
     
     /**
      * In der Methode "Löschen" wird ein ausgewähltes Objekt aus der Liste gelöscht, das mit der Nummer-Suchmethode aufgerufen wird.
@@ -776,6 +824,8 @@ public class Datenbank
 
     /**
      * Gibt die Anzahl der Objekte/Werkstoffe in der ArrayList auf dem Bildschirm aus.
+     * 
+     * @return (int)liste.size()
      */
     public int AnzahlWerkstoffe()
     {
