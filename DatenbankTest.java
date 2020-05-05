@@ -838,7 +838,7 @@ public class DatenbankTest
         }
         try
         {
-            datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(400776, Math.pow(10,6));
+            datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(400776, Math.pow(10,6)+0.0001);
         }
         catch(Exception e)
         {
