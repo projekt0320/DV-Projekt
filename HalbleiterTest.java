@@ -55,17 +55,7 @@ public class HalbleiterTest
         assertEquals("name:   SiC\n nummer:   409212\n verwendung:   Lichttechnik\n metallAehnlicheEigenschaften:   hohe Wärmeleitfähigkeit\n elektrische Leitfaehigkeit:   0.0098", halbleit1.gibEigenschaft());
     }
     
-    @Test
-    public void testKonstruktorHalbleiter() throws Exception
-    {
-        Halbleiter halbleiter1= new Halbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",5);
-        assertEquals("Germanium",halbleiter1.getName()     );
-        assertEquals(   400776,halbleiter1.getNummer()    );
-        assertEquals(   "Arzneimittel",halbleiter1.getVerwendung()    );
-        assertEquals(   "plastische Verformbarkeit",halbleiter1.getmetallAehnlicheEigenschaften()      );
-        assertEquals(   5,halbleiter1.getElektrischeLeitfaehigkeit()      );
-        
-    }
+    
     
     @Test
     public void testSetElektrischeLeitfaehigkeitPositiv() throws Exception
@@ -115,7 +105,19 @@ public class HalbleiterTest
     }
 
     
+
+    @Test
+    public void testKonstruktorHalbleiter() throws Exception
+    {
+        Halbleiter halbleit1 = new Halbleiter("Germanium", 400776,  "Arzneimittel", "plastische Verformbarkeit", 5);
+        assertEquals("Germanium", halbleit1.getName());
+        assertEquals(400776, halbleit1.getNummer());
+        assertEquals("Arzneimittel", halbleit1.getVerwendung());
+        assertEquals("plastische Verformbarkeit", halbleit1.getmetallAehnlicheEigenschaften());
+        assertEquals(5, halbleit1.getElektrischeLeitfaehigkeit(), 0.1);
+    }
 }
+
 
 
 

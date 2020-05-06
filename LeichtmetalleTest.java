@@ -40,7 +40,7 @@ public class LeichtmetalleTest
     {
     }
 
-   
+    
 
     @Test
     public void testKonstruktorLeichtmetall()throws Exception
@@ -122,7 +122,10 @@ public class LeichtmetalleTest
         leichtme1.setHauptelement("HauptelementNeu");
         assertEquals( "HauptelementNeu"  , leichtme1.getHauptelement()   );
     }
+
+   
 }
+
 
 
 
