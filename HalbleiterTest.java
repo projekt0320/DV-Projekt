@@ -55,8 +55,7 @@ public class HalbleiterTest
         assertEquals(" name:   SiC\n nummer:   409212\n verwendung:   Lichttechnik\n metallAehnlicheEigenschaften:   hohe Wärmeleitfähigkeit\n elektrische Leitfaehigkeit:   0.0098", halbleit1.gibEigenschaft());
     }
     
-    
-    
+    //Tests zu setElektrischeLeitfähigkeit-Methode
     @Test
     public void testSetElektrischeLeitfaehigkeitPositiv() throws Exception
     {
@@ -99,7 +98,7 @@ public class HalbleiterTest
        
     }
     
-
+    //Test zu SetMetallähnlicheEigenschaft-Methode
     @Test
     public void testSetMetallaehnlicheEigenschaft()throws Exception
     {
@@ -108,8 +107,7 @@ public class HalbleiterTest
         assertEquals("hohe Wärmeleitfähigkeit", halbleit1.getmetallAehnlicheEigenschaften());
     }
 
-    
-
+    //Test zum Konstruktor
     @Test
     public void testKonstruktorHalbleiter() throws Exception
     {

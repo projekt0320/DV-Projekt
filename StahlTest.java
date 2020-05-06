@@ -1,5 +1,4 @@
 
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -39,7 +38,7 @@ public class StahlTest
     public void tearDown()
     {
     }
-    
+
     //Tests zu GibEigenschaft-Methode
     @Test
     public void TestGibEigenschaftStahl1() throws Exception
@@ -54,18 +53,21 @@ public class StahlTest
         Stahl stahl1 = new Stahl();
         assertEquals(" name:   C45\n nummer:   10503\n verwendung:   Maschinenbau\n elektrischeLeitfaehigkeit:   8.3\n Eisengehalt:   97.0\n Kohlenstoffgehalt:   0.45", stahl1.gibEigenschaft());
     }
+
+    //Test zum Konstruktor
     @Test
-        public void testKonstruktorStahl() throws Exception
-        {
-            Stahl stahl1 = new Stahl("St52", 10067, "Bau ", 9.4, 67.0, 0.52);
-            assertEquals("St52", stahl1.getName());
-            assertEquals(10067, stahl1.getNummer());
-            assertEquals("Bau ", stahl1.getVerwendung());
-            assertEquals(9.4, stahl1.getElektrischeLeitfaehigkeit(), 0.1);
-            assertEquals(67.0, stahl1.getEisengehalt(), 0.1);
-            assertEquals(0.52, stahl1.getKohlenstoffgehalt(), 0.1);
-        }
-    
+    public void testKonstruktorStahl() throws Exception
+    {
+        Stahl stahl1 = new Stahl("St52", 10067, "Bau ", 9.4, 67.0, 0.52);
+        assertEquals("St52", stahl1.getName());
+        assertEquals(10067, stahl1.getNummer());
+        assertEquals("Bau ", stahl1.getVerwendung());
+        assertEquals(9.4, stahl1.getElektrischeLeitfaehigkeit(), 0.1);
+        assertEquals(67.0, stahl1.getEisengehalt(), 0.1);
+        assertEquals(0.52, stahl1.getKohlenstoffgehalt(), 0.1);
+    }
+
+    //Tests zu SetKohlenstoffgehalt-Methode
     @Test
     public void testSetKohlenstoffgehaltPositiv() throws Exception
     {
@@ -77,35 +79,39 @@ public class StahlTest
         stahl1.setKohlenstoffgehalt(2);
         assertEquals(2, stahl1.getKohlenstoffgehalt(), 0.1);
     }
-      @Test
+
+    @Test
     public void testSetKohlenstoffgehaltUntergrenze() throws Exception
     {
         Stahl stahl1 = new Stahl("St52", 10067,  "Bau ", 9.4,  67.0, 0.52);
         try
         {
-        stahl1.setKohlenstoffgehalt(0);
-       
+            stahl1.setKohlenstoffgehalt(0);
+
         }
         catch(Exception e)
         {
             System.out.println(     e.getMessage()   );
         }
     }
+
     @Test
-     public void testSetKohlenstoffgehaltObergrenze() throws Exception
+    public void testSetKohlenstoffgehaltObergrenze() throws Exception
     {
         Stahl stahl1 = new Stahl("St52", 10067,  "Bau ", 9.4,  67.0, 0.52);
         try
         {
-        stahl1.setKohlenstoffgehalt(2.07);
-       
+            stahl1.setKohlenstoffgehalt(2.07);
+
         }
         catch(Exception e)
         {
             System.out.println(     e.getMessage()   );
         }
     }
-     @Test
+
+    //Tests zu SetEisengehalt-Methode
+    @Test
     public void testSetEisengehaltPositiv() throws Exception
     {
         Stahl stahl1 = new Stahl("St52", 10067,  "Bau", 9.4,  67.0, 0.52);
@@ -116,35 +122,38 @@ public class StahlTest
         stahl1.setEisengehalt(95.5);
         assertEquals(95.5, stahl1.getEisengehalt(), 0.1);
     }
-      @Test
+
+    @Test
     public void testSetEisengehaltUntergrenze() throws Exception
     {
         Stahl stahl1 = new Stahl("St52", 10067,  "Bau", 9.4,  67.0, 0.52);
         try
         {
-        stahl1.setEisengehalt(50);
+            stahl1.setEisengehalt(50);
         }
         catch(Exception e)
         {
             System.out.println(     e.getMessage()   );
         }
-       
+
     }
-       @Test
+
+    @Test
     public void testSetEisengehaltObergrenze() throws Exception
     {
         Stahl stahl1 = new Stahl("St52", 10067,  "Bau", 9.4,  67.0, 0.52);
         try
         {
-        stahl1.setEisengehalt(100);
+            stahl1.setEisengehalt(100);
         }
         catch(Exception e)
         {
             System.out.println(     e.getMessage()   );
         }
-       
+
     }
 
+    //Tests zu SetElektrischeLeitfähigkeit-Methode
     @Test
     public void testSetElektrischeLeitfaehigkeitPositiv()throws Exception
     {
@@ -156,36 +165,38 @@ public class StahlTest
         stahl1.setElektrischeLeitfaehigkeit(61.5);
         assertEquals(61.5, stahl1.getElektrischeLeitfaehigkeit(), 0.1);
     }
+
     @Test
     public void testSetElektrischeLeitfaehigkeitUntergrenze()throws Exception
     {
         Stahl stahl1 = new Stahl("St52", 10067, "Bau", 9.4, 67.0, 0.52);
         try
         {
-         stahl1.setElektrischeLeitfaehigkeit(0.68);
+            stahl1.setElektrischeLeitfaehigkeit(0.68);
         }
         catch(Exception e)
         {
             System.out.println(     e.getMessage()   );
         }
-        
+
     }
-      @Test
+
+    @Test
     public void testSetElektrischeLeitfaehigkeitObergrenze()throws Exception
     {
         Stahl stahl1 = new Stahl("St52", 10067, "Bau", 9.4, 67.0, 0.52);
         try
         {
-         stahl1.setElektrischeLeitfaehigkeit(62.001);
+            stahl1.setElektrischeLeitfaehigkeit(62.001);
         }
         catch(Exception e)
         {
             System.out.println(     e.getMessage()   );
         }
-        
-    }
-    
 
+    }
+
+    //Tests zu SetNummer-Methode
     @Test
     public void testSetNummerPositiv() throws Exception
     {
@@ -197,40 +208,38 @@ public class StahlTest
         stahl1.setNummer(9999998);
         assertEquals(9999998, stahl1.getNummer());
     }
-     @Test
+
+    @Test
     public void testSetNummerUntergrenze() throws Exception
     {
         Stahl stahl1 = new Stahl("St52", 10067,  "Bau",  9.4, 67.0, 0.52);
-          try
+        try
         {
-             stahl1.setNummer(0);
+            stahl1.setNummer(0);
         }
         catch(Exception e)
         {
             System.out.println(     e.getMessage()   );
         }
-       
+
     }
-        @Test
+
+    @Test
     public void testSetNummerObergrenze() throws Exception
     {
         Stahl stahl1 = new Stahl("St52", 10067,  "Bau",  9.4, 67.0, 0.52);
-          try
+        try
         {
-             stahl1.setNummer(10000000);
+            stahl1.setNummer(10000000);
         }
         catch(Exception e)
         {
             System.out.println(     e.getMessage()   );
         }
-       
+
     }
 
-   
 }
-
-
-
 
 
 

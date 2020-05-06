@@ -47,7 +47,7 @@ public class DatenbankTest
         assertEquals(datenban1.liste.get(0), datenban1.sucheNummer(400776));
         assertEquals(datenban1.AnzahlWerkstoffe(),1);
     }
-    //Testen der ErstellenLEichtmetalle- Methode
+    //Testen der ErstellenLeichtmetalle- Methode
     @Test
     public void testErstellenHalbleiterMitGleicherNummer()throws Exception
     {
@@ -156,7 +156,6 @@ public class DatenbankTest
         assertEquals(datenban1.AnzahlWerkstoffe(),1);
     }
 
-    
     @Test
     public void testErstellenLeichtmetalleMitGleicherNummer()
     {
@@ -205,7 +204,7 @@ public class DatenbankTest
         }
     }
 
-    //Positives Testen Lösche- MEthoden
+    //Positives Testen Lösche- Methoden
     @Test
     public void testeLoeschen() throws Exception
     {
@@ -235,7 +234,7 @@ public class DatenbankTest
     @Test
     public void testeLoeschenFalscheNummer() throws Exception
     {
-        
+
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
         datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
@@ -249,8 +248,8 @@ public class DatenbankTest
             System.out.println( e.getMessage()  );
         }
     }
+    
     //Tests zu SucheName-Methde
-
     @Test
     public void TestSucheName1() throws Exception
     {
@@ -439,27 +438,6 @@ public class DatenbankTest
         }
     }
 
-    //Positives Testen Bearbeitemethoden
-
-    @Test
-    public void testeBearbeitenDichte() throws Exception
-    {
-        Datenbank datenban1 = new Datenbank();
-        datenban1.ErstellenLeichtmetalle("Titan", 20000, "auto", 2.5, "Titan", 4.5);
-        datenban1.BearbeitenName(20000, "TitanNeu");
-        assertEquals(datenban1.liste.get(0).getName(),"TitanNeu");
-    }
-
-    @Test
-    public void testeBearbeitenNummer() throws Exception
-    {
-        Datenbank datenban1 = new Datenbank();
-        datenban1.ErstellenLeichtmetalle("Titan", 20000, "auto", 2.5, "Titan", 4.5);
-        datenban1.BearbeitenNummer(20000, 30000);
-        assertEquals(datenban1.liste.get(0).getNummer(),30000);
-    }
-
-
     //Tests zu Methode Bearbeiten Name
     @Test
     public void TestBearbeitenName1() throws Exception
@@ -608,6 +586,7 @@ public class DatenbankTest
         datenban1.BearbeitenKohlenstoffgehalt(400776, 2.1);  //wird nicht mehr ausgeführt,würde jedoch Programmfehler aufrufen: „ClassCastException: class Halbleiter cannot be cast to class Stahl“
 
     }
+
     @Test
     public void TestBearbeitenKohlenstoffgehalt4()throws Exception
     {
@@ -687,7 +666,6 @@ public class DatenbankTest
     }
 
     //Test zu Methode BearbeitenDichte
-
     @Test
     public void TestBearbeitenDichte2()throws Exception
     {
@@ -747,6 +725,7 @@ public class DatenbankTest
         datenban1.BearbeitenDichte(400776, 3.5); //wird nicht mehr ausgeführt,würde jedoch Programmfehler aufrufen: „ClassCastException: class Halbleiter cannot be cast to class Leichtmetalle“
 
     }
+
     @Test
     public void TestBearbeitenDichte4()throws Exception
     {
@@ -769,7 +748,7 @@ public class DatenbankTest
         {
             System.out.println( e.getMessage()  );
         }
-        }
+    }
 
     @Test
     public void TestBearbeitenDichte5()throws Exception
@@ -783,7 +762,7 @@ public class DatenbankTest
         {
             System.out.println( e.getMessage()  );
         }
-        }
+    }
 
     @Test
     public void TestBearbeitenDichte6()throws Exception
@@ -809,7 +788,7 @@ public class DatenbankTest
         }
         try
         {
-             datenban1.BearbeitenDichte(0,3.5);  
+            datenban1.BearbeitenDichte(0,3.5);  
         }
         catch(Exception e)
         {
@@ -885,6 +864,7 @@ public class DatenbankTest
         datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(20000, 0.0008); //wird nicht mehr ausgeführt,würde jedoch Programmfehler aufrufen: „ClassCastException: class Leichtmetalle cannot be cast to class Halbleiter“
 
     }
+
     @Test
     public void TestBearbeitenElektrischeLeitfaehigkeitHalbleiter4()throws Exception
     {
@@ -907,7 +887,7 @@ public class DatenbankTest
         {
             System.out.println( e.getMessage()   );
         }
-        }
+    }
 
     @Test
     public void TestBearbeitenElektrischeLeitfaehigkeitHalbleiter5()throws Exception
@@ -947,7 +927,7 @@ public class DatenbankTest
         }
         try
         {
-           datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(0,3.5);  
+            datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(0,3.5);  
         }
         catch(Exception e)
         {
@@ -955,7 +935,7 @@ public class DatenbankTest
         }
         try
         {
-           datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(10000000,3.5); 
+            datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(10000000,3.5); 
         }
         catch(Exception e)
         {
@@ -964,9 +944,6 @@ public class DatenbankTest
     }
 
 }
-
-
-
 
 
 
