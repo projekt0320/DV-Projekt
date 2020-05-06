@@ -211,8 +211,9 @@ public class DatenbankTest
     {
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
+        assertEquals(datenban1.liste.size(), 1); 
         datenban1.loeschen(20000);
-        assertNull(datenban1.liste.get(0)); 
+        assertEquals(datenban1.liste.size(), 0); 
     }
 
     @Test
