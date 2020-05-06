@@ -56,12 +56,7 @@ public class LeichtmetalleTest
     
 
 
-    @Test
-    public void negativTesten() throws Exception
-    {
-        Leichtmetalle leichtme1 = new Leichtmetalle("Titan", 2, "Sportauto", 2.5, "Titan", 4.5);
-        assertEquals(2,leichtme1.getNummer());
-    }
+    
     
     //Tests zu GibEigenschaft-Methode
     @Test

@@ -212,12 +212,14 @@ public class DatenbankTest
         Datenbank datenban1 = new Datenbank();
         datenban1.ErstellenLeichtmetalle("Titan", 20000, "Auto", 2.5, "Titan", 4.5);
         assertEquals(datenban1.liste.size(), 1); 
+        assertEquals(datenban1.AnzahlWerkstoffe(),1);
         datenban1.loeschen(20000);
         assertEquals(datenban1.liste.size(), 0); 
+        assertEquals(datenban1.AnzahlWerkstoffe(),0);
     }
 
     @Test
-    public void testeLoeschenFalscheNummer() throws Exception
+    public void testeLoeschenLeereListe() throws Exception
     {
         Datenbank datenban1 = new Datenbank();
         try
@@ -230,6 +232,23 @@ public class DatenbankTest
         }
     }
 
+    @Test
+    public void testeLoeschenFalscheNummer() throws Exception
+    {
+        
+        Datenbank datenban1 = new Datenbank();
+        datenban1.ErstellenStahl("C45", 10503, "Bau", 8.3, 97, 0.45);
+        datenban1.ErstellenStahl("St33", 10025, "Fahrzeugbau", 10.6, 83, 0.33);
+        datenban1.ErstellenStahl("St52", 10067, "Bau", 9.4, 67, 0.52);
+        try
+        {
+            datenban1.loeschen(20000);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()  );
+        }
+    }
     //Tests zu SucheName-Methde
 
     @Test
