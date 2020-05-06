@@ -47,7 +47,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)==null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen ein, dieser Werkstoff existiert bereits.");
             }
@@ -55,7 +55,7 @@ public class Datenbank
         }
         else if (sucheNummer(Nummer)!= null && sucheName(Name)== null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -63,7 +63,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)!= null)
         {
-            if (test==true)
+            if (test!=true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -90,7 +90,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)==null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen ein, dieser Werkstoff existiert bereits.");
             }
@@ -98,7 +98,7 @@ public class Datenbank
         }
         else if (sucheNummer(Nummer)!= null && sucheName(Name)== null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -106,7 +106,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)!= null)
         {
-            if (test==true)
+            if (test!=true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -133,7 +133,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)==null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen ein, dieser Werkstoff existiert bereits.");
             }
@@ -141,7 +141,7 @@ public class Datenbank
         }
         else if (sucheNummer(Nummer)!= null && sucheName(Name)== null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -149,7 +149,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)!= null)
         {
-            if (test==true)
+            if (test!=true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -176,7 +176,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)==null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen ein, dieser Werkstoff existiert bereits.");
             }
@@ -184,7 +184,7 @@ public class Datenbank
         }
         else if (sucheNummer(Nummer)!= null && sucheName(Name)== null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -192,7 +192,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)!= null)
         {
-            if (test==true)
+            if (test!=true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -219,7 +219,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)==null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen ein, dieser Werkstoff existiert bereits.");
             }
@@ -227,7 +227,7 @@ public class Datenbank
         }
         else if (sucheNummer(Nummer)!= null && sucheName(Name)== null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -235,7 +235,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)!= null)
         {
-            if (test==true)
+            if (test!=true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -262,7 +262,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)==null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen ein, dieser Werkstoff existiert bereits.");
             }
@@ -270,7 +270,7 @@ public class Datenbank
         }
         else if (sucheNummer(Nummer)!= null && sucheName(Name)== null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -278,7 +278,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)!= null)
         {
-            if (test==true)
+            if (test!=true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -306,7 +306,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)==null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen ein, dieser Werkstoff existiert bereits.");
             }
@@ -314,7 +314,7 @@ public class Datenbank
         }
         else if (sucheNummer(Nummer)!= null && sucheName(Name)== null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -322,7 +322,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)!= null)
         {
-            if (test==true)
+            if (test!=true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -349,7 +349,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)==null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen ein, dieser Werkstoff existiert bereits.");
             }
@@ -357,7 +357,7 @@ public class Datenbank
         }
         else if (sucheNummer(Nummer)!= null && sucheName(Name)== null)
         {
-            if (test == true)
+            if (test != true)
             {
                 System.out.println("Bitte geben Sie eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
@@ -365,7 +365,7 @@ public class Datenbank
         }
         else if (sucheName(Name)!= null && sucheNummer(Nummer)!= null)
         {
-            if (test==true)
+            if (test!=true)
             {
                 System.out.println("Bitte geben Sie einen anderen Namen und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
             }
