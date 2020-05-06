@@ -56,7 +56,7 @@ public class HalbleiterTest
     }
     
     @Test
-    public void testKonstruktor() throws Exception
+    public void testKonstruktorHalbleiter() throws Exception
     {
         Halbleiter halbleiter1= new Halbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",5);
         assertEquals("Germanium",halbleiter1.getName()     );
