@@ -72,6 +72,10 @@ public class StahlTest
         Stahl stahl1 = new Stahl("St52", 10067,  "Bau ", 9.4,  67.0, 0.52);
         stahl1.setKohlenstoffgehalt(1);
         assertEquals(1, stahl1.getKohlenstoffgehalt(), 0.1);
+        stahl1.setKohlenstoffgehalt(0.5);
+        assertEquals(0.5, stahl1.getKohlenstoffgehalt(),0.1);
+        stahl1.setKohlenstoffgehalt(2);
+        assertEquals(2, stahl1.getKohlenstoffgehalt(), 0.1);
     }
       @Test
     public void testSetKohlenstoffgehaltUntergrenze() throws Exception
@@ -107,6 +111,10 @@ public class StahlTest
         Stahl stahl1 = new Stahl("St52", 10067,  "Bau", 9.4,  67.0, 0.52);
         stahl1.setEisengehalt(75);
         assertEquals(75, stahl1.getEisengehalt(), 0.1);
+        stahl1.setEisengehalt(50.5);
+        assertEquals(50.5, stahl1.getEisengehalt(), 0.1);
+        stahl1.setEisengehalt(95.5);
+        assertEquals(95.5, stahl1.getEisengehalt(), 0.1);
     }
       @Test
     public void testSetEisengehaltUntergrenze() throws Exception
@@ -143,6 +151,10 @@ public class StahlTest
         Stahl stahl1 = new Stahl("St52", 10067, "Bau", 9.4, 67.0, 0.52);
         stahl1.setElektrischeLeitfaehigkeit(5);
         assertEquals(5, stahl1.getElektrischeLeitfaehigkeit(), 0.1);
+        stahl1.setElektrischeLeitfaehigkeit(0.7);
+        assertEquals(0.7, stahl1.getElektrischeLeitfaehigkeit(), 0.1);
+        stahl1.setElektrischeLeitfaehigkeit(61.5);
+        assertEquals(61.5, stahl1.getElektrischeLeitfaehigkeit(), 0.1);
     }
     @Test
     public void testSetElektrischeLeitfaehigkeitUntergrenze()throws Exception
@@ -180,6 +192,10 @@ public class StahlTest
         Stahl stahl1 = new Stahl("St52", 10067,  "Bau",  9.4, 67.0, 0.52);
         stahl1.setNummer(1000000);
         assertEquals(1000000, stahl1.getNummer());
+        stahl1.setNummer(1);
+        assertEquals(1, stahl1.getNummer());
+        stahl1.setNummer(9999998);
+        assertEquals(9999998, stahl1.getNummer());
     }
      @Test
     public void testSetNummerUntergrenze() throws Exception

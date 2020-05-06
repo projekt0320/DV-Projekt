@@ -79,6 +79,10 @@ public class LeichtmetalleTest
         Leichtmetalle leichtme1 = new Leichtmetalle("Titan", 20000, "Sportwagen", 2.5, "Titan", 4.5);
         leichtme1.setDichte(3);
         assertEquals(3, leichtme1.getDichte(), 0.1);
+        leichtme1.setDichte(0.5);
+        assertEquals(0.5, leichtme1.getDichte(), 0.1);
+        leichtme1.setDichte(4.5);
+        assertEquals(4.5, leichtme1.getDichte(), 0.1);
     }
      @Test
     public void testSetDichteUntergrenze()throws Exception

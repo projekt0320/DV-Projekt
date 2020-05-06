@@ -63,6 +63,10 @@ public class HalbleiterTest
         Halbleiter halbleit1 = new Halbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",  0.0006);
         halbleit1.setElektrischeLeitfaehigkeit(50);
         assertEquals(50, halbleit1.getElektrischeLeitfaehigkeit(), 0.1);
+        halbleit1.setElektrischeLeitfaehigkeit(0.5);
+        assertEquals(0.5, halbleit1.getElektrischeLeitfaehigkeit(), 0.1);
+        halbleit1.setElektrischeLeitfaehigkeit(Math.pow(10,6)-1);
+        assertEquals(Math.pow(10,6)-1, halbleit1.getElektrischeLeitfaehigkeit(), 0.1);
     }
     
     @Test
