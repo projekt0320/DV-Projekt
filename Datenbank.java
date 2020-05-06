@@ -742,7 +742,7 @@ public class Datenbank
         {
             if(w.getVerwendung()== verwendung)
             {
-                s= s+w.gibEigenschaft();
+                s= s + "\n" +w.gibEigenschaft();
             }   
         }
 

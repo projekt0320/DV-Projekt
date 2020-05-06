@@ -53,7 +53,7 @@ public abstract class  Nichtmetalle extends Werkstoffe
      */
     public String gibEigenschaft()
     {
-        String s= "name:   "+this.getName()+"\n nummer:   "+this.getNummer()+ "\n verwendung:   "+this.getVerwendung()+ "\n metallAehnlicheEigenschaften:   "+metallAehnlicheEigenschaften;
+        String s= " name:   "+this.getName()+"\n nummer:   "+this.getNummer()+ "\n verwendung:   "+this.getVerwendung()+ "\n metallAehnlicheEigenschaften:   "+metallAehnlicheEigenschaften;
         return s;
     }
 }

@@ -45,14 +45,14 @@ public class HalbleiterTest
     public void TestGibEigenschaftHalbleiter1() throws Exception
     {
         Halbleiter halbleit1 = new Halbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit", 0.0006);
-        assertEquals("name:   Germanium\n nummer:   400776\n verwendung:   Arzneimittel\n metallAehnlicheEigenschaften:   plastische Verformbarkeit\n elektrische Leitfaehigkeit:   6.0E-4", halbleit1.gibEigenschaft());
+        assertEquals(" name:   Germanium\n nummer:   400776\n verwendung:   Arzneimittel\n metallAehnlicheEigenschaften:   plastische Verformbarkeit\n elektrische Leitfaehigkeit:   6.0E-4", halbleit1.gibEigenschaft());
     }
     
     @Test
     public void TestGibEigenschaftHalbleiter2() throws Exception
     {
         Halbleiter halbleit1 = new Halbleiter();
-        assertEquals("name:   SiC\n nummer:   409212\n verwendung:   Lichttechnik\n metallAehnlicheEigenschaften:   hohe Wärmeleitfähigkeit\n elektrische Leitfaehigkeit:   0.0098", halbleit1.gibEigenschaft());
+        assertEquals(" name:   SiC\n nummer:   409212\n verwendung:   Lichttechnik\n metallAehnlicheEigenschaften:   hohe Wärmeleitfähigkeit\n elektrische Leitfaehigkeit:   0.0098", halbleit1.gibEigenschaft());
     }
     
     
