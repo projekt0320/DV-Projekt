@@ -86,6 +86,54 @@ public class Erstellen_GUI extends JFrame
         );
         c.add(bSchwermetalleerstellen);
         
+         bHalbleitererstellen.setText("Halbleiter erstellen");
+        bHalbleitererstellen.setMargin(new Insets(2, 2, 2, 2));
+        bHalbleitererstellen.addActionListener(new ActionListener()
+            { 
+                public void actionPerformed(ActionEvent evt)
+                { 
+                    
+                }
+            }
+        );
+        c.add(bHalbleitererstellen);
+        
+         bKeramikerstellen.setText("keramischen Werkstoff erstellen");
+        bKeramikerstellen.setMargin(new Insets(2, 2, 2, 2));
+        bKeramikerstellen.addActionListener(new ActionListener()
+            { 
+                public void actionPerformed(ActionEvent evt)
+                { 
+                    
+                }
+            }
+        );
+        c.add(bKeramikerstellen);
+        
+        bKunststofferstellen.setText("Kunststoff erstellen");
+        bKunststofferstellen.setMargin(new Insets(2, 2, 2, 2));
+        bKunststofferstellen.addActionListener(new ActionListener()
+            { 
+                public void actionPerformed(ActionEvent evt)
+                { 
+                    
+                }
+            }
+        );
+        c.add(bKunststofferstellen);
+        
+        bNaturstofferstellen.setText("Naturstoff erstellen");
+        bNaturstofferstellen.setMargin(new Insets(2, 2, 2, 2));
+        bNaturstofferstellen.addActionListener(new ActionListener()
+            { 
+                public void actionPerformed(ActionEvent evt)
+                { 
+                    
+                }
+            }
+        );
+        c.add(bNaturstofferstellen);
+        
         setVisible(true);
     }
 
