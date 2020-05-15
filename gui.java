@@ -14,8 +14,8 @@ import javax.swing.event.*;
 
 public class gui extends JFrame {
   // Anfang Attribute
-  private JTextField tfWerkstoffdatenbank = new JTextField();
-  private JButton bWerksofferstellen = new JButton();
+  private JLabel lWerkstoffdatenbank = new JLabel();
+  private JButton bWerkstofferstellen = new JButton();
   private JButton bWerkstoffbearbeiten = new JButton();
   private JButton bWerkstoffloeschen = new JButton();
   private JButton bWerkstoffsuchen = new JButton();
@@ -25,36 +25,41 @@ public class gui extends JFrame {
     // Frame-Initialisierung
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 718; 
-    int frameHeight = 588;
+    int frameWidth = 700; 
+    int frameHeight = 600;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
     int y = (d.height - getSize().height) / 2;
     setLocation(x, y);
-    setTitle("gui");
+    setTitle("Werkstoffdatenbank");
     setResizable(false);
     Container cp = getContentPane();
     cp.setLayout(null);
     // Anfang Komponenten
     
-    tfWerkstoffdatenbank.setBounds(1, 141, 702, 104);
-    tfWerkstoffdatenbank.setToolTipText("hh");
-    tfWerkstoffdatenbank.setCursor(new Cursor(Cursor.TEXT_CURSOR));
-    tfWerkstoffdatenbank.setText("Werkstoffdatenbank");
-    tfWerkstoffdatenbank.setFont(new Font("Dialog", Font.PLAIN, 22));
-    tfWerkstoffdatenbank.setHorizontalAlignment(SwingConstants.CENTER);
-    cp.add(tfWerkstoffdatenbank);
+    lWerkstoffdatenbank.setBounds(1, 141, 702, 104);
+    lWerkstoffdatenbank.setToolTipText("hh");
+    lWerkstoffdatenbank.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+    lWerkstoffdatenbank.setText("Werkstoffdatenbank");
+    lWerkstoffdatenbank.setFont(new Font("Dialog", Font.PLAIN, 22));
+    lWerkstoffdatenbank.setHorizontalAlignment(SwingConstants.CENTER);
+    cp.add(lWerkstoffdatenbank);
     cp.setBackground(new Color(0xC0C0C0));
-    bWerksofferstellen.setBounds(39, 278, 155, 25);
-    bWerksofferstellen.setText("Werksoff erstellen");
-    bWerksofferstellen.setMargin(new Insets(2, 2, 2, 2));
-    bWerksofferstellen.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
-        bWerksofferstellen_ActionPerformed(evt);
+    
+    bWerkstofferstellen.setBounds(39, 278, 155, 25);
+    bWerkstofferstellen.setText("Werkstoff erstellen");
+    bWerkstofferstellen.setMargin(new Insets(2, 2, 2, 2));
+    bWerkstofferstellen.addActionListener(new ActionListener()
+    { 
+      public void actionPerformed(ActionEvent evt)
+      { 
+        Erstellen_GUI erstelle = new Erstellen_GUI();
       }
-    });
-    cp.add(bWerksofferstellen);
+    }
+    );
+    cp.add(bWerkstofferstellen);
+    
     bWerkstoffbearbeiten.setBounds(34, 346, 163, 25);
     bWerkstoffbearbeiten.setText("Werkstoff bearbeiten");
     bWerkstoffbearbeiten.setMargin(new Insets(2, 2, 2, 2));
@@ -64,6 +69,7 @@ public class gui extends JFrame {
       }
     });
     cp.add(bWerkstoffbearbeiten);
+    
     bWerkstoffloeschen.setBounds(32, 385, 163, 25);
     bWerkstoffloeschen.setText("Werkstoff löschen");
     bWerkstoffloeschen.setMargin(new Insets(2, 2, 2, 2));
@@ -73,6 +79,7 @@ public class gui extends JFrame {
       }
     });
     cp.add(bWerkstoffloeschen);
+    
     bWerkstoffsuchen.setBounds(31, 313, 171, 25);
     bWerkstoffsuchen.setText("Werkstoff suchen");
     bWerkstoffsuchen.setMargin(new Insets(2, 2, 2, 2));
@@ -92,11 +99,6 @@ public class gui extends JFrame {
   public static void main(String[] args) {
     new gui();
   } // end of main
-  
-  public void bWerksofferstellen_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
-    
-  } // end of bWerksofferstellen_ActionPerformed
 
   public void bWerkstoffbearbeiten_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
@@ -115,3 +117,4 @@ public class gui extends JFrame {
 
   // Ende Methoden
 } // end of class gui
+
