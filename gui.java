@@ -20,7 +20,7 @@ public class gui extends JFrame {
   private JButton bWerkstoffloeschen = new JButton();
   private JButton bWerkstoffsuchen = new JButton();
   // Ende Attribute
- 
+  
   
   public gui() { 
     // Frame-Initialisierung
