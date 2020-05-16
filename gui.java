@@ -20,6 +20,7 @@ public class gui extends JFrame {
   private JButton bWerkstoffloeschen = new JButton();
   private JButton bWerkstoffsuchen = new JButton();
   // Ende Attribute
+ 
   
   public gui() { 
     // Frame-Initialisierung
@@ -73,9 +74,10 @@ public class gui extends JFrame {
     bWerkstoffloeschen.setBounds(32, 385, 163, 25);
     bWerkstoffloeschen.setText("Werkstoff löschen");
     bWerkstoffloeschen.setMargin(new Insets(2, 2, 2, 2));
-    bWerkstoffloeschen.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
-        bWerkstoffloeschen_ActionPerformed(evt);
+    bWerkstoffloeschen.addActionListener(new ActionListener() 
+    { 
+      public void actionPerformed(ActionEvent evt){ 
+        Loeschen_GUI loeschen = new Loeschen_GUI();
       }
     });
     cp.add(bWerkstoffloeschen);
