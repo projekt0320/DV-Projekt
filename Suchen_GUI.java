@@ -76,7 +76,7 @@ public class Suchen_GUI extends JFrame {
   
   public void bSucheNummer_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
-    
+    sucheNummer snummer= new sucheNummer();
   } // end of bSucheNummer_ActionPerformed
 
   public void bSucheName_ActionPerformed(ActionEvent evt) {
