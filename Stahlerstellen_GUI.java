@@ -82,7 +82,8 @@ public class Stahlerstellen_GUI extends JFrame
                 { 
                     erstellen_ActionPerformed(evt);
                 }
-            });
+            }
+            );
 
         setVisible(true);
     }
