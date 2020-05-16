@@ -60,8 +60,7 @@ public class Loeschen_GUI extends JFrame
     }
 
     public static void main(String[] args) {
-        Loeschen_GUI Loeschen_GUI1=new Loeschen_GUI();
-        Loeschen_GUI1.setVisible(true);
+        new Loeschen_GUI();
     } 
 
     public void bLoeschen_ActionPerformed(ActionEvent evt){
