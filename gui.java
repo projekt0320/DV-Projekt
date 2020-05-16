@@ -85,7 +85,7 @@ public class gui extends JFrame {
     bWerkstoffsuchen.setMargin(new Insets(2, 2, 2, 2));
     bWerkstoffsuchen.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
-        bWerkstoffsuchen_ActionPerformed(evt);
+        Suchen_GUI suchen= new Suchen_GUI();
       }
     });
     cp.add(bWerkstoffsuchen);
