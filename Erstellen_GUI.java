@@ -44,7 +44,7 @@ public class Erstellen_GUI extends JFrame
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    
+                    Stahlerstellen_GUI SE = new Stahlerstellen_GUI();
                 }
             }
         );
