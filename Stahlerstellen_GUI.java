@@ -26,9 +26,12 @@ public class Stahlerstellen_GUI extends JFrame
     private JTextField tElektrLeitf;
     private JTextField tEisengehalt;
     private JTextField tKohlenstoffgehalt;
+        Datenbank d1 = new Datenbank();
+        //Stahl s1 = Stahl();
 
+        private JLabel lFertig;
     private JButton erstellen = new JButton();
-
+        Container c = getContentPane();
 
     /**
      * Konstruktor für Objekte der Klasse Stahlerstellen_GUI
@@ -44,7 +47,6 @@ public class Stahlerstellen_GUI extends JFrame
         int x = (d.width - getSize().width) / 2;
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
-        Container c = getContentPane();
         c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
 
         lName=new JLabel ("Name:");
@@ -53,6 +55,7 @@ public class Stahlerstellen_GUI extends JFrame
         lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit:");
         lEisengehalt=new JLabel ("Eisengehalt:");
         lKohlenstoffgehalt=new JLabel ("Kohlenstoffgehalt:");
+        
 
         tName=new JTextField(10);
         tNummer=new JTextField(10);
@@ -74,7 +77,6 @@ public class Stahlerstellen_GUI extends JFrame
         c.add(lKohlenstoffgehalt);
         c.add(tKohlenstoffgehalt);
 
-        
         erstellen.setText("erstellen");
         erstellen.setMargin(new Insets(2, 2, 2, 2));
         erstellen.addActionListener(new ActionListener()
@@ -86,6 +88,7 @@ public class Stahlerstellen_GUI extends JFrame
             }
         );
 
+        c.add(erstellen);
         setVisible(true);
     }
 
@@ -94,9 +97,20 @@ public class Stahlerstellen_GUI extends JFrame
         String na = tName.getText();
         int nr = Integer.parseInt(tNummer.getText());
         String ve = tVerwendung.getText();
-
-        //Datenbank.ErstellenStahl(na, nr, ve, 3, 45, 2);
-
+        double el = Double.parseDouble(tElektrLeitf.getText());
+        double eg = Double.parseDouble(tEisengehalt.getText());
+        double kg = Double.parseDouble(tKohlenstoffgehalt.getText());
+        
+        try
+        {
+            d1.ErstellenStahl(na, nr, ve, el, eg, kg);
+        }
+        catch (Exception e)
+        { 
+        }
+        
+        lFertig = new JLabel("Stahl wurde erstellt!");
+        c.add(lFertig);
     }
 
     public static void main(String[] args) {
