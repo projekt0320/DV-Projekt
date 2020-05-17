@@ -29,6 +29,7 @@ public class Stahlerstellen_GUI extends JFrame
 
     private JButton erstellen = new JButton();
 
+
     /**
      * Konstruktor für Objekte der Klasse Stahlerstellen_GUI
      */
@@ -83,19 +84,19 @@ public class Stahlerstellen_GUI extends JFrame
                     erstellen_ActionPerformed(evt);
                 }
             }
-            );
+        );
 
         setVisible(true);
     }
 
     public void erstellen_ActionPerformed(ActionEvent evt)
     {
-
         String na = tName.getText();
         int nr = Integer.parseInt(tNummer.getText());
         String ve = tVerwendung.getText();
 
         //Datenbank.ErstellenStahl(na, nr, ve, 3, 45, 2);
+
     }
 
     public static void main(String[] args) {
