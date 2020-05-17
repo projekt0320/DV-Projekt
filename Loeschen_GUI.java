@@ -79,7 +79,7 @@ public class Loeschen_GUI extends JFrame
         catch (NumberFormatException e){
             n = -1;
         }
-        if (n>=0){
+        if (n>0 && n<=9999999){
             try{
                 Datenbank.loeschen(n);
                 lAusgabe.setText("Werkstoff wurde gelöscht");
