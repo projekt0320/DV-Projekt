@@ -88,13 +88,55 @@ public class Bearbeiten_GUI extends JFrame
         if(evt.getSource() == this.bBearbeiten){
            int i= Liste.getSelectedIndex();
         if(i==0){
-            bearbeitenNameMethode();
+            bearbeitenName();
         }
+        else if(i==1){
+            bearbeitenNummer();
         }
+        else if(i==2){
+            bearbeitenVerwendung();
+        }
+        else if(i==3){
+            bearbeitenElektrischeLeitfaehigkeitMetalle();
+        }
+        else if(i==4){
+            bearbeitenElektrischeLeitfaehigkeitHalbleiter();
+        }
+        else if(i==5){
+            bearbeitenEisengehalt();
+        }
+        else if(i==6){
+            bearbeitenKohlenstoffgehalt();
+        }
+        else if(i==7){
+            bearbeitenHauptelement();
+        }
+        else if(i==8){
+            bearbeitenSiedetemperatur();
+        }
+        else if(i==9){
+            bearbeitenVerformbarkeitSchwermetalle();
+        }
+        else if(i==10){
+            bearbeitenVerformbarkeitKunststoffe();
+        }
+        else if(i==11){
+            bearbeitenDichte();
+        }
+        else if(i==12){
+            bearbeitenMetallischeEigenschaft();
+        }
+        else if(i==13){
+            bearbeitenZugfestigkeit();
+        }
+        else if(i==14){
+            bearbeitenDegradation();
+        }
+    }
     } //
 
-    private Datenbank Datenbank = new Datenbank();
-    public void bearbeitenNameMethode(){
+    Datenbank Datenbank = new Datenbank();
+    public void bearbeitenName(){
         int n;
         String s1 ="";
         try{
@@ -107,6 +149,350 @@ public class Bearbeiten_GUI extends JFrame
         if (n>0 && n<=9999999){
             try{
                 Datenbank.BearbeitenName(n,s1);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenNummer(){
+        int n1;
+        int n2;
+        try{
+            n1= Integer.parseInt(t1.getText());
+            n2= Integer.parseInt(t2.getText());
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+            n2 = -1;
+        }
+        if (n1>0 && n1<=9999999 && n2>0 && n2<=9999999){
+            try{
+                Datenbank.BearbeitenNummer(n1,n2);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenVerwendung(){
+        int n;
+        String s1 ="";
+        try{
+            n= Integer.parseInt(t1.getText());
+            s1= t2.getText();
+        } 
+        catch (NumberFormatException e){
+            n = -1;
+        }
+        if (n>0 && n<=9999999){
+            try{
+                Datenbank.BearbeitenVerwendung(n,s1);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenElektrischeLeitfaehigkeitMetalle(){
+        int n1;
+        double n2;
+        try{
+            n1= Integer.parseInt(t1.getText());
+            n2= Double.parseDouble(t2.getText());
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+            n2 = -1;
+        }
+        if (n1>0 && n1<=9999999 && n2>0.68 && n2<=62){
+            try{
+                Datenbank.BearbeitenElektrischeLeitfaehigkeitMetalle(n1,n2);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenElektrischeLeitfaehigkeitHalbleiter(){
+        int n1;
+        double n2;
+        try{
+            n1= Integer.parseInt(t1.getText());
+            n2= Double.parseDouble(t2.getText());
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+            n2 = -1;
+        }
+        if (n1>0 && n1<=9999999 && n2>0 && n2<= Math.pow(10,6)){
+            try{
+                Datenbank.BearbeitenElektrischeLeitfaehigkeitHalbleiter(n1,n2);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenEisengehalt(){
+        int n1;
+        double n2;
+        try{
+            n1= Integer.parseInt(t1.getText());
+            n2= Double.parseDouble(t2.getText());
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+            n2 = -1;
+        }
+        if (n1>0 && n1<=9999999 && n2>50 && n2<100){
+            try{
+                Datenbank.BearbeitenEisengehalt(n1,n2);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenKohlenstoffgehalt(){
+        int n1;
+        double n2;
+        try{
+            n1= Integer.parseInt(t1.getText());
+            n2= Double.parseDouble(t2.getText());
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+            n2 = -1;
+        }
+        if (n1>0 && n1<=9999999 && n2>50 && n2<100){
+            try{
+                Datenbank.BearbeitenKohlenstoffgehalt(n1,n2);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenHauptelement(){
+        int n;
+        String s1 ="";
+        try{
+            n= Integer.parseInt(t1.getText());
+            s1= t2.getText();
+        } 
+        catch (NumberFormatException e){
+            n = -1;
+        }
+        if (n>0 && n<=9999999){
+            try{
+                Datenbank.BearbeitenHauptelement(n,s1);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenSiedetemperatur(){
+        int n1;
+        double n2;
+        try{
+            n1= Integer.parseInt(t1.getText());
+            n2= Double.parseDouble(t2.getText());
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+            n2 = -1;
+        }
+        if (n1>0 && n1<=9999999 && n2>1000 && n2<1300){
+            try{
+                Datenbank.BearbeitenSiedetemperatur(n1,n2);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenVerformbarkeitSchwermetalle(){
+        int n1;
+        String s1 ="";
+        try{
+            n1= Integer.parseInt(t1.getText());
+             s1= t2.getText();
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+        }
+        if (n1>0 && n1<=9999999){
+            try{
+                Datenbank.BearbeitenVerformbarkeitSchwermetalle(n1,s1);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenVerformbarkeitKunststoffe(){
+        int n1;
+        String s1 ="";
+        try{
+            n1= Integer.parseInt(t1.getText());
+             s1= t2.getText();
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+        }
+        if (n1>0 && n1<=9999999){
+            try{
+                Datenbank.BearbeitenVerformbarkeitKunststoffe(n1,s1);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenDichte(){
+        int n1;
+        double n2;
+        try{
+            n1= Integer.parseInt(t1.getText());
+            n2= Double.parseDouble(t2.getText());
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+            n2 = -1;
+        }
+        if (n1>0 && n1<=9999999 && n2>0 && n2<5){
+            try{
+                Datenbank.BearbeitenDichte(n1,n2);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenMetallischeEigenschaft(){
+        int n1;
+        String s1 ="";
+        try{
+            n1= Integer.parseInt(t1.getText());
+             s1= t2.getText();
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+        }
+        if (n1>0 && n1<=9999999){
+            try{
+                Datenbank.BearbeitenmetallischeEigenschaft(n1,s1);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenZugfestigkeit(){
+        int n1;
+        double n2;
+        try{
+            n1= Integer.parseInt(t1.getText());
+            n2= Double.parseDouble(t2.getText());
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+            n2 = -1;
+        }
+        if (n1>0 && n1<=9999999 && n2>0){
+            try{
+                Datenbank.BearbeitenZugfestigkeit(n1,n2);
+                l3.setText("Werkstoff wurde bearbeitet");
+            }
+            catch(Exception e) {
+                l3.setText(e.getMessage());
+            }
+        }
+        else {
+            l3.setText("Eingabe ist nicht in Ordnung");
+        }
+    }
+    
+    public void bearbeitenDegradation(){
+        int n1;
+        String s1 ="";
+        try{
+            n1= Integer.parseInt(t1.getText());
+             s1= t2.getText();
+        } 
+        catch (NumberFormatException e){
+            n1 = -1;
+        }
+        if (n1>0 && n1<=9999999){
+            try{
+                Datenbank.BearbeitenDegradation(n1,s1);
                 l3.setText("Werkstoff wurde bearbeitet");
             }
             catch(Exception e) {
