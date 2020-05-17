@@ -18,7 +18,7 @@ public class Loeschen_GUI extends JFrame
 
     private JTextField tNummer;
 
-    private JButton bLoeschen = new JButton();
+    private JButton bLoeschen;
     /**
      * Konstruktor für Objekte der Klasse Loeschen_GUI
      */
@@ -43,7 +43,8 @@ public class Loeschen_GUI extends JFrame
 
         c.add(lNummer);
         c.add(tNummer);
-
+        
+        bLoeschen=new JButton();
         bLoeschen.setText("löschen");
         bLoeschen.setMargin(new Insets(2, 2, 2, 2));
         bLoeschen.addActionListener(new ActionListener()
