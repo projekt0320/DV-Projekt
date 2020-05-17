@@ -66,20 +66,30 @@ public class Loeschen_GUI extends JFrame
     public void bLoeschen_ActionPerformed(ActionEvent evt){
         // TODO hier Quelltext einfügen
         if(evt.getSource() == this.bLoeschen){
-          bLoeschenMethode(); 
+            bLoeschenMethode(); 
         }
     } //
 
     private Datenbank Datenbank = new Datenbank(); 
     public void bLoeschenMethode(){
-        int n= Integer.parseInt(tNummer.getText());
+        int n;
         try{
-            Datenbank.loeschen(n);
-            lAusgabe.setText("Werkstoff wurde gelöscht");
+            n= Integer.parseInt(tNummer.getText());
+        } 
+        catch (NumberFormatException e){
+            n = -1;
         }
-        catch(Exception e) {
-            lAusgabe.setText(e.getMessage());
+        if (n>=0){
+            try{
+                Datenbank.loeschen(n);
+                lAusgabe.setText("Werkstoff wurde gelöscht");
+            }
+            catch(Exception e) {
+                lAusgabe.setText(e.getMessage());
+            }
+        }
+        else {
+            lAusgabe.setText("Eingabe ist nicht in Ordnung");
         }
     }
-
 }
