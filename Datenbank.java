@@ -15,7 +15,7 @@ public class Datenbank
     private int anzahl;
     ArrayList <Werkstoffe> liste;
     boolean test = true;
-
+    
     /**
      * Der Konstruktor der Klasse Datenbank erzeugt eine ArrayList, in der Werkstoffe gespeichert werden können.
      * Zudem wird die Anzahl der Werkstoffe in der Liste auf 0 gesetzt.
@@ -70,7 +70,7 @@ public class Datenbank
             throw new Exception("Bitte geben Sie einen anderen Namen und eine andere Nummer ein, dieser Werkstoff existiert bereits.");
         }
     }
-
+ 
     /**
      *Die Methode erstellt ein Objekt mit der dynamischen Unterklasse Gusswerkstoff. Die Anzahl der Werkstoffe in der Liste wird um eins erhöht und der neu erstellte 
      *Werkstoff wird in die ArrayList eingefügt.

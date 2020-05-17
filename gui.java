@@ -19,6 +19,7 @@ public class gui extends JFrame {
   private JButton bWerkstoffbearbeiten = new JButton();
   private JButton bWerkstoffloeschen = new JButton();
   private JButton bWerkstoffsuchen = new JButton();
+  
   // Ende Attribute
   
   
