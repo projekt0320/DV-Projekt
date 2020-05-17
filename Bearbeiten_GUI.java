@@ -69,13 +69,7 @@ public class Bearbeiten_GUI extends JFrame
             }
         );
 
-        Liste.addListSelectionListener(new ListSelectionListener()
-            {
-                public void valueChanged(ListSelectionEvent event)
-                {
-                    Bearbeiten_ValueChanged(event);
-                }
-            });  
+        
         c.add(bBearbeiten);
         c.add(l1);
         c.add(t1);
@@ -89,17 +83,13 @@ public class Bearbeiten_GUI extends JFrame
         new Bearbeiten_GUI();
     } 
 
-    public void Bearbeiten_ValueChanged(ListSelectionEvent event){
-        int i= Liste.getSelectedIndex();
-        if(i==0){
-            bearbeitenNameMethode();
-        }
-    }
-
     public void bBearbeiten_ActionPerformed(ActionEvent evt){
         // TODO hier Quelltext einfügen
         if(evt.getSource() == this.bBearbeiten){
-            bearbeitenNameMethode(); 
+           int i= Liste.getSelectedIndex();
+        if(i==0){
+            bearbeitenNameMethode();
+        }
         }
     } //
 
