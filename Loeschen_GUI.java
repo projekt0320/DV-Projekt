@@ -41,7 +41,6 @@ public class Loeschen_GUI extends JFrame
 
         tNummer=new JTextField(10);
 
-        c.add(lAusgabe);
         c.add(lNummer);
         c.add(tNummer);
 
@@ -56,6 +55,7 @@ public class Loeschen_GUI extends JFrame
             }
         );
         c.add(bLoeschen);
+        c.add(lAusgabe);
         setVisible(true);
     }
 
