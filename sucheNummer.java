@@ -77,7 +77,9 @@ public class sucheNummer extends JFrame {
       int n= Integer.parseInt(  jTextField1.getText()    );
       try
       {
+          //String x=
           datenban1.sucheNummerAnzeige(n);
+          //Ausgabe.setText(x);
       }
       catch(Exception e)
       {
