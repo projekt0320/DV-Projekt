@@ -81,12 +81,12 @@ public class Suchen_GUI extends JFrame {
 
   public void bSucheName_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
-    
+    sucheName sname= new sucheName();
   } // end of bSucheName_ActionPerformed
 
   public void bSucheVerwendung_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
-    
+    sucheVerwendung sverwendung= new sucheVerwendung();
   } // end of bSucheVerwendung_ActionPerformed
 
   // Ende Methoden

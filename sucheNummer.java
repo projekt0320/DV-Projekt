@@ -1,3 +1,4 @@
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -7,24 +8,24 @@ import javax.swing.event.*;
  *
  * Beschreibung
  *
- * @version 1.0 vom 16.05.2020
+ * @version 1.0 vom 18.05.2020
  * @author 
  */
 
 public class sucheNummer extends JFrame {
   // Anfang Attribute
-  private JTextArea FeldNummer = new JTextArea("");
-    private JScrollPane FeldNummerScrollPane = new JScrollPane(FeldNummer);
-  private JTextField tfEingabeName = new JTextField();
   private JButton bSuchestarten = new JButton();
+  private JLabel lEingabeNummer = new JLabel();
+  private JTextField jTextField1 = new JTextField();
+  private JLabel Ausgabe = new JLabel();
   // Ende Attribute
   
   public sucheNummer() { 
     // Frame-Initialisierung
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 450; 
-    int frameHeight = 448;
+    int frameWidth = 562; 
+    int frameHeight = 300;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -36,12 +37,7 @@ public class sucheNummer extends JFrame {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    FeldNummerScrollPane.setBounds(203, 42, 200, 52);
-    cp.add(FeldNummerScrollPane);
-    tfEingabeName.setBounds(21, 54, 150, 20);
-    tfEingabeName.setText("EingabeName");
-    cp.add(tfEingabeName);
-    bSuchestarten.setBounds(99, 138, 219, 73);
+    bSuchestarten.setBounds(182, 134, 171, 25);
     bSuchestarten.setText("Suche starten");
     bSuchestarten.setMargin(new Insets(2, 2, 2, 2));
     bSuchestarten.addActionListener(new ActionListener() { 
@@ -50,6 +46,14 @@ public class sucheNummer extends JFrame {
       }
     });
     cp.add(bSuchestarten);
+    lEingabeNummer.setBounds(44, 70, 110, 20);
+    lEingabeNummer.setText("Eingabe Nummer");
+    cp.add(lEingabeNummer);
+    jTextField1.setBounds(194, 77, 182, 20);
+    cp.add(jTextField1);
+    Ausgabe.setBounds(82, 188, 414, 52);
+    Ausgabe.setText("");
+    cp.add(Ausgabe);
     // Ende Komponenten
     
     setVisible(true);
@@ -63,8 +67,23 @@ public class sucheNummer extends JFrame {
   
   public void bSuchestarten_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
-    
+    if(evt.getSource() == this.bSuchestarten){
+            bSucheNummerMethode(); 
+        }
   } // end of bSuchestarten_ActionPerformed
+  public void bSucheNummerMethode()
+  {
+      Datenbank datenban1= new Datenbank();
+      int n= Integer.parseInt(  jTextField1.getText()    );
+      try
+      {
+          datenban1.sucheNummerAnzeige(n);
+      }
+      catch(Exception e)
+      {
+           Ausgabe.setText(     e.getMessage()      );
+      }
+  }
 
   // Ende Methoden
 } // end of class sucheNummer

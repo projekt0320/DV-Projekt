@@ -1,4 +1,3 @@
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -12,32 +11,45 @@ import javax.swing.event.*;
  * @author 
  */
 
-public class sucheVerwendung extends JFrame {
+public class Suchen_GUI3 extends JFrame {
   // Anfang Attribute
+  private JList jList1 = new JList();
+    private DefaultListModel jList1Model = new DefaultListModel();
+    private JScrollPane jList1ScrollPane = new JScrollPane(jList1);
+  private JTextArea jTextArea1 = new JTextArea("");
+    private JScrollPane jTextArea1ScrollPane = new JScrollPane(jTextArea1);
   private JButton bSuchestarten = new JButton();
-  private JLabel Ausgabe = new JLabel();
-  private JLabel lEingabeVerwendung = new JLabel();
-  private JTextField jTextField1 = new JTextField();
+  private JTextArea jTextArea2 = new JTextArea("");
+    private JScrollPane jTextArea2ScrollPane = new JScrollPane(jTextArea2);
   // Ende Attribute
   
-  public sucheVerwendung() { 
+  public Suchen_GUI3() { 
     // Frame-Initialisierung
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 692; 
-    int frameHeight = 443;
+    int frameWidth = 470; 
+    int frameHeight = 328;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
     int y = (d.height - getSize().height) / 2;
     setLocation(x, y);
-    setTitle("sucheVerwendung");
+    setTitle("Suchen_GUI3");
     setResizable(false);
     Container cp = getContentPane();
     cp.setLayout(null);
     // Anfang Komponenten
     
-    bSuchestarten.setBounds(285, 213, 131, 41);
+    jList1.setModel(jList1Model);
+    jList1ScrollPane.setBounds(16, 103, 150, 60);
+    jList1Model.addElement("Name");
+    jList1Model.addElement("Nummer");
+    jList1Model.addElement("Verwendung");
+    cp.add(jList1ScrollPane);
+    jTextArea1ScrollPane.setBounds(15, 61, 128, 36);
+    jTextArea1.setText("Suchparameter");
+    cp.add(jTextArea1ScrollPane);
+    bSuchestarten.setBounds(161, 204, 131, 25);
     bSuchestarten.setText("Suche starten");
     bSuchestarten.setMargin(new Insets(2, 2, 2, 2));
     bSuchestarten.addActionListener(new ActionListener() { 
@@ -46,44 +58,23 @@ public class sucheVerwendung extends JFrame {
       }
     });
     cp.add(bSuchestarten);
-    Ausgabe.setBounds(97, 284, 246, 52);
-    Ausgabe.setText("");
-    cp.add(Ausgabe);
-    lEingabeVerwendung.setBounds(89, 155, 156, 20);
-    lEingabeVerwendung.setText("Eingabe Verwendung");
-    cp.add(lEingabeVerwendung);
-    jTextField1.setBounds(269, 150, 230, 28);
-    cp.add(jTextField1);
+    jTextArea2ScrollPane.setBounds(200, 104, 185, 33);
+    cp.add(jTextArea2ScrollPane);
     // Ende Komponenten
     
     setVisible(true);
-  } // end of public sucheVerwendung
+  } // end of public Suchen_GUI3
   
   // Anfang Methoden
   
   public static void main(String[] args) {
-    new sucheVerwendung();
+    new Suchen_GUI3();
   } // end of main
   
-   public void bSuchestarten_ActionPerformed(ActionEvent evt) {
+  public void bSuchestarten_ActionPerformed(ActionEvent evt) {
     // TODO hier Quelltext einfügen
-     if(evt.getSource() == this.bSuchestarten){
-            bSucheVerwendungMethode(); 
-        }
+    
   } // end of bSuchestarten_ActionPerformed
-     public void bSucheVerwendungMethode()
-     {
-         String s= jTextField1.getText();
-          Datenbank datenban1= new Datenbank();
-          try
-          {
-         datenban1.sucheVerwendung(s);
-        }
-        catch(Exception e)
-        {
-           Ausgabe.setText(     e.getMessage()      );
-        }
-    }
 
   // Ende Methoden
-} // end of class sucheVerwendung
+} // end of class Suchen_GUI3
