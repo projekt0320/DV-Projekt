@@ -90,6 +90,7 @@ public class Stahlerstellen_GUI extends JFrame
 
         c.add(erstellen);
         
+        lFertig = new JLabel();
         lFertig.setText("");
         c.add(lFertig);
         setVisible(true);
