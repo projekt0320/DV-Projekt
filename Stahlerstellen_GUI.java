@@ -89,6 +89,9 @@ public class Stahlerstellen_GUI extends JFrame
         );
 
         c.add(erstellen);
+        
+        lFertig.setText("");
+        c.add(lFertig);
         setVisible(true);
     }
 
@@ -104,13 +107,14 @@ public class Stahlerstellen_GUI extends JFrame
         try
         {
             d1.ErstellenStahl(na, nr, ve, el, eg, kg);
+            lFertig.setText("Stahl wurde erstellt");
         }
         catch (Exception e)
         { 
+            lFertig.setText(     e.getMessage()      );
         }
         
-        lFertig = new JLabel("Stahl wurde erstellt!");
-        c.add(lFertig);
+        
     }
 
     public static void main(String[] args) {
