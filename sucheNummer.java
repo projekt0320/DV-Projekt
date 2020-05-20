@@ -78,18 +78,29 @@ public class sucheNummer extends JFrame {
   } // end of bSuchestarten_ActionPerformed
   public void bSucheNummerMethode()
   {
-      Datenbank datenban1= new Datenbank();
-      int n= Integer.parseInt(  jTextField1.getText()    );
-      try
-      {
-          //String x=
-          datenban1.sucheNummerAnzeige(n);
-          //Ausgabe.setText(x);
-      }
-      catch(Exception e)
-      {
+    Datenbank datenban1= new Datenbank();
+    int n=-1;
+    //fehlerhafter Datentyp oder keine Eingabe
+    try
+    {
+          n= Integer.parseInt(  jTextField1.getText()    );
+    }
+    catch(Exception e)
+    {
+          Ausgabe.setText("Fehlerhafte Eingabe");
+    }
+    if(n!=-1)
+    {
+        try
+        {
+              String s=datenban1.sucheNummerAnzeige(n);
+              Ausgabe.setText(s);
+        }
+        catch(Exception e)
+        {
            Ausgabe.setText(     e.getMessage()      );
-      }
+        }
+    }
   }
   
 

@@ -77,13 +77,16 @@ public class sucheName extends JFrame {
   {
       String s= jTextField1.getText();
       Datenbank datenban1= new Datenbank();
+      
        try
           {
-         datenban1.sucheNameAnzeige(s);
+              String s2= datenban1.sucheNameAnzeige(s);
+              Ausgabe.setText(s2);
         }
         catch(Exception e)
         {
-            Ausgabe.setText(     e.getMessage()      );
+             Ausgabe.setText(     e.getMessage()      );
+           
         }
   }
 

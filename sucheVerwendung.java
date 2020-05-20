@@ -66,25 +66,30 @@ public class sucheVerwendung extends JFrame {
     new sucheVerwendung();
   } // end of main
   
-   public void bSuchestarten_ActionPerformed(ActionEvent evt) {
+   public void bSuchestarten_ActionPerformed(ActionEvent evt) 
+   {
     // TODO hier Quelltext einfügen
      if(evt.getSource() == this.bSuchestarten){
             bSucheVerwendungMethode(); 
         }
   } // end of bSuchestarten_ActionPerformed
-     public void bSucheVerwendungMethode()
-     {
+  public void bSucheVerwendungMethode()
+  {
+         Datenbank datenban1= new Datenbank();
          String s= jTextField1.getText();
-          Datenbank datenban1= new Datenbank();
+        
           try
           {
-         datenban1.sucheVerwendung(s);
-        }
+              String s2= datenban1.sucheVerwendung(s);
+              Ausgabe.setText( s2 );
+          }
         catch(Exception e)
         {
+        
            Ausgabe.setText(     e.getMessage()      );
+        
         }
-    }
+  }
 
   // Ende Methoden
 } // end of class sucheVerwendung
