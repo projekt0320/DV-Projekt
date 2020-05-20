@@ -1094,7 +1094,7 @@ public class gesamt_GUI extends JFrame {
             {
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    c.removeAll();
+                    
                     bBearbeiten_ActionPerformed(evt);
 
                 }
@@ -1124,7 +1124,7 @@ public class gesamt_GUI extends JFrame {
     public void bBearbeiten_ActionPerformed(ActionEvent evt){
         // TODO hier Quelltext einfügen
 
-        if(evt.getSource() == this.bBearbeiten){
+        
             int i= Liste.getSelectedIndex();
             if(i==0){
                 bearbeitenName();
@@ -1171,7 +1171,7 @@ public class gesamt_GUI extends JFrame {
             else if(i==14){
                 bearbeitenDegradation();
             }
-        }
+        
     } //
 
     public void bearbeitenName(){
@@ -1834,27 +1834,38 @@ public class gesamt_GUI extends JFrame {
             {
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    c.removeAll();
+                    
                     bLoeschen_ActionPerformed(evt);
                 }
             }
         );
+        
         c.add(bLoeschen);
+        bZuruck.addActionListener(new ActionListener()
+            { 
+                public void actionPerformed(ActionEvent evt)
+                { 
+                    c.removeAll();
+                    Hauptmenu_GUI();
+                }
+            }
+        );
+        c.add(bZuruck);
         c.add(lAusgabeLoeschen);
         setVisible(true);
     }
 
     public void bLoeschen_ActionPerformed(ActionEvent evt){
         // TODO hier Quelltext einfügen
-        if(evt.getSource() == this.bLoeschen){
+        
             bLoeschenMethode(); 
-        }
+        
     } //
 
     public void bLoeschenMethode(){
         int n;
         try{
-            n= Integer.parseInt(tNummer.getText());
+            n= Integer.parseInt(tNummerLoeschen.getText());
         } 
         catch (NumberFormatException e){
             n = -1;
