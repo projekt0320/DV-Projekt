@@ -41,7 +41,7 @@ public class gui extends JFrame {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    lWerkstoffdatenbank.setBounds(1, 141, 702, 104);
+    lWerkstoffdatenbank.setBounds(130, 90, 400, 104);
     lWerkstoffdatenbank.setToolTipText("");
     lWerkstoffdatenbank.setCursor(new Cursor(Cursor.TEXT_CURSOR));
     lWerkstoffdatenbank.setText("Werkstoffdatenbank");
@@ -50,7 +50,7 @@ public class gui extends JFrame {
     cp.add(lWerkstoffdatenbank);
     cp.setBackground(new Color(0xC0C0C0));
     
-    bWerkstofferstellen.setBounds(39, 278, 155, 25);
+    bWerkstofferstellen.setBounds(250, 230, 150, 30);
     bWerkstofferstellen.setText("Werkstoff erstellen");
     bWerkstofferstellen.setMargin(new Insets(2, 2, 2, 2));
     bWerkstofferstellen.addActionListener(new ActionListener()
@@ -63,7 +63,7 @@ public class gui extends JFrame {
     );
     cp.add(bWerkstofferstellen);
     
-    bWerkstoffbearbeiten.setBounds(34, 346, 163, 25);
+    bWerkstoffbearbeiten.setBounds(250, 310, 150, 30);
     bWerkstoffbearbeiten.setText("Werkstoff bearbeiten");
     bWerkstoffbearbeiten.setMargin(new Insets(2, 2, 2, 2));
     bWerkstoffbearbeiten.addActionListener(new ActionListener() { 
@@ -73,7 +73,7 @@ public class gui extends JFrame {
     });
     cp.add(bWerkstoffbearbeiten);
     
-    bWerkstoffloeschen.setBounds(32, 385, 163, 25);
+    bWerkstoffloeschen.setBounds(250, 350, 150, 30);
     bWerkstoffloeschen.setText("Werkstoff löschen");
     bWerkstoffloeschen.setMargin(new Insets(2, 2, 2, 2));
     bWerkstoffloeschen.addActionListener(new ActionListener() 
@@ -84,7 +84,7 @@ public class gui extends JFrame {
     });
     cp.add(bWerkstoffloeschen);
     
-    bWerkstoffsuchen.setBounds(31, 313, 171, 25);
+    bWerkstoffsuchen.setBounds(250, 270, 150, 30);
     bWerkstoffsuchen.setText("Werkstoff suchen");
     bWerkstoffsuchen.setMargin(new Insets(2, 2, 2, 2));
     bWerkstoffsuchen.addActionListener(new ActionListener() { 
