@@ -6,7 +6,7 @@ import javax.swing.event.*;
 
 /**
  *
- * Beschreibung
+ * unaktuelle GUI-Klasse -> aktuelle GUI-Klasse unter "gesamt_GUI"
  *
  * @version 1.0 vom 14.05.2020
  * @author 
