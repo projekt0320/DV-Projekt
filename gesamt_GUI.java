@@ -84,6 +84,13 @@ public class gesamt_GUI extends JFrame {
   private JLabel Ausgabe2 = new JLabel();
   private JLabel lEingabeVerwendung = new JLabel();
   private JTextField jTextField2 = new JTextField();
+  
+  private JLabel lNummerLoeschen;
+    private JLabel lAusgabeLoeschen;
+
+    private JTextField tNummerLoeschen;
+
+    private JButton bLoeschen;
 
     // Ende Attribute
 
@@ -151,7 +158,8 @@ public class gesamt_GUI extends JFrame {
         bWerkstoffloeschen.addActionListener(new ActionListener() 
             { 
                 public void actionPerformed(ActionEvent evt){ 
-                    Loeschen_GUI loeschen = new Loeschen_GUI();
+                    cp.removeAll();
+                    Loeschen_GUI();
                 }
             });
         cp.add(bWerkstoffloeschen);
@@ -161,7 +169,8 @@ public class gesamt_GUI extends JFrame {
         bWerkstoffsuchen.setMargin(new Insets(2, 2, 2, 2));
         bWerkstoffsuchen.addActionListener(new ActionListener() { 
                 public void actionPerformed(ActionEvent evt) { 
-                    Suchen_GUI suchen= new Suchen_GUI();
+                    cp.removeAll();
+                    Suchen_GUI();
                 }
             });
         cp.add(bWerkstoffsuchen);
@@ -345,12 +354,16 @@ public class gesamt_GUI extends JFrame {
         c.add(lKohlenstoffgehalt);
         c.add(tKohlenstoffgehalt);
 
+        lFertig = new JLabel();
+        
+        
         erstellen.setText("erstellen");
         erstellen.setMargin(new Insets(2, 2, 2, 2));
         erstellen.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
+                    lFertig.setText("");
                     Stahlerstellen_ActionPerformed(evt);
                 }
             }
@@ -369,8 +382,7 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
 
-        lFertig = new JLabel();
-        lFertig.setText("");
+        
         c.add(lFertig);
         setVisible(true);
     }
@@ -1145,5 +1157,76 @@ public class gesamt_GUI extends JFrame {
            Ausgabe2.setText(     e.getMessage()      );
         
         }
-  }// Ende Methoden
+  }
+  
+  
+  
+  public void Loeschen_GUI()
+    {
+        
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle("Werkstoff löschen");
+        setResizable(false);
+        setSize(700, 600);
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (d.width - getSize().width) / 2;
+        int y = (d.height - getSize().height) / 2;
+        setLocation(x, y);
+        Container c = getContentPane();
+        c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+
+        lNummerLoeschen=new JLabel ("Nummer des Werkstoffs, der gelöscht werden soll:");
+        lAusgabeLoeschen=new JLabel();
+
+        tNummerLoeschen=new JTextField(10);
+
+        c.add(lNummerLoeschen);
+        c.add(tNummerLoeschen);
+        
+        bLoeschen=new JButton();
+        bLoeschen.setText("löschen");
+        bLoeschen.setMargin(new Insets(2, 2, 2, 2));
+        bLoeschen.addActionListener(new ActionListener()
+            {
+                public void actionPerformed(ActionEvent evt)
+                { 
+                    c.removeAll();
+                    bLoeschen_ActionPerformed(evt);
+                }
+            }
+        );
+        c.add(bLoeschen);
+        c.add(lAusgabeLoeschen);
+        setVisible(true);
+    }
+
+    public void bLoeschen_ActionPerformed(ActionEvent evt){
+        // TODO hier Quelltext einfügen
+        if(evt.getSource() == this.bLoeschen){
+            bLoeschenMethode(); 
+        }
+    } //
+
+    
+    public void bLoeschenMethode(){
+        int n;
+        try{
+            n= Integer.parseInt(tNummer.getText());
+        } 
+        catch (NumberFormatException e){
+            n = -1;
+        }
+        if (n>0 && n<=9999999){
+            try{
+                Datenbank.loeschen(n);
+                lAusgabeLoeschen.setText("Werkstoff wurde gelöscht");
+            }
+            catch(Exception e) {
+                lAusgabeLoeschen.setText(e.getMessage());
+            }
+        }
+        else {
+            lAusgabeLoeschen.setText("Eingabe ist nicht in Ordnung");
+        }
+    }// Ende Methoden
 } // end of class gui
