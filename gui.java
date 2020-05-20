@@ -57,7 +57,7 @@ public class gui extends JFrame {
     { 
       public void actionPerformed(ActionEvent evt)
       { 
-        Erstellen_GUI erstelle = new Erstellen_GUI();
+        //Erstellen_GUI erstelle = new Erstellen_GUI();
       }
     }
     );
