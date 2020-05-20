@@ -42,7 +42,7 @@ public class gui extends JFrame {
     // Anfang Komponenten
     
     lWerkstoffdatenbank.setBounds(1, 141, 702, 104);
-    lWerkstoffdatenbank.setToolTipText("hh");
+    lWerkstoffdatenbank.setToolTipText("");
     lWerkstoffdatenbank.setCursor(new Cursor(Cursor.TEXT_CURSOR));
     lWerkstoffdatenbank.setText("Werkstoffdatenbank");
     lWerkstoffdatenbank.setFont(new Font("Dialog", Font.PLAIN, 22));

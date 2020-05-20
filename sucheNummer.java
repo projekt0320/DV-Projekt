@@ -1,4 +1,5 @@
 
+              
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -24,8 +25,8 @@ public class sucheNummer extends JFrame {
     // Frame-Initialisierung
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 562; 
-    int frameHeight = 300;
+    int frameWidth = 700; 
+    int frameHeight = 600;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -37,7 +38,7 @@ public class sucheNummer extends JFrame {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    bSuchestarten.setBounds(182, 134, 171, 25);
+    bSuchestarten.setBounds(250, 135, 175, 25);
     bSuchestarten.setText("Suche starten");
     bSuchestarten.setMargin(new Insets(2, 2, 2, 2));
     bSuchestarten.addActionListener(new ActionListener() { 
@@ -45,13 +46,17 @@ public class sucheNummer extends JFrame {
         bSuchestarten_ActionPerformed(evt);
       }
     });
+    bSuchestarten.setHorizontalTextPosition(SwingConstants.RIGHT);
+    bSuchestarten.setVerticalAlignment(SwingConstants.CENTER);
+    bSuchestarten.setVerticalTextPosition(SwingConstants.CENTER);
     cp.add(bSuchestarten);
-    lEingabeNummer.setBounds(44, 70, 110, 20);
+    lEingabeNummer.setBounds(50, 80, 110, 20);
     lEingabeNummer.setText("Eingabe Nummer");
     cp.add(lEingabeNummer);
-    jTextField1.setBounds(194, 77, 182, 20);
+    jTextField1.setBounds(195, 80, 250, 20);
     cp.add(jTextField1);
-    Ausgabe.setBounds(82, 188, 414, 52);
+    Ausgabe.setBounds(50, 220, 500, 500);
+    Ausgabe.setVerticalAlignment(SwingConstants.TOP);
     Ausgabe.setText("");
     cp.add(Ausgabe);
     // Ende Komponenten
@@ -86,6 +91,7 @@ public class sucheNummer extends JFrame {
            Ausgabe.setText(     e.getMessage()      );
       }
   }
+  
 
   // Ende Methoden
 } // end of class sucheNummer

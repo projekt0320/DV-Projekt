@@ -24,8 +24,8 @@ public class sucheName extends JFrame {
     // Frame-Initialisierung
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    int frameWidth = 635; 
-    int frameHeight = 568;
+    int frameWidth = 700; 
+    int frameHeight = 600;
     setSize(frameWidth, frameHeight);
     Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
     int x = (d.width - getSize().width) / 2;
@@ -37,10 +37,10 @@ public class sucheName extends JFrame {
     cp.setLayout(null);
     // Anfang Komponenten
     
-    lEingabeName.setBounds(68, 139, 110, 20);
+    lEingabeName.setBounds(50, 80, 110, 20);
     lEingabeName.setText("Eingabe Name");
     cp.add(lEingabeName);
-    bSuchestarten.setBounds(215, 184, 139, 41);
+    bSuchestarten.setBounds(250, 135, 175, 25);
     bSuchestarten.setText("Suche starten");
     bSuchestarten.setMargin(new Insets(2, 2, 2, 2));
     bSuchestarten.addActionListener(new ActionListener() { 
@@ -49,10 +49,11 @@ public class sucheName extends JFrame {
       }
     });
     cp.add(bSuchestarten);
-    Ausgabe.setBounds(74, 258, 302, 52);
+    Ausgabe.setBounds(59, 220, 500, 500);
+    Ausgabe.setVerticalAlignment(SwingConstants.TOP);
     Ausgabe.setText("");
     cp.add(Ausgabe);
-    jTextField1.setBounds(190, 132, 222, 36);
+    jTextField1.setBounds(195, 80, 250, 20);
     cp.add(jTextField1);
     // Ende Komponenten
     

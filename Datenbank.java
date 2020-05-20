@@ -748,7 +748,7 @@ public class Datenbank
 
         if(s== "")
         {
-            throw new Exception ("Verwendung nicht gefunden.");
+            throw new Exception ("Werkstoff mit angegebener Verwendung nicht gefunden.");
         }
         else
         {
@@ -774,7 +774,7 @@ public class Datenbank
                 return w.gibEigenschaft();
             }
         }
-        throw new Exception ("Nummer nicht gefunden.");
+        throw new Exception ("Werkstoff mit angegebener Nummer nicht gefunden.");
     }
     
     /**
@@ -796,7 +796,7 @@ public class Datenbank
                 return w.gibEigenschaft();
             }
         }
-        throw new Exception ("Name nicht gefunden.");
+        throw new Exception ("Werkstoff mit angegebenem Name nicht gefunden.");
     }
 
     
