@@ -62,6 +62,28 @@ public class gesamt_GUI extends JFrame {
     private JTextField t2;
     private JLabel l3;
     private JButton bBearbeiten;
+    
+    private JButton bSucheNummer = new JButton();
+  private JButton bSucheName = new JButton();
+  private JButton bSucheVerwendung = new JButton();
+  private JLabel ParameterSuchen = new JLabel();
+  
+  
+  private JLabel lEingabeName = new JLabel();
+  private JButton bSuchestarten = new JButton();
+  private JLabel Ausgabe = new JLabel();
+  private JTextField jTextField = new JTextField();
+  
+  private JButton bSuchestarten1 = new JButton();
+  private JLabel lEingabeNummer = new JLabel();
+  private JTextField jTextField1 = new JTextField();
+  private JLabel Ausgabe1 = new JLabel();
+  
+  
+  private JButton bSuchestarten2 = new JButton();
+  private JLabel Ausgabe2 = new JLabel();
+  private JLabel lEingabeVerwendung = new JLabel();
+  private JTextField jTextField2 = new JTextField();
 
     // Ende Attribute
 
@@ -422,8 +444,6 @@ public class gesamt_GUI extends JFrame {
         c.add(t1);
         c.add(l2);
         c.add(t2);
-        c.add(l3);
-        
         bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -434,6 +454,9 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
+        c.add(l3);
+        
+        
         
         setVisible(true);
     }
@@ -857,5 +880,270 @@ public class gesamt_GUI extends JFrame {
         else {
             l3.setText("Eingabe ist nicht in Ordnung");
         }
-    }// Ende Methoden
+    }
+    
+    
+    
+    public void Suchen_GUI()
+    { 
+    // Frame-Initialisierung
+    setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    int frameWidth = 700;
+    int frameHeight = 600;
+    setSize(frameWidth, frameHeight);
+    Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+    int x = (d.width - getSize().width) / 2;
+    int y = (d.height - getSize().height) / 2;
+    setLocation(x, y);
+    setTitle("Suchen_GUI");
+    setResizable(false);
+    Container cp = getContentPane();
+    cp.setLayout(null);
+    // Anfang Komponenten
+    ParameterSuchen.setBounds(91, 40, 265, 20);
+    ParameterSuchen.setText("Mit welchem Parameter soll gesucht werden?");
+    cp.add(ParameterSuchen);
+    bSucheNummer.setBounds(250, 100, 150, 30);
+    bSucheNummer.setText("Suche Nummer");
+    bSucheNummer.setMargin(new Insets(2, 2, 2, 2));
+    bSucheNummer.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        cp.removeAll();
+        sucheName();
+      }
+    });
+    cp.add(bSucheNummer);
+    bSucheName.setBounds(250, 140, 150, 30);
+    bSucheName.setText("Suche Name");
+    bSucheName.setMargin(new Insets(2, 2, 2, 2));
+    bSucheName.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        cp.removeAll();
+        sucheNummer();
+      }
+    });
+    cp.add(bSucheName);
+    bSucheVerwendung.setBounds(250, 180, 150, 30);
+    bSucheVerwendung.setText("Suche Verwendung");
+    bSucheVerwendung.setMargin(new Insets(2, 2, 2, 2));
+    bSucheVerwendung.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        cp.removeAll();
+        sucheVerwendung();
+      }
+    });
+    cp.add(bSucheVerwendung);
+    cp.setBackground(new Color(0xC0C0C0));
+    // Ende Komponenten
+    
+    setVisible(true);
+  }
+  
+  public void sucheName()
+  { 
+    // Frame-Initialisierung
+    setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    int frameWidth = 700; 
+    int frameHeight = 600;
+    setSize(frameWidth, frameHeight);
+    Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+    int x = (d.width - getSize().width) / 2;
+    int y = (d.height - getSize().height) / 2;
+    setLocation(x, y);
+    setTitle("sucheName");
+    setResizable(false);
+    Container cp = getContentPane();
+    cp.setLayout(null);
+    // Anfang Komponenten
+    
+    lEingabeName.setBounds(50, 80, 110, 20);
+    lEingabeName.setText("Eingabe Name");
+    cp.add(lEingabeName);
+    bSuchestarten.setBounds(250, 135, 175, 25);
+    bSuchestarten.setText("Suche starten");
+    bSuchestarten.setMargin(new Insets(2, 2, 2, 2));
+    bSuchestarten.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        cp.removeAll();
+          bNameSuchestarten_ActionPerformed(evt);
+      }
+    });
+    cp.add(bSuchestarten);
+    Ausgabe.setBounds(59, 220, 500, 500);
+    Ausgabe.setVerticalAlignment(SwingConstants.TOP);
+    Ausgabe.setText("");
+    cp.add(Ausgabe);
+    jTextField.setBounds(195, 80, 250, 20);
+    cp.add(jTextField);
+    // Ende Komponenten
+    
+    setVisible(true);
+  } // end of public sucheName
+  
+  public void bNameSuchestarten_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+     if(evt.getSource() == this.bSuchestarten){
+            bSucheNameMethode(); 
+        }
+       
+  } // end of bSuchestarten_ActionPerformed
+  
+  public void bSucheNameMethode()
+  {
+      String s= jTextField.getText();
+      
+       try
+          {
+              String s2= Datenbank.sucheNameAnzeige(s);
+              Ausgabe.setText(s2);
+        }
+        catch(Exception e)
+        {
+             Ausgabe.setText(     e.getMessage()      );
+           
+        }
+  }
+  
+  public void sucheNummer() { 
+    // Frame-Initialisierung
+    setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    int frameWidth = 700; 
+    int frameHeight = 600;
+    setSize(frameWidth, frameHeight);
+    Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+    int x = (d.width - getSize().width) / 2;
+    int y = (d.height - getSize().height) / 2;
+    setLocation(x, y);
+    setTitle("sucheNummer");
+    setResizable(false);
+    Container cp = getContentPane();
+    cp.setLayout(null);
+    // Anfang Komponenten
+    
+    bSuchestarten1.setBounds(250, 135, 175, 25);
+    bSuchestarten1.setText("Suche starten");
+    bSuchestarten1.setMargin(new Insets(2, 2, 2, 2));
+    bSuchestarten1.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        cp.removeAll();
+          bNummerSuchestarten_ActionPerformed(evt);
+      }
+    });
+    bSuchestarten1.setHorizontalTextPosition(SwingConstants.RIGHT);
+    bSuchestarten1.setVerticalAlignment(SwingConstants.CENTER);
+    bSuchestarten1.setVerticalTextPosition(SwingConstants.CENTER);
+    cp.add(bSuchestarten1);
+    lEingabeNummer.setBounds(50, 80, 110, 20);
+    lEingabeNummer.setText("Eingabe Nummer");
+    cp.add(lEingabeNummer);
+    jTextField1.setBounds(195, 80, 250, 20);
+    cp.add(jTextField1);
+    Ausgabe1.setBounds(50, 220, 500, 500);
+    Ausgabe1.setVerticalAlignment(SwingConstants.TOP);
+    Ausgabe1.setText("");
+    cp.add(Ausgabe1);
+    // Ende Komponenten
+    
+    setVisible(true);
+  } // end of public sucheNummer
+  
+  public void bNummerSuchestarten_ActionPerformed(ActionEvent evt) {
+    // TODO hier Quelltext einfügen
+    if(evt.getSource() == this.bSuchestarten){
+            bSucheNummerMethode(); 
+        }
+  } // end of bSuchestarten_ActionPerformed
+  
+  public void bSucheNummerMethode()
+  {
+    
+    int n=-1;
+    //fehlerhafter Datentyp oder keine Eingabe
+    try
+    {
+          n= Integer.parseInt(  jTextField1.getText()    );
+    }
+    catch(Exception e)
+    {
+          Ausgabe1.setText("Fehlerhafte Eingabe");
+    }
+    
+    if(n!=-1)
+    {
+        try
+        {
+              String s=Datenbank.sucheNummerAnzeige(n);
+              Ausgabe1.setText(s);
+        }
+        catch(Exception e)
+        {
+           Ausgabe1.setText(     e.getMessage()      );
+        }
+    }
+  }
+  
+  public void sucheVerwendung() { 
+    // Frame-Initialisierung
+    setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    int frameWidth = 700; 
+    int frameHeight = 600;
+    setSize(frameWidth, frameHeight);
+    Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+    int x = (d.width - getSize().width) / 2;
+    int y = (d.height - getSize().height) / 2;
+    setLocation(x, y);
+    setTitle("sucheVerwendung");
+    setResizable(false);
+    Container cp = getContentPane();
+    cp.setLayout(null);
+    // Anfang Komponenten
+    
+    bSuchestarten.setBounds(250, 135, 175, 25);
+    bSuchestarten.setText("Suche starten");
+    bSuchestarten.setMargin(new Insets(2, 2, 2, 2));
+    bSuchestarten.addActionListener(new ActionListener() { 
+      public void actionPerformed(ActionEvent evt) { 
+        cp.removeAll();
+          bVerwendungSuchestarten_ActionPerformed(evt);
+      }
+    });
+    cp.add(bSuchestarten);
+    Ausgabe2.setBounds(50, 220, 500, 500);
+    Ausgabe2.setVerticalAlignment(SwingConstants.TOP);
+    Ausgabe2.setText("");
+    cp.add(Ausgabe2);
+    lEingabeVerwendung.setBounds(50, 80, 156, 20);
+    lEingabeVerwendung.setText("Eingabe Verwendung");
+    cp.add(lEingabeVerwendung);
+    jTextField2.setBounds(195, 80, 250, 20);
+    cp.add(jTextField2);
+    // Ende Komponenten
+    
+    setVisible(true);
+  } // end of public sucheVerwendung
+ 
+   public void bVerwendungSuchestarten_ActionPerformed(ActionEvent evt) 
+   {
+    // TODO hier Quelltext einfügen
+     if(evt.getSource() == this.bSuchestarten){
+            bSucheVerwendungMethode(); 
+        }
+  } // end of bSuchestarten_ActionPerformed
+  
+  public void bSucheVerwendungMethode()
+  {
+         String s= jTextField2.getText();
+        
+          try
+          {
+              String s2= Datenbank.sucheVerwendung(s);
+              Ausgabe2.setText( s2 );
+          }
+        catch(Exception e)
+        {
+        
+           Ausgabe2.setText(     e.getMessage()      );
+        
+        }
+  }// Ende Methoden
 } // end of class gui
