@@ -5,11 +5,13 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 /**
+ * Alle GUI-Methoden in einer Klasse, sodass alle auf dasselbe Datenbank-Objekt zugreifen.
+ * Noch nicht die endgültige Version der GUI-Klasse, es kommen noch Vereinheitlichungen in den Fenstern, java.doc-Dokumentation und
+ * weitere Exceptions dazu.
+ * 
  *
- * Beschreibung
- *
- * @version 1.0 vom 14.05.2020
- * @author 
+ * @version 20. Mai 2020
+ * @author Jenny Glönkler (Bearbeiten, Löschen), Markus Schnee (Suchen, Hauptmenü), Felicia Wieland (Erstellen, gesamt_GUI)
  */
 
 public class gesamt_GUI extends JFrame {
@@ -1567,7 +1569,7 @@ public class gesamt_GUI extends JFrame {
         bSucheNummer.addActionListener(new ActionListener() { 
                 public void actionPerformed(ActionEvent evt) { 
                     cp.removeAll();
-                    sucheName();
+                    sucheNummer();
                 }
             });
         cp.add(bSucheNummer);
@@ -1577,7 +1579,7 @@ public class gesamt_GUI extends JFrame {
         bSucheName.addActionListener(new ActionListener() { 
                 public void actionPerformed(ActionEvent evt) { 
                     cp.removeAll();
-                    sucheNummer();
+                    sucheName();
                 }
             });
         cp.add(bSucheName);
@@ -1622,7 +1624,6 @@ public class gesamt_GUI extends JFrame {
         bSuchestarten.setMargin(new Insets(2, 2, 2, 2));
         bSuchestarten.addActionListener(new ActionListener() { 
                 public void actionPerformed(ActionEvent evt) { 
-                    cp.removeAll();
                     bNameSuchestarten_ActionPerformed(evt);
                 }
             });
@@ -1683,7 +1684,6 @@ public class gesamt_GUI extends JFrame {
         bSuchestarten1.setMargin(new Insets(2, 2, 2, 2));
         bSuchestarten1.addActionListener(new ActionListener() { 
                 public void actionPerformed(ActionEvent evt) { 
-                    cp.removeAll();
                     bNummerSuchestarten_ActionPerformed(evt);
                 }
             });
@@ -1707,7 +1707,7 @@ public class gesamt_GUI extends JFrame {
 
     public void bNummerSuchestarten_ActionPerformed(ActionEvent evt) {
         // TODO hier Quelltext einfügen
-        if(evt.getSource() == this.bSuchestarten){
+        if(evt.getSource() == this.bSuchestarten1){
             bSucheNummerMethode(); 
         }
     } // end of bSuchestarten_ActionPerformed
@@ -1756,16 +1756,15 @@ public class gesamt_GUI extends JFrame {
         cp.setLayout(null);
         // Anfang Komponenten
 
-        bSuchestarten.setBounds(250, 135, 175, 25);
-        bSuchestarten.setText("Suche starten");
-        bSuchestarten.setMargin(new Insets(2, 2, 2, 2));
-        bSuchestarten.addActionListener(new ActionListener() { 
+        bSuchestarten2.setBounds(250, 135, 175, 25);
+        bSuchestarten2.setText("Suche starten");
+        bSuchestarten2.setMargin(new Insets(2, 2, 2, 2));
+        bSuchestarten2.addActionListener(new ActionListener() { 
                 public void actionPerformed(ActionEvent evt) { 
-                    cp.removeAll();
                     bVerwendungSuchestarten_ActionPerformed(evt);
                 }
             });
-        cp.add(bSuchestarten);
+        cp.add(bSuchestarten2);
         Ausgabe2.setBounds(50, 220, 500, 500);
         Ausgabe2.setVerticalAlignment(SwingConstants.TOP);
         Ausgabe2.setText("");
@@ -1783,7 +1782,7 @@ public class gesamt_GUI extends JFrame {
     public void bVerwendungSuchestarten_ActionPerformed(ActionEvent evt) 
     {
         // TODO hier Quelltext einfügen
-        if(evt.getSource() == this.bSuchestarten){
+        if(evt.getSource() == this.bSuchestarten2){
             bSucheVerwendungMethode(); 
         }
     } // end of bSuchestarten_ActionPerformed
