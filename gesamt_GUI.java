@@ -36,7 +36,7 @@ public class gesamt_GUI extends JFrame {
     private JButton bKunststofferstellen = new JButton();
     private JButton bNaturstofferstellen = new JButton();
     
-    private JLabel lLeer1 = new JLabel();
+    private JLabel lErstellen = new JLabel("Werkstoff erstellen");
     private JLabel lLeer2 = new JLabel();
 
     private JLabel lName;
@@ -156,7 +156,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-
                     cp.removeAll();
                     Erstellen_GUI();
                 }
@@ -219,8 +218,10 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
         Container c = getContentPane();
-        c.setLayout(new GridLayout(6, 2, 20, 20));
+        c.setLayout(null);
         setVisible(true);
+        
+        lErstellen.setBounds(270, 50, 175, 50);
 
         bStahlerstellen.setText("Stahl erstellen");
         bStahlerstellen.setMargin(new Insets(2, 2, 2, 2));
@@ -326,8 +327,6 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bNaturstofferstellen);
         
-        c.add(lLeer1);
-        c.add(lLeer2);
 
         bZuruck.addActionListener(new ActionListener()
             { 
@@ -339,6 +338,18 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
+        
+        c.add(lErstellen);
+        
+        bStahlerstellen.setBounds(275, 130, 100, 30);
+        bGusseisenerstellen.setBounds(250, 180, 150, 30);
+        bLeichtmetalleerstellen.setBounds(250, 230, 150, 30);
+        bSchwermetalleerstellen.setBounds(250, 280, 150, 30);
+        bHalbleitererstellen.setBounds(260, 330, 130, 30);
+        bKeramikerstellen.setBounds(213, 380, 225, 30);
+        bKunststofferstellen.setBounds(250, 430, 150, 30);
+        bNaturstofferstellen.setBounds(250, 480, 150, 30);
+        
 
         setVisible(true);
     }
@@ -354,8 +365,9 @@ public class gesamt_GUI extends JFrame {
         int x = (d.width - getSize().width) / 2;
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
-        Container c = getContentPane();
-        c.setLayout(new GridLayout(8, 1, 20, 20));
+       Container c = getContentPane();
+        c.setLayout(new GridLayout(10, 2, 20, 20));
+        
 
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
@@ -364,12 +376,13 @@ public class gesamt_GUI extends JFrame {
         lEisengehalt=new JLabel ("Eisengehalt:");
         lKohlenstoffgehalt=new JLabel ("Kohlenstoffgehalt:");
 
-        tName=new JTextField(10);
-        tNummer=new JTextField(10);
-        tVerwendung=new JTextField(10);
-        tElektrLeitf=new JTextField(10);
-        tEisengehalt=new JTextField(10);
-        tKohlenstoffgehalt=new JTextField(10);
+        tName=new JTextField();
+        tNummer=new JTextField();
+        tVerwendung=new JTextField();
+        tElektrLeitf=new JTextField();
+        tEisengehalt=new JTextField();
+        tKohlenstoffgehalt=new JTextField();
+        
 
         c.add(lName);
         c.add(tName);
@@ -400,8 +413,6 @@ public class gesamt_GUI extends JFrame {
 
         c.add(erstellen);
 
-        c.add(lLeer1);
-        c.add(lLeer2);
         
         bZuruck.addActionListener(new ActionListener()
             { 
