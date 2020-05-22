@@ -221,7 +221,6 @@ public class gesamt_GUI extends JFrame {
         c.setLayout(null);
         setVisible(true);
         
-        lErstellen.setBounds(270, 50, 175, 50);
 
         bStahlerstellen.setText("Stahl erstellen");
         bStahlerstellen.setMargin(new Insets(2, 2, 2, 2));
@@ -341,14 +340,16 @@ public class gesamt_GUI extends JFrame {
         
         c.add(lErstellen);
         
-        bStahlerstellen.setBounds(275, 130, 100, 30);
-        bGusseisenerstellen.setBounds(250, 180, 150, 30);
-        bLeichtmetalleerstellen.setBounds(250, 230, 150, 30);
-        bSchwermetalleerstellen.setBounds(250, 280, 150, 30);
-        bHalbleitererstellen.setBounds(260, 330, 130, 30);
-        bKeramikerstellen.setBounds(213, 380, 225, 30);
-        bKunststofferstellen.setBounds(250, 430, 150, 30);
-        bNaturstofferstellen.setBounds(250, 480, 150, 30);
+        lErstellen.setBounds(270, 30, 175, 30);
+        bStahlerstellen.setBounds(275, 90, 100, 30);
+        bGusseisenerstellen.setBounds(250, 140, 150, 30);
+        bLeichtmetalleerstellen.setBounds(250, 190, 150, 30);
+        bSchwermetalleerstellen.setBounds(250, 240, 150, 30);
+        bHalbleitererstellen.setBounds(260, 290, 130, 30);
+        bKeramikerstellen.setBounds(213, 340, 225, 30);
+        bKunststofferstellen.setBounds(250, 390, 150, 30);
+        bNaturstofferstellen.setBounds(250, 430, 150, 30);
+        bZuruck.setBounds(250, 500, 150, 30);
         
 
         setVisible(true);
@@ -366,7 +367,7 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
        Container c = getContentPane();
-        c.setLayout(new GridLayout(10, 2, 20, 20));
+        c.setLayout(null);
         
 
         lName=new JLabel ("Name:");
@@ -426,6 +427,28 @@ public class gesamt_GUI extends JFrame {
         c.add(bZuruck);
 
         c.add(lFertig);
+        
+        lName.setBounds(20, 20, 150, 20);
+        lNummer.setBounds(20, 60, 150, 20);
+        lVerwendung.setBounds(20, 100, 150, 20);
+        lElektrLeitf.setBounds(20, 140, 150, 20);
+        lEisengehalt.setBounds(20, 180, 150, 20);
+        lKohlenstoffgehalt.setBounds(20, 220, 150, 20);
+        
+        tName.setBounds(190, 20, 150, 20);
+        tNummer.setBounds(190, 60, 150, 20);
+        tVerwendung.setBounds(190, 100, 150, 20);
+        tElektrLeitf.setBounds(190, 140, 150, 20);
+        tEisengehalt.setBounds(190, 180, 150, 20);
+        tKohlenstoffgehalt.setBounds(190, 220, 150, 20);
+        
+        lFertig.setBounds(20, 320, 400, 20);
+        
+        erstellen.setBounds(20, 280, 150, 20);
+        
+        bZuruck.setBounds(20, 400, 150, 20);
+        
+        
         setVisible(true);
     }
 
