@@ -35,6 +35,9 @@ public class gesamt_GUI extends JFrame {
     private JButton bKeramikerstellen = new JButton();
     private JButton bKunststofferstellen = new JButton();
     private JButton bNaturstofferstellen = new JButton();
+    
+    private JLabel lLeer1 = new JLabel();
+    private JLabel lLeer2 = new JLabel();
 
     private JLabel lName;
     private JLabel lNummer;
@@ -216,7 +219,7 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
         Container c = getContentPane();
-        c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        c.setLayout(new GridLayout(6, 2, 20, 20));
         setVisible(true);
 
         bStahlerstellen.setText("Stahl erstellen");
@@ -322,6 +325,9 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bNaturstofferstellen);
+        
+        c.add(lLeer1);
+        c.add(lLeer2);
 
         bZuruck.addActionListener(new ActionListener()
             { 
@@ -349,7 +355,7 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
         Container c = getContentPane();
-        c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        c.setLayout(new GridLayout(8, 1, 20, 20));
 
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
@@ -394,6 +400,9 @@ public class gesamt_GUI extends JFrame {
 
         c.add(erstellen);
 
+        c.add(lLeer1);
+        c.add(lLeer2);
+        
         bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
