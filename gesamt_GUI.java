@@ -437,7 +437,7 @@ public class gesamt_GUI extends JFrame {
         tEisengehalt.setBounds(240, 180, 150, 20);
         tKohlenstoffgehalt.setBounds(240, 220, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -567,7 +567,7 @@ public class gesamt_GUI extends JFrame {
         tEisengehalt.setBounds(240, 180, 150, 20);
         tSiedetemperatur.setBounds(240, 220, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -698,7 +698,7 @@ public class gesamt_GUI extends JFrame {
         tHauptelement.setBounds(240, 180, 150, 20);
         tVerformbarkeit.setBounds(240, 220, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -825,7 +825,7 @@ public class gesamt_GUI extends JFrame {
         tHauptelement.setBounds(240, 180, 150, 20);
         tDichte.setBounds(240, 220, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -950,7 +950,7 @@ public class gesamt_GUI extends JFrame {
         tmetallEig.setBounds(240, 140, 150, 20);
         tELeit.setBounds(240, 180, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -1069,7 +1069,7 @@ public class gesamt_GUI extends JFrame {
         tmetallEig.setBounds(240, 140, 150, 20);
         tZugfestigkeit.setBounds(240, 180, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -1188,7 +1188,7 @@ public class gesamt_GUI extends JFrame {
         tmetallEig.setBounds(240, 140, 150, 20);
         tVerform.setBounds(240, 180, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -1305,7 +1305,7 @@ public class gesamt_GUI extends JFrame {
         tmetallEig.setBounds(240, 140, 150, 20);
         tDegradation.setBounds(240, 180, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
