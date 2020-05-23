@@ -1891,10 +1891,11 @@ public class gesamt_GUI extends JFrame {
                 }
             }
         );
+        taTestTextArea = new JTextArea();
         cp.add(lEingabeName);
         cp.add(jTextField);
         cp.add(bSuchestarten);
-        cp.add(Ausgabe);
+        cp.add(taTestTextArea);
         cp.add(bZuruck);
 
         // Ende Komponenten
@@ -1904,17 +1905,18 @@ public class gesamt_GUI extends JFrame {
     public void bNameSuchestarten_ActionPerformed(ActionEvent evt) {
         // TODO hier Quelltext einfügen
 
-        try
+       try
         {
             String s= jTextField.getText();
             String s2= Datenbank.sucheNameAnzeige(s);
-            Ausgabe.setText(s2);
+            taTestTextArea.setText(s2);
         }
         catch(Exception e)
         {
-            Ausgabe.setText(     e.getMessage()      );
+            taTestTextArea.setText(     e.getMessage()      );
 
         }
+        
 
     } // end of bSuchestarten_ActionPerformed
 
@@ -1978,7 +1980,7 @@ public class gesamt_GUI extends JFrame {
         }
         catch(Exception e)
         {
-            Ausgabe1.setText("Fehlerhafte Eingabe");
+            taTestTextArea.setText("Fehlerhafte Eingabe");
         }
 
         if(n!=-1)
@@ -2053,13 +2055,7 @@ public class gesamt_GUI extends JFrame {
     {
         // TODO hier Quelltext einfügen
         if(evt.getSource() == this.bSuchestarten2){
-            bSucheVerwendungMethode(); 
-        }
-    } // end of bSuchestarten_ActionPerformed
-
-    public void bSucheVerwendungMethode()
-    {
-        String s= jTextField2.getText();
+             String s= jTextField2.getText();
 
         try
         {
@@ -2072,7 +2068,10 @@ public class gesamt_GUI extends JFrame {
             Ausgabe2.setText(     e.getMessage()      );
 
         }
-    }
+        }
+    } // end of bSuchestarten_ActionPerformed
+
+   
 
     public void Loeschen_GUI()
     {
