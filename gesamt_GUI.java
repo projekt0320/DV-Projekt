@@ -402,7 +402,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Stahlerstellen_ActionPerformed(evt);
                 }
             }
@@ -535,7 +534,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Gusserstellen_ActionPerformed(evt);
                 }
             }
@@ -600,6 +598,7 @@ public class gesamt_GUI extends JFrame {
             eg=-1;
             st=-1;
         }
+        
         if (nr>0 && nr<=9999999 && el>0 && el<=9999999 && eg>0 && eg<=9999999 && st>0 && st<=9999999)
         {
             try
@@ -710,8 +709,6 @@ public class gesamt_GUI extends JFrame {
 
     public void Schwermetallerstellen_ActionPerformed(ActionEvent evt)
     {
-        lFertig.setText("");
-
         String na = tName.getText();
         int nr;
         String ve = tVerwendung.getText();
@@ -793,7 +790,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Leichtmetallerstellen_ActionPerformed(evt);
                 }
             }
@@ -920,7 +916,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Halbleitererstellen_ActionPerformed(evt);
                 }
             }
@@ -1039,7 +1034,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Keramikerstellen_ActionPerformed(evt);
                 }
             }
@@ -1158,7 +1152,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Kunststofferstellen_ActionPerformed(evt);
                 }
             }
@@ -1275,7 +1268,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Naturstofferstellen_ActionPerformed(evt);
                 }
             }
