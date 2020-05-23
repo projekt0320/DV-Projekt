@@ -1713,18 +1713,11 @@ public class gesamt_GUI extends JFrame {
 
     public void bNameSuchestarten_ActionPerformed(ActionEvent evt) {
         // TODO hier Quelltext einfügen
-        if(evt.getSource() == this.bSuchestarten){
-            bSucheNameMethode(); 
-        }
-
-    } // end of bSuchestarten_ActionPerformed
-
-    public void bSucheNameMethode()
-    {
-        String s= jTextField.getText();
+       
 
         try
         {
+             String s= jTextField.getText();
             String s2= Datenbank.sucheNameAnzeige(s);
             Ausgabe.setText(s2);
         }
@@ -1733,7 +1726,10 @@ public class gesamt_GUI extends JFrame {
             Ausgabe.setText(     e.getMessage()      );
 
         }
-    }
+
+    } // end of bSuchestarten_ActionPerformed
+
+    
 
     public void sucheNummer() { 
         // Frame-Initialisierung
@@ -1793,15 +1789,7 @@ public class gesamt_GUI extends JFrame {
 
     public void bNummerSuchestarten_ActionPerformed(ActionEvent evt) {
         // TODO hier Quelltext einfügen
-        if(evt.getSource() == this.bSuchestarten1){
-            bSucheNummerMethode(); 
-        }
-    } // end of bSuchestarten_ActionPerformed
-
-    public void bSucheNummerMethode()
-    {
-
-        int n=-1;
+         int n=-1;
         //fehlerhafter Datentyp oder keine Eingabe
         try
         {
@@ -1824,7 +1812,9 @@ public class gesamt_GUI extends JFrame {
                 Ausgabe1.setText(     e.getMessage()      );
             }
         }
-    }
+    } // end of bSuchestarten_ActionPerformed
+
+   
 
     public void sucheVerwendung() { 
         // Frame-Initialisierung
@@ -1854,7 +1844,7 @@ public class gesamt_GUI extends JFrame {
         Ausgabe2.setBounds(50, 220, 500, 500);
         Ausgabe2.setVerticalAlignment(SwingConstants.TOP);
         Ausgabe2.setText("");
-        cp.add(Ausgabe2);
+        
         lEingabeVerwendung.setBounds(50, 80, 156, 20);
         lEingabeVerwendung.setText("Eingabe Verwendung");
         
@@ -1872,6 +1862,7 @@ public class gesamt_GUI extends JFrame {
         cp.add(lEingabeVerwendung);
         cp.add(jTextField2);
         cp.add(bSuchestarten2);
+        cp.add(Ausgabe2);
         cp.add(bZuruck);
         // Ende Komponenten
 
