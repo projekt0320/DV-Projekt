@@ -423,19 +423,19 @@ public class gesamt_GUI extends JFrame {
 
         c.add(lFertig);
 
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lElektrLeitf.setBounds(20, 140, 150, 20);
-        lEisengehalt.setBounds(20, 180, 150, 20);
-        lKohlenstoffgehalt.setBounds(20, 220, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lElektrLeitf.setBounds(20, 140, 200, 20);
+        lEisengehalt.setBounds(20, 180, 200, 20);
+        lKohlenstoffgehalt.setBounds(20, 220, 200, 20);
 
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tElektrLeitf.setBounds(190, 140, 150, 20);
-        tEisengehalt.setBounds(190, 180, 150, 20);
-        tKohlenstoffgehalt.setBounds(190, 220, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tElektrLeitf.setBounds(240, 140, 150, 20);
+        tEisengehalt.setBounds(240, 180, 150, 20);
+        tKohlenstoffgehalt.setBounds(240, 220, 150, 20);
 
         lFertig.setBounds(20, 320, 400, 20);
 
@@ -553,19 +553,19 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
 
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lElektrLeitf.setBounds(20, 140, 150, 20);
-        lEisengehalt.setBounds(20, 180, 150, 20);
-        lSiedetemperatur.setBounds(20, 220, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lElektrLeitf.setBounds(20, 140, 200, 20);
+        lEisengehalt.setBounds(20, 180, 200, 20);
+        lSiedetemperatur.setBounds(20, 220, 200, 20);
 
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tElektrLeitf.setBounds(190, 140, 150, 20);
-        tEisengehalt.setBounds(190, 180, 150, 20);
-        tSiedetemperatur.setBounds(190, 220, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tElektrLeitf.setBounds(240, 140, 150, 20);
+        tEisengehalt.setBounds(240, 180, 150, 20);
+        tSiedetemperatur.setBounds(240, 220, 150, 20);
 
         lFertig.setBounds(20, 320, 400, 20);
 
@@ -684,19 +684,19 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
 
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lElektrLeitf.setBounds(20, 140, 150, 20);
-        lHauptelement.setBounds(20, 180, 150, 20);
-        lVerformbarkeit.setBounds(20, 220, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lElektrLeitf.setBounds(20, 140, 200, 20);
+        lHauptelement.setBounds(20, 180, 200, 20);
+        lVerformbarkeit.setBounds(20, 220, 200, 20);
 
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tElektrLeitf.setBounds(190, 140, 150, 20);
-        tHauptelement.setBounds(190, 180, 150, 20);
-        tVerformbarkeit.setBounds(190, 220, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tElektrLeitf.setBounds(240, 140, 150, 20);
+        tHauptelement.setBounds(240, 180, 150, 20);
+        tVerformbarkeit.setBounds(240, 220, 150, 20);
 
         lFertig.setBounds(20, 320, 400, 20);
 
@@ -811,19 +811,19 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
 
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lElektrLeitf.setBounds(20, 140, 150, 20);
-        lHauptelement.setBounds(20, 180, 150, 20);
-        lDichte.setBounds(20, 220, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lElektrLeitf.setBounds(20, 140, 200, 20);
+        lHauptelement.setBounds(20, 180, 200, 20);
+        lDichte.setBounds(20, 220, 200, 20);
 
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tElektrLeitf.setBounds(190, 140, 150, 20);
-        tHauptelement.setBounds(190, 180, 150, 20);
-        tDichte.setBounds(190, 220, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tElektrLeitf.setBounds(240, 140, 150, 20);
+        tHauptelement.setBounds(240, 180, 150, 20);
+        tDichte.setBounds(240, 220, 150, 20);
 
         lFertig.setBounds(20, 320, 400, 20);
 
@@ -892,7 +892,7 @@ public class gesamt_GUI extends JFrame {
         lNummer=new JLabel ("Nummer:");
         lVerwendung=new JLabel ("Verwendung:");
         lmetallEig=new JLabel ("Metallähnliche Eigenschaft:");
-        lELeit=new JLabel ("Elektrische Leitfähigkeitin S/m:");
+        lELeit=new JLabel ("Elektrische Leitfähigkeit in S/m:");
 
         tName=new JTextField(10);
         tNummer=new JTextField(10);
