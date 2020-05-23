@@ -486,7 +486,7 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
         Container c = getContentPane();
-        c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        c.setLayout(null);
 
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
@@ -541,6 +541,26 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
+        
+        lName.setBounds(20, 20, 150, 20);
+        lNummer.setBounds(20, 60, 150, 20);
+        lVerwendung.setBounds(20, 100, 150, 20);
+        lElektrLeitf.setBounds(20, 140, 150, 20);
+        lEisengehalt.setBounds(20, 180, 150, 20);
+        lSiedetemperatur.setBounds(20, 220, 150, 20);
+        
+        tName.setBounds(190, 20, 150, 20);
+        tNummer.setBounds(190, 60, 150, 20);
+        tVerwendung.setBounds(190, 100, 150, 20);
+        tElektrLeitf.setBounds(190, 140, 150, 20);
+        tEisengehalt.setBounds(190, 180, 150, 20);
+        tSiedetemperatur.setBounds(190, 220, 150, 20);
+        
+        lFertig.setBounds(20, 320, 400, 20);
+        
+        erstellen.setBounds(20, 280, 150, 20);
+        
+        bZuruck.setBounds(20, 400, 150, 20);
 
         c.add(lFertig);
         setVisible(true);
@@ -579,7 +599,7 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
         Container c = getContentPane();
-        c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        c.setLayout(null);
 
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
@@ -634,6 +654,26 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
+        
+        lName.setBounds(20, 20, 150, 20);
+        lNummer.setBounds(20, 60, 150, 20);
+        lVerwendung.setBounds(20, 100, 150, 20);
+        lElektrLeitf.setBounds(20, 140, 150, 20);
+        lHauptelement.setBounds(20, 180, 150, 20);
+        lVerformbarkeit.setBounds(20, 220, 150, 20);
+        
+        tName.setBounds(190, 20, 150, 20);
+        tNummer.setBounds(190, 60, 150, 20);
+        tVerwendung.setBounds(190, 100, 150, 20);
+        tElektrLeitf.setBounds(190, 140, 150, 20);
+        tHauptelement.setBounds(190, 180, 150, 20);
+        tVerformbarkeit.setBounds(190, 220, 150, 20);
+        
+        lFertig.setBounds(20, 320, 400, 20);
+        
+        erstellen.setBounds(20, 280, 150, 20);
+        
+        bZuruck.setBounds(20, 400, 150, 20);
 
         c.add(lFertig);
         setVisible(true);
@@ -672,7 +712,7 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
         Container c = getContentPane();
-        c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        c.setLayout(null);
 
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
@@ -727,6 +767,26 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
+        
+        lName.setBounds(20, 20, 150, 20);
+        lNummer.setBounds(20, 60, 150, 20);
+        lVerwendung.setBounds(20, 100, 150, 20);
+        lElektrLeitf.setBounds(20, 140, 150, 20);
+        lHauptelement.setBounds(20, 180, 150, 20);
+        lDichte.setBounds(20, 220, 150, 20);
+        
+        tName.setBounds(190, 20, 150, 20);
+        tNummer.setBounds(190, 60, 150, 20);
+        tVerwendung.setBounds(190, 100, 150, 20);
+        tElektrLeitf.setBounds(190, 140, 150, 20);
+        tHauptelement.setBounds(190, 180, 150, 20);
+        tDichte.setBounds(190, 220, 150, 20);
+        
+        lFertig.setBounds(20, 320, 400, 20);
+        
+        erstellen.setBounds(20, 280, 150, 20);
+        
+        bZuruck.setBounds(20, 400, 150, 20);
 
         c.add(lFertig);
         setVisible(true);
@@ -765,7 +825,7 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
         Container c = getContentPane();
-        c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        c.setLayout(null);
 
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
@@ -816,7 +876,25 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
+        
+        lName.setBounds(20, 20, 150, 20);
+        lNummer.setBounds(20, 60, 150, 20);
+        lVerwendung.setBounds(20, 100, 150, 20);
+        lmetallEig.setBounds(20, 140, 150, 20);
+        lELeit.setBounds(20, 180, 150, 20);
+        
+        tName.setBounds(190, 20, 150, 20);
+        tNummer.setBounds(190, 60, 150, 20);
+        tVerwendung.setBounds(190, 100, 150, 20);
+        tmetallEig.setBounds(190, 140, 150, 20);
+        tELeit.setBounds(190, 180, 150, 20);
 
+        lFertig.setBounds(20, 320, 400, 20);
+        
+        erstellen.setBounds(20, 280, 150, 20);
+        
+        bZuruck.setBounds(20, 400, 150, 20);
+        
         c.add(lFertig);
         setVisible(true);
     }
@@ -853,7 +931,7 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
         Container c = getContentPane();
-        c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        c.setLayout(null);
 
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
@@ -905,6 +983,24 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
 
+        lName.setBounds(20, 20, 150, 20);
+        lNummer.setBounds(20, 60, 150, 20);
+        lVerwendung.setBounds(20, 100, 150, 20);
+        lmetallEig.setBounds(20, 140, 150, 20);
+        lZugfestigkeit.setBounds(20, 180, 150, 20);
+        
+        tName.setBounds(190, 20, 150, 20);
+        tNummer.setBounds(190, 60, 150, 20);
+        tVerwendung.setBounds(190, 100, 150, 20);
+        tmetallEig.setBounds(190, 140, 150, 20);
+        tZugfestigkeit.setBounds(190, 180, 150, 20);
+        
+        lFertig.setBounds(20, 320, 400, 20);
+        
+        erstellen.setBounds(20, 280, 150, 20);
+        
+        bZuruck.setBounds(20, 400, 150, 20);
+        
         c.add(lFertig);
         setVisible(true);
     }
@@ -941,7 +1037,7 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
         Container c = getContentPane();
-        c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        c.setLayout(null);
 
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
@@ -992,6 +1088,24 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
+        
+        lName.setBounds(20, 20, 150, 20);
+        lNummer.setBounds(20, 60, 150, 20);
+        lVerwendung.setBounds(20, 100, 150, 20);
+        lmetallEig.setBounds(20, 140, 150, 20);
+        lVerform.setBounds(20, 180, 150, 20);
+        
+        tName.setBounds(190, 20, 150, 20);
+        tNummer.setBounds(190, 60, 150, 20);
+        tVerwendung.setBounds(190, 100, 150, 20);
+        tmetallEig.setBounds(190, 140, 150, 20);
+        tVerform.setBounds(190, 180, 150, 20);
+        
+        lFertig.setBounds(20, 320, 400, 20);
+        
+        erstellen.setBounds(20, 280, 150, 20);
+        
+        bZuruck.setBounds(20, 400, 150, 20);
 
         c.add(lFertig);
         setVisible(true);
@@ -1029,7 +1143,7 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
         Container c = getContentPane();
-        c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        c.setLayout(null);
 
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
@@ -1080,6 +1194,24 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
+        
+        lName.setBounds(20, 20, 150, 20);
+        lNummer.setBounds(20, 60, 150, 20);
+        lVerwendung.setBounds(20, 100, 150, 20);
+        lmetallEig.setBounds(20, 140, 150, 20);
+        lDegradation.setBounds(20, 180, 150, 20);
+        
+        tName.setBounds(190, 20, 150, 20);
+        tNummer.setBounds(190, 60, 150, 20);
+        tVerwendung.setBounds(190, 100, 150, 20);
+        tmetallEig.setBounds(190, 140, 150, 20);
+        tDegradation.setBounds(190, 180, 150, 20);
+        
+        lFertig.setBounds(20, 320, 400, 20);
+        
+        erstellen.setBounds(20, 280, 150, 20);
+        
+        bZuruck.setBounds(20, 400, 150, 20);
 
         c.add(lFertig);
         setVisible(true);
