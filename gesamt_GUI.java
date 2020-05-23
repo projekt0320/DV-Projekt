@@ -485,6 +485,7 @@ public class gesamt_GUI extends JFrame {
         }
 
     }
+
     public void Gusserstellen_GUI()
     {
 
@@ -665,7 +666,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Schwermetallerstellen_ActionPerformed(evt);
                 }
             }
@@ -710,6 +710,7 @@ public class gesamt_GUI extends JFrame {
 
     public void Schwermetallerstellen_ActionPerformed(ActionEvent evt)
     {
+        lFertig.setText("");
 
         String na = tName.getText();
         int nr;
@@ -1924,7 +1925,7 @@ public class gesamt_GUI extends JFrame {
             });
 
         Ausgabe.setText("");
-        
+
         bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
