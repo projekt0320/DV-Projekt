@@ -402,7 +402,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Stahlerstellen_ActionPerformed(evt);
                 }
             }
@@ -423,21 +422,21 @@ public class gesamt_GUI extends JFrame {
 
         c.add(lFertig);
 
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lElektrLeitf.setBounds(20, 140, 150, 20);
-        lEisengehalt.setBounds(20, 180, 150, 20);
-        lKohlenstoffgehalt.setBounds(20, 220, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lElektrLeitf.setBounds(20, 140, 200, 20);
+        lEisengehalt.setBounds(20, 180, 200, 20);
+        lKohlenstoffgehalt.setBounds(20, 220, 200, 20);
 
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tElektrLeitf.setBounds(190, 140, 150, 20);
-        tEisengehalt.setBounds(190, 180, 150, 20);
-        tKohlenstoffgehalt.setBounds(190, 220, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tElektrLeitf.setBounds(240, 140, 150, 20);
+        tEisengehalt.setBounds(240, 180, 150, 20);
+        tKohlenstoffgehalt.setBounds(240, 220, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -484,8 +483,8 @@ public class gesamt_GUI extends JFrame {
             lFertig.setText("Eingabe nicht in Ordnung");
         }
 
-        
     }
+
     public void Gusserstellen_GUI()
     {
 
@@ -535,7 +534,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Gusserstellen_ActionPerformed(evt);
                 }
             }
@@ -554,21 +552,21 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
 
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lElektrLeitf.setBounds(20, 140, 150, 20);
-        lEisengehalt.setBounds(20, 180, 150, 20);
-        lSiedetemperatur.setBounds(20, 220, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lElektrLeitf.setBounds(20, 140, 200, 20);
+        lEisengehalt.setBounds(20, 180, 200, 20);
+        lSiedetemperatur.setBounds(20, 220, 200, 20);
 
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tElektrLeitf.setBounds(190, 140, 150, 20);
-        tEisengehalt.setBounds(190, 180, 150, 20);
-        tSiedetemperatur.setBounds(190, 220, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tElektrLeitf.setBounds(240, 140, 150, 20);
+        tEisengehalt.setBounds(240, 180, 150, 20);
+        tSiedetemperatur.setBounds(240, 220, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -580,7 +578,7 @@ public class gesamt_GUI extends JFrame {
 
     public void Gusserstellen_ActionPerformed(ActionEvent evt)
     {
-        
+
         String na = tName.getText();
         int nr;
         String ve = tVerwendung.getText();
@@ -600,6 +598,7 @@ public class gesamt_GUI extends JFrame {
             eg=-1;
             st=-1;
         }
+        
         if (nr>0 && nr<=9999999 && el>0 && el<=9999999 && eg>0 && eg<=9999999 && st>0 && st<=9999999)
         {
             try
@@ -666,7 +665,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Schwermetallerstellen_ActionPerformed(evt);
                 }
             }
@@ -685,21 +683,21 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
 
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lElektrLeitf.setBounds(20, 140, 150, 20);
-        lHauptelement.setBounds(20, 180, 150, 20);
-        lVerformbarkeit.setBounds(20, 220, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lElektrLeitf.setBounds(20, 140, 200, 20);
+        lHauptelement.setBounds(20, 180, 200, 20);
+        lVerformbarkeit.setBounds(20, 220, 200, 20);
 
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tElektrLeitf.setBounds(190, 140, 150, 20);
-        tHauptelement.setBounds(190, 180, 150, 20);
-        tVerformbarkeit.setBounds(190, 220, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tElektrLeitf.setBounds(240, 140, 150, 20);
+        tHauptelement.setBounds(240, 180, 150, 20);
+        tVerformbarkeit.setBounds(240, 220, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -711,7 +709,6 @@ public class gesamt_GUI extends JFrame {
 
     public void Schwermetallerstellen_ActionPerformed(ActionEvent evt)
     {
-        
         String na = tName.getText();
         int nr;
         String ve = tVerwendung.getText();
@@ -730,14 +727,14 @@ public class gesamt_GUI extends JFrame {
         if (nr>0 && nr<=9999999 && el>0 && el<=9999999)
         {
             try
-        {
-            Datenbank.ErstellenSchwermetalle(na, nr, ve, el, he, vf);
-            lFertig.setText("Schwermetall wurde erstellt");
-        }
-        catch (Exception e)
-        { 
-            lFertig.setText(     e.getMessage()      );
-        }
+            {
+                Datenbank.ErstellenSchwermetalle(na, nr, ve, el, he, vf);
+                lFertig.setText("Schwermetall wurde erstellt");
+            }
+            catch (Exception e)
+            { 
+                lFertig.setText(     e.getMessage()      );
+            }
         }
         else {
             lFertig.setText("Eingabe nicht in Ordnung");
@@ -793,7 +790,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Leichtmetallerstellen_ActionPerformed(evt);
                 }
             }
@@ -812,21 +808,21 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
 
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lElektrLeitf.setBounds(20, 140, 150, 20);
-        lHauptelement.setBounds(20, 180, 150, 20);
-        lDichte.setBounds(20, 220, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lElektrLeitf.setBounds(20, 140, 200, 20);
+        lHauptelement.setBounds(20, 180, 200, 20);
+        lDichte.setBounds(20, 220, 200, 20);
 
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tElektrLeitf.setBounds(190, 140, 150, 20);
-        tHauptelement.setBounds(190, 180, 150, 20);
-        tDichte.setBounds(190, 220, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tElektrLeitf.setBounds(240, 140, 150, 20);
+        tHauptelement.setBounds(240, 180, 150, 20);
+        tDichte.setBounds(240, 220, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -838,7 +834,7 @@ public class gesamt_GUI extends JFrame {
 
     public void Leichtmetallerstellen_ActionPerformed(ActionEvent evt)
     {
-       
+
         String na = tName.getText();
         int nr;
         String ve = tVerwendung.getText();
@@ -858,21 +854,21 @@ public class gesamt_GUI extends JFrame {
         }
         if (nr>0 && nr<=9999999 && el>0 && el<=9999999 && d>0 && d<=9999999)
         {
-        try
-        {
-            Datenbank.ErstellenLeichtmetalle(na, nr, ve, el, he, d);
-            lFertig.setText("Leichtmetall wurde erstellt");
-        }
-        catch (Exception e)
-        { 
-            lFertig.setText(     e.getMessage()      );
-        }
+            try
+            {
+                Datenbank.ErstellenLeichtmetalle(na, nr, ve, el, he, d);
+                lFertig.setText("Leichtmetall wurde erstellt");
+            }
+            catch (Exception e)
+            { 
+                lFertig.setText(     e.getMessage()      );
+            }
 
         }
         else {
             lFertig.setText("Eingabe nicht in Ordnung");
         }
-        
+
     }
 
     public void Halbleitererstellen_GUI()
@@ -893,7 +889,7 @@ public class gesamt_GUI extends JFrame {
         lNummer=new JLabel ("Nummer:");
         lVerwendung=new JLabel ("Verwendung:");
         lmetallEig=new JLabel ("Metallähnliche Eigenschaft:");
-        lELeit=new JLabel ("Elektrische Leitfähigkeitin S/m:");
+        lELeit=new JLabel ("Elektrische Leitfähigkeit in S/m:");
 
         tName=new JTextField(10);
         tNummer=new JTextField(10);
@@ -920,7 +916,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Halbleitererstellen_ActionPerformed(evt);
                 }
             }
@@ -951,7 +946,7 @@ public class gesamt_GUI extends JFrame {
         tmetallEig.setBounds(240, 140, 150, 20);
         tELeit.setBounds(240, 180, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -964,21 +959,34 @@ public class gesamt_GUI extends JFrame {
     public void Halbleitererstellen_ActionPerformed(ActionEvent evt)
     {
         String na = tName.getText();
-        int nr = Integer.parseInt(tNummer.getText());
+        int nr;
         String ve = tVerwendung.getText();
         String me = tmetallEig.getText();
-        double el = Double.parseDouble(tELeit.getText());
+        double el;
 
-        try
+        try{
+            nr = Integer.parseInt(tNummer.getText());
+            el = Double.parseDouble(tElektrLeitf.getText());
+        } 
+        catch (NumberFormatException e){
+            nr =-1;
+            el=-1;
+        }
+        if (nr>0 && nr<=9999999 && el>0 && el<=9999999)
         {
-            Datenbank.ErstellenHalbleiter(na, nr, ve, me, el);
-            lFertig.setText("Halbleiter wurde erstellt");
+            try
+            {
+                Datenbank.ErstellenHalbleiter(na, nr, ve, me, el);
+                lFertig.setText("Halbleiter wurde erstellt");
+            }
+            catch (Exception e)
+            { 
+                lFertig.setText(     e.getMessage()      );
+            }
         }
-        catch (Exception e)
-        { 
-            lFertig.setText(     e.getMessage()      );
+        else {
+            lFertig.setText("Eingabe nicht in Ordnung");
         }
-
     }
 
     public void Keramikerstellen_GUI()
@@ -1026,7 +1034,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Keramikerstellen_ActionPerformed(evt);
                 }
             }
@@ -1057,7 +1064,7 @@ public class gesamt_GUI extends JFrame {
         tmetallEig.setBounds(240, 140, 150, 20);
         tZugfestigkeit.setBounds(240, 180, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -1070,21 +1077,34 @@ public class gesamt_GUI extends JFrame {
     public void Keramikerstellen_ActionPerformed(ActionEvent evt)
     {
         String na = tName.getText();
-        int nr = Integer.parseInt(tNummer.getText());
+        int nr;
         String ve = tVerwendung.getText();
         String me = tmetallEig.getText();
-        double zf = Double.parseDouble(tZugfestigkeit.getText());
+        double zf;
 
-        try
+        try{
+            nr = Integer.parseInt(tNummer.getText());
+            zf = Double.parseDouble(tZugfestigkeit.getText());
+        } 
+        catch (NumberFormatException e){
+            nr =-1;
+            zf=-1;
+        }
+        if (nr>0 && nr<=9999999 && zf>0 && zf<=9999999)
         {
-            Datenbank.ErstellenKeramik(na, nr, ve, me, zf);
-            lFertig.setText("Keramischer Werkstoff wurde erstellt");
+            try
+            {
+                Datenbank.ErstellenKeramik(na, nr, ve, me, zf);
+                lFertig.setText("Keramischer Werkstoff wurde erstellt");
+            }
+            catch (Exception e)
+            { 
+                lFertig.setText(     e.getMessage()      );
+            }
         }
-        catch (Exception e)
-        { 
-            lFertig.setText(     e.getMessage()      );
+        else {
+            lFertig.setText("Eingabe nicht in Ordnung");
         }
-
     }
 
     public void Kunststofferstellen_GUI()
@@ -1132,7 +1152,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Kunststofferstellen_ActionPerformed(evt);
                 }
             }
@@ -1163,7 +1182,7 @@ public class gesamt_GUI extends JFrame {
         tmetallEig.setBounds(240, 140, 150, 20);
         tVerform.setBounds(240, 180, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -1176,21 +1195,32 @@ public class gesamt_GUI extends JFrame {
     public void Kunststofferstellen_ActionPerformed(ActionEvent evt)
     {
         String na = tName.getText();
-        int nr = Integer.parseInt(tNummer.getText());
+        int nr;
         String ve = tVerwendung.getText();
         String me = tmetallEig.getText();
         String vf = tVerform.getText();
 
-        try
+        try{
+            nr = Integer.parseInt(tNummer.getText());
+        } 
+        catch (NumberFormatException e){
+            nr =-1;
+        }
+        if (nr>0 && nr<=9999999)
         {
-            Datenbank.ErstellenKunststoffe(na, nr, ve, me, vf);
-            lFertig.setText("Kunststoff wurde erstellt");
+            try
+            {
+                Datenbank.ErstellenKunststoffe(na, nr, ve, me, vf);
+                lFertig.setText("Kunststoff wurde erstellt");
+            }
+            catch (Exception e)
+            { 
+                lFertig.setText(     e.getMessage()      );
+            }
         }
-        catch (Exception e)
-        { 
-            lFertig.setText(     e.getMessage()      );
+        else {
+            lFertig.setText("Eingabe nicht in Ordnung");
         }
-
     }
 
     public void Naturstofferstellen_GUI()
@@ -1238,7 +1268,6 @@ public class gesamt_GUI extends JFrame {
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    lFertig.setText("");
                     Naturstofferstellen_ActionPerformed(evt);
                 }
             }
@@ -1269,7 +1298,7 @@ public class gesamt_GUI extends JFrame {
         tmetallEig.setBounds(240, 140, 150, 20);
         tDegradation.setBounds(240, 180, 150, 20);
 
-        lFertig.setBounds(20, 320, 400, 20);
+        lFertig.setBounds(20, 320, 550, 20);
 
         erstellen.setBounds(20, 280, 150, 20);
 
@@ -1282,21 +1311,32 @@ public class gesamt_GUI extends JFrame {
     public void Naturstofferstellen_ActionPerformed(ActionEvent evt)
     {
         String na = tName.getText();
-        int nr = Integer.parseInt(tNummer.getText());
+        int nr;
         String ve = tVerwendung.getText();
         String me = tmetallEig.getText();
         String de = tDegradation.getText();
 
-        try
+        try{
+            nr = Integer.parseInt(tNummer.getText());
+        } 
+        catch (NumberFormatException e){
+            nr =-1;
+        }
+        if (nr>0 && nr<=9999999)
         {
-            Datenbank.ErstellenNaturstoffe(na, nr, ve, me, de);
-            lFertig.setText("Naturstoff wurde erstellt");
+            try
+            {
+                Datenbank.ErstellenNaturstoffe(na, nr, ve, me, de);
+                lFertig.setText("Naturstoff wurde erstellt");
+            }
+            catch (Exception e)
+            { 
+                lFertig.setText(     e.getMessage()      );
+            }
         }
-        catch (Exception e)
-        { 
-            lFertig.setText(     e.getMessage()      );
+        else {
+            lFertig.setText("Eingabe nicht in Ordnung");
         }
-
     }
 
     public void Bearbeiten_GUI()
@@ -1867,9 +1907,7 @@ public class gesamt_GUI extends JFrame {
         cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
         // Anfang Komponenten
 
-        
         lEingabeName.setText("Eingabe Name");
-
         bSuchestarten.setText("Suche starten");
         bSuchestarten.setMargin(new Insets(2, 2, 2, 2));
         bSuchestarten.addActionListener(new ActionListener() { 
@@ -1878,10 +1916,8 @@ public class gesamt_GUI extends JFrame {
                 }
             });
 
-        
         Ausgabe.setText("");
 
-        
         bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -1919,7 +1955,6 @@ public class gesamt_GUI extends JFrame {
         
 
     } // end of bSuchestarten_ActionPerformed
-
 
     public void sucheNummer() { 
         // Frame-Initialisierung
@@ -1996,7 +2031,6 @@ public class gesamt_GUI extends JFrame {
             }
         }
     } // end of bSuchestarten_ActionPerformed
-
 
     public void sucheVerwendung() { 
         // Frame-Initialisierung
