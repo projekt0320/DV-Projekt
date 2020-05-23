@@ -877,17 +877,17 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
         
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lmetallEig.setBounds(20, 140, 150, 20);
-        lELeit.setBounds(20, 180, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lmetallEig.setBounds(20, 140, 200, 20);
+        lELeit.setBounds(20, 180, 200, 20);
         
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tmetallEig.setBounds(190, 140, 150, 20);
-        tELeit.setBounds(190, 180, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tmetallEig.setBounds(240, 140, 150, 20);
+        tELeit.setBounds(240, 180, 150, 20);
 
         lFertig.setBounds(20, 320, 400, 20);
         
@@ -983,17 +983,17 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
 
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lmetallEig.setBounds(20, 140, 150, 20);
-        lZugfestigkeit.setBounds(20, 180, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lmetallEig.setBounds(20, 140, 200, 20);
+        lZugfestigkeit.setBounds(20, 180, 200, 20);
         
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tmetallEig.setBounds(190, 140, 150, 20);
-        tZugfestigkeit.setBounds(190, 180, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tmetallEig.setBounds(240, 140, 150, 20);
+        tZugfestigkeit.setBounds(240, 180, 150, 20);
         
         lFertig.setBounds(20, 320, 400, 20);
         
@@ -1089,17 +1089,17 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
         
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lmetallEig.setBounds(20, 140, 150, 20);
-        lVerform.setBounds(20, 180, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lmetallEig.setBounds(20, 140, 200, 20);
+        lVerform.setBounds(20, 180, 200, 20);
         
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tmetallEig.setBounds(190, 140, 150, 20);
-        tVerform.setBounds(190, 180, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tmetallEig.setBounds(240, 140, 150, 20);
+        tVerform.setBounds(240, 180, 150, 20);
         
         lFertig.setBounds(20, 320, 400, 20);
         
@@ -1195,17 +1195,17 @@ public class gesamt_GUI extends JFrame {
         );
         c.add(bZuruck);
         
-        lName.setBounds(20, 20, 150, 20);
-        lNummer.setBounds(20, 60, 150, 20);
-        lVerwendung.setBounds(20, 100, 150, 20);
-        lmetallEig.setBounds(20, 140, 150, 20);
-        lDegradation.setBounds(20, 180, 150, 20);
+        lName.setBounds(20, 20, 200, 20);
+        lNummer.setBounds(20, 60, 200, 20);
+        lVerwendung.setBounds(20, 100, 200, 20);
+        lmetallEig.setBounds(20, 140, 200, 20);
+        lDegradation.setBounds(20, 180, 200, 20);
         
-        tName.setBounds(190, 20, 150, 20);
-        tNummer.setBounds(190, 60, 150, 20);
-        tVerwendung.setBounds(190, 100, 150, 20);
-        tmetallEig.setBounds(190, 140, 150, 20);
-        tDegradation.setBounds(190, 180, 150, 20);
+        tName.setBounds(240, 20, 150, 20);
+        tNummer.setBounds(240, 60, 150, 20);
+        tVerwendung.setBounds(240, 100, 150, 20);
+        tmetallEig.setBounds(240, 140, 150, 20);
+        tDegradation.setBounds(240, 180, 150, 20);
         
         lFertig.setBounds(20, 320, 400, 20);
         
