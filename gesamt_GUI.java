@@ -114,6 +114,7 @@ public class gesamt_GUI extends JFrame {
     private JTextField tNummerLoeschen;
 
     private JButton bLoeschen;
+    private JTextArea taTestTextArea;
 
     // Ende Attribute
 
@@ -1658,7 +1659,9 @@ public class gesamt_GUI extends JFrame {
     public void sucheName()
     { 
         // Frame-Initialisierung
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        
+        
+       setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 700; 
         int frameHeight = 600;
         setSize(frameWidth, frameHeight);
@@ -1672,6 +1675,7 @@ public class gesamt_GUI extends JFrame {
         cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
         // Anfang Komponenten
 
+        
         
         lEingabeName.setText("Eingabe Name");
         
@@ -1746,7 +1750,7 @@ public class gesamt_GUI extends JFrame {
         Container cp = getContentPane();
         cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
         // Anfang Komponenten
-
+        taTestTextArea = new JTextArea();
         
         bSuchestarten1.setText("Suche starten");
         bSuchestarten1.setMargin(new Insets(2, 2, 2, 2));
@@ -1761,13 +1765,6 @@ public class gesamt_GUI extends JFrame {
         
         
         lEingabeNummer.setText("Eingabe Nummer");
-        
-        
-        
-        Ausgabe1.setBounds(50, 220, 500, 500);
-        Ausgabe1.setVerticalAlignment(SwingConstants.TOP);
-        Ausgabe1.setText("");
-        
         bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -1777,10 +1774,11 @@ public class gesamt_GUI extends JFrame {
                 }
             }
         );
+        
         cp.add(lEingabeNummer);
         cp.add(jTextField1);
         cp.add(bSuchestarten1);
-        cp.add(Ausgabe1);
+        cp.add(taTestTextArea);
         cp.add(bZuruck);
         // Ende Komponenten
 
@@ -1805,11 +1803,11 @@ public class gesamt_GUI extends JFrame {
             try
             {
                 String s=Datenbank.sucheNummerAnzeige(n);
-                Ausgabe1.setText(s);
+                taTestTextArea.setText(s);
             }
             catch(Exception e)
             {
-                Ausgabe1.setText(     e.getMessage()      );
+                taTestTextArea.setText(     e.getMessage()      );
             }
         }
     } // end of bSuchestarten_ActionPerformed
