@@ -1656,7 +1656,7 @@ public class gesamt_GUI extends JFrame {
         setTitle("sucheName");
         setResizable(false);
         Container cp = getContentPane();
-        cp.setLayout(null);
+        cp.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
         // Anfang Komponenten
 
         lEingabeName.setBounds(50, 80, 110, 20);
@@ -1677,6 +1677,18 @@ public class gesamt_GUI extends JFrame {
         cp.add(Ausgabe);
         jTextField.setBounds(195, 80, 250, 20);
         cp.add(jTextField);
+         bZuruck.addActionListener(new ActionListener()
+            { 
+                public void actionPerformed(ActionEvent evt)
+                { 
+                    cp.removeAll();
+                    Hauptmenu_GUI();
+                }
+            }
+        );
+        cp.add(bZuruck);
+       
+       
         // Ende Komponenten
 
         setVisible(true);
@@ -1817,6 +1829,16 @@ public class gesamt_GUI extends JFrame {
         cp.add(lEingabeVerwendung);
         jTextField2.setBounds(195, 80, 250, 20);
         cp.add(jTextField2);
+         bZuruck.addActionListener(new ActionListener()
+            { 
+                public void actionPerformed(ActionEvent evt)
+                { 
+                    cp.removeAll();
+                    Hauptmenu_GUI();
+                }
+            }
+        );
+        cp.add(bZuruck);
         // Ende Komponenten
 
         setVisible(true);
