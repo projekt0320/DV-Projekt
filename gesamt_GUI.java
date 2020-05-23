@@ -35,7 +35,7 @@ public class gesamt_GUI extends JFrame {
     private JButton bKeramikerstellen = new JButton();
     private JButton bKunststofferstellen = new JButton();
     private JButton bNaturstofferstellen = new JButton();
-    
+
     private JLabel lErstellen = new JLabel("Werkstoff erstellen");
     private JLabel lLeer2 = new JLabel();
 
@@ -221,7 +221,6 @@ public class gesamt_GUI extends JFrame {
         Container c = getContentPane();
         c.setLayout(null);
         setVisible(true);
-        
 
         bStahlerstellen.setText("Stahl erstellen");
         bStahlerstellen.setMargin(new Insets(2, 2, 2, 2));
@@ -326,7 +325,6 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bNaturstofferstellen);
-        
 
         bZuruck.addActionListener(new ActionListener()
             { 
@@ -338,9 +336,9 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
-        
+
         c.add(lErstellen);
-        
+
         lErstellen.setBounds(270, 30, 175, 30);
         bStahlerstellen.setBounds(275, 90, 100, 30);
         bGusseisenerstellen.setBounds(250, 140, 150, 30);
@@ -351,7 +349,6 @@ public class gesamt_GUI extends JFrame {
         bKunststofferstellen.setBounds(250, 390, 150, 30);
         bNaturstofferstellen.setBounds(250, 430, 150, 30);
         bZuruck.setBounds(250, 500, 150, 30);
-        
 
         setVisible(true);
     }
@@ -367,9 +364,8 @@ public class gesamt_GUI extends JFrame {
         int x = (d.width - getSize().width) / 2;
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
-       Container c = getContentPane();
+        Container c = getContentPane();
         c.setLayout(null);
-        
 
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
@@ -384,7 +380,6 @@ public class gesamt_GUI extends JFrame {
         tElektrLeitf=new JTextField();
         tEisengehalt=new JTextField();
         tKohlenstoffgehalt=new JTextField();
-        
 
         c.add(lName);
         c.add(tName);
@@ -415,7 +410,6 @@ public class gesamt_GUI extends JFrame {
 
         c.add(erstellen);
 
-        
         bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -428,52 +422,70 @@ public class gesamt_GUI extends JFrame {
         c.add(bZuruck);
 
         c.add(lFertig);
-        
+
         lName.setBounds(20, 20, 150, 20);
         lNummer.setBounds(20, 60, 150, 20);
         lVerwendung.setBounds(20, 100, 150, 20);
         lElektrLeitf.setBounds(20, 140, 150, 20);
         lEisengehalt.setBounds(20, 180, 150, 20);
         lKohlenstoffgehalt.setBounds(20, 220, 150, 20);
-        
+
         tName.setBounds(190, 20, 150, 20);
         tNummer.setBounds(190, 60, 150, 20);
         tVerwendung.setBounds(190, 100, 150, 20);
         tElektrLeitf.setBounds(190, 140, 150, 20);
         tEisengehalt.setBounds(190, 180, 150, 20);
         tKohlenstoffgehalt.setBounds(190, 220, 150, 20);
-        
+
         lFertig.setBounds(20, 320, 400, 20);
-        
+
         erstellen.setBounds(20, 280, 150, 20);
-        
+
         bZuruck.setBounds(20, 400, 150, 20);
-        
-        
+
         setVisible(true);
     }
 
     public void Stahlerstellen_ActionPerformed(ActionEvent evt)
     {
+
         String na = tName.getText();
-        int nr = Integer.parseInt(tNummer.getText());
+        int nr;
         String ve = tVerwendung.getText();
-        double el = Double.parseDouble(tElektrLeitf.getText());
-        double eg = Double.parseDouble(tEisengehalt.getText());
-        double kg = Double.parseDouble(tKohlenstoffgehalt.getText());
+        double el;
+        double eg;
+        double kg;
 
-        try
+        try{
+            nr = Integer.parseInt(tNummer.getText());
+            el = Double.parseDouble(tElektrLeitf.getText());
+            eg = Double.parseDouble(tEisengehalt.getText());
+            kg = Double.parseDouble(tKohlenstoffgehalt.getText());
+        } 
+        catch (NumberFormatException e){
+            nr =-1;
+            el=-1;
+            eg=-1;
+            kg=-1;
+        }
+        if (nr>0 && nr<=9999999 && el>0 && el<=9999999 && eg>0 && eg<=9999999 && kg>0 && kg<=9999999)
         {
-            Datenbank.ErstellenStahl(na, nr, ve, el, eg, kg);
-            lFertig.setText("Stahl wurde erstellt");
+            try
+            {
+                Datenbank.ErstellenStahl(na, nr, ve, el, eg, kg);
+                lFertig.setText("Stahl wurde erstellt");
+            }
+            catch (Exception e)
+            { 
+                lFertig.setText(     e.getMessage()      );
+            }
         }
-        catch (Exception e)
-        { 
-            lFertig.setText(     e.getMessage()      );
+        else {
+            lFertig.setText("Eingabe nicht in Ordnung");
         }
 
+        
     }
-
     public void Gusserstellen_GUI()
     {
 
@@ -541,25 +553,25 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
-        
+
         lName.setBounds(20, 20, 150, 20);
         lNummer.setBounds(20, 60, 150, 20);
         lVerwendung.setBounds(20, 100, 150, 20);
         lElektrLeitf.setBounds(20, 140, 150, 20);
         lEisengehalt.setBounds(20, 180, 150, 20);
         lSiedetemperatur.setBounds(20, 220, 150, 20);
-        
+
         tName.setBounds(190, 20, 150, 20);
         tNummer.setBounds(190, 60, 150, 20);
         tVerwendung.setBounds(190, 100, 150, 20);
         tElektrLeitf.setBounds(190, 140, 150, 20);
         tEisengehalt.setBounds(190, 180, 150, 20);
         tSiedetemperatur.setBounds(190, 220, 150, 20);
-        
+
         lFertig.setBounds(20, 320, 400, 20);
-        
+
         erstellen.setBounds(20, 280, 150, 20);
-        
+
         bZuruck.setBounds(20, 400, 150, 20);
 
         c.add(lFertig);
@@ -654,25 +666,25 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
-        
+
         lName.setBounds(20, 20, 150, 20);
         lNummer.setBounds(20, 60, 150, 20);
         lVerwendung.setBounds(20, 100, 150, 20);
         lElektrLeitf.setBounds(20, 140, 150, 20);
         lHauptelement.setBounds(20, 180, 150, 20);
         lVerformbarkeit.setBounds(20, 220, 150, 20);
-        
+
         tName.setBounds(190, 20, 150, 20);
         tNummer.setBounds(190, 60, 150, 20);
         tVerwendung.setBounds(190, 100, 150, 20);
         tElektrLeitf.setBounds(190, 140, 150, 20);
         tHauptelement.setBounds(190, 180, 150, 20);
         tVerformbarkeit.setBounds(190, 220, 150, 20);
-        
+
         lFertig.setBounds(20, 320, 400, 20);
-        
+
         erstellen.setBounds(20, 280, 150, 20);
-        
+
         bZuruck.setBounds(20, 400, 150, 20);
 
         c.add(lFertig);
@@ -767,25 +779,25 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
-        
+
         lName.setBounds(20, 20, 150, 20);
         lNummer.setBounds(20, 60, 150, 20);
         lVerwendung.setBounds(20, 100, 150, 20);
         lElektrLeitf.setBounds(20, 140, 150, 20);
         lHauptelement.setBounds(20, 180, 150, 20);
         lDichte.setBounds(20, 220, 150, 20);
-        
+
         tName.setBounds(190, 20, 150, 20);
         tNummer.setBounds(190, 60, 150, 20);
         tVerwendung.setBounds(190, 100, 150, 20);
         tElektrLeitf.setBounds(190, 140, 150, 20);
         tHauptelement.setBounds(190, 180, 150, 20);
         tDichte.setBounds(190, 220, 150, 20);
-        
+
         lFertig.setBounds(20, 320, 400, 20);
-        
+
         erstellen.setBounds(20, 280, 150, 20);
-        
+
         bZuruck.setBounds(20, 400, 150, 20);
 
         c.add(lFertig);
@@ -876,13 +888,13 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
-        
+
         lName.setBounds(20, 20, 200, 20);
         lNummer.setBounds(20, 60, 200, 20);
         lVerwendung.setBounds(20, 100, 200, 20);
         lmetallEig.setBounds(20, 140, 200, 20);
         lELeit.setBounds(20, 180, 200, 20);
-        
+
         tName.setBounds(240, 20, 150, 20);
         tNummer.setBounds(240, 60, 150, 20);
         tVerwendung.setBounds(240, 100, 150, 20);
@@ -890,11 +902,11 @@ public class gesamt_GUI extends JFrame {
         tELeit.setBounds(240, 180, 150, 20);
 
         lFertig.setBounds(20, 320, 400, 20);
-        
+
         erstellen.setBounds(20, 280, 150, 20);
-        
+
         bZuruck.setBounds(20, 400, 150, 20);
-        
+
         c.add(lFertig);
         setVisible(true);
     }
@@ -988,19 +1000,19 @@ public class gesamt_GUI extends JFrame {
         lVerwendung.setBounds(20, 100, 200, 20);
         lmetallEig.setBounds(20, 140, 200, 20);
         lZugfestigkeit.setBounds(20, 180, 200, 20);
-        
+
         tName.setBounds(240, 20, 150, 20);
         tNummer.setBounds(240, 60, 150, 20);
         tVerwendung.setBounds(240, 100, 150, 20);
         tmetallEig.setBounds(240, 140, 150, 20);
         tZugfestigkeit.setBounds(240, 180, 150, 20);
-        
+
         lFertig.setBounds(20, 320, 400, 20);
-        
+
         erstellen.setBounds(20, 280, 150, 20);
-        
+
         bZuruck.setBounds(20, 400, 150, 20);
-        
+
         c.add(lFertig);
         setVisible(true);
     }
@@ -1088,23 +1100,23 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
-        
+
         lName.setBounds(20, 20, 200, 20);
         lNummer.setBounds(20, 60, 200, 20);
         lVerwendung.setBounds(20, 100, 200, 20);
         lmetallEig.setBounds(20, 140, 200, 20);
         lVerform.setBounds(20, 180, 200, 20);
-        
+
         tName.setBounds(240, 20, 150, 20);
         tNummer.setBounds(240, 60, 150, 20);
         tVerwendung.setBounds(240, 100, 150, 20);
         tmetallEig.setBounds(240, 140, 150, 20);
         tVerform.setBounds(240, 180, 150, 20);
-        
+
         lFertig.setBounds(20, 320, 400, 20);
-        
+
         erstellen.setBounds(20, 280, 150, 20);
-        
+
         bZuruck.setBounds(20, 400, 150, 20);
 
         c.add(lFertig);
@@ -1194,23 +1206,23 @@ public class gesamt_GUI extends JFrame {
             }
         );
         c.add(bZuruck);
-        
+
         lName.setBounds(20, 20, 200, 20);
         lNummer.setBounds(20, 60, 200, 20);
         lVerwendung.setBounds(20, 100, 200, 20);
         lmetallEig.setBounds(20, 140, 200, 20);
         lDegradation.setBounds(20, 180, 200, 20);
-        
+
         tName.setBounds(240, 20, 150, 20);
         tNummer.setBounds(240, 60, 150, 20);
         tVerwendung.setBounds(240, 100, 150, 20);
         tmetallEig.setBounds(240, 140, 150, 20);
         tDegradation.setBounds(240, 180, 150, 20);
-        
+
         lFertig.setBounds(20, 320, 400, 20);
-        
+
         erstellen.setBounds(20, 280, 150, 20);
-        
+
         bZuruck.setBounds(20, 400, 150, 20);
 
         c.add(lFertig);
@@ -1272,7 +1284,7 @@ public class gesamt_GUI extends JFrame {
             {
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    
+
                     bBearbeiten_ActionPerformed(evt);
 
                 }
@@ -1302,54 +1314,53 @@ public class gesamt_GUI extends JFrame {
     public void bBearbeiten_ActionPerformed(ActionEvent evt){
         // TODO hier Quelltext einfügen
 
-        
-            int i= Liste.getSelectedIndex();
-            if(i==0){
-                bearbeitenName();
-            }
-            else if(i==1){
-                bearbeitenNummer();
-            }
-            else if(i==2){
-                bearbeitenVerwendung();
-            }
-            else if(i==3){
-                bearbeitenElektrischeLeitfaehigkeitMetalle();
-            }
-            else if(i==4){
-                bearbeitenElektrischeLeitfaehigkeitHalbleiter();
-            }
-            else if(i==5){
-                bearbeitenEisengehalt();
-            }
-            else if(i==6){
-                bearbeitenKohlenstoffgehalt();
-            }
-            else if(i==7){
-                bearbeitenHauptelement();
-            }
-            else if(i==8){
-                bearbeitenSiedetemperatur();
-            }
-            else if(i==9){
-                bearbeitenVerformbarkeitSchwermetalle();
-            }
-            else if(i==10){
-                bearbeitenVerformbarkeitKunststoffe();
-            }
-            else if(i==11){
-                bearbeitenDichte();
-            }
-            else if(i==12){
-                bearbeitenMetallischeEigenschaft();
-            }
-            else if(i==13){
-                bearbeitenZugfestigkeit();
-            }
-            else if(i==14){
-                bearbeitenDegradation();
-            }
-        
+        int i= Liste.getSelectedIndex();
+        if(i==0){
+            bearbeitenName();
+        }
+        else if(i==1){
+            bearbeitenNummer();
+        }
+        else if(i==2){
+            bearbeitenVerwendung();
+        }
+        else if(i==3){
+            bearbeitenElektrischeLeitfaehigkeitMetalle();
+        }
+        else if(i==4){
+            bearbeitenElektrischeLeitfaehigkeitHalbleiter();
+        }
+        else if(i==5){
+            bearbeitenEisengehalt();
+        }
+        else if(i==6){
+            bearbeitenKohlenstoffgehalt();
+        }
+        else if(i==7){
+            bearbeitenHauptelement();
+        }
+        else if(i==8){
+            bearbeitenSiedetemperatur();
+        }
+        else if(i==9){
+            bearbeitenVerformbarkeitSchwermetalle();
+        }
+        else if(i==10){
+            bearbeitenVerformbarkeitKunststoffe();
+        }
+        else if(i==11){
+            bearbeitenDichte();
+        }
+        else if(i==12){
+            bearbeitenMetallischeEigenschaft();
+        }
+        else if(i==13){
+            bearbeitenZugfestigkeit();
+        }
+        else if(i==14){
+            bearbeitenDegradation();
+        }
+
     } //
 
     public void bearbeitenName(){
@@ -1748,7 +1759,7 @@ public class gesamt_GUI extends JFrame {
                     sucheNummer();
                 }
             });
-        
+
         bSucheName.setBounds(250, 140, 150, 30);
         bSucheName.setText("Suche Name");
         bSucheName.setMargin(new Insets(2, 2, 2, 2));
@@ -1758,7 +1769,7 @@ public class gesamt_GUI extends JFrame {
                     sucheName();
                 }
             });
-        
+
         bSucheVerwendung.setBounds(250, 180, 150, 30);
         bSucheVerwendung.setText("Suche Verwendung");
         bSucheVerwendung.setMargin(new Insets(2, 2, 2, 2));
@@ -1768,7 +1779,7 @@ public class gesamt_GUI extends JFrame {
                     sucheVerwendung();
                 }
             });
-            bZuruck.addActionListener(new ActionListener()
+        bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
@@ -1791,9 +1802,8 @@ public class gesamt_GUI extends JFrame {
     public void sucheName()
     { 
         // Frame-Initialisierung
-        
-        
-       setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 700; 
         int frameHeight = 600;
         setSize(frameWidth, frameHeight);
@@ -1808,10 +1818,8 @@ public class gesamt_GUI extends JFrame {
         // Anfang Komponenten
 
         
-        
         lEingabeName.setText("Eingabe Name");
-        
-       
+
         bSuchestarten.setText("Suche starten");
         bSuchestarten.setMargin(new Insets(2, 2, 2, 2));
         bSuchestarten.addActionListener(new ActionListener() { 
@@ -1819,14 +1827,12 @@ public class gesamt_GUI extends JFrame {
                     bNameSuchestarten_ActionPerformed(evt);
                 }
             });
-        
-        
+
         
         Ausgabe.setText("");
-       
-       
+
         
-         bZuruck.addActionListener(new ActionListener()
+        bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
@@ -1838,22 +1844,19 @@ public class gesamt_GUI extends JFrame {
         cp.add(lEingabeName);
         cp.add(jTextField);
         cp.add(bSuchestarten);
-         cp.add(Ausgabe);
+        cp.add(Ausgabe);
         cp.add(bZuruck);
-       
-       
-        // Ende Komponenten
 
+        // Ende Komponenten
         setVisible(true);
     } // end of public sucheName
 
     public void bNameSuchestarten_ActionPerformed(ActionEvent evt) {
         // TODO hier Quelltext einfügen
-       
 
         try
         {
-             String s= jTextField.getText();
+            String s= jTextField.getText();
             String s2= Datenbank.sucheNameAnzeige(s);
             Ausgabe.setText(s2);
         }
@@ -1865,7 +1868,6 @@ public class gesamt_GUI extends JFrame {
 
     } // end of bSuchestarten_ActionPerformed
 
-    
 
     public void sucheNummer() { 
         // Frame-Initialisierung
@@ -1883,7 +1885,7 @@ public class gesamt_GUI extends JFrame {
         cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
         // Anfang Komponenten
         taTestTextArea = new JTextArea();
-        
+
         bSuchestarten1.setText("Suche starten");
         bSuchestarten1.setMargin(new Insets(2, 2, 2, 2));
         bSuchestarten1.addActionListener(new ActionListener() { 
@@ -1894,8 +1896,7 @@ public class gesamt_GUI extends JFrame {
         bSuchestarten1.setHorizontalTextPosition(SwingConstants.RIGHT);
         bSuchestarten1.setVerticalAlignment(SwingConstants.CENTER);
         bSuchestarten1.setVerticalTextPosition(SwingConstants.CENTER);
-        
-        
+
         lEingabeNummer.setText("Eingabe Nummer");
         bZuruck.addActionListener(new ActionListener()
             { 
@@ -1906,7 +1907,7 @@ public class gesamt_GUI extends JFrame {
                 }
             }
         );
-        
+
         cp.add(lEingabeNummer);
         cp.add(jTextField1);
         cp.add(bSuchestarten1);
@@ -1919,7 +1920,7 @@ public class gesamt_GUI extends JFrame {
 
     public void bNummerSuchestarten_ActionPerformed(ActionEvent evt) {
         // TODO hier Quelltext einfügen
-         int n=-1;
+        int n=-1;
         //fehlerhafter Datentyp oder keine Eingabe
         try
         {
@@ -1944,7 +1945,6 @@ public class gesamt_GUI extends JFrame {
         }
     } // end of bSuchestarten_ActionPerformed
 
-   
 
     public void sucheVerwendung() { 
         // Frame-Initialisierung
@@ -1959,7 +1959,7 @@ public class gesamt_GUI extends JFrame {
         setTitle("sucheVerwendung");
         setResizable(false);
         Container cp = getContentPane();
-         cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
+        cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
         // Anfang Komponenten
 
         bSuchestarten2.setBounds(250, 135, 175, 25);
@@ -1970,17 +1970,17 @@ public class gesamt_GUI extends JFrame {
                     bVerwendungSuchestarten_ActionPerformed(evt);
                 }
             });
-        
+
         Ausgabe2.setBounds(50, 220, 500, 500);
         Ausgabe2.setVerticalAlignment(SwingConstants.TOP);
         Ausgabe2.setText("");
-        
+
         lEingabeVerwendung.setBounds(50, 80, 156, 20);
         lEingabeVerwendung.setText("Eingabe Verwendung");
-        
+
         jTextField2.setBounds(195, 80, 250, 20);
-        
-         bZuruck.addActionListener(new ActionListener()
+
+        bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
@@ -2053,12 +2053,12 @@ public class gesamt_GUI extends JFrame {
             {
                 public void actionPerformed(ActionEvent evt)
                 { 
-                    
+
                     bLoeschen_ActionPerformed(evt);
                 }
             }
         );
-        
+
         c.add(bLoeschen);
         bZuruck.addActionListener(new ActionListener()
             { 
@@ -2076,9 +2076,9 @@ public class gesamt_GUI extends JFrame {
 
     public void bLoeschen_ActionPerformed(ActionEvent evt){
         // TODO hier Quelltext einfügen
-        
-            bLoeschenMethode(); 
-        
+
+        bLoeschenMethode(); 
+
     } //
 
     public void bLoeschenMethode(){
