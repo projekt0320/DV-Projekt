@@ -580,23 +580,41 @@ public class gesamt_GUI extends JFrame {
 
     public void Gusserstellen_ActionPerformed(ActionEvent evt)
     {
+        
         String na = tName.getText();
-        int nr = Integer.parseInt(tNummer.getText());
+        int nr;
         String ve = tVerwendung.getText();
-        double el = Double.parseDouble(tElektrLeitf.getText());
-        double eg = Double.parseDouble(tEisengehalt.getText());
-        double st = Double.parseDouble(tSiedetemperatur.getText());
+        double el;
+        double eg;
+        double st;
 
-        try
+        try{
+            nr = Integer.parseInt(tNummer.getText());
+            el = Double.parseDouble(tElektrLeitf.getText());
+            eg = Double.parseDouble(tEisengehalt.getText());
+            st = Double.parseDouble(tSiedetemperatur.getText());
+        } 
+        catch (NumberFormatException e){
+            nr =-1;
+            el=-1;
+            eg=-1;
+            st=-1;
+        }
+        if (nr>0 && nr<=9999999 && el>0 && el<=9999999 && eg>0 && eg<=9999999 && st>0 && st<=9999999)
         {
-            Datenbank.ErstellenGuss(na, nr, ve, el, eg, st);
-            lFertig.setText("Gusseisen wurde erstellt");
+            try
+            {
+                Datenbank.ErstellenStahl(na, nr, ve, el, eg, st);
+                lFertig.setText("Gusseisen wurde erstellt");
+            }
+            catch (Exception e)
+            { 
+                lFertig.setText(     e.getMessage()      );
+            }
         }
-        catch (Exception e)
-        { 
-            lFertig.setText(     e.getMessage()      );
+        else {
+            lFertig.setText("Eingabe nicht in Ordnung");
         }
-
     }
 
     public void Schwermetallerstellen_GUI()
@@ -693,14 +711,25 @@ public class gesamt_GUI extends JFrame {
 
     public void Schwermetallerstellen_ActionPerformed(ActionEvent evt)
     {
+        
         String na = tName.getText();
-        int nr = Integer.parseInt(tNummer.getText());
+        int nr;
         String ve = tVerwendung.getText();
-        double el = Double.parseDouble(tElektrLeitf.getText());
+        double el;
         String he = tHauptelement.getText();
         String vf = tVerformbarkeit.getText();
 
-        try
+        try{
+            nr = Integer.parseInt(tNummer.getText());
+            el = Double.parseDouble(tElektrLeitf.getText());
+        } 
+        catch (NumberFormatException e){
+            nr =-1;
+            el=-1;
+        }
+        if (nr>0 && nr<=9999999 && el>0 && el<=9999999)
+        {
+            try
         {
             Datenbank.ErstellenSchwermetalle(na, nr, ve, el, he, vf);
             lFertig.setText("Schwermetall wurde erstellt");
@@ -709,7 +738,10 @@ public class gesamt_GUI extends JFrame {
         { 
             lFertig.setText(     e.getMessage()      );
         }
-
+        }
+        else {
+            lFertig.setText("Eingabe nicht in Ordnung");
+        }
     }
 
     public void Leichtmetallerstellen_GUI()
@@ -806,13 +838,26 @@ public class gesamt_GUI extends JFrame {
 
     public void Leichtmetallerstellen_ActionPerformed(ActionEvent evt)
     {
+       
         String na = tName.getText();
-        int nr = Integer.parseInt(tNummer.getText());
+        int nr;
         String ve = tVerwendung.getText();
-        double el = Double.parseDouble(tElektrLeitf.getText());
+        double el;
         String he = tHauptelement.getText();
-        double d = Double.parseDouble(tDichte.getText());
+        double d;
 
+        try{
+            nr = Integer.parseInt(tNummer.getText());
+            el = Double.parseDouble(tElektrLeitf.getText());
+            d = Double.parseDouble(tDichte.getText());
+        } 
+        catch (NumberFormatException e){
+            nr =-1;
+            el=-1;
+            d=-1;
+        }
+        if (nr>0 && nr<=9999999 && el>0 && el<=9999999 && d>0 && d<=9999999)
+        {
         try
         {
             Datenbank.ErstellenLeichtmetalle(na, nr, ve, el, he, d);
@@ -823,6 +868,11 @@ public class gesamt_GUI extends JFrame {
             lFertig.setText(     e.getMessage()      );
         }
 
+        }
+        else {
+            lFertig.setText("Eingabe nicht in Ordnung");
+        }
+        
     }
 
     public void Halbleitererstellen_GUI()
