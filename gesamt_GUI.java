@@ -374,9 +374,9 @@ public class gesamt_GUI extends JFrame {
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
         lVerwendung=new JLabel ("Verwendung:");
-        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit:");
-        lEisengehalt=new JLabel ("Eisengehalt:");
-        lKohlenstoffgehalt=new JLabel ("Kohlenstoffgehalt:");
+        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit in MS/m:");
+        lEisengehalt=new JLabel ("Eisengehalt in Prozent:");
+        lKohlenstoffgehalt=new JLabel ("Kohlenstoffgehalt in Prozent:");
 
         tName=new JTextField();
         tNummer=new JTextField();
@@ -491,9 +491,9 @@ public class gesamt_GUI extends JFrame {
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
         lVerwendung=new JLabel ("Verwendung:");
-        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit:");
-        lEisengehalt=new JLabel ("Eisengehalt:");
-        lSiedetemperatur=new JLabel ("Siedetemperatur:");
+        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit in MS/m:");
+        lEisengehalt=new JLabel ("Eisengehalt in Prozent:");
+        lSiedetemperatur=new JLabel ("Siedetemperatur in °C:");
 
         tName=new JTextField(10);
         tNummer=new JTextField(10);
@@ -604,7 +604,7 @@ public class gesamt_GUI extends JFrame {
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
         lVerwendung=new JLabel ("Verwendung:");
-        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit:");
+        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit in MS/m:");
         lHauptelement=new JLabel ("Hauptelement:");
         lVerformbarkeit=new JLabel ("Verformbarkeit:");
 
@@ -717,9 +717,9 @@ public class gesamt_GUI extends JFrame {
         lName=new JLabel ("Name:");
         lNummer=new JLabel ("Nummer:");
         lVerwendung=new JLabel ("Verwendung:");
-        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit:");
+        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit in MS/m:");
         lHauptelement=new JLabel ("Hauptelement:");
-        lDichte=new JLabel ("Dichte:");
+        lDichte=new JLabel ("Dichte in g/cm^3:");
 
         tName=new JTextField(10);
         tNummer=new JTextField(10);
@@ -831,7 +831,7 @@ public class gesamt_GUI extends JFrame {
         lNummer=new JLabel ("Nummer:");
         lVerwendung=new JLabel ("Verwendung:");
         lmetallEig=new JLabel ("Metallähnliche Eigenschaft:");
-        lELeit=new JLabel ("Elektrische Leitfähigkeit:");
+        lELeit=new JLabel ("Elektrische Leitfähigkeitin S/m:");
 
         tName=new JTextField(10);
         tNummer=new JTextField(10);
@@ -937,7 +937,7 @@ public class gesamt_GUI extends JFrame {
         lNummer=new JLabel ("Nummer:");
         lVerwendung=new JLabel ("Verwendung:");
         lmetallEig=new JLabel ("Metallähnliche Eigenschaft:");
-        lZugfestigkeit=new JLabel ("Zugfestigkeit:");
+        lZugfestigkeit=new JLabel ("Zugfestigkeit in N/mm^2:");
 
         tName=new JTextField(10);
         tNummer=new JTextField(10);
