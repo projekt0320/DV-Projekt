@@ -96,17 +96,17 @@ public class gesamt_GUI extends JFrame {
     private JLabel lEingabeName = new JLabel();
     private JButton bSuchestarten = new JButton();
     private JLabel Ausgabe = new JLabel();
-    private JTextField jTextField = new JTextField();
+    private JTextField jTextField = new JTextField(25);
 
     private JButton bSuchestarten1 = new JButton();
     private JLabel lEingabeNummer = new JLabel();
-    private JTextField jTextField1 = new JTextField();
+    private JTextField jTextField1 = new JTextField(25);
     private JLabel Ausgabe1 = new JLabel();
 
     private JButton bSuchestarten2 = new JButton();
     private JLabel Ausgabe2 = new JLabel();
     private JLabel lEingabeVerwendung = new JLabel();
-    private JTextField jTextField2 = new JTextField();
+    private JTextField jTextField2 = new JTextField(25);
 
     private JLabel lNummerLoeschen;
     private JLabel lAusgabeLoeschen;
@@ -1615,7 +1615,7 @@ public class gesamt_GUI extends JFrame {
                     sucheNummer();
                 }
             });
-        cp.add(bSucheNummer);
+        
         bSucheName.setBounds(250, 140, 150, 30);
         bSucheName.setText("Suche Name");
         bSucheName.setMargin(new Insets(2, 2, 2, 2));
@@ -1625,7 +1625,7 @@ public class gesamt_GUI extends JFrame {
                     sucheName();
                 }
             });
-        cp.add(bSucheName);
+        
         bSucheVerwendung.setBounds(250, 180, 150, 30);
         bSucheVerwendung.setText("Suche Verwendung");
         bSucheVerwendung.setMargin(new Insets(2, 2, 2, 2));
@@ -1635,7 +1635,20 @@ public class gesamt_GUI extends JFrame {
                     sucheVerwendung();
                 }
             });
+            bZuruck.addActionListener(new ActionListener()
+            { 
+                public void actionPerformed(ActionEvent evt)
+                { 
+                    cp.removeAll();
+                    Hauptmenu_GUI();
+                }
+            }
+        );
+        bZuruck.setBounds(250, 300, 150, 30);
+        cp.add(bSucheName);
+        cp.add(bSucheNummer);
         cp.add(bSucheVerwendung);
+        cp.add(bZuruck);
         cp.setBackground(new Color(0xC0C0C0));
         // Ende Komponenten
 
@@ -1656,13 +1669,13 @@ public class gesamt_GUI extends JFrame {
         setTitle("sucheName");
         setResizable(false);
         Container cp = getContentPane();
-        cp.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
         // Anfang Komponenten
 
-        lEingabeName.setBounds(50, 80, 110, 20);
+        
         lEingabeName.setText("Eingabe Name");
-        cp.add(lEingabeName);
-        bSuchestarten.setBounds(250, 135, 175, 25);
+        
+       
         bSuchestarten.setText("Suche starten");
         bSuchestarten.setMargin(new Insets(2, 2, 2, 2));
         bSuchestarten.addActionListener(new ActionListener() { 
@@ -1670,13 +1683,13 @@ public class gesamt_GUI extends JFrame {
                     bNameSuchestarten_ActionPerformed(evt);
                 }
             });
-        cp.add(bSuchestarten);
-        Ausgabe.setBounds(59, 220, 500, 500);
-        Ausgabe.setVerticalAlignment(SwingConstants.TOP);
+        
+        
+        
         Ausgabe.setText("");
-        cp.add(Ausgabe);
-        jTextField.setBounds(195, 80, 250, 20);
-        cp.add(jTextField);
+       
+       
+        
          bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -1686,6 +1699,10 @@ public class gesamt_GUI extends JFrame {
                 }
             }
         );
+        cp.add(lEingabeName);
+        cp.add(jTextField);
+        cp.add(bSuchestarten);
+         cp.add(Ausgabe);
         cp.add(bZuruck);
        
        
@@ -1731,10 +1748,10 @@ public class gesamt_GUI extends JFrame {
         setTitle("sucheNummer");
         setResizable(false);
         Container cp = getContentPane();
-        cp.setLayout(null);
+        cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
         // Anfang Komponenten
 
-        bSuchestarten1.setBounds(250, 135, 175, 25);
+        
         bSuchestarten1.setText("Suche starten");
         bSuchestarten1.setMargin(new Insets(2, 2, 2, 2));
         bSuchestarten1.addActionListener(new ActionListener() { 
@@ -1745,16 +1762,30 @@ public class gesamt_GUI extends JFrame {
         bSuchestarten1.setHorizontalTextPosition(SwingConstants.RIGHT);
         bSuchestarten1.setVerticalAlignment(SwingConstants.CENTER);
         bSuchestarten1.setVerticalTextPosition(SwingConstants.CENTER);
-        cp.add(bSuchestarten1);
-        lEingabeNummer.setBounds(50, 80, 110, 20);
+        
+        
         lEingabeNummer.setText("Eingabe Nummer");
-        cp.add(lEingabeNummer);
-        jTextField1.setBounds(195, 80, 250, 20);
-        cp.add(jTextField1);
+        
+        
+        
         Ausgabe1.setBounds(50, 220, 500, 500);
         Ausgabe1.setVerticalAlignment(SwingConstants.TOP);
         Ausgabe1.setText("");
+        
+        bZuruck.addActionListener(new ActionListener()
+            { 
+                public void actionPerformed(ActionEvent evt)
+                { 
+                    cp.removeAll();
+                    Hauptmenu_GUI();
+                }
+            }
+        );
+        cp.add(lEingabeNummer);
+        cp.add(jTextField1);
+        cp.add(bSuchestarten1);
         cp.add(Ausgabe1);
+        cp.add(bZuruck);
         // Ende Komponenten
 
         setVisible(true);
@@ -1808,7 +1839,7 @@ public class gesamt_GUI extends JFrame {
         setTitle("sucheVerwendung");
         setResizable(false);
         Container cp = getContentPane();
-        cp.setLayout(null);
+         cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
         // Anfang Komponenten
 
         bSuchestarten2.setBounds(250, 135, 175, 25);
@@ -1819,16 +1850,16 @@ public class gesamt_GUI extends JFrame {
                     bVerwendungSuchestarten_ActionPerformed(evt);
                 }
             });
-        cp.add(bSuchestarten2);
+        
         Ausgabe2.setBounds(50, 220, 500, 500);
         Ausgabe2.setVerticalAlignment(SwingConstants.TOP);
         Ausgabe2.setText("");
         cp.add(Ausgabe2);
         lEingabeVerwendung.setBounds(50, 80, 156, 20);
         lEingabeVerwendung.setText("Eingabe Verwendung");
-        cp.add(lEingabeVerwendung);
+        
         jTextField2.setBounds(195, 80, 250, 20);
-        cp.add(jTextField2);
+        
          bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -1838,6 +1869,9 @@ public class gesamt_GUI extends JFrame {
                 }
             }
         );
+        cp.add(lEingabeVerwendung);
+        cp.add(jTextField2);
+        cp.add(bSuchestarten2);
         cp.add(bZuruck);
         // Ende Komponenten
 
