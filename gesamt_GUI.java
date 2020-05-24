@@ -331,6 +331,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
+                    remove(c);
                     Hauptmenu_GUI();
                 }
             }
@@ -405,6 +406,7 @@ public class gesamt_GUI extends JFrame {
                     tEisengehalt.setText("");
                     tKohlenstoffgehalt.setText("");
                     lFertig.setText("");
+                    remove(c);
                     Hauptmenu_GUI();
                 }
             }
@@ -479,14 +481,14 @@ public class gesamt_GUI extends JFrame {
     public void Gusserstellen_GUI(Container c)
     {
 
-        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        // setTitle("Gusseisen erstellen");
-        // setResizable(false);
-        // setSize(700, 600);
-        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        // int x = (d.width - getSize().width) / 2;
-        // int y = (d.height - getSize().height) / 2;
-        // setLocation(x, y);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle("Gusseisen erstellen");
+        setResizable(false);
+        setSize(700, 600);
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (d.width - getSize().width) / 2;
+        int y = (d.height - getSize().height) / 2;
+        setLocation(x, y);
         // Container c = getContentPane();
         // c.setLayout(null);
 
@@ -599,14 +601,14 @@ public class gesamt_GUI extends JFrame {
     public void Schwermetallerstellen_GUI(Container c)
     {
 
-        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        // setTitle("Schwermetall erstellen");
-        // setResizable(false);
-        // setSize(700, 600);
-        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        // int x = (d.width - getSize().width) / 2;
-        // int y = (d.height - getSize().height) / 2;
-        // setLocation(x, y);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle("Schwermetall erstellen");
+        setResizable(false);
+        setSize(700, 600);
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (d.width - getSize().width) / 2;
+        int y = (d.height - getSize().height) / 2;
+        setLocation(x, y);
         // Container c = getContentPane();
         // c.setLayout(null);
 
@@ -713,14 +715,14 @@ public class gesamt_GUI extends JFrame {
     public void Leichtmetallerstellen_GUI(Container c)
     {
 
-        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        // setTitle("Leichtmetall erstellen");
-        // setResizable(false);
-        // setSize(700, 600);
-        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        // int x = (d.width - getSize().width) / 2;
-        // int y = (d.height - getSize().height) / 2;
-        // setLocation(x, y);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle("Leichtmetall erstellen");
+        setResizable(false);
+        setSize(700, 600);
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (d.width - getSize().width) / 2;
+        int y = (d.height - getSize().height) / 2;
+        setLocation(x, y);
         // Container c = getContentPane();
         // c.setLayout(null);
 
@@ -832,14 +834,14 @@ public class gesamt_GUI extends JFrame {
     public void Halbleitererstellen_GUI(Container c)
     {
 
-        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        // setTitle("Halbleiter erstellen");
-        // setResizable(false);
-        // setSize(700, 600);
-        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        // int x = (d.width - getSize().width) / 2;
-        // int y = (d.height - getSize().height) / 2;
-        // setLocation(x, y);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle("Halbleiter erstellen");
+        setResizable(false);
+        setSize(700, 600);
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (d.width - getSize().width) / 2;
+        int y = (d.height - getSize().height) / 2;
+        setLocation(x, y);
         // Container c = getContentPane();
         // c.setLayout(null);
 
@@ -940,14 +942,14 @@ public class gesamt_GUI extends JFrame {
     public void Keramikerstellen_GUI(Container c)
     {
 
-        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        // setTitle("Keramik erstellen");
-        // setResizable(false);
-        // setSize(700, 600);
-        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        // int x = (d.width - getSize().width) / 2;
-        // int y = (d.height - getSize().height) / 2;
-        // setLocation(x, y);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle("Keramik erstellen");
+        setResizable(false);
+        setSize(700, 600);
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (d.width - getSize().width) / 2;
+        int y = (d.height - getSize().height) / 2;
+        setLocation(x, y);
         // Container c = getContentPane();
         // c.setLayout(null);
 
@@ -1048,14 +1050,14 @@ public class gesamt_GUI extends JFrame {
     public void Kunststofferstellen_GUI(Container c)
     {
 
-        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        // setTitle("Kunststoff erstellen");
-        // setResizable(false);
-        // setSize(700, 600);
-        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        // int x = (d.width - getSize().width) / 2;
-        // int y = (d.height - getSize().height) / 2;
-        // setLocation(x, y);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle("Kunststoff erstellen");
+        setResizable(false);
+        setSize(700, 600);
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (d.width - getSize().width) / 2;
+        int y = (d.height - getSize().height) / 2;
+        setLocation(x, y);
         // Container c = getContentPane();
         // c.setLayout(null);
 
@@ -1154,14 +1156,14 @@ public class gesamt_GUI extends JFrame {
     public void Naturstofferstellen_GUI(Container c)
     {
 
-        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        // setTitle("Naturstoff erstellen");
-        // setResizable(false);
-        // setSize(700, 600);
-        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        // int x = (d.width - getSize().width) / 2;
-        // int y = (d.height - getSize().height) / 2;
-        // setLocation(x, y);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle("Naturstoff erstellen");
+        setResizable(false);
+        setSize(700, 600);
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (d.width - getSize().width) / 2;
+        int y = (d.height - getSize().height) / 2;
+        setLocation(x, y);
         // Container c = getContentPane();
         // c.setLayout(null);
 
