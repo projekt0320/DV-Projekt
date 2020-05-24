@@ -37,43 +37,42 @@ public class gesamt_GUI extends JFrame {
     private JButton bNaturstofferstellen = new JButton();
 
     private JLabel lErstellen = new JLabel("Werkstoff erstellen");
-    private JLabel lLeer2 = new JLabel();
 
-    private JLabel lName;
-    private JLabel lNummer;
-    private JLabel lVerwendung;
-    private JLabel lElektrLeitf;
-    private JLabel lEisengehalt;
-    private JLabel lKohlenstoffgehalt;
+    private JLabel lName=new JLabel ("Name:");
+    private JLabel lNummer=new JLabel ("Nummer:");
+    private JLabel lVerwendung=new JLabel ("Verwendung:");
+    private JLabel lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit in MS/m:");
+    private JLabel lEisengehalt=new JLabel ("Eisengehalt in Prozent:");
+    private JLabel lKohlenstoffgehalt=new JLabel ("Kohlenstoffgehalt in Prozent:");
+    private JLabel lSiedetemperatur= new JLabel ("Siedetemperatur in °C:");
+    private JLabel lHauptelement = new JLabel ("Hauptelement:");
+    private JLabel lVerformbarkeit = new JLabel ("Verformbarkeit:");
+    private JLabel lDichte = new JLabel ("Dichte in g/cm^3:");
+    private JLabel lmetallEig = new JLabel ("Metallähnliche Eigenschaft:");
+    private JLabel lELeit = new JLabel ("Elektrische Leitfähigkeit in S/m:");
+    private JLabel lZugfestigkeit = new JLabel ("Zugfestigkeit in N/mm^2:");
+    private JLabel lVerform = new JLabel ("Verformbarkeit:");
+    private JLabel lDegradation = new JLabel ("Degradation:");
 
-    private JTextField tName;
-    private JTextField tNummer;
-    private JTextField tVerwendung;
-    private JTextField tElektrLeitf;
-    private JTextField tEisengehalt;
-    private JTextField tKohlenstoffgehalt;
+    private JLabel lFertig = new JLabel();
+    private JButton erstellen = new JButton("erstellen");
+    private JButton bStahlerstellen1 = new JButton("Stahl erstellen");
 
-    private JLabel lSiedetemperatur;
-    private JTextField tSiedetemperatur;
-    private JLabel lHauptelement;
-    private JTextField tHauptelement;
-    private JLabel lVerformbarkeit;
-    private JTextField tVerformbarkeit;
-    private JLabel lDichte;
-    private JTextField tDichte;
-    private JLabel lmetallEig;
-    private JTextField tmetallEig;
-    private JLabel lELeit;
-    private JTextField tELeit;
-    private JLabel lZugfestigkeit;
-    private JTextField tZugfestigkeit;
-    private JLabel lVerform;
-    private JTextField tVerform;
-    private JLabel lDegradation;
-    private JTextField tDegradation;
-
-    private JLabel lFertig;
-    private JButton erstellen = new JButton();
+    private JTextField tName = new JTextField();
+    private JTextField tNummer = new JTextField();
+    private JTextField tVerwendung = new JTextField();
+    private JTextField tElektrLeitf = new JTextField();
+    private JTextField tEisengehalt = new JTextField();
+    private JTextField tKohlenstoffgehalt = new JTextField();
+    private JTextField tSiedetemperatur = new JTextField();
+    private JTextField tHauptelement = new JTextField();
+    private JTextField tVerformbarkeit = new JTextField();
+    private JTextField tDichte = new JTextField();
+    private JTextField tmetallEig = new JTextField();
+    private JTextField tELeit = new JTextField();
+    private JTextField tZugfestigkeit = new JTextField();
+    private JTextField tVerform = new JTextField();
+    private JTextField tDegradation = new JTextField();
 
     private JLabel lBearbeiten;
     private JList Liste;
@@ -210,17 +209,16 @@ public class gesamt_GUI extends JFrame {
 
     public void Erstellen_GUI()
     {
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("Erstellen");
-        setResizable(false);
-        setSize(700, 600);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (d.width - getSize().width) / 2;
-        int y = (d.height - getSize().height) / 2;
-        setLocation(x, y);
+        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // setTitle("Erstellen");
+        // setResizable(false);
+        // setSize(700, 600);
+        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        // int x = (d.width - getSize().width) / 2;
+        // int y = (d.height - getSize().height) / 2;
+        // setLocation(x, y);
         Container c = getContentPane();
         c.setLayout(null);
-        setVisible(true);
 
         bStahlerstellen.setText("Stahl erstellen");
         bStahlerstellen.setMargin(new Insets(2, 2, 2, 2));
@@ -353,33 +351,20 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    private int zahl =0;
     public void Stahlerstellen_GUI()
     {
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("Stahl erstellen");
-        setResizable(false);
-        setSize(700, 600);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (d.width - getSize().width) / 2;
-        int y = (d.height - getSize().height) / 2;
-        setLocation(x, y);
+        // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // setTitle("Stahl erstellen");
+        // setResizable(false);
+        // setSize(700, 600);
+        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        // int x = (d.width - getSize().width) / 2;
+        // int y = (d.height - getSize().height) / 2;
+        // setLocation(x, y);
         Container c = getContentPane();
         c.setLayout(null);
-
-        lName=new JLabel ("Name:");
-        lNummer=new JLabel ("Nummer:");
-        lVerwendung=new JLabel ("Verwendung:");
-        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit in MS/m:");
-        lEisengehalt=new JLabel ("Eisengehalt in Prozent:");
-        lKohlenstoffgehalt=new JLabel ("Kohlenstoffgehalt in Prozent:");
-
-        tName=new JTextField();
-        tNummer=new JTextField();
-        tVerwendung=new JTextField();
-        tElektrLeitf=new JTextField();
-        tEisengehalt=new JTextField();
-        tKohlenstoffgehalt=new JTextField();
 
         c.add(lName);
         c.add(tName);
@@ -394,15 +379,12 @@ public class gesamt_GUI extends JFrame {
         c.add(lKohlenstoffgehalt);
         c.add(tKohlenstoffgehalt);
 
-        lFertig = new JLabel();
-
-        erstellen.setText("erstellen");
-        erstellen.setMargin(new Insets(2, 2, 2, 2));
         erstellen.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
                     Stahlerstellen_ActionPerformed(evt);
+                    zahl++;
                 }
             }
         );
@@ -414,6 +396,13 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
+                    tName.setText("");
+                    tNummer.setText("");
+                    tVerwendung.setText("");
+                    tElektrLeitf.setText("");
+                    tEisengehalt.setText("");
+                    tKohlenstoffgehalt.setText("");
+                    lFertig.setText("");
                     Hauptmenu_GUI();
                 }
             }
@@ -488,30 +477,16 @@ public class gesamt_GUI extends JFrame {
     public void Gusserstellen_GUI()
     {
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("Gusseisen erstellen");
-        setResizable(false);
-        setSize(700, 600);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (d.width - getSize().width) / 2;
-        int y = (d.height - getSize().height) / 2;
-        setLocation(x, y);
+        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // setTitle("Gusseisen erstellen");
+        // setResizable(false);
+        // setSize(700, 600);
+        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        // int x = (d.width - getSize().width) / 2;
+        // int y = (d.height - getSize().height) / 2;
+        // setLocation(x, y);
         Container c = getContentPane();
         c.setLayout(null);
-
-        lName=new JLabel ("Name:");
-        lNummer=new JLabel ("Nummer:");
-        lVerwendung=new JLabel ("Verwendung:");
-        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit in MS/m:");
-        lEisengehalt=new JLabel ("Eisengehalt in Prozent:");
-        lSiedetemperatur=new JLabel ("Siedetemperatur in °C:");
-
-        tName=new JTextField(10);
-        tNummer=new JTextField(10);
-        tVerwendung=new JTextField(10);
-        tElektrLeitf=new JTextField(10);
-        tEisengehalt=new JTextField(10);
-        tSiedetemperatur=new JTextField(10);
 
         c.add(lName);
         c.add(tName);
@@ -526,10 +501,6 @@ public class gesamt_GUI extends JFrame {
         c.add(lSiedetemperatur);
         c.add(tSiedetemperatur);
 
-        lFertig = new JLabel();
-
-        erstellen.setText("erstellen");
-        erstellen.setMargin(new Insets(2, 2, 2, 2));
         erstellen.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -546,6 +517,13 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
+                    tName.setText("");
+                    tNummer.setText("");
+                    tVerwendung.setText("");
+                    tElektrLeitf.setText("");
+                    tEisengehalt.setText("");
+                    tSiedetemperatur.setText("");
+                    lFertig.setText("");
                     Hauptmenu_GUI();
                 }
             }
@@ -619,30 +597,16 @@ public class gesamt_GUI extends JFrame {
     public void Schwermetallerstellen_GUI()
     {
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("Schwermetall erstellen");
-        setResizable(false);
-        setSize(700, 600);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (d.width - getSize().width) / 2;
-        int y = (d.height - getSize().height) / 2;
-        setLocation(x, y);
+        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // setTitle("Schwermetall erstellen");
+        // setResizable(false);
+        // setSize(700, 600);
+        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        // int x = (d.width - getSize().width) / 2;
+        // int y = (d.height - getSize().height) / 2;
+        // setLocation(x, y);
         Container c = getContentPane();
         c.setLayout(null);
-
-        lName=new JLabel ("Name:");
-        lNummer=new JLabel ("Nummer:");
-        lVerwendung=new JLabel ("Verwendung:");
-        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit in MS/m:");
-        lHauptelement=new JLabel ("Hauptelement:");
-        lVerformbarkeit=new JLabel ("Verformbarkeit:");
-
-        tName=new JTextField(10);
-        tNummer=new JTextField(10);
-        tVerwendung=new JTextField(10);
-        tElektrLeitf=new JTextField(10);
-        tHauptelement=new JTextField(10);
-        tVerformbarkeit=new JTextField(10);
 
         c.add(lName);
         c.add(tName);
@@ -657,11 +621,7 @@ public class gesamt_GUI extends JFrame {
         c.add(lVerformbarkeit);
         c.add(tVerformbarkeit);
 
-        lFertig = new JLabel();
-
-        erstellen.setText("erstellen");
-        erstellen.setMargin(new Insets(2, 2, 2, 2));
-        erstellen.addActionListener(new ActionListener()
+       erstellen.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
@@ -677,6 +637,13 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
+                    tName.setText("");
+                    tNummer.setText("");
+                    tVerwendung.setText("");
+                    tElektrLeitf.setText("");
+                    tHauptelement.setText("");
+                    tVerformbarkeit.setText("");
+                    lFertig.setText("");
                     Hauptmenu_GUI();
                 }
             }
@@ -744,30 +711,16 @@ public class gesamt_GUI extends JFrame {
     public void Leichtmetallerstellen_GUI()
     {
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("Leichtmetall erstellen");
-        setResizable(false);
-        setSize(700, 600);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (d.width - getSize().width) / 2;
-        int y = (d.height - getSize().height) / 2;
-        setLocation(x, y);
+        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // setTitle("Leichtmetall erstellen");
+        // setResizable(false);
+        // setSize(700, 600);
+        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        // int x = (d.width - getSize().width) / 2;
+        // int y = (d.height - getSize().height) / 2;
+        // setLocation(x, y);
         Container c = getContentPane();
         c.setLayout(null);
-
-        lName=new JLabel ("Name:");
-        lNummer=new JLabel ("Nummer:");
-        lVerwendung=new JLabel ("Verwendung:");
-        lElektrLeitf=new JLabel ("Elektrische Leitfähigkeit in MS/m:");
-        lHauptelement=new JLabel ("Hauptelement:");
-        lDichte=new JLabel ("Dichte in g/cm^3:");
-
-        tName=new JTextField(10);
-        tNummer=new JTextField(10);
-        tVerwendung=new JTextField(10);
-        tElektrLeitf=new JTextField(10);
-        tHauptelement=new JTextField(10);
-        tDichte=new JTextField(10);
 
         c.add(lName);
         c.add(tName);
@@ -782,10 +735,6 @@ public class gesamt_GUI extends JFrame {
         c.add(lDichte);
         c.add(tDichte);
 
-        lFertig = new JLabel();
-
-        erstellen.setText("erstellen");
-        erstellen.setMargin(new Insets(2, 2, 2, 2));
         erstellen.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -802,6 +751,13 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
+                    tName.setText("");
+                    tNummer.setText("");
+                    tVerwendung.setText("");
+                    tElektrLeitf.setText("");
+                    tEisengehalt.setText("");
+                    tDichte.setText("");
+                    lFertig.setText("");
                     Hauptmenu_GUI();
                 }
             }
@@ -874,28 +830,16 @@ public class gesamt_GUI extends JFrame {
     public void Halbleitererstellen_GUI()
     {
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("Halbleiter erstellen");
-        setResizable(false);
-        setSize(700, 600);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (d.width - getSize().width) / 2;
-        int y = (d.height - getSize().height) / 2;
-        setLocation(x, y);
+        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // setTitle("Halbleiter erstellen");
+        // setResizable(false);
+        // setSize(700, 600);
+        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        // int x = (d.width - getSize().width) / 2;
+        // int y = (d.height - getSize().height) / 2;
+        // setLocation(x, y);
         Container c = getContentPane();
         c.setLayout(null);
-
-        lName=new JLabel ("Name:");
-        lNummer=new JLabel ("Nummer:");
-        lVerwendung=new JLabel ("Verwendung:");
-        lmetallEig=new JLabel ("Metallähnliche Eigenschaft:");
-        lELeit=new JLabel ("Elektrische Leitfähigkeit in S/m:");
-
-        tName=new JTextField(10);
-        tNummer=new JTextField(10);
-        tVerwendung=new JTextField(10);
-        tmetallEig=new JTextField(10);
-        tELeit=new JTextField(10);
 
         c.add(lName);
         c.add(tName);
@@ -908,10 +852,6 @@ public class gesamt_GUI extends JFrame {
         c.add(lELeit);
         c.add(tELeit);
 
-        lFertig = new JLabel();
-
-        erstellen.setText("erstellen");
-        erstellen.setMargin(new Insets(2, 2, 2, 2));
         erstellen.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -928,6 +868,12 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
+                    tName.setText("");
+                    tNummer.setText("");
+                    tVerwendung.setText("");
+                    tmetallEig.setText("");
+                    tELeit.setText("");
+                    lFertig.setText("");
                     Hauptmenu_GUI();
                 }
             }
@@ -992,30 +938,18 @@ public class gesamt_GUI extends JFrame {
     public void Keramikerstellen_GUI()
     {
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("Keramik erstellen");
-        setResizable(false);
-        setSize(700, 600);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (d.width - getSize().width) / 2;
-        int y = (d.height - getSize().height) / 2;
-        setLocation(x, y);
+        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // setTitle("Keramik erstellen");
+        // setResizable(false);
+        // setSize(700, 600);
+        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        // int x = (d.width - getSize().width) / 2;
+        // int y = (d.height - getSize().height) / 2;
+        // setLocation(x, y);
         Container c = getContentPane();
         c.setLayout(null);
 
-        lName=new JLabel ("Name:");
-        lNummer=new JLabel ("Nummer:");
-        lVerwendung=new JLabel ("Verwendung:");
-        lmetallEig=new JLabel ("Metallähnliche Eigenschaft:");
-        lZugfestigkeit=new JLabel ("Zugfestigkeit in N/mm^2:");
-
-        tName=new JTextField(10);
-        tNummer=new JTextField(10);
-        tVerwendung=new JTextField(10);
-        tmetallEig=new JTextField(10);
-        tZugfestigkeit=new JTextField(10);
-
-        c.add(lName);
+         c.add(lName);
         c.add(tName);
         c.add(lNummer);
         c.add(tNummer);
@@ -1026,10 +960,6 @@ public class gesamt_GUI extends JFrame {
         c.add(lZugfestigkeit);
         c.add(tZugfestigkeit);
 
-        lFertig = new JLabel();
-
-        erstellen.setText("erstellen");
-        erstellen.setMargin(new Insets(2, 2, 2, 2));
         erstellen.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -1046,6 +976,12 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
+                    tName.setText("");
+                    tNummer.setText("");
+                    tVerwendung.setText("");
+                    tmetallEig.setText("");
+                    tZugfestigkeit.setText("");
+                    lFertig.setText("");
                     Hauptmenu_GUI();
                 }
             }
