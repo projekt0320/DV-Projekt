@@ -1046,28 +1046,16 @@ public class gesamt_GUI extends JFrame {
     public void Kunststofferstellen_GUI()
     {
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("Kunststoff erstellen");
-        setResizable(false);
-        setSize(700, 600);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (d.width - getSize().width) / 2;
-        int y = (d.height - getSize().height) / 2;
-        setLocation(x, y);
+        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // setTitle("Kunststoff erstellen");
+        // setResizable(false);
+        // setSize(700, 600);
+        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        // int x = (d.width - getSize().width) / 2;
+        // int y = (d.height - getSize().height) / 2;
+        // setLocation(x, y);
         Container c = getContentPane();
         c.setLayout(null);
-
-        lName=new JLabel ("Name:");
-        lNummer=new JLabel ("Nummer:");
-        lVerwendung=new JLabel ("Verwendung:");
-        lmetallEig=new JLabel ("Metallähnliche Eigenschaft:");
-        lVerform=new JLabel ("Verformbarkeit:");
-
-        tName=new JTextField(10);
-        tNummer=new JTextField(10);
-        tVerwendung=new JTextField(10);
-        tmetallEig=new JTextField(10);
-        tVerform=new JTextField(10);
 
         c.add(lName);
         c.add(tName);
@@ -1080,10 +1068,6 @@ public class gesamt_GUI extends JFrame {
         c.add(lVerform);
         c.add(tVerform);
 
-        lFertig = new JLabel();
-
-        erstellen.setText("erstellen");
-        erstellen.setMargin(new Insets(2, 2, 2, 2));
         erstellen.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -1100,6 +1084,12 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
+                    tName.setText("");
+                    tNummer.setText("");
+                    tVerwendung.setText("");
+                    tmetallEig.setText("");
+                    tVerform.setText("");
+                    lFertig.setText("");
                     Hauptmenu_GUI();
                 }
             }
@@ -1162,28 +1152,16 @@ public class gesamt_GUI extends JFrame {
     public void Naturstofferstellen_GUI()
     {
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("Naturstoff erstellen");
-        setResizable(false);
-        setSize(700, 600);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (d.width - getSize().width) / 2;
-        int y = (d.height - getSize().height) / 2;
-        setLocation(x, y);
+        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // setTitle("Naturstoff erstellen");
+        // setResizable(false);
+        // setSize(700, 600);
+        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        // int x = (d.width - getSize().width) / 2;
+        // int y = (d.height - getSize().height) / 2;
+        // setLocation(x, y);
         Container c = getContentPane();
         c.setLayout(null);
-
-        lName=new JLabel ("Name:");
-        lNummer=new JLabel ("Nummer:");
-        lVerwendung=new JLabel ("Verwendung:");
-        lmetallEig=new JLabel ("Metallähnliche Eigenschaft:");
-        lDegradation=new JLabel ("Degradation:");
-
-        tName=new JTextField(10);
-        tNummer=new JTextField(10);
-        tVerwendung=new JTextField(10);
-        tmetallEig=new JTextField(10);
-        tDegradation=new JTextField(10);
 
         c.add(lName);
         c.add(tName);
@@ -1196,10 +1174,6 @@ public class gesamt_GUI extends JFrame {
         c.add(lDegradation);
         c.add(tDegradation);
 
-        lFertig = new JLabel();
-
-        erstellen.setText("erstellen");
-        erstellen.setMargin(new Insets(2, 2, 2, 2));
         erstellen.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -1216,6 +1190,12 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
+                    tName.setText("");
+                    tNummer.setText("");
+                    tVerwendung.setText("");
+                    tmetallEig.setText("");
+                    tDegradation.setText("");
+                    lFertig.setText("");
                     Hauptmenu_GUI();
                 }
             }
