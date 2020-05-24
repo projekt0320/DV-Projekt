@@ -242,7 +242,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
-                    Gusserstellen_GUI();
+                    Gusserstellen_GUI(c);
                 }
             }
         );
@@ -255,7 +255,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
-                    Leichtmetallerstellen_GUI();
+                    Leichtmetallerstellen_GUI(c);
                 }
             }
         );
@@ -268,7 +268,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
-                    Schwermetallerstellen_GUI();
+                    Schwermetallerstellen_GUI(c);
                 }
             }
         );
@@ -281,7 +281,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
-                    Halbleitererstellen_GUI();
+                    Halbleitererstellen_GUI(c);
                 }
             }
         );
@@ -294,7 +294,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
-                    Keramikerstellen_GUI();
+                    Keramikerstellen_GUI(c);
                 }
             }
         );
@@ -307,7 +307,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
-                    Kunststofferstellen_GUI();
+                    Kunststofferstellen_GUI(c);
                 }
             }
         );
@@ -320,7 +320,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
-                    Naturstofferstellen_GUI();
+                    Naturstofferstellen_GUI(c);
                 }
             }
         );
@@ -476,7 +476,7 @@ public class gesamt_GUI extends JFrame {
 
     }
 
-    public void Gusserstellen_GUI()
+    public void Gusserstellen_GUI(Container c)
     {
 
         // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -487,8 +487,8 @@ public class gesamt_GUI extends JFrame {
         // int x = (d.width - getSize().width) / 2;
         // int y = (d.height - getSize().height) / 2;
         // setLocation(x, y);
-        Container c = getContentPane();
-        c.setLayout(null);
+        // Container c = getContentPane();
+        // c.setLayout(null);
 
         c.add(lName);
         c.add(tName);
@@ -596,7 +596,7 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
-    public void Schwermetallerstellen_GUI()
+    public void Schwermetallerstellen_GUI(Container c)
     {
 
         // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -607,8 +607,8 @@ public class gesamt_GUI extends JFrame {
         // int x = (d.width - getSize().width) / 2;
         // int y = (d.height - getSize().height) / 2;
         // setLocation(x, y);
-        Container c = getContentPane();
-        c.setLayout(null);
+        // Container c = getContentPane();
+        // c.setLayout(null);
 
         c.add(lName);
         c.add(tName);
@@ -710,7 +710,7 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
-    public void Leichtmetallerstellen_GUI()
+    public void Leichtmetallerstellen_GUI(Container c)
     {
 
         // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -721,8 +721,8 @@ public class gesamt_GUI extends JFrame {
         // int x = (d.width - getSize().width) / 2;
         // int y = (d.height - getSize().height) / 2;
         // setLocation(x, y);
-        Container c = getContentPane();
-        c.setLayout(null);
+        // Container c = getContentPane();
+        // c.setLayout(null);
 
         c.add(lName);
         c.add(tName);
@@ -829,7 +829,7 @@ public class gesamt_GUI extends JFrame {
 
     }
 
-    public void Halbleitererstellen_GUI()
+    public void Halbleitererstellen_GUI(Container c)
     {
 
         // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -840,8 +840,8 @@ public class gesamt_GUI extends JFrame {
         // int x = (d.width - getSize().width) / 2;
         // int y = (d.height - getSize().height) / 2;
         // setLocation(x, y);
-        Container c = getContentPane();
-        c.setLayout(null);
+        // Container c = getContentPane();
+        // c.setLayout(null);
 
         c.add(lName);
         c.add(tName);
@@ -937,7 +937,7 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
-    public void Keramikerstellen_GUI()
+    public void Keramikerstellen_GUI(Container c)
     {
 
         // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -948,8 +948,8 @@ public class gesamt_GUI extends JFrame {
         // int x = (d.width - getSize().width) / 2;
         // int y = (d.height - getSize().height) / 2;
         // setLocation(x, y);
-        Container c = getContentPane();
-        c.setLayout(null);
+        // Container c = getContentPane();
+        // c.setLayout(null);
 
          c.add(lName);
         c.add(tName);
@@ -1045,7 +1045,7 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
-    public void Kunststofferstellen_GUI()
+    public void Kunststofferstellen_GUI(Container c)
     {
 
         // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -1056,8 +1056,8 @@ public class gesamt_GUI extends JFrame {
         // int x = (d.width - getSize().width) / 2;
         // int y = (d.height - getSize().height) / 2;
         // setLocation(x, y);
-        Container c = getContentPane();
-        c.setLayout(null);
+        // Container c = getContentPane();
+        // c.setLayout(null);
 
         c.add(lName);
         c.add(tName);
@@ -1151,7 +1151,7 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
-    public void Naturstofferstellen_GUI()
+    public void Naturstofferstellen_GUI(Container c)
     {
 
         // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -1162,8 +1162,8 @@ public class gesamt_GUI extends JFrame {
         // int x = (d.width - getSize().width) / 2;
         // int y = (d.height - getSize().height) / 2;
         // setLocation(x, y);
-        Container c = getContentPane();
-        c.setLayout(null);
+        // Container c = getContentPane();
+        // c.setLayout(null);
 
         c.add(lName);
         c.add(tName);
