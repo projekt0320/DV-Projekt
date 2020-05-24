@@ -157,7 +157,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     cp.removeAll();
-                    Erstellen_GUI();
+                    Erstellen_GUI(cp);
                 }
             }
         );
@@ -207,18 +207,20 @@ public class gesamt_GUI extends JFrame {
         new gesamt_GUI();
     } // end of main
 
-    public void Erstellen_GUI()
+    public void Erstellen_GUI(Container c)
     {
-        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        // setTitle("Erstellen");
-        // setResizable(false);
-        // setSize(700, 600);
-        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        // int x = (d.width - getSize().width) / 2;
-        // int y = (d.height - getSize().height) / 2;
-        // setLocation(x, y);
-        Container c = getContentPane();
-        c.setLayout(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle("Erstellen");
+        setResizable(false);
+        setSize(700, 600);
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (d.width - getSize().width) / 2;
+        int y = (d.height - getSize().height) / 2;
+        setLocation(x, y);
+        // Container c = getContentPane();
+        // c.setLayout(null);
+        
+                    
 
         bStahlerstellen.setText("Stahl erstellen");
         bStahlerstellen.setMargin(new Insets(2, 2, 2, 2));
@@ -227,7 +229,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     c.removeAll();
-                    Stahlerstellen_GUI();
+                    Stahlerstellen_GUI(c);
                 }
             }
         );
@@ -352,19 +354,19 @@ public class gesamt_GUI extends JFrame {
     }
 
     private int zahl =0;
-    public void Stahlerstellen_GUI()
+    public void Stahlerstellen_GUI(Container c)
     {
 
-        // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // setTitle("Stahl erstellen");
-        // setResizable(false);
-        // setSize(700, 600);
-        // Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        // int x = (d.width - getSize().width) / 2;
-        // int y = (d.height - getSize().height) / 2;
-        // setLocation(x, y);
-        Container c = getContentPane();
-        c.setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Stahl erstellen");
+        setResizable(false);
+        setSize(700, 600);
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (d.width - getSize().width) / 2;
+        int y = (d.height - getSize().height) / 2;
+        setLocation(x, y);
+        // Container c = getContentPane();
+        // c.setLayout(null);
 
         c.add(lName);
         c.add(tName);
