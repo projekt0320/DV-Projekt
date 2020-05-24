@@ -916,7 +916,7 @@ public class gesamt_GUI extends JFrame {
 
         try{
             nr = Integer.parseInt(tNummer.getText());
-            el = Double.parseDouble(tElektrLeitf.getText());
+            el = Double.parseDouble(tELeit.getText());
         } 
         catch (NumberFormatException e){
             nr =-1;
