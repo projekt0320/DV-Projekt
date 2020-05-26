@@ -84,7 +84,7 @@ public class gesamt_GUI extends JFrame {
     private JTextField t1;
     private JLabel l2;
     private JTextField t2;
-    private JLabel l3;
+    private JTextArea l3;
     private JButton bBearbeiten;
 
     private JButton bSucheNummer = new JButton();
@@ -1279,7 +1279,7 @@ public class gesamt_GUI extends JFrame {
         t1=new JTextField(10);
         l2=new JLabel("neue Eigenschaft");
         t2=new JTextField(10);
-        l3=new JLabel();
+        l3=new JTextArea();
 
         Liste=new JList(bearbeitenNames);
         Liste.setVisibleRowCount( 3 );
@@ -1314,12 +1314,12 @@ public class gesamt_GUI extends JFrame {
         l1.setBounds(20, 160, 300, 20);
         l2.setBounds(20, 200, 300, 20);
         bBearbeiten.setBounds(20, 240, 150, 20);
-        l3.setBounds(20, 280, 500, 20);
+        l3.setBounds(20, 280, 480, 40);
         scrollPane.setBounds(350,20,200,100);
         
         t1.setBounds(350, 160, 150, 20);
         t2.setBounds(350, 200, 150, 20);
-        bZuruck.setBounds(20, 320, 150, 20);
+        bZuruck.setBounds(20, 360, 150, 20);
         
         c.add(lBearbeiten);
         c.add(scrollPane);

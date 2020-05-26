@@ -457,7 +457,7 @@ public class Datenbank
         } 
         String s= "Metalle";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
@@ -481,7 +481,7 @@ public class Datenbank
         } 
         String s= "Halbleiter";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
@@ -506,7 +506,7 @@ public class Datenbank
         }
         String s= "Eisenmetalle";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
@@ -530,7 +530,7 @@ public class Datenbank
         } 
         String s= "Stahl";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
@@ -554,7 +554,7 @@ public class Datenbank
         } 
         String s= "Nichteisenmetalle";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
@@ -578,7 +578,7 @@ public class Datenbank
         } 
         String s= "Gusswerkstoff";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
@@ -602,7 +602,7 @@ public class Datenbank
         } 
         String s= "Schwermetalle";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
@@ -626,7 +626,7 @@ public class Datenbank
         } 
         String s= "Kunststoffe";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
@@ -650,7 +650,7 @@ public class Datenbank
         } 
         String s= "Leichtmetalle";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
@@ -674,7 +674,7 @@ public class Datenbank
         } 
         String s= "Nichtmetalle";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
@@ -698,7 +698,7 @@ public class Datenbank
         } 
         String s= "keramischeWerkstoffe";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
@@ -722,7 +722,7 @@ public class Datenbank
         } 
         String s= "Naturstoffe";
         if(w.getClass().getSimpleName()!= s){
-            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+            throw new Exception("Die von Ihnen gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
         }
         else
         {
