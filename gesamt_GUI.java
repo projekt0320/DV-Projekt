@@ -1271,21 +1271,21 @@ public class gesamt_GUI extends JFrame {
         setLocation(x, y);
 
         Container c = getContentPane();
-        c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
-        lBearbeiten=new JLabel("                    bearbeiten:");
-        c.add(lBearbeiten);
+        //c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        lBearbeiten=new JLabel("Eigenschaft, die bearbeitet werden soll:");
+        
 
-        l1=new JLabel("                     Nummer des Werkstoffs, der bearbeitet werden soll:");  
+        l1=new JLabel("Nummer des Werkstoffs, der bearbeitet werden soll:");  
         t1=new JTextField(10);
-        l2=new JLabel("                     neue Eigenschaft");
+        l2=new JLabel("neue Eigenschaft");
         t2=new JTextField(10);
         l3=new JLabel();
 
         Liste=new JList(bearbeitenNames);
-        Liste.setVisibleRowCount( 5 );
+        Liste.setVisibleRowCount( 3 );
 
         Liste.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        c.add(new JScrollPane(Liste));
+        JScrollPane scrollPane = new JScrollPane(Liste);
 
         bBearbeiten=new JButton();
         bBearbeiten.setText("bearbeiten");
@@ -1301,11 +1301,6 @@ public class gesamt_GUI extends JFrame {
             }
         );
 
-        c.add(bBearbeiten);
-        c.add(l1);
-        c.add(t1);
-        c.add(l2);
-        c.add(t2);
         bZuruck.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
@@ -1315,6 +1310,24 @@ public class gesamt_GUI extends JFrame {
                 }
             }
         );
+        lBearbeiten.setBounds(20, 20, 300, 20);
+        l1.setBounds(20, 160, 300, 20);
+        l2.setBounds(20, 200, 300, 20);
+        bBearbeiten.setBounds(20, 240, 150, 20);
+        l3.setBounds(20, 280, 500, 20);
+        scrollPane.setBounds(350,20,200,100);
+        
+        t1.setBounds(350, 160, 150, 20);
+        t2.setBounds(350, 200, 150, 20);
+        bZuruck.setBounds(20, 320, 150, 20);
+        
+        c.add(lBearbeiten);
+        c.add(scrollPane);
+        c.add(l1);
+        c.add(t1);
+        c.add(l2);
+        c.add(t2);
+        c.add(bBearbeiten);
         c.add(bZuruck);
         c.add(l3);
 
