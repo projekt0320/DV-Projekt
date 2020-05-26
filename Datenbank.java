@@ -455,6 +455,10 @@ public class Datenbank
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
         } 
+        String s= "Metalle";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((Metalle) w).setElektrischeLeitfaehigkeit(elektrLeitf);
@@ -475,6 +479,10 @@ public class Datenbank
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
         } 
+        String s= "Halbleiter";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((Halbleiter) w).setElektrischeLeitfaehigkeit(elektrLeitf);
@@ -495,7 +503,11 @@ public class Datenbank
         if(w == null)
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
-        } 
+        }
+        String s= "Eisenmetalle";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((Eisenmetalle) w).setEisengehalt(eisengehalt);
@@ -516,6 +528,10 @@ public class Datenbank
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
         } 
+        String s= "Stahl";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((Stahl)w).setKohlenstoffgehalt(Kohlenstoffgehalt);
@@ -536,6 +552,10 @@ public class Datenbank
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
         } 
+        String s= "Nichteisenmetalle";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((Nichteisenmetalle)w).setHauptelement(Hauptelement);
@@ -556,6 +576,10 @@ public class Datenbank
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
         } 
+        String s= "Gusswerkstoff";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((Gusswerkstoff)w).setSiedetemperatur(Siedetemp);
@@ -576,6 +600,10 @@ public class Datenbank
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
         } 
+        String s= "Schwermetalle";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((Schwermetalle)w).setVerformbarkeit(Verformbarkeit);
@@ -596,6 +624,10 @@ public class Datenbank
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
         } 
+        String s= "Kunststoffe";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((Kunststoffe)w).setVerformbarkeit(Verformbarkeit);
@@ -616,6 +648,10 @@ public class Datenbank
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
         } 
+        String s= "Leichtmetalle";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((Leichtmetalle)w).setDichte(Dichte);
@@ -636,6 +672,10 @@ public class Datenbank
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
         } 
+        String s= "Nichtmetalle";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((Nichtmetalle)w).setMetallAehnlicheEigenschaften(metallEigenschaft);
@@ -656,6 +696,10 @@ public class Datenbank
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
         } 
+        String s= "keramischeWerkstoffe";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((keramischeWerkstoffe)w).setZugfestigkeit(Zugfestigkeit);
@@ -676,6 +720,10 @@ public class Datenbank
         {
             throw new Exception("Der Werkstoff konnte nicht gefunden und deshalb nicht bearbeitet werden.");
         } 
+        String s= "Naturstoffe";
+        if(w.getClass().getSimpleName()!= s){
+            throw new Exception("Die von Ihnen zu bearbeiten gewählte Eigenschaft, kann nicht bearbeitet werden.\nBitte geben Sie eine andere Nummer an oder wählen Sie eine andere Eigenschaft aus.");
+        }
         else
         {
             ((Naturstoffe)w).setDegradation(Degradation);

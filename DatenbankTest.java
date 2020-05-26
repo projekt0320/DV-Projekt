@@ -248,7 +248,7 @@ public class DatenbankTest
             System.out.println( e.getMessage()  );
         }
     }
-    
+
     //Tests zu SucheName-Methde
     @Test
     public void TestSucheName1() throws Exception
@@ -581,10 +581,19 @@ public class DatenbankTest
         datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
         datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
         datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
-
-        datenban1.BearbeitenKohlenstoffgehalt(20000, 2.1);   // Programmfehler: „ClassCastException: class Leichtmetalle cannot be cast to class Stahl“
-        datenban1.BearbeitenKohlenstoffgehalt(400776, 2.1);  //wird nicht mehr ausgeführt,würde jedoch Programmfehler aufrufen: „ClassCastException: class Halbleiter cannot be cast to class Stahl“
-
+        
+        try{
+        datenban1.BearbeitenKohlenstoffgehalt(20000, 2.1);   }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        try{
+        datenban1.BearbeitenKohlenstoffgehalt(400776, 2.1); }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
     }
 
     @Test
@@ -720,10 +729,19 @@ public class DatenbankTest
         datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
         datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
         datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
-
-        datenban1.BearbeitenDichte(10503, 3.5);  // Programmfehler: „ClassCastException: class Stahl cannot be cast to class Leichtmetalle“
-        datenban1.BearbeitenDichte(400776, 3.5); //wird nicht mehr ausgeführt,würde jedoch Programmfehler aufrufen: „ClassCastException: class Halbleiter cannot be cast to class Leichtmetalle“
-
+        
+        try{
+        datenban1.BearbeitenDichte(10503, 3.5); }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        try{
+        datenban1.BearbeitenDichte(400776, 3.5);}
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
     }
 
     @Test
@@ -859,10 +877,21 @@ public class DatenbankTest
         datenban1.ErstellenHalbleiter("SiC", 409212, "Bau", "hohe Wärmeleitfähigkeit",0.0098);
         datenban1.ErstellenHalbleiter("Germanium", 400776, "Arzneimittel", "plastische Verformbarkeit",0.0006);
         datenban1.ErstellenHalbleiter("Cadmiumsulfid", 408228, "Halbleitertechnik", "metallischer Glanz",0.0013);
-
-        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(10503, 0.0008);  // Programmfehler: „ClassCastException: class Stahl cannot be cast to class Halbleiter“
-        datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(20000, 0.0008); //wird nicht mehr ausgeführt,würde jedoch Programmfehler aufrufen: „ClassCastException: class Leichtmetalle cannot be cast to class Halbleiter“
-
+        try{
+            datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(10503, 0.0008);  
+            
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
+        try{
+            datenban1.BearbeitenElektrischeLeitfaehigkeitHalbleiter(20000, 0.0008);
+        }
+        catch(Exception e)
+        {
+            System.out.println( e.getMessage()   );
+        }
     }
 
     @Test
@@ -944,6 +973,5 @@ public class DatenbankTest
     }
 
 }
-
 
 
