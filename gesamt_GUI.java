@@ -5,18 +5,15 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 /**
- * Alle GUI-Methoden in einer Klasse, sodass alle auf dasselbe Datenbank-Objekt zugreifen.
- * Noch nicht die endgültige Version der GUI-Klasse, es kommen noch Vereinheitlichungen in den Fenstern, java.doc-Dokumentation und
- * weitere Exceptions dazu.
- * 
+ * Die Klasse gesamt_GUI beinhaltet die Benutzeroberflächen für das Erstellen, Suchen, Bearbeiten und Löschen von Werkstoffen. Sie ist
+ * eine Unterklasse der Klasse JFrame.
  *
- * @version 20. Mai 2020
+ * @version 27. Mai 2020
  * @author Jenny Glönkler (Bearbeiten, Löschen), Markus Schnee (Suchen, Hauptmenü), Felicia Wieland (Erstellen, gesamt_GUI)
  */
 
 public class gesamt_GUI extends JFrame {
 
-    // Anfang Attribute
     Datenbank Datenbank = new Datenbank();
 
     private JLabel lWerkstoffdatenbank = new JLabel();
@@ -56,7 +53,8 @@ public class gesamt_GUI extends JFrame {
 
     private JLabel lFertig = new JLabel();
     private JButton erstellen = new JButton("erstellen");
-    private JButton bStahlerstellen1 = new JButton("Stahl erstellen");
+    private JButton berstellen1 = new JButton ("erstellen");
+    private int zahl =0;
 
     private JTextField tName = new JTextField();
     private JTextField tNummer = new JTextField();
@@ -115,17 +113,23 @@ public class gesamt_GUI extends JFrame {
     private JButton bLoeschen;
     private JTextArea taTestTextArea;
 
-    // Ende Attribute
-
+    /**
+     * Konstruktor der Klasse gesamt_GUI, in der die Konstruktoren der Überklassen aufgerufen werden.
+     * Ebenso wird die Methode Hauptmenu_GUI aufgerufen.
+     */
     public gesamt_GUI()
     {
         super();
         Hauptmenu_GUI();
     }
 
+    /**
+     * Die Methode Hauptmenu_GUI initialisiert den Frame, erstellt einen Container, in dem sich ein Label mit dem Projekt-Titel und
+     * Buttons für die Auswahlmöglichkeiten "Werkstoff erstellen", "Werkstoff suchen", "Werkstoff bearbeiten" und "Werkstoff löschen"
+     * befinden.
+     */
     public void Hauptmenu_GUI()
     { 
-        // Frame-Initialisierung
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 700; 
         int frameHeight = 600;
@@ -138,7 +142,6 @@ public class gesamt_GUI extends JFrame {
         setResizable(false);
         Container cp = getContentPane();
         cp.setLayout(null);
-        // Anfang Komponenten
 
         lWerkstoffdatenbank.setBounds(130, 90, 400, 104);
         lWerkstoffdatenbank.setToolTipText("");
@@ -200,11 +203,16 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Main-Methode der Klasse gesamt_GUI.
+     * 
+     * @param args
+     */
     public static void main(String[] args)
     {
         new gesamt_GUI();
     }
-    
+
     public void Erstellen_GUI(Container c)
     {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -217,7 +225,7 @@ public class gesamt_GUI extends JFrame {
         setLocation(x, y);
         // Container c = getContentPane();
         // c.setLayout(null);
-       
+
         bStahlerstellen.setText("Stahl erstellen");
         bStahlerstellen.setMargin(new Insets(2, 2, 2, 2));
         bStahlerstellen.addActionListener(new ActionListener()
@@ -350,7 +358,6 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
-    private int zahl =0;
     public void Stahlerstellen_GUI(Container c)
     {
 
@@ -378,17 +385,17 @@ public class gesamt_GUI extends JFrame {
         c.add(lKohlenstoffgehalt);
         c.add(tKohlenstoffgehalt);
 
-        erstellen.addActionListener(new ActionListener()
+        berstellen1.addActionListener(new ActionListener()
             { 
-                public void actionPerformed(ActionEvent evt)
+                public void actionPerformed(ActionEvent evt1)
                 { 
-                    Stahlerstellen_ActionPerformed(evt);
+                    Stahlerstellen_ActionPerformed(evt1);
                     zahl++;
                 }
             }
         );
 
-        c.add(erstellen);
+        c.add(berstellen1);
 
         bZuruck.addActionListener(new ActionListener()
             { 
@@ -427,52 +434,52 @@ public class gesamt_GUI extends JFrame {
 
         lFertig.setBounds(20, 320, 550, 20);
 
-        erstellen.setBounds(20, 280, 150, 20);
+        berstellen1.setBounds(20, 280, 150, 20);
 
         bZuruck.setBounds(20, 400, 150, 20);
 
         setVisible(true);
     }
 
-    public void Stahlerstellen_ActionPerformed(ActionEvent evt)
+    public void Stahlerstellen_ActionPerformed(ActionEvent evt1)
     {
-        if(evt.getSource() == this.erstellen)
+        if(evt1.getSource() == this.berstellen1)
         {
-        String na = tName.getText();
-        int nr;
-        String ve = tVerwendung.getText();
-        double el;
-        double eg;
-        double kg;
+            String na = tName.getText();
+            int nr;
+            String ve = tVerwendung.getText();
+            double el;
+            double eg;
+            double kg;
 
-        try{
-            nr = Integer.parseInt(tNummer.getText());
-            el = Double.parseDouble(tElektrLeitf.getText());
-            eg = Double.parseDouble(tEisengehalt.getText());
-            kg = Double.parseDouble(tKohlenstoffgehalt.getText());
-        } 
-        catch (NumberFormatException e){
-            nr =-1;
-            el=-1;
-            eg=-1;
-            kg=-1;
-        }
-        if (nr>0 && nr<=9999999 && el>0 && el<=9999999 && eg>0 && eg<=9999999 && kg>0 && kg<=9999999)
-        {
-            try
+            try{
+                nr = Integer.parseInt(tNummer.getText());
+                el = Double.parseDouble(tElektrLeitf.getText());
+                eg = Double.parseDouble(tEisengehalt.getText());
+                kg = Double.parseDouble(tKohlenstoffgehalt.getText());
+            } 
+            catch (NumberFormatException e){
+                nr =-1;
+                el=-1;
+                eg=-1;
+                kg=-1;
+            }
+            if (nr>0 && nr<=9999999 && el>0 && el<=9999999 && eg>0 && eg<=9999999 && kg>0 && kg<=9999999)
             {
-                Datenbank.ErstellenStahl(na, nr, ve, el, eg, kg);
-                lFertig.setText("Stahl wurde erstellt");
+                try
+                {
+                    Datenbank.ErstellenStahl(na, nr, ve, el, eg, kg);
+                    lFertig.setText("Stahl wurde erstellt");
+                }
+                catch (Exception e)
+                { 
+                    lFertig.setText(     e.getMessage()      );
+                }
             }
-            catch (Exception e)
-            { 
-                lFertig.setText(     e.getMessage()      );
+            else {
+                lFertig.setText("Eingabe nicht in Ordnung");
             }
         }
-        else {
-            lFertig.setText("Eingabe nicht in Ordnung");
-        }
-    }
     }
 
     public void Gusserstellen_GUI(Container c)
@@ -577,7 +584,7 @@ public class gesamt_GUI extends JFrame {
             eg=-1;
             st=-1;
         }
-        
+
         if (nr>0 && nr<=9999999 && el>0 && el<=9999999 && eg>0 && eg<=9999999 && st>0 && st<=9999999)
         {
             try
@@ -622,7 +629,7 @@ public class gesamt_GUI extends JFrame {
         c.add(lVerformbarkeit);
         c.add(tVerformbarkeit);
 
-       erstellen.addActionListener(new ActionListener()
+        erstellen.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt)
                 { 
@@ -950,7 +957,7 @@ public class gesamt_GUI extends JFrame {
         // Container c = getContentPane();
         // c.setLayout(null);
 
-         c.add(lName);
+        c.add(lName);
         c.add(tName);
         c.add(lNummer);
         c.add(tNummer);
@@ -1270,7 +1277,6 @@ public class gesamt_GUI extends JFrame {
         Container c = getContentPane();
         //c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
         lBearbeiten=new JLabel("Eigenschaft, die bearbeitet werden soll:");
-        
 
         l1=new JLabel("Nummer des Werkstoffs, der bearbeitet werden soll:");  
         t1=new JTextField(10);
@@ -1313,11 +1319,11 @@ public class gesamt_GUI extends JFrame {
         bBearbeiten.setBounds(20, 240, 150, 20);
         l3.setBounds(20, 280, 480, 40);
         scrollPane.setBounds(350,20,200,100);
-        
+
         t1.setBounds(350, 160, 150, 20);
         t2.setBounds(350, 200, 150, 20);
         bZuruck.setBounds(20, 360, 150, 20);
-        
+
         c.add(lBearbeiten);
         c.add(scrollPane);
         c.add(l1);
@@ -1871,7 +1877,7 @@ public class gesamt_GUI extends JFrame {
     public void bNameSuchestarten_ActionPerformed(ActionEvent evt) {
         // TODO hier Quelltext einfügen
 
-       try
+        try
         {
             String s= jTextField.getText();
             String s2= Datenbank.sucheNameAnzeige(s);
@@ -1882,10 +1888,8 @@ public class gesamt_GUI extends JFrame {
             taTestTextArea.setText(     e.getMessage()      );
 
         }
-        
 
     } // end of bSuchestarten_ActionPerformed
-
     public void sucheNummer() { 
         // Frame-Initialisierung
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -2020,23 +2024,21 @@ public class gesamt_GUI extends JFrame {
         // TODO hier Quelltext einfügen
         if(evt.getSource() == this.bSuchestarten2)
         {
-             String s= jTextField2.getText();
+            String s= jTextField2.getText();
 
-        try
-        {
-            String s2= Datenbank.sucheVerwendung(s);
-            Ausgabe2.setText( s2 );
-        }
-        catch(Exception e)
-        {
+            try
+            {
+                String s2= Datenbank.sucheVerwendung(s);
+                Ausgabe2.setText( s2 );
+            }
+            catch(Exception e)
+            {
 
-            Ausgabe2.setText(     e.getMessage()      );
+                Ausgabe2.setText(     e.getMessage()      );
 
-        }
+            }
         }
     } // end of bSuchestarten_ActionPerformed
-
-   
 
     public void Loeschen_GUI()
     {
