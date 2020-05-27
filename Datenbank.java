@@ -788,7 +788,7 @@ public class Datenbank
         String s= "";
         for (Werkstoffe w : liste)
         {
-            if(w.getVerwendung()== verwendung)
+            if(w.getVerwendung().equals(verwendung))
             {
                 s= s  +w.gibEigenschaft()+ "\n";
             }   
@@ -839,7 +839,7 @@ public class Datenbank
     {
         for (Werkstoffe w : liste)
         {
-            if(w.getName()== name)
+            if(w.getName().equals(name))
             {
                 return w.gibEigenschaft();
             }

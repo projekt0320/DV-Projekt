@@ -2095,7 +2095,8 @@ public class gesamt_GUI extends JFrame {
         Container cp = getContentPane();
         cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
         // Anfang Komponenten
-
+        taTestTextArea = new JTextArea();
+        
         bSuchestarten2.setBounds(250, 135, 175, 25);
         bSuchestarten2.setText("Suche starten");
         bSuchestarten2.setMargin(new Insets(2, 2, 2, 2));
@@ -2105,9 +2106,7 @@ public class gesamt_GUI extends JFrame {
                 }
             });
 
-        Ausgabe2.setBounds(50, 220, 500, 500);
-        Ausgabe2.setVerticalAlignment(SwingConstants.TOP);
-        Ausgabe2.setText("");
+        
 
         lEingabeVerwendung.setBounds(50, 80, 156, 20);
         lEingabeVerwendung.setText("Eingabe Verwendung");
@@ -2126,7 +2125,7 @@ public class gesamt_GUI extends JFrame {
         cp.add(lEingabeVerwendung);
         cp.add(jTextField2);
         cp.add(bSuchestarten2);
-        cp.add(Ausgabe2);
+        cp.add(taTestTextArea);
         cp.add(bZuruck);
         // Ende Komponenten
 
@@ -2143,12 +2142,12 @@ public class gesamt_GUI extends JFrame {
             try
             {
                 String s2= Datenbank.sucheVerwendung(s);
-                Ausgabe2.setText( s2 );
+                taTestTextArea.setText( s2 );
             }
             catch(Exception e)
             {
 
-                Ausgabe2.setText(     e.getMessage()      );
+                taTestTextArea.setText(     e.getMessage()      );
 
             }
         }
