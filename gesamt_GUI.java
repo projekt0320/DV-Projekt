@@ -197,16 +197,14 @@ public class gesamt_GUI extends JFrame {
             });
         cp.add(bWerkstoffsuchen);
 
-        // Ende Komponenten
         setVisible(true);
-    } // end of public gui
+    }
 
-    // Anfang Methoden
-
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         new gesamt_GUI();
-    } // end of main
-
+    }
+    
     public void Erstellen_GUI(Container c)
     {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -219,9 +217,7 @@ public class gesamt_GUI extends JFrame {
         setLocation(x, y);
         // Container c = getContentPane();
         // c.setLayout(null);
-        
-                    
-
+       
         bStahlerstellen.setText("Stahl erstellen");
         bStahlerstellen.setMargin(new Insets(2, 2, 2, 2));
         bStahlerstellen.addActionListener(new ActionListener()
@@ -440,7 +436,8 @@ public class gesamt_GUI extends JFrame {
 
     public void Stahlerstellen_ActionPerformed(ActionEvent evt)
     {
-
+        if(evt.getSource() == this.erstellen)
+        {
         String na = tName.getText();
         int nr;
         String ve = tVerwendung.getText();
@@ -475,7 +472,7 @@ public class gesamt_GUI extends JFrame {
         else {
             lFertig.setText("Eingabe nicht in Ordnung");
         }
-
+    }
     }
 
     public void Gusserstellen_GUI(Container c)
@@ -2021,7 +2018,8 @@ public class gesamt_GUI extends JFrame {
     public void bVerwendungSuchestarten_ActionPerformed(ActionEvent evt) 
     {
         // TODO hier Quelltext einfügen
-        if(evt.getSource() == this.bSuchestarten2){
+        if(evt.getSource() == this.bSuchestarten2)
+        {
              String s= jTextField2.getText();
 
         try
