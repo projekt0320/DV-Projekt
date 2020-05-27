@@ -743,7 +743,7 @@ public class Datenbank
     {
         for (Werkstoffe w : liste)
         {
-            if(w.getName() == name)
+            if(w.getName().equals(name))
             {
                 return w.gibEigenschaft();
             }
