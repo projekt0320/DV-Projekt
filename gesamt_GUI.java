@@ -172,7 +172,7 @@ public class gesamt_GUI extends JFrame {
         bWerkstoffbearbeiten.addActionListener(new ActionListener() { 
                 public void actionPerformed(ActionEvent evt) { 
                     cp.removeAll();
-                    Bearbeiten_GUI();
+                    Bearbeiten_GUI(cp);
                 }
             });
         cp.add(bWerkstoffbearbeiten);
@@ -195,7 +195,7 @@ public class gesamt_GUI extends JFrame {
         bWerkstoffsuchen.addActionListener(new ActionListener() { 
                 public void actionPerformed(ActionEvent evt) { 
                     cp.removeAll();
-                    Suchen_GUI();
+                    Suchen_GUI(cp);
                 }
             });
         cp.add(bWerkstoffsuchen);
@@ -1376,8 +1376,13 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
-    
-    public void Bearbeiten_GUI()
+    /**
+     * Methode, die den Frame intialisiert und in dem leeren Container der Hauptmenü-Methode Labels, Textfelder, eine TextArea und ein
+     * Scrolldown-Menü platziert. 
+     * 
+     * @param c
+     */
+    public void Bearbeiten_GUI(Container c)
     {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setTitle("Werkstoff bearbeiten");
@@ -1388,7 +1393,7 @@ public class gesamt_GUI extends JFrame {
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
 
-        Container c = getContentPane();
+        //Container c = getContentPane();
         //c.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
         lBearbeiten=new JLabel("Eigenschaft, die bearbeitet werden soll:");
 
@@ -1451,9 +1456,13 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Methode, die bei Anklicken des Bearbeiten-Buttons für das jeweilige gewählte Listenfeld im Scrolldown-Menü wiederum eine Methode
+     * aufruft.
+     * 
+     * @param evt
+     */
     public void bBearbeiten_ActionPerformed(ActionEvent evt){
-        // TODO hier Quelltext einfügen
-
         int i= Liste.getSelectedIndex();
         if(i==0){
             bearbeitenName();
@@ -1500,9 +1509,12 @@ public class gesamt_GUI extends JFrame {
         else if(i==14){
             bearbeitenDegradation();
         }
+    }
 
-    } //
-
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenName(){
         int n;
         String s1 ="";
@@ -1527,6 +1539,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenNummer(){
         int n1;
         int n2;
@@ -1552,6 +1568,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenVerwendung(){
         int n;
         String s1 ="";
@@ -1576,6 +1596,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenElektrischeLeitfaehigkeitMetalle(){
         int n1;
         double n2;
@@ -1601,6 +1625,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenElektrischeLeitfaehigkeitHalbleiter(){
         int n1;
         double n2;
@@ -1626,6 +1654,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenEisengehalt(){
         int n1;
         double n2;
@@ -1651,6 +1683,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenKohlenstoffgehalt(){
         int n1;
         double n2;
@@ -1676,6 +1712,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenHauptelement(){
         int n;
         String s1 ="";
@@ -1700,6 +1740,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenSiedetemperatur(){
         int n1;
         double n2;
@@ -1725,6 +1769,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenVerformbarkeitSchwermetalle(){
         int n1;
         String s1 ="";
@@ -1749,6 +1797,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenVerformbarkeitKunststoffe(){
         int n1;
         String s1 ="";
@@ -1773,6 +1825,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenDichte(){
         int n1;
         double n2;
@@ -1798,6 +1854,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenMetallischeEigenschaft(){
         int n1;
         String s1 ="";
@@ -1822,6 +1882,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenZugfestigkeit(){
         int n1;
         double n2;
@@ -1847,6 +1911,10 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Methode, in der der eingegebene Text in den Textfeldern der jeweiligen Bearbeiten-Methode der Datenbank-Klasse übergeben wird.
+     * Bei falschen Eingaben werden Exceptions gefangen und angezeigt.
+     */
     public void bearbeitenDegradation(){
         int n1;
         String s1 ="";
@@ -1871,9 +1939,14 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
-    public void Suchen_GUI()
+    /**
+     * Methode, die den Frame initialisiert und den leeren Container der Hauptmenü-Methode übernimmt. In diesem Container werden vier
+     * Buttons und ein Label platziert. Über die Buttons kann die Such-Art ausgewählt werden.
+     * 
+     * @param cp
+     */
+    public void Suchen_GUI(Container cp)
     { 
-        // Frame-Initialisierung
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 700;
         int frameHeight = 600;
@@ -1882,11 +1955,11 @@ public class gesamt_GUI extends JFrame {
         int x = (d.width - getSize().width) / 2;
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
-        setTitle("Suchen_GUI");
+        setTitle("Werkstoff suchen");
         setResizable(false);
-        Container cp = getContentPane();
-        cp.setLayout(null);
-        // Anfang Komponenten
+        // Container cp = getContentPane();
+        // cp.setLayout(null);
+
         ParameterSuchen.setBounds(91, 40, 265, 20);
         ParameterSuchen.setText("Mit welchem Parameter soll gesucht werden?");
         cp.add(ParameterSuchen);
@@ -1934,15 +2007,16 @@ public class gesamt_GUI extends JFrame {
         cp.add(bSucheVerwendung);
         cp.add(bZuruck);
         cp.setBackground(new Color(0xC0C0C0));
-        // Ende Komponenten
 
         setVisible(true);
     }
 
+    /**
+     * Methode, die den Frame initialisiert und je ein Label, Textfeld, eine TextArea und zwei Buttons enthält. Mit dem Such-Button kann
+     * mit dem Parameter im Textfeld nach einem Werkstoff gesucht werden, der dann in der TextArea angezeigt wird.
+     */
     public void sucheName()
     { 
-        // Frame-Initialisierung
-
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 700; 
         int frameHeight = 600;
@@ -1955,7 +2029,6 @@ public class gesamt_GUI extends JFrame {
         setResizable(false);
         Container cp = getContentPane();
         cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
-        // Anfang Komponenten
 
         lEingabeName.setText("Eingabe Name");
         bSuchestarten.setText("Suche starten");
@@ -1973,6 +2046,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     cp.removeAll();
+                    jTextField.setText("");
                     Hauptmenu_GUI();
                 }
             }
@@ -1984,13 +2058,16 @@ public class gesamt_GUI extends JFrame {
         cp.add(taTestTextArea);
         cp.add(bZuruck);
 
-        // Ende Komponenten
         setVisible(true);
-    } // end of public sucheName
+    }
 
+    /**
+     * Diese Methode ruft mit dem eingegebenen Parameter die jeweilige Suchen-Methode der Datnbank-Klasse auf und übergibt das Ergebnis
+     * der TextArea.
+     * 
+     * @param evt
+     */
     public void bNameSuchestarten_ActionPerformed(ActionEvent evt) {
-        // TODO hier Quelltext einfügen
-
         try
         {
             String s= jTextField.getText();
@@ -2002,10 +2079,14 @@ public class gesamt_GUI extends JFrame {
             taTestTextArea.setText(     e.getMessage()      );
 
         }
+    }
 
-    } // end of bSuchestarten_ActionPerformed
+    /**
+     * Methode, die den Frame initialisiert und je ein Label, Textfeld, eine TextArea und zwei Buttons enthält. Mit dem Such-Button kann
+     * mit dem Parameter im Textfeld nach einem Werkstoff gesucht werden, der dann in der TextArea angezeigt wird.
+     */
     public void sucheNummer() { 
-        // Frame-Initialisierung
+
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 700; 
         int frameHeight = 600;
@@ -2018,9 +2099,8 @@ public class gesamt_GUI extends JFrame {
         setResizable(false);
         Container cp = getContentPane();
         cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
-        // Anfang Komponenten
-        taTestTextArea = new JTextArea();
 
+        taTestTextArea = new JTextArea();
         bSuchestarten1.setText("Suche starten");
         bSuchestarten1.setMargin(new Insets(2, 2, 2, 2));
         bSuchestarten1.addActionListener(new ActionListener() { 
@@ -2038,6 +2118,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     cp.removeAll();
+                    jTextField1.setText("");
                     Hauptmenu_GUI();
                 }
             }
@@ -2048,13 +2129,18 @@ public class gesamt_GUI extends JFrame {
         cp.add(bSuchestarten1);
         cp.add(taTestTextArea);
         cp.add(bZuruck);
-        // Ende Komponenten
 
         setVisible(true);
-    } // end of public sucheNummer
+    }
 
+    /**
+     * Diese Methode ruft mit dem eingegebenen Parameter die jeweilige Suchen-Methode der Datnbank-Klasse auf und übergibt das Ergebnis
+     * der TextArea.
+     * 
+     * @param evt
+     */
     public void bNummerSuchestarten_ActionPerformed(ActionEvent evt) {
-        // TODO hier Quelltext einfügen
+
         int n=-1;
         //fehlerhafter Datentyp oder keine Eingabe
         try
@@ -2078,10 +2164,14 @@ public class gesamt_GUI extends JFrame {
                 taTestTextArea.setText(     e.getMessage()      );
             }
         }
-    } // end of bSuchestarten_ActionPerformed
+    }
 
+    /**
+     * Methode, die den Frame initialisiert und je ein Label, Textfeld, eine TextArea und zwei Buttons enthält. Mit dem Such-Button kann
+     * mit dem Parameter im Textfeld nach einem Werkstoff gesucht werden, der dann in der TextArea angezeigt wird.
+     */
     public void sucheVerwendung() { 
-        // Frame-Initialisierung
+
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 700; 
         int frameHeight = 600;
@@ -2094,9 +2184,10 @@ public class gesamt_GUI extends JFrame {
         setResizable(false);
         Container cp = getContentPane();
         cp.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 40));
+
         // Anfang Komponenten
         taTestTextArea = new JTextArea();
-        
+
         bSuchestarten2.setBounds(250, 135, 175, 25);
         bSuchestarten2.setText("Suche starten");
         bSuchestarten2.setMargin(new Insets(2, 2, 2, 2));
@@ -2118,6 +2209,7 @@ public class gesamt_GUI extends JFrame {
                 public void actionPerformed(ActionEvent evt)
                 { 
                     cp.removeAll();
+                    jTextField2.setText("");
                     Hauptmenu_GUI();
                 }
             }
@@ -2127,14 +2219,18 @@ public class gesamt_GUI extends JFrame {
         cp.add(bSuchestarten2);
         cp.add(taTestTextArea);
         cp.add(bZuruck);
-        // Ende Komponenten
 
         setVisible(true);
-    } // end of public sucheVerwendung
+    }
 
+    /**
+     * Diese Methode ruft mit dem eingegebenen Parameter die jeweilige Suchen-Methode der Datnbank-Klasse auf und übergibt das Ergebnis
+     * der TextArea.
+     * 
+     * @param evt
+     */
     public void bVerwendungSuchestarten_ActionPerformed(ActionEvent evt) 
     {
-        // TODO hier Quelltext einfügen
         if(evt.getSource() == this.bSuchestarten2)
         {
             String s= jTextField2.getText();
@@ -2151,8 +2247,12 @@ public class gesamt_GUI extends JFrame {
 
             }
         }
-    } // end of bSuchestarten_ActionPerformed
+    }
 
+    /**
+     * Diese Methode initialisiert den Frame und fügt ihrem Container zwei Labels, zwei Buttons und ein Textfeld hinzu. Beim Klicken des
+     * Löschen-Buttons wird der durch die Nummer ausgewählte Werkstoff aus der Datenbank gelöscht.
+     */
     public void Loeschen_GUI()
     {
 
@@ -2182,7 +2282,6 @@ public class gesamt_GUI extends JFrame {
             {
                 public void actionPerformed(ActionEvent evt)
                 { 
-
                     bLoeschen_ActionPerformed(evt);
                 }
             }
@@ -2203,13 +2302,19 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Methode, die die Button-Lösch-Methode auruft.
+     * 
+     * @param evt
+     */
     public void bLoeschen_ActionPerformed(ActionEvent evt){
-        // TODO hier Quelltext einfügen
-
         bLoeschenMethode(); 
+    }
 
-    } //
-
+    /**
+     * Diese Methode übernimmt die eingegebene Zahl des Textfelds und übergibt sie der Löschen-Methode der Datenbank-Klasse. Bei Fehlern
+     * wird eine Exception gefangen und angezeigt.
+     */
     public void bLoeschenMethode(){
         int n;
         try{
@@ -2230,5 +2335,5 @@ public class gesamt_GUI extends JFrame {
         else {
             lAusgabeLoeschen.setText("Eingabe ist nicht in Ordnung");
         }
-    }// Ende Methoden
-} // end of class gui
+    }
+}
