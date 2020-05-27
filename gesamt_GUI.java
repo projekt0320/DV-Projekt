@@ -213,6 +213,12 @@ public class gesamt_GUI extends JFrame {
         new gesamt_GUI();
     }
 
+    /**
+     * Die Methode Erstellen_GUI initialisiert den Frame und übernimmt den leeren Container der Hauptmenü-Methode, in dem sie ein Label
+     * und acht Buttons mit der Weiterleitung zum jeweiligen Werkstoff-Erstell-Fenster platziert.
+     * 
+     * @param c
+     */
     public void Erstellen_GUI(Container c)
     {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -358,10 +364,17 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Diese Methode initialisiert den Frame und übernimmt den leeren Container der Erstellen-Methode, in dem sie je
+     * sechs Labels und Textfelder mit der Möglichkeit, die Eigenschaften festzulegen, platziert. Außerdem gibt es einen Button, der
+     * den jeweiligen Werkstoff erstellt und in der Datenbank speichert. Dazu kommt ein Label, das eine Rückmeldung zum Vorgang gibt.
+     * 
+     * @param c
+     */
     public void Stahlerstellen_GUI(Container c)
     {
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setTitle("Stahl erstellen");
         setResizable(false);
         setSize(700, 600);
@@ -385,6 +398,9 @@ public class gesamt_GUI extends JFrame {
         c.add(lKohlenstoffgehalt);
         c.add(tKohlenstoffgehalt);
 
+        //Die Methode actionPerformed wird nach einmaligem Rückkehren ins Hauptmenü und nach Wiederkehren in eines der Erstellen-Fenster
+        //jeweils 5 Mal aufgerufen (siehe bei "Stahl erstellen" die Variable "zahl"). Grund: ???
+        //Das gilt auch für die anderen Erstellen-Methoden.
         berstellen1.addActionListener(new ActionListener()
             { 
                 public void actionPerformed(ActionEvent evt1)
@@ -441,6 +457,12 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Diese Methode wird bei Drücken des Erstellen-Buttons ausgeführt und übernimmt die Daten aus den Textfeldern. Diese werden der
+     * extern aufgerufenen Erstellen-Methode der Datenbank-Klasse übergeben. Die geworfenen Ecxeptions werden gefangen.
+     * 
+     * @param evt1
+     */
     public void Stahlerstellen_ActionPerformed(ActionEvent evt1)
     {
         if(evt1.getSource() == this.berstellen1)
@@ -482,6 +504,13 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Diese Methode initialisiert den Frame und übernimmt den leeren Container der Erstellen-Methode, in dem sie je
+     * sechs Labels und Textfelder mit der Möglichkeit, die Eigenschaften festzulegen, platziert. Außerdem gibt es einen Button, der
+     * den jeweiligen Werkstoff erstellt und in der Datenbank speichert. Dazu kommt ein Label, das eine Rückmeldung zum Vorgang gibt.
+     * 
+     * @param c
+     */
     public void Gusserstellen_GUI(Container c)
     {
 
@@ -562,6 +591,12 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Diese Methode wird bei Drücken des Erstellen-Buttons ausgeführt und übernimmt die Daten aus den Textfeldern. Diese werden der
+     * extern aufgerufenen Erstellen-Methode der Datenbank-Klasse übergeben. Die geworfenen Ecxeptions werden gefangen.
+     * 
+     * @param evt
+     */
     public void Gusserstellen_ActionPerformed(ActionEvent evt)
     {
 
@@ -602,6 +637,13 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Diese Methode initialisiert den Frame und übernimmt den leeren Container der Erstellen-Methode, in dem sie je
+     * sechs Labels und Textfelder mit der Möglichkeit, die Eigenschaften festzulegen, platziert. Außerdem gibt es einen Button, der
+     * den jeweiligen Werkstoff erstellt und in der Datenbank speichert. Dazu kommt ein Label, das eine Rückmeldung zum Vorgang gibt.
+     * 
+     * @param c
+     */
     public void Schwermetallerstellen_GUI(Container c)
     {
 
@@ -682,6 +724,12 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Diese Methode wird bei Drücken des Erstellen-Buttons ausgeführt und übernimmt die Daten aus den Textfeldern. Diese werden der
+     * extern aufgerufenen Erstellen-Methode der Datenbank-Klasse übergeben. Die geworfenen Ecxeptions werden gefangen.
+     * 
+     * @param evt
+     */
     public void Schwermetallerstellen_ActionPerformed(ActionEvent evt)
     {
         String na = tName.getText();
@@ -716,6 +764,13 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Diese Methode initialisiert den Frame und übernimmt den leeren Container der Erstellen-Methode, in dem sie je
+     * sechs Labels und Textfelder mit der Möglichkeit, die Eigenschaften festzulegen, platziert. Außerdem gibt es einen Button, der
+     * den jeweiligen Werkstoff erstellt und in der Datenbank speichert. Dazu kommt ein Label, das eine Rückmeldung zum Vorgang gibt.
+     * 
+     * @param c
+     */
     public void Leichtmetallerstellen_GUI(Container c)
     {
 
@@ -796,6 +851,12 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Diese Methode wird bei Drücken des Erstellen-Buttons ausgeführt und übernimmt die Daten aus den Textfeldern. Diese werden der
+     * extern aufgerufenen Erstellen-Methode der Datenbank-Klasse übergeben. Die geworfenen Ecxeptions werden gefangen.
+     * 
+     * @param evt
+     */
     public void Leichtmetallerstellen_ActionPerformed(ActionEvent evt)
     {
 
@@ -835,6 +896,13 @@ public class gesamt_GUI extends JFrame {
 
     }
 
+    /**
+     * Diese Methode initialisiert den Frame und übernimmt den leeren Container der Erstellen-Methode, in dem sie je
+     * sechs Labels und Textfelder mit der Möglichkeit, die Eigenschaften festzulegen, platziert. Außerdem gibt es einen Button, der
+     * den jeweiligen Werkstoff erstellt und in der Datenbank speichert. Dazu kommt ein Label, das eine Rückmeldung zum Vorgang gibt.
+     * 
+     * @param c
+     */
     public void Halbleitererstellen_GUI(Container c)
     {
 
@@ -910,6 +978,12 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Diese Methode wird bei Drücken des Erstellen-Buttons ausgeführt und übernimmt die Daten aus den Textfeldern. Diese werden der
+     * extern aufgerufenen Erstellen-Methode der Datenbank-Klasse übergeben. Die geworfenen Ecxeptions werden gefangen.
+     * 
+     * @param evt
+     */
     public void Halbleitererstellen_ActionPerformed(ActionEvent evt)
     {
         String na = tName.getText();
@@ -943,6 +1017,13 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Diese Methode initialisiert den Frame und übernimmt den leeren Container der Erstellen-Methode, in dem sie je
+     * sechs Labels und Textfelder mit der Möglichkeit, die Eigenschaften festzulegen, platziert. Außerdem gibt es einen Button, der
+     * den jeweiligen Werkstoff erstellt und in der Datenbank speichert. Dazu kommt ein Label, das eine Rückmeldung zum Vorgang gibt.
+     * 
+     * @param c
+     */
     public void Keramikerstellen_GUI(Container c)
     {
 
@@ -1018,6 +1099,12 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Diese Methode wird bei Drücken des Erstellen-Buttons ausgeführt und übernimmt die Daten aus den Textfeldern. Diese werden der
+     * extern aufgerufenen Erstellen-Methode der Datenbank-Klasse übergeben. Die geworfenen Ecxeptions werden gefangen.
+     * 
+     * @param evt
+     */
     public void Keramikerstellen_ActionPerformed(ActionEvent evt)
     {
         String na = tName.getText();
@@ -1051,6 +1138,13 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Diese Methode initialisiert den Frame und übernimmt den leeren Container der Erstellen-Methode, in dem sie je
+     * sechs Labels und Textfelder mit der Möglichkeit, die Eigenschaften festzulegen, platziert. Außerdem gibt es einen Button, der
+     * den jeweiligen Werkstoff erstellt und in der Datenbank speichert. Dazu kommt ein Label, das eine Rückmeldung zum Vorgang gibt.
+     * 
+     * @param c
+     */
     public void Kunststofferstellen_GUI(Container c)
     {
 
@@ -1126,6 +1220,12 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Diese Methode wird bei Drücken des Erstellen-Buttons ausgeführt und übernimmt die Daten aus den Textfeldern. Diese werden der
+     * extern aufgerufenen Erstellen-Methode der Datenbank-Klasse übergeben. Die geworfenen Ecxeptions werden gefangen.
+     * 
+     * @param evt
+     */
     public void Kunststofferstellen_ActionPerformed(ActionEvent evt)
     {
         String na = tName.getText();
@@ -1157,6 +1257,13 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    /**
+     * Diese Methode initialisiert den Frame und übernimmt den leeren Container der Erstellen-Methode, in dem sie je
+     * sechs Labels und Textfelder mit der Möglichkeit, die Eigenschaften festzulegen, platziert. Außerdem gibt es einen Button, der
+     * den jeweiligen Werkstoff erstellt und in der Datenbank speichert. Dazu kommt ein Label, das eine Rückmeldung zum Vorgang gibt.
+     * 
+     * @param c
+     */
     public void Naturstofferstellen_GUI(Container c)
     {
 
@@ -1232,6 +1339,12 @@ public class gesamt_GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Diese Methode wird bei Drücken des Erstellen-Buttons ausgeführt und übernimmt die Daten aus den Textfeldern. Diese werden der
+     * extern aufgerufenen Erstellen-Methode der Datenbank-Klasse übergeben. Die geworfenen Ecxeptions werden gefangen.
+     * 
+     * @param evt
+     */
     public void Naturstofferstellen_ActionPerformed(ActionEvent evt)
     {
         String na = tName.getText();
@@ -1263,6 +1376,7 @@ public class gesamt_GUI extends JFrame {
         }
     }
 
+    
     public void Bearbeiten_GUI()
     {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
